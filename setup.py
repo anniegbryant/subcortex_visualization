@@ -6,6 +6,7 @@ setup(
     description='Visualize subcortical brain data from SVG templates',
     author='Your Name',
     packages=find_packages(),
+    include_package_data=True,  # ← IMPORTANT
     package_data={
         'subcortex_visualization': ['data/*.svg', 'data/*.csv'],
     },
