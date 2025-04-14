@@ -7,7 +7,7 @@ We based our vector graphic outlines on the three-dimensional subcortical meshes
 
 The below graphic summarizes the transformation from 3D volumetric meshes in the ENIGMA toolbox (left) to 2D vector graphics in this python package (right).
 
-<img src="Example_3D_to_2D_schematic.png" width="70%">
+<img src="images/Example_3D_to_2D_schematic.png" width="70%">
 
 
 While `ggseg` offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure, hence development here.
@@ -41,7 +41,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
                       fill_title = "Subcortical region index")
 ```
 
-<img src="example_subcortex_plot.png" width="80%">
+<img src="images/example_subcortex_plot.png" width="80%">
 
 We compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb) to demonstrate how to plot real data in one or both hemispheres.
 Real data should be structured as follows in a `pandas.DataFrame` for plotting (here we've just assigned an integer index to each region):
@@ -90,4 +90,4 @@ plot_subcortical_data(subcortex_data=example_continuous_data,
 ```
 
 
-<img src="example_subcortex_normdist.png" width="80%">
+<img src="images/example_subcortex_normdist.png" width="80%">
