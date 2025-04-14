@@ -34,6 +34,15 @@ This will install the `subcortex_visualization` package so you have access to th
 
 ## Usage
 
+Running the below code will produce an image of the left subcortex, each region colored by its index, with the plasma color scheme:
+
+```python
+plot_subcortical_data(hemisphere='L', cmap='plasma', 
+                      fill_title = "Subcortical region index")
+```
+
+<img src="example_subcortex_plot.png" width="80%">
+
 We compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb) to demonstrate how to plot real data in one or both hemispheres.
 Real data should be structured as follows in a `pandas.DataFrame` for plotting (here we've just assigned an integer index to each region):
 
@@ -58,14 +67,27 @@ Briefly, all functionality is contained within the `plot_subcortical_data` funct
 * `vmax`: Max fill value; this is optional, and you would only want to use this to manually constrain the fill range to match another figure
 * `midpoint`: Midpoint value to enforce for fill range; this is optional
 
-Running the below code will produce an image of the left subcortex, each region colored by its index, with the plasma color scheme:
+Here's an example plotting both hemispheres, with data randomly sampled from a normal distribution, setting a color range from blue (low) to red (high) with white at the center (midpoint=0):
 
 ```python
-plot_subcortical_data(subcortex_data=example_subcortex_data,  
-                      hemisphere='L', cmap='plasma', 
-                      fill_title = "Subcortical region index")
+import matplotlib.colors as mcolors
+import numpy as np
+
+np.random.seed(127)
+
+example_continuous_data_L = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"],
+                                          "value": np.random.normal(0, 1, 7)}).assign(Hemisphere = "L")
+example_continuous_data_R = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"],
+                                            "value": np.random.normal(0, 1, 7)}).assign(Hemisphere = "R")
+example_continuous_data = pd.concat([example_continuous_data_L, example_continuous_data_R], axis=0)
+
+white_blue_red_cmap = mcolors.LinearSegmentedColormap.from_list("BlueWhiteRed", ["blue", "white", "red"])
+
+plot_subcortical_data(subcortex_data=example_continuous_data,  
+                      line_thickness=1.25, line_color='black',
+                          hemisphere='both', fill_title = "Normal distribution sample", cmap=white_blue_red_cmap, 
+                          vmin=None, vmax=None, midpoint=0)
 ```
 
 
-
-<img src="example_subcortex_plot.png" width="80%">
+<img src="example_subcortex_normdist.png" width="80%">
