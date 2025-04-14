@@ -4,7 +4,7 @@ setup(
     name='subcortex_visualization',
     version='0.1',
     description='Visualize subcortical brain data from SVG templates',
-    author='Your Name',
+    author='Annie G. Bryant',
     packages=find_packages(),
     include_package_data=True,  # ← IMPORTANT
     package_data={

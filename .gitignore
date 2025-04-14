@@ -11,3 +11,6 @@ dist/
 __pycache__/
 *.pyc
 *.pyo
+
+# Readme images
+readme_images.svg
