@@ -1,0 +1,13 @@
+*DS_Store
+
+# Ignore package metadata
+*.egg-info/
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
