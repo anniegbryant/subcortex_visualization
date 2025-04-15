@@ -7,7 +7,7 @@ We based our vector graphic outlines on the three-dimensional subcortical meshes
 
 The below graphic summarizes the transformation from 3D volumetric meshes in the ENIGMA toolbox (left) to 2D vector graphics in this python package (right).
 
-<img src="images/Example_3D_to_2D_schematic.png" width="70%">
+<img src="images/aseg_3D_to_2D_schematic.png" width="70%">
 
 
 While `ggseg` offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure, hence development here.
@@ -34,14 +34,14 @@ This will install the `subcortex_visualization` package so you have access to th
 
 ## Usage
 
-Running the below code will produce an image of the left subcortex, each region colored by its index, with the plasma color scheme:
+Running the below code will produce an image of the left subcortex in the aseg atlas (currently the only supported atlas), each region colored by its index, with the plasma color scheme:
 
 ```python
 plot_subcortical_data(hemisphere='L', cmap='plasma', 
                       fill_title = "Subcortical region index")
 ```
 
-<img src="images/example_subcortex_plot.png" width="80%">
+<img src="images/example_aseg_subcortex_plot.png" width="80%">
 
 We compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb) to demonstrate how to plot real data in one or both hemispheres.
 Real data should be structured as follows in a `pandas.DataFrame` for plotting (here we've just assigned an integer index to each region):
@@ -58,6 +58,7 @@ Real data should be structured as follows in a `pandas.DataFrame` for plotting (
 
 Briefly, all functionality is contained within the `plot_subcortical_data` function, which takes in the following arguments: 
 * `subcortex_data`: The three-column dataframe in a format as shown above; this is optional, if left out the plot will just color each region by its index
+* `atlas`: The name of the subcortical segmentation atlas (default is 'aseg', which is currently the only supported atlas)
 * `line_thickness`: How thick the lines around each subcortical region should be drawn, in mm (default is 1.5)
 * `line_color`: What color the lines around each subcortical region should be (default is 'black')
 * `hemisphere`: Which hemisphere ('L' or 'R') the `subcortex_data` is from; can also be 'both' (default is 'L')
@@ -83,11 +84,10 @@ example_continuous_data = pd.concat([example_continuous_data_L, example_continuo
 
 white_blue_red_cmap = mcolors.LinearSegmentedColormap.from_list("BlueWhiteRed", ["blue", "white", "red"])
 
-plot_subcortical_data(subcortex_data=example_continuous_data,  
-                      line_thickness=1.25, line_color='black',
-                          hemisphere='both', fill_title = "Normal distribution sample", cmap=white_blue_red_cmap, 
-                          vmin=None, vmax=None, midpoint=0)
+plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
+                      hemisphere='both', fill_title = "Normal distribution sample",
+                      cmap=white_blue_red_cmap, midpoint=0)
 ```
 
 
-<img src="images/example_subcortex_normdist.png" width="80%">
+<img src="images/example_aseg_subcortex_normdist.png" width="80%">

@@ -19,7 +19,7 @@ from matplotlib.patches import PathPatch
 # Files 
 from importlib.resources import files
 
-def plot_subcortical_data(subcortex_data=None,
+def plot_subcortical_data(subcortex_data=None, atlas='aseg',
                           line_thickness=1.5, line_color='black',
                           hemisphere='L', fill_title = "values", cmap='viridis', 
                           vmin=None, vmax=None, midpoint=None,
@@ -32,6 +32,9 @@ def plot_subcortical_data(subcortex_data=None,
     subcortex_data : pandas.DataFrame, optional
         DataFrame with columns ['region', 'value', 'Hemisphere'].
         If None, a default dataset is generated based on the selected hemisphere.
+
+    atlas : str, default='aseg'
+        The atlas used for the subcortical regions. Currently, only 'aseg' is supported.
 
     line_thickness : float, default=1.5
         Thickness of the outline for each region.
@@ -73,12 +76,12 @@ def plot_subcortical_data(subcortex_data=None,
     """
         
     # Load SVG
-    svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_base_{hemisphere}.svg")
+    svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_base_{hemisphere}.svg")
     tree = ET.parse(svg_path)
     root = tree.getroot()
 
-    # Load subcorticla paths lookup
-    subcortical_paths_lookup_path = files("subcortex_visualization.data").joinpath("subcortical_paths_lookup.csv")
+    # Load subcortical paths lookup
+    subcortical_paths_lookup_path = files("subcortex_visualization.data").joinpath(f"subcortical_{atlas}_paths_lookup.csv")
     subcortical_paths_lookup = pd.read_csv(subcortical_paths_lookup_path)
 
     # Define SVG namespace
@@ -91,11 +94,11 @@ def plot_subcortical_data(subcortex_data=None,
     # If the user didn't provide subcortex_data, simply generate a dataframe with indices from 1 to 7 (if left/right) or 1 to 14 (if both)
     if subcortex_data is None:
         if hemisphere == 'both':
-            subcortex_data = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"]*2, 
-                                           "Hemisphere": ["L"]*7 + ["R"]*7,
+            subcortex_data = pd.DataFrame({"region": subcortical_paths_lookup.query("Hemisphere=='L' & Num_Hemi==1")['region'].unique().tolist()*2,
+                                          "Hemisphere": ["L"]*7 + ["R"]*7,
                                            "value": list(range(7)) + list(range(7))}).assign(Num_Hemi = 2)
         else:
-            subcortex_data = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"], 
+            subcortex_data = pd.DataFrame({"region": subcortical_paths_lookup.query("Hemisphere=='L' & Num_Hemi==1")['region'].unique().tolist(), 
                                            "value": range(7)}).assign(Hemisphere = hemisphere, Num_Hemi = 1)
 
     # If hemisphere = 'both', filter subcortical_paths_lookup to Num_Hemi == 2
