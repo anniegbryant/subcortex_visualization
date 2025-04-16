@@ -1,29 +1,26 @@
 # Necessary imports 
 import pandas as pd
 import numpy as np
-import random
 
 # SVG parsing
-from IPython.display import SVG, display
 import xml.etree.ElementTree as ET
 from svgpath2mpl import parse_path
 
 # matplotlib plotting
 import matplotlib
-from matplotlib.colors import to_hex
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import matplotlib.colors as mcolors
-from matplotlib.patches import PathPatch
+from matplotlib.patches import PathPatch, Patch
 
 # Files 
 from importlib.resources import files
 
 def plot_subcortical_data(subcortex_data=None, atlas='aseg',
                           line_thickness=1.5, line_color='black',
-                          hemisphere='L', fill_title = "values", cmap='viridis', 
-                          vmin=None, vmax=None, midpoint=None,
+                          hemisphere='L', fill_title="values", cmap='viridis',
+                          vmin=None, vmax=None, midpoint=None, show_legend=True,
                           show_figure=True):
+    
     """
     Visualize subcortical brain data on an SVG map using matplotlib.
 
@@ -34,7 +31,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg',
         If None, a default dataset is generated based on the selected hemisphere.
 
     atlas : str, default='aseg'
-        The atlas used for the subcortical regions. Currently, only 'aseg' is supported.
+        The atlas used for the subcortical regions. Currently, two options are supported: 'aseg' and 'Tian_S1'.
 
     line_thickness : float, default=1.5
         Thickness of the outline for each region.
@@ -60,6 +57,9 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg',
     midpoint : float, optional
         If provided, uses a diverging colormap centered around this value.
 
+    show_legend : bool, default=True
+        If True, displays a legend or colorbar indicating the mapping of values to colors.
+
     show_figure : bool, default=True
         If True, displays the figure using `plt.show()`. If False, returns the matplotlib Figure object.
 
@@ -71,108 +71,119 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg',
     Notes
     -----
     - The function loads SVG files and a lookup CSV bundled with the package, which can be found under `data/` directory.
-    - It assumes SVGs are named `subcortex_base_L.svg` and `subcortex_base_R.svg` in the package `data/` directory.
     - The input `subcortex_data` should align with regions defined in the lookup table.
     """
-        
+    
     # Load SVG
     svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_base_{hemisphere}.svg")
     tree = ET.parse(svg_path)
     root = tree.getroot()
 
-    # Load subcortical paths lookup
-    subcortical_paths_lookup_path = files("subcortex_visualization.data").joinpath(f"subcortical_{atlas}_paths_lookup.csv")
-    subcortical_paths_lookup = pd.read_csv(subcortical_paths_lookup_path)
-
     # Define SVG namespace
     ns = {'svg': 'http://www.w3.org/2000/svg'}
-    ET.register_namespace('', ns['svg'])  # Prevents adding ns0 in output
+    ET.register_namespace('', ns['svg'])
 
-    # Find objects
-    paths = root.findall('.//svg:path', ns)  # for example, all <path> elements
+    # Find path elements
+    paths = root.findall('.//svg:path', ns)
 
-    # If the user didn't provide subcortex_data, simply generate a dataframe with indices from 1 to 7 (if left/right) or 1 to 14 (if both)
-    if subcortex_data is None:
-        if hemisphere == 'both':
-            subcortex_data = pd.DataFrame({"region": subcortical_paths_lookup.query("Hemisphere=='L' & Num_Hemi==1")['region'].unique().tolist()*2,
-                                          "Hemisphere": ["L"]*7 + ["R"]*7,
-                                           "value": list(range(7)) + list(range(7))}).assign(Num_Hemi = 2)
-        else:
-            subcortex_data = pd.DataFrame({"region": subcortical_paths_lookup.query("Hemisphere=='L' & Num_Hemi==1")['region'].unique().tolist(), 
-                                           "value": range(7)}).assign(Hemisphere = hemisphere, Num_Hemi = 1)
+    # Load ordering file
+    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas}_{hemisphere}_ordering.csv"))
 
-    # If hemisphere = 'both', filter subcortical_paths_lookup to Num_Hemi == 2
-    if hemisphere == 'both':
-        subcortical_paths_lookup = subcortical_paths_lookup.query("Num_Hemi == 2")
-        # Merge example data with paths
-        subcortex_data_with_paths = (subcortex_data
-                                            .merge(subcortical_paths_lookup, on=['region', 'Hemisphere'], how='left')
-                                            .sort_values('path_number'))
-    else:
-        subcortical_paths_lookup = subcortical_paths_lookup.query("Num_Hemi == 1")
-        # Merge example data with paths
-        subcortex_data_with_paths = (subcortex_data
-                                            .merge(subcortical_paths_lookup, on=['region', 'Hemisphere'], how='left')
-                                            .query("Hemisphere == @hemisphere")
-                                            .sort_values('path_number'))
-
-    # Extract fill values
-    fill_values = subcortex_data_with_paths['value'].values
-
-    if midpoint is not None:
-        # Compute max absolute deviation from the midpoint
-        max_dev = np.max(np.abs(fill_values - midpoint))
-
-        # If vmin or vmax is not set, define them symmetrically around midpoint
-        if vmin is None:
-            vmin = midpoint - max_dev
-        if vmax is None:
-            vmax = midpoint + max_dev
-
-        norm = mcolors.TwoSlopeNorm(vmin=vmin, vcenter=midpoint, vmax=vmax)
-    else:
-        if vmin is None:
-            vmin = np.min(fill_values)
-        if vmax is None:
-            vmax = np.max(fill_values)
-            
-        norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
-
-    
+    # Handle colormap
     if isinstance(cmap, str):
         cmap = matplotlib.colormaps.get_cmap(cmap)
+
+    if subcortex_data is None:
+        # Assign discrete indices per region
+        unique_regions = atlas_ordering['region'].unique()
+        region_to_index = {region: idx for idx, region in enumerate(unique_regions)}
+        atlas_ordering['value'] = atlas_ordering['region'].map(region_to_index)
         
-    elif isinstance(cmap, mcolors.Colormap):
-        pass
+        # Discrete colormap
+        num_regions = len(unique_regions)
+        cmap_colors = cmap(np.linspace(0, 1, num_regions))
+        color_lookup = {region: cmap_colors[i] for region, i in region_to_index.items()}
+    else:
+        # Merge and normalize
+        atlas_ordering = atlas_ordering.merge(subcortex_data, on=['region', 'Hemisphere'], how='left')
+
+        fill_values = atlas_ordering['value'].values
+
+        if midpoint is not None:
+            max_dev = np.nanmax(np.abs(fill_values - midpoint))
+            if vmin is None:
+                vmin = midpoint - max_dev
+            if vmax is None:
+                vmax = midpoint + max_dev
+            norm = mcolors.TwoSlopeNorm(vmin=vmin, vcenter=midpoint, vmax=vmax)
+        else:
+            if vmin is None:
+                vmin = np.nanmin(fill_values)
+            if vmax is None:
+                vmax = np.nanmax(fill_values)
+            norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
 
     # Start plotting
-    fig, ax = plt.subplots(figsize=(6, 6))
-
+    if hemisphere == 'both': 
+        fig, ax = plt.subplots(figsize=(12,6))
+    else:
+        fig, ax = plt.subplots(figsize=(7, 6))
     patches = []
-    for path_elem, fill_value in zip(paths, fill_values):
-        d = path_elem.attrib['d']
-        path = parse_path(d)
-        patch = PathPatch(path, facecolor=cmap(norm(fill_value)), edgecolor=line_color, lw=line_thickness)
-        ax.add_patch(patch)
-        patches.append(patch)
 
-    # Set axis limits and aspect
+    for _, row in atlas_ordering.iterrows():
+        this_region = row['region']
+        this_region_side = row['face']
+        this_region_hemi = row['Hemisphere']
+
+        # Determine color
+        if subcortex_data is None:
+            this_region_color = color_lookup[this_region]
+        else:
+            val = row['value']
+            this_region_color = cmap(norm(val)) if not pd.isnull(val) else "#cccccc"
+
+        # Match title to region
+        for path in paths:
+            for child in path:
+                if child.tag.endswith('title') and child.text == f"{this_region}_{this_region_side}_{this_region_hemi}":
+                    d = path.attrib['d']
+                    path_obj = parse_path(d)
+                    patch = PathPatch(path_obj, facecolor=this_region_color,
+                                      edgecolor=line_color, lw=line_thickness)
+                    ax.add_patch(patch)
+                    patches.append(patch)
+
     ax.autoscale_view()
     ax.set_aspect('equal')
     ax.axis('off')
-    ax.invert_yaxis()  # <- This fixes the upside-down SVG
+    ax.invert_yaxis()
 
-    # Add colorbar
-    sm = cm.ScalarMappable(norm=norm, cmap=cmap)
-    sm.set_array([])  # required for colorbar to render
-    cbar = fig.colorbar(sm, ax=ax, orientation='horizontal', fraction=0.046, pad=0.04)
-    cbar.set_label(fill_title)
+    if show_legend:
+        if subcortex_data is None:
+            # Discrete legend
+            unique_regions = atlas_ordering[['region', 'value']].drop_duplicates()
+            legend_elements = [
+                Patch(facecolor=cmap_colors[row['value']], edgecolor='black', label=row['region'])
+                for _, row in unique_regions.iterrows()
+            ]
+            # Add legend to the plot
+            ax.legend(handles=legend_elements, loc='lower center',
+                      bbox_to_anchor=(0.5, -0.25), ncol=4, frameon=False,
+                      fontsize='medium', handleheight=1.2, handlelength=1.2,
+                      title=fill_title, 
+                      handletextpad=0.4)
+            fig.subplots_adjust(bottom=0.5)  # Reserve space for legend
+
+        else:
+            # Continuous colorbar
+            sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+            sm.set_array([])  # Only needed for compatibility
+            cbar = fig.colorbar(sm, ax=ax, orientation='horizontal', fraction=0.046, pad=0.04)
+            cbar.set_label(fill_title)
 
     plt.tight_layout()
 
     if show_figure:
         plt.show()
-    
     else:
-        # Return the plot
         return fig

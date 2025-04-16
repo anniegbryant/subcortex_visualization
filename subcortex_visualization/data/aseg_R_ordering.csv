@@ -1,0 +1,14 @@
+﻿region,face,plot_order,Hemisphere
+accumbens,lateral,1,R
+caudate,lateral,2,R
+thalamus,lateral,3,R
+hippocampus,lateral,4,R
+amygdala,lateral,5,R
+putamen,lateral,6,R
+putamen,medial,7,R
+pallidum,medial,8,R
+accumbens,medial,9,R
+caudate,medial,10,R
+thalamus,medial,11,R
+amygdala,medial,12,R
+hippocampus,medial,13,R
