@@ -121,14 +121,15 @@ First, you'll want to convert from your three-dimensional segmentation atlas (st
 
 In the tutorial Jupyter notebook, you can rotate the rendered mesh in 3D right in your notebook!
 
-<video src="images/mesh_rotation_interactive.mp4" width="80%" autoplay loop muted></video>
+
+<video src="https://github.com/anniegbryant/subcortex_visualization/raw/refs/heads/main/images/mesh_rotation_interactive.mp4" width="60%" autoplay loop muted></video>
 
 
 ### 🎨 Tracing the outline of each region in vector graphic editing software
 
 Next, pour yourself a big mug of coffee to sit and trace the outline of each region in Inkscape (or a similar vector graphic editing program) ☕️
 
-<video src="images/tracing_region.mp4" width="60%" autoplay loop muted></video>
+<video src="https://github.com/anniegbryant/subcortex_visualization/raw/refs/heads/main/images/tracing_region.mp4" width="60%" autoplay loop muted></video>
 
 The first pass at tracing each region can be pretty quick, since you can edit individual points in the path afterwards.
 If your atlas is homotopically symmetric (i.e., symmetric between hemispheres), the silver lining here is that you only need to trace for one hemisphere (e.g., left hemisphere) and then save the flipped (mirrored) version for the other hemisphere. 
