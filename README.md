@@ -1,6 +1,6 @@
 # Subcortical data visualization in 2D
 
-## Motivation
+## 🙋‍♀️ Motivation
 
 This Python package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
 We based our vector graphic outlines on the three-dimensional subcortical meshes provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA); more information on this powerful resource can be found in [Larivière, S., et al. *Nat Methods* (2021)](https://doi.org/10.1038/s41592-021-01186-4). 
@@ -14,7 +14,7 @@ While `ggseg` offers subcortical plotting with the `aseg` atlas, it is [not curr
 There is currently no other software available to visualize the Melbourne Subcortex Atlas segmentation in 2D with real data, hence development here (currently detail levels S1 and S2 are available in this package, as described below).
 
 
-## Installation
+## 🖥️ Installation
 
 The package can be installed from GitHub in two ways.
 First, you can install directly with pip:
@@ -33,7 +33,9 @@ pip install .
 
 This will install the `subcortex_visualization` package so you have access to the `plot_subcortical_data` function and associated data.
 
-## Usage
+## 👨‍💻 Usage
+
+### ❗️ Quick start
 
 Running the below code will produce an image of the left subcortex in the aseg atlas (the default), each region colored by its index, with the plasma color scheme:
 
@@ -44,8 +46,11 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
 
 <img src="images/example_aseg_subcortex_plot.png" width="80%">
 
-We compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb) to demonstrate how to plot real data in one or both hemispheres.
-Real data should be structured as follows in a `pandas.DataFrame` for plotting (here we've just assigned an integer index to each region):
+
+### 📚 Tutorial
+
+For a guide that goes through all the functionality and atlases available in this package,  we compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb).
+To plot real data in the subcortex, your `subcortex_data` should be  a `pandas.DataFrame` structured as follows (here we've just assigned an integer index to each region):
 
 | region        | value         | Hemisphere  |
 | :--- | :---: | :---: |
@@ -92,10 +97,10 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
 
 <img src="images/example_aseg_subcortex_normdist.png" width="80%">
 
-### Usage with different levels of granularity in the Melbourne Subcortex Atlas
+
+### 🧠 Usage with different levels of granularity in the Melbourne Subcortex Atlas
 
 We currently offer two levels of detail from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master): S1 (total of 16 regions) and S2 (total of 32 regions).
 Here's a schematic overview of the conversion from 3D to 2D for these two segmentations:
 
 <img src="images/Tian_S1_and_S2_3D_to_2D_schematic.png" width="90%">
-
