@@ -104,3 +104,37 @@ We currently offer two levels of detail from the [Melbourne Subcortex Atlas](htt
 Here's a schematic overview of the conversion from 3D to 2D for these two segmentations:
 
 <img src="images/Tian_S1_and_S2_3D_to_2D_schematic.png" width="90%">
+
+## 💡 Want to generate your own mesh and/or parcellation?
+
+This package provides three popular subcortical atlases as a starting point: the `aseg` segmentation into seven regions per hemisphere from the FreeSurfer `recon-all` pipeline, and two segmentation levels (`S1` and `S2`) from Ye Tian's segmentations as part of the Melbourne Subcortical Atlas.
+The workflow can readily be extended to your favorite segmentation atlas, though! 
+We have a dedicated folder for a custom segmentation pipeline that will walk you through the two key steps:  
+1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using the [`nii2mesh`](https://github.com/neurolabusc/nii2mesh) software developed by Chris Rorden; and 
+2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
+
+### 🕸️ Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation
+
+First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering using the [`nii2mesh` tool](https://github.com/neurolabusc/nii2mesh) developed by Chris Rorden:
+
+<img src="images/volume_to_mesh_schematic.png" width="90%">
+
+In the tutorial Jupyter notebook, you can rotate the rendered mesh in 3D right in your notebook!
+
+<video src="images/mesh_rotation_interactive.mp4" width="80%" autoplay loop muted></video>
+
+
+### 🎨 Tracing the outline of each region in vector graphic editing software
+
+Next, pour yourself a big mug of coffee to sit and trace the outline of each region in Inkscape (or a similar vector graphic editing program) ☕️
+
+<video src="images/tracing_region.mp4" width="60%" autoplay loop muted></video>
+
+The first pass at tracing each region can be pretty quick, since you can edit individual points in the path afterwards.
+If your atlas is homotopically symmetric (i.e., symmetric between hemispheres), the silver lining here is that you only need to trace for one hemisphere (e.g., left hemisphere) and then save the flipped (mirrored) version for the other hemisphere. 
+
+## ❓ Questions, comments, or suggestions always welcome!
+
+Please feel free to ask questions, report bugs, or share suggestions by creating an issue or by emailing me (Annie) at ([anniegbryant@gmail.com](mailto:anniegbryant@gmail.com)) 😊
+
+As an [open-source tool](https://opensource.guide/how-to-contribute/), pull requests are always welcome from the community, too.
