@@ -133,7 +133,7 @@ Next, pour yourself a big mug of coffee to sit and trace the outline of each reg
 The first pass at tracing each region can be pretty quick, since you can edit individual points in the path afterwards.
 If your atlas is homotopically symmetric (i.e., symmetric between hemispheres), the silver lining here is that you only need to trace for one hemisphere (e.g., left hemisphere) and then save the flipped (mirrored) version for the other hemisphere. 
 
-## ❓ Questions, comments, or suggestions always welcome!
+## ❓📧 Questions, comments, or suggestions always welcome!
 
 Please feel free to ask questions, report bugs, or share suggestions by creating an issue or by emailing me (Annie) at ([anniegbryant@gmail.com](mailto:anniegbryant@gmail.com)) 😊
 
