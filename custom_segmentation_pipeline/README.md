@@ -37,7 +37,7 @@ If you're using a Mac, the Quick Look feature can also interactively render .obj
 
 We've included a [simple Jupyter notebook](https://github.com/anniegbryant/subcortex_visualization/blob/main/custom_segmentation_pipeline/render_mesh_interactively.ipynb) guide to combine and render the meshes into one object that is interactive and color-coded by region:
 
-<video src="https://github.com/anniegbryant/subcortex_visualization/raw/refs/heads/main/images/mesh_rotation_interactive.mp4" width="80%" autoplay loop muted></video>
+<img src="../images/mesh_rotation_interactive.gif" width="60%">
 
 If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then exporting as a snapshot PNG image(s) by clicking the 'PNG' icon as shown in the above video.
 
@@ -56,8 +56,7 @@ We'll use the 'Freehand lines' tool for tracing, which looks like the following 
 And then go ahead and trace your first region in your image!
 We recommend setting 'Smoothing' in your top toolbar to around 20 (we use 22.0), which means that you can do a pretty quick first pass at tracing each region and the path won't stick to every bump you draw.
 
-
-<video src="https://github.com/anniegbryant/subcortex_visualization/raw/refs/heads/main/images/tracing_region.mp4" width="60%" autoplay loop muted></video>
+<img src="../images/tracing_region.gif" width="60%">
 
 Once you finish your first trace, if you want to edit any of the points in the path, just double-click on the black line and you can click and drag the points to adjust their spacing.
 Rinse and repeat: go ahead and trace the outline for all of the regions in your atlas.
