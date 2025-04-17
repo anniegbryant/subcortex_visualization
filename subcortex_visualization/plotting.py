@@ -204,9 +204,9 @@ def plot_helper(atlas_ordering, paths, hemisphere='L', subcortex_data=None, line
 
     # Start plotting
     if hemisphere == 'both': 
-        fig, ax = plt.subplots(figsize=(12,6))
+        fig, ax = plt.subplots(figsize=(17,6))
     else:
-        fig, ax = plt.subplots(figsize=(7, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
     patches = []
 
     for _, row in atlas_ordering.iterrows():

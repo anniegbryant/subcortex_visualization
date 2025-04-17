@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="257.37677mm"
+   height="55.154961mm"
+   viewBox="0 0 257.37678 55.154961"
+   version="1.1"
+   id="svg2808"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   sodipodi:docname="subcortex_Tian_S2_base_both.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2810"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.64326113"
+     inkscape:cx="493.57871"
+     inkscape:cy="331.12524"
+     inkscape:window-width="1470"
+     inkscape:window-height="800"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2805">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26765">
+      <rect
+         style="fill:#0000ff;fill-rule:evenodd;stroke-width:0.264583"
+         id="rect26767"
+         width="114.57155"
+         height="88.987595"
+         x="353.72571"
+         y="372.32745" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lighting"
+       id="filter27384"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feComponentTransfer
+         result="component"
+         id="feComponentTransfer27382">
+        <feFuncR
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncR27376" />
+        <feFuncG
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncG27378" />
+        <feFuncB
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncB27380" />
+      </feComponentTransfer>
+    </filter>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23154"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23054"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23064"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23074"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23084"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23094"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23104"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23124"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23144"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23114"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23034"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23134"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23044"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28408"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28398"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28326"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28227"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28237"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28336"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28388"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28418"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28438"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28428"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28316"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28217"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28207"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28346"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28306"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28247"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25985">
+      <rect
+         style="fill:#0000ff;fill-rule:evenodd;stroke-width:0.264583"
+         id="rect25987"
+         width="116.4089"
+         height="91.868637"
+         x="157.92657"
+         y="243.20021" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lighting"
+       id="filter27394"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feComponentTransfer
+         result="component"
+         id="feComponentTransfer27392">
+        <feFuncR
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncR27386" />
+        <feFuncG
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncG27388" />
+        <feFuncB
+           type="gamma"
+           amplitude="1.15"
+           exponent="1"
+           offset="0"
+           id="feFuncB27390" />
+      </feComponentTransfer>
+    </filter>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28247-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28306-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28346-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28207-5"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28217-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28316-9"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28428-8"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28438-0"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28418-2"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28388-2"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28336-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28237-7"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28227-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28326-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28398-2"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect28408-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23044-3"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23134-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23034-5"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23114-7"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23144-3"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23124-6"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23104-3"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23094-2"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23084-5"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23074-0"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23064-3"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23054-7"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect23154-3"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 66.370276,24.903467 c 0.05041,-0.385571 0.151477,-1.158613 0.400509,-1.772766 0.249032,-0.614153 0.642706,-1.064015 1.096717,-1.211206 0.454011,-0.147191 0.964791,0.01084 1.339271,0.05887 0.37448,0.04804 0.612349,-0.01324 1.143505,-0.03925 0.531155,-0.02601 1.35491,-0.01714 1.833978,0.07351 0.479068,0.09065 0.613648,0.26077 0.546507,0.740376 -0.06714,0.479605 -0.333699,1.269676 -0.539122,2.003448 -0.205423,0.733773 -0.349809,1.410918 -0.533789,1.897509 -0.18398,0.486591 -0.407596,0.783889 -0.57159,1.060357 -0.163994,0.276469 -0.268212,0.531372 -0.342539,0.657348 -0.07433,0.125975 -0.121345,0.124108 -0.182551,0.157001 -0.06121,0.03289 -0.13453,0.100665 -0.428735,0.1244 -0.294204,0.02374 -0.811408,0.0034 -1.172898,-0.08068 -0.36149,-0.08406 -0.567523,-0.233439 -0.844017,-0.3859 -0.276494,-0.152461 -0.623588,-0.307402 -0.944166,-0.54316 -0.320577,-0.235758 -0.614173,-0.553415 -0.752306,-0.95913 -0.138133,-0.405714 -0.118699,-0.899419 -0.108941,-1.147318 0.0098,-0.2479 0.0098,-0.247838 0.06017,-0.63341 z"
+       id="path23152"
+       inkscape:path-effect="#path-effect23154"
+       inkscape:original-d="m 66.319867,25.289039 c 0.103078,-0.770848 0.20416,-1.543888 0.3032,-2.319114 0.396977,-0.453178 0.790649,-0.903042 1.186612,-1.355973 0.51179,0.158493 1.022569,0.316524 1.532338,0.474077 0.239894,-0.05907 0.477761,-0.120355 0.713609,-0.183822 0.825784,0.01105 1.649539,0.01995 2.471276,0.02662 0.136598,0.172309 0.271176,0.342432 0.403735,0.510354 -0.264535,0.792263 -0.531098,1.582332 -0.799673,2.370209 -0.142367,0.67934 -0.286745,1.356487 -0.433159,2.031441 -0.221587,0.299483 -0.445202,0.596782 -0.670844,0.891887 -0.102194,0.257089 -0.206409,0.511993 -0.31265,0.764704 -0.04501,6.21e-4 -0.09203,-0.0012 -0.141057,-0.0056 -0.07126,0.06993 -0.144589,0.137697 -0.219912,0.203256 -0.515203,-0.01789 -1.032407,-0.03825 -1.551626,-0.06108 -0.204013,-0.147192 -0.410045,-0.296577 -0.618104,-0.448155 -0.34506,-0.152752 -0.692156,-0.307689 -1.041264,-0.464812 -0.291569,-0.315464 -0.585165,-0.633121 -0.880781,-0.952964 0.02174,-0.491492 0.04117,-0.985197 0.0583,-1.48109 z"
+       sodipodi:nodetypes="sccccccccccccccccss">
+      <title
+         id="title5446">accumbens_core_lateral_L</title>
+    </path>
+    <path
+       style="fill:#ff6400;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 94.055976,9.7408187 c 0.0896,-0.052737 0.268254,-0.1578926 0.542319,-0.3269316 0.274066,-0.169039 0.64131,-0.4005325 1.065385,-0.643675 0.424075,-0.2431424 0.91291,-0.5024153 1.378673,-0.7118292 0.465763,-0.209414 0.903249,-0.3670517 1.326548,-0.4621211 0.423299,-0.095069 0.822741,-0.1256155 1.163726,-0.1357108 0.340984,-0.010095 0.607893,4.11e-4 1.099683,0.075626 0.49178,0.075215 1.16872,0.2091326 1.42775,0.5743513 0.25903,0.3652187 0.0856,0.9487779 -0.0193,1.3404104 -0.10481,0.3916325 -0.13674,0.5755442 -0.31094,0.8805392 -0.17421,0.304995 -0.49006,0.728843 -0.75441,0.96124 -0.26435,0.232397 -0.4767,0.273623 -0.77229,0.293378 -0.295585,0.01975 -0.665186,0.01755 -0.965651,0.03782 -0.300464,0.02027 -0.520519,0.06212 -0.927643,-0.02713 -0.407123,-0.08925 -0.996685,-0.311903 -1.646267,-0.592881 -0.649583,-0.280978 -1.359188,-0.620536 -1.818313,-0.831919 -0.459124,-0.2113822 -0.667767,-0.2943864 -0.773338,-0.3363854 -0.105571,-0.041999 -0.10557,-0.04205 -0.01597,-0.094787 z"
+       id="path23052"
+       inkscape:path-effect="#path-effect23054"
+       inkscape:original-d="m 93.966378,9.7935556 c 0.180674,-0.1029633 0.359329,-0.2081196 0.535957,-0.3154612 0.370182,-0.2329981 0.737426,-0.4644929 1.101764,-0.6944991 0.48379,-0.2562723 0.972626,-0.515544 1.461573,-0.7752021 0.442539,-0.1591617 0.880025,-0.3167995 1.321698,-0.4762425 0.404848,-0.03072 0.80429,-0.061269 1.210324,-0.092556 0.275909,0.011068 0.542816,0.021575 0.821426,0.032334 0.70494,0.1396343 1.38188,0.2735488 2.07626,0.4107421 -0.17605,0.5931487 -0.34951,1.1767092 -0.52685,1.7723991 -0.0324,0.1875265 -0.0642,0.3714591 -0.0967,0.5571201 -0.31594,0.424459 -0.63179,0.848308 -0.94755,1.271539 -0.21313,0.04162 -0.42548,0.08286 -0.64061,0.124368 -0.376096,-0.002 -0.745698,-0.0042 -1.121595,-0.0067 -0.22498,0.04306 -0.445039,0.08489 -0.672263,0.127851 -0.587541,-0.22046 -1.177101,-0.443114 -1.768688,-0.667953 -0.707585,-0.337367 -1.417189,-0.676927 -2.128828,-1.01868 C 94.385677,9.961827 94.177041,9.8788049 93.966377,9.7936065 Z"
+       sodipodi:nodetypes="sccccccccccccccccs">
+      <title
+         id="title5374">thalamus_VA_lateral_L</title>
+    </path>
+    <path
+       style="fill:#00ffc0;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 102.86867,7.9612947 c 0.29362,-0.048313 0.87547,-0.14405 1.55034,-0.1876941 0.67486,-0.043644 1.4291,-0.034449 2.01109,-0.021915 0.58198,0.012534 0.98024,0.028211 1.52914,0.1811694 0.54889,0.1529582 1.24802,0.4422496 1.85378,0.728027 0.60577,0.2857773 1.11821,0.5677176 1.78242,1.0344667 0.66421,0.4667492 1.49275,1.1277142 2.11425,1.7420402 0.62151,0.614326 1.04783,1.19245 1.40552,1.910507 0.35769,0.718058 0.64117,1.560804 0.742,2.036801 0.10083,0.475997 0.0133,0.564766 -0.30178,0.716195 -0.31506,0.15143 -0.85954,0.366833 -1.20799,0.508936 -0.34845,0.142104 -0.50075,0.210907 -0.76524,0.287771 -0.2645,0.07686 -0.64178,0.161731 -1.17316,0.20951 -0.53138,0.04778 -1.21736,0.05817 -1.9438,-0.0076 -0.72643,-0.06576 -1.49366,-0.20815 -2.26069,-0.512051 -0.76704,-0.303901 -1.53398,-0.770369 -2.06891,-1.115392 -0.53492,-0.345023 -0.83773,-0.568845 -1.06702,-0.764617 -0.2293,-0.195772 -0.38472,-0.363932 -0.64382,-0.586253 -0.25911,-0.22232 -0.62219,-0.498383 -1.06515,-0.802633 -0.44295,-0.30425 -0.96587,-0.63646 -1.3376,-0.850764 -0.37172,-0.214304 -0.59232,-0.310244 -0.85806,-0.532031 -0.26574,-0.221786 -0.5761,-0.570561 -0.71088,-0.819262 -0.13479,-0.248702 -0.0916,-0.396574 0.123,-0.781188 0.21458,-0.3846142 0.60049,-1.0051421 0.96252,-1.4324239 0.36203,-0.4272818 0.69808,-0.6594929 0.86724,-0.7763805 0.16916,-0.1168877 0.16917,-0.116909 0.4628,-0.1652219 z"
+       id="path23062"
+       inkscape:path-effect="#path-effect23064"
+       inkscape:original-d="m 102.57504,8.0096076 c 0.58729,-0.096384 1.16914,-0.1921136 1.75611,-0.2889494 0.76272,0.00953 1.51696,0.01872 2.28056,0.027802 0.40028,0.018149 0.79854,0.033826 1.1948,0.047031 0.70114,0.2914786 1.40027,0.5807643 2.09736,0.8678647 0.51447,0.2841222 1.02691,0.5660674 1.53731,0.845811 0.81844,0.6529671 1.64698,1.3139321 2.46546,1.9668131 0.42458,0.575719 0.8509,1.153842 1.27802,1.733098 0.28835,0.856838 0.57184,1.699583 0.8618,2.561963 -0.0882,0.08987 -0.17576,0.178627 -0.26261,0.266271 -0.54246,0.217595 -1.08693,0.433006 -1.63344,0.646215 -0.15026,0.07097 -0.30256,0.139781 -0.45687,0.206394 -0.37527,0.08706 -0.75256,0.17192 -1.13188,0.254607 -0.68397,0.01256 -1.36995,0.02296 -2.05797,0.03117 -0.76521,-0.140196 -1.53243,-0.282586 -2.3017,-0.427161 -0.76491,-0.464277 -1.53185,-0.93074 -2.30081,-1.399404 -0.3008,-0.221631 -0.60361,-0.445455 -0.90845,-0.67148 -0.15341,-0.165968 -0.30883,-0.334136 -0.46629,-0.50449 -0.36106,-0.273873 -0.72415,-0.549931 -1.08925,-0.828182 -0.5209,-0.330019 -1.04382,-0.66223 -1.56877,-0.996634 -0.21857,-0.09375 -0.43917,-0.18969 -0.66179,-0.287816 -0.30834,-0.346582 -0.6187,-0.695358 -0.93109,-1.046326 0.0452,-0.145692 0.0884,-0.293568 0.12965,-0.443636 0.38794,-0.6183438 0.77385,-1.2388732 1.15774,-1.8615879 0.33789,-0.2331286 0.67395,-0.4653326 1.0121,-0.6993522 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccccc">
+      <title
+         id="title5376">thalamus_DA_lateral_L</title>
+    </path>
+    <path
+       style="fill:#000fff;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 111.51357,18.120206 c 0.0159,-0.403435 0.0477,-1.212421 0.0742,-1.728738 0.0265,-0.516316 0.0478,-0.739844 0.52347,-0.927954 0.47571,-0.188109 1.40405,-0.338546 2.01704,-0.38274 0.61298,-0.04419 0.9064,0.01638 1.30923,0.270004 0.40284,0.25362 0.90451,0.69378 1.32605,1.123969 0.42155,0.430189 0.75108,0.838115 1.0794,1.311952 0.32833,0.473837 0.64659,1.000867 1.17478,1.559254 0.52819,0.558386 1.26053,1.140657 1.56642,1.659888 0.30589,0.519232 0.1882,0.975812 0.071,1.419925 -0.11721,0.444112 -0.23392,0.875793 -0.33381,1.195794 -0.0999,0.32 -0.1829,0.528628 -0.25415,0.756636 -0.0712,0.228008 -0.13083,0.474955 -0.24095,0.738206 -0.11013,0.263252 -0.27075,0.543628 -0.4331,0.867713 -0.16235,0.324085 -0.32639,0.69158 -0.57313,1.116973 -0.24674,0.425393 -0.57922,0.913524 -0.92081,1.223272 -0.34159,0.309749 -0.69595,0.445382 -1.21303,0.456558 -0.51708,0.01118 -1.19817,-0.10289 -1.67261,-0.239447 -0.47445,-0.136558 -0.74238,-0.296689 -1.3284,-0.606511 -0.58601,-0.309823 -1.49035,-0.769237 -2.08065,-1.173625 -0.59029,-0.404387 -0.86289,-0.751148 -0.79718,-1.632621 0.0657,-0.881473 0.47053,-2.299023 0.64224,-3.49023 0.17171,-1.191206 0.11004,-2.150719 0.0791,-2.632781 -0.031,-0.482062 -0.0309,-0.482062 -0.0151,-0.885497 z"
+       id="path23072"
+       inkscape:path-effect="#path-effect23074"
+       inkscape:original-d="m 111.49769,18.523641 c 0.0341,-0.806778 0.066,-1.615761 0.0955,-2.42694 0.0233,-0.221338 0.0445,-0.444872 0.0638,-0.670597 0.93036,-0.148246 1.8587,-0.298684 2.78501,-0.451308 0.29923,0.06194 0.59264,0.122533 0.89025,0.183799 0.50808,0.445825 1.00975,0.885984 1.51817,1.33203 0.33471,0.414293 0.66424,0.822218 0.99842,1.235949 0.3225,0.53393 0.64076,1.060961 0.9623,1.593537 0.73477,0.584259 1.4671,1.166534 2.19701,1.746822 -0.11567,0.458765 -0.23337,0.915344 -0.35308,1.369731 -0.11469,0.433873 -0.23141,0.865552 -0.35014,1.295054 -0.081,0.210831 -0.16398,0.419467 -0.24902,0.625919 -0.0576,0.249139 -0.11714,0.496095 -0.17874,0.740865 -0.15859,0.282567 -0.31921,0.562941 -0.48185,0.84113 -0.16203,0.369682 -0.32607,0.73718 -0.49214,1.102484 -0.32967,0.484531 -0.66215,0.97266 -0.99223,1.456752 -0.35235,0.137821 -0.70671,0.273458 -1.06309,0.406901 -0.67907,-0.111875 -1.36016,-0.225943 -2.04328,-0.342196 -0.2659,-0.157939 -0.53383,-0.31807 -0.80378,-0.480387 -0.9017,-0.457954 -1.80604,-0.917368 -2.713,-1.378233 -0.27356,-0.348021 -0.54616,-0.694783 -0.81909,-1.041917 0.40457,-1.415724 0.8094,-2.833272 1.21447,-4.252652 -0.0617,-0.963119 -0.12337,-1.922632 -0.18553,-2.886743 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccc">
+      <title
+         id="title5432">thalamus_DP_lateral_L</title>
+    </path>
+    <path
+       style="fill:#00ff5c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 109.86321,16.16245 c -0.003,-0.109963 -0.009,-0.332125 0.0261,-0.472519 0.0352,-0.140393 0.11135,-0.196573 0.34171,-0.30238 0.23037,-0.105808 0.60507,-0.257354 0.91092,-0.173552 0.30585,0.0838 0.52262,0.403043 0.64481,0.631622 0.1222,0.228579 0.1536,0.370373 0.17748,0.511817 0.0239,0.141444 0.0405,0.282643 0.0475,0.47515 0.007,0.192507 0.005,0.43654 0.002,0.695338 -0.003,0.258799 -0.006,0.532387 -0.0463,0.703556 -0.04,0.171168 -0.11684,0.242145 -0.3608,0.147546 -0.24397,-0.0946 -0.66111,-0.358535 -0.91561,-0.565463 -0.25451,-0.206927 -0.35919,-0.366401 -0.42877,-0.483732 -0.0696,-0.117331 -0.1036,-0.192644 -0.17165,-0.343278 -0.068,-0.150633 -0.17012,-0.376576 -0.21387,-0.508453 -0.0438,-0.131877 -0.0275,-0.168231 -0.0191,-0.18696 0.008,-0.01873 0.009,-0.01873 0.006,-0.128692 z"
+       id="path23082"
+       inkscape:path-effect="#path-effect23084"
+       inkscape:original-d="m 109.86621,16.272414 c -0.004,-0.219982 -0.0101,-0.442143 -0.0182,-0.666495 0.0782,-0.05402 0.1544,-0.110179 0.22857,-0.16855 0.3849,-0.155369 0.75961,-0.306912 1.15013,-0.465155 0.22111,0.325563 0.43787,0.644806 0.65027,0.957688 0.0334,0.143978 0.0648,0.285772 0.0942,0.425372 0.0187,0.143398 0.0353,0.284601 0.0499,0.42362 -2e-4,0.246222 -0.002,0.49026 -0.007,0.732095 -0.001,0.275765 -0.005,0.549346 -0.0101,0.820732 -0.0747,0.07314 -0.15151,0.144099 -0.23031,0.212863 -0.4112,-0.260095 -0.82834,-0.524029 -1.23424,-0.780941 -0.10265,-0.157278 -0.20734,-0.31675 -0.31405,-0.478408 -0.032,-0.07312 -0.066,-0.148443 -0.10207,-0.225946 -0.10005,-0.223754 -0.20211,-0.449701 -0.30621,-0.677833 0.0182,-0.03413 0.0344,-0.0705 0.0487,-0.109043 z"
+       sodipodi:nodetypes="scccccccccccccss">
+      <title
+         id="title5378">thalamus_VP_lateral_L</title>
+    </path>
+    <path
+       style="fill:#6cff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 107.22502,34.878218 c 0.45916,-0.204907 1.37722,-0.614597 2.44175,-1.058484 1.06454,-0.443887 2.27369,-0.921255 3.36471,-1.558618 1.09103,-0.637362 2.06051,-1.432991 2.99283,-2.085534 0.93231,-0.652543 1.82938,-1.163307 2.43159,-1.848782 0.60222,-0.685476 0.90792,-1.541197 1.1321,-2.169175 0.22418,-0.627977 0.36236,-1.015635 0.54982,-1.597605 0.18746,-0.58197 0.42059,-1.347132 0.6061,-1.912723 0.18551,-0.565592 0.32251,-0.928352 0.48168,-1.229306 0.15917,-0.300953 0.34036,-0.539251 0.65537,-0.791619 0.31502,-0.252368 0.77059,-0.522561 1.30519,-0.488977 0.53459,0.03358 1.12382,0.365232 1.8608,0.970729 0.73698,0.605497 1.60687,1.472904 2.02111,2.496904 0.41424,1.024 0.36726,2.197128 0.32589,3.018934 -0.0414,0.821806 -0.077,1.291502 -0.31254,2.002483 -0.23554,0.710982 -0.67521,1.674688 -1.037,2.345958 -0.36179,0.671269 -0.64679,1.052754 -1.11051,1.611175 -0.46371,0.55842 -1.10626,1.293981 -1.97197,2.094124 -0.86572,0.800142 -1.95547,1.665628 -2.67848,2.263039 -0.72301,0.59741 -1.0796,0.926985 -1.46019,1.243333 -0.38059,0.316348 -0.78561,0.619781 -1.2388,0.920697 -0.45319,0.300915 -0.95585,0.600198 -1.54491,0.906118 -0.58906,0.305919 -1.26597,0.619074 -1.81087,0.708432 -0.54489,0.08936 -0.95271,-0.04497 -1.27041,-0.267859 -0.3177,-0.222886 -0.54457,-0.537069 -0.86088,-0.888254 -0.31631,-0.351185 -0.70757,-0.724345 -1.16266,-1.036795 -0.45508,-0.31245 -0.95553,-0.550648 -1.4923,-0.841492 -0.53677,-0.290843 -1.09601,-0.627011 -1.54778,-1.069599 -0.45177,-0.442588 -0.78989,-0.986632 -0.95943,-1.259429 -0.16954,-0.272798 -0.16938,-0.272768 0.28979,-0.477675 z"
+       id="path23092"
+       inkscape:path-effect="#path-effect23094"
+       inkscape:original-d="m 106.76585,35.083125 c 0.91845,-0.409555 1.83651,-0.819237 2.75414,-1.229056 1.21142,-0.477959 2.42057,-0.95533 3.63216,-1.433961 0.97055,-0.796126 1.94003,-1.591751 2.90846,-2.386907 0.89615,-0.509917 1.79322,-1.020675 2.69023,-1.531739 0.30752,-0.860051 0.61322,-1.715772 0.9215,-2.579486 0.14009,-0.392239 0.27827,-0.779895 0.41788,-1.172384 0.23532,-0.771464 0.46844,-1.536627 0.70268,-2.306371 0.13903,-0.360571 0.27602,-0.723335 0.411,-1.088292 0.18321,-0.236115 0.36439,-0.474415 0.54356,-0.714908 0.44868,-0.265766 0.90425,-0.535965 1.36661,-0.810515 0.60664,0.341552 1.19587,0.6732 1.79171,1.008465 0.87815,0.875659 1.74804,1.743066 2.62358,2.616087 -0.0468,1.17498 -0.094,2.348099 -0.14093,3.519382 -0.0357,0.472338 -0.0713,0.942037 -0.10691,1.409098 -0.43539,0.955004 -0.87506,1.918709 -1.31357,2.879221 -0.28298,0.383663 -0.56798,0.765149 -0.85499,1.144435 -0.64053,0.737753 -1.28308,1.473313 -1.92765,2.206688 -1.0889,0.865199 -2.17865,1.730683 -3.26828,2.595693 -0.35456,0.331766 -0.71114,0.661346 -1.06975,0.988725 -0.40442,0.303364 -0.80944,0.606793 -1.21388,0.909423 -0.50063,0.301467 -1.00329,0.600749 -1.50797,0.897846 -0.67481,0.3125 -1.35172,0.625651 -2.03072,0.939461 -0.41096,-0.135208 -0.81878,-0.269543 -1.23007,-0.405172 -0.22403,-0.310301 -0.4509,-0.624486 -0.68063,-0.942565 -0.40293,-0.384256 -0.7942,-0.757414 -1.19542,-1.140096 -0.50898,-0.242132 -1.00943,-0.480331 -1.51782,-0.722432 -0.56514,-0.339615 -1.12438,-0.675784 -1.68852,-1.014993 -0.33931,-0.546068 -0.67743,-1.090111 -1.01656,-1.635677 z"
+       sodipodi:nodetypes="sccccccccccccccccccccccccccsss">
+      <title
+         id="title5434">hippocampus_posterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#00d8ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 101.98431,36.937846 c 0.49591,-0.234415 1.01382,-0.489134 1.61629,-0.761295 0.60247,-0.272161 1.28815,-0.561249 1.81462,-0.689456 0.52647,-0.128208 0.88482,-0.09294 1.13594,-0.01878 0.25111,0.07416 0.39485,0.185628 0.93556,0.488412 0.54071,0.302783 1.4982,0.807913 2.08428,1.130385 0.58608,0.322472 0.79238,0.457562 1.05906,0.669291 0.26668,0.21173 0.59393,0.499713 0.95069,0.787166 0.35676,0.287453 0.7453,0.576371 1.00316,0.822017 0.25786,0.245646 0.37714,0.440795 0.49793,0.604102 0.12079,0.163307 0.24257,0.295073 0.39792,0.47218 0.15535,0.177107 0.34455,0.399697 0.30874,0.76856 -0.0358,0.368863 -0.29714,0.883212 -0.99669,1.615256 -0.69955,0.732045 -1.84011,1.684166 -2.55087,2.310628 -0.71077,0.626462 -0.99867,0.93339 -1.6966,1.464693 -0.69793,0.531303 -1.80574,1.287198 -2.90217,1.96449 -1.09643,0.677293 -2.18392,1.276966 -3.03951,1.675769 -0.8556,0.398803 -1.50426,0.608091 -2.71905,0.692447 -1.214788,0.08436 -3.017324,0.04552 -4.028844,-0.194086 -1.01152,-0.239606 -1.255822,-0.683197 -1.214842,-1.311962 0.04098,-0.628766 0.369227,-1.441159 0.731244,-2.305164 0.362016,-0.864004 0.757807,-1.779551 1.060347,-2.47657 0.302541,-0.697019 0.511835,-1.175506 0.971021,-2.088661 0.459186,-0.913155 1.168251,-2.260769 1.655921,-3.088369 0.48767,-0.827599 0.753696,-1.134552 0.930333,-1.307814 0.17664,-0.173262 0.26282,-0.212197 0.33905,-0.282727 0.0762,-0.07053 0.14379,-0.173709 0.41518,-0.332842 0.2714,-0.159134 0.74539,-0.373257 1.24129,-0.607673 z"
+       id="path23102"
+       inkscape:path-effect="#path-effect23104"
+       inkscape:original-d="m 101.96154,36.958526 c 0.51994,-0.252529 1.03785,-0.507251 1.55374,-0.764158 0.6879,-0.289717 1.37358,-0.578804 2.06582,-0.870967 0.36039,0.03748 0.71875,0.07272 1.07509,0.105803 0.14578,0.11366 0.28952,0.225127 0.43124,0.334409 0.93995,0.495987 1.89744,1.001118 2.86093,1.509301 0.20832,0.13728 0.41462,0.272368 0.6189,0.405271 0.32928,0.290183 0.65653,0.578165 0.98176,0.863962 0.38846,0.288916 0.777,0.577836 1.17193,0.871441 0.12132,0.197339 0.2406,0.392493 0.35787,0.585454 0.1238,0.133962 0.24559,0.265723 0.36535,0.395299 0.19095,0.224628 0.38014,0.447226 0.56992,0.6705 -0.26115,0.514576 -0.52248,1.028929 -0.78403,1.543074 -1.13761,0.950045 -2.27817,1.902167 -3.41341,2.849457 -0.28626,0.305608 -0.57416,0.612538 -0.86146,0.918383 -1.10861,0.756804 -2.21642,1.512698 -3.32714,2.270217 -1.08217,0.59707 -2.16966,1.196738 -3.24283,1.788197 -0.63808,0.206159 -1.28674,0.415443 -1.92907,0.622408 -1.787333,-0.03829 -3.589869,-0.07711 -5.370107,-0.115697 -0.242736,-0.440892 -0.487033,-0.884485 -0.732906,-1.330772 0.330273,-0.810196 0.65851,-1.622593 0.984737,-2.437174 0.397816,-0.913353 0.793606,-1.8289 1.187368,-2.746632 0.21132,-0.476293 0.420613,-0.95478 0.627879,-1.435453 0.711092,-1.345422 1.420156,-2.693037 2.127192,-4.042838 0.268053,-0.304768 0.534077,-0.611722 0.798087,-0.920869 0.0882,-0.03672 0.17438,-0.07567 0.25854,-0.116798 0.0695,-0.100958 0.13711,-0.204106 0.20263,-0.309449 0.47601,-0.211933 0.95,-0.426059 1.42197,-0.642369 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title5436">hippocampus_anterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#ff00e0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 88.41352,37.362518 c 0.127691,-0.263912 0.383356,-0.792326 0.680714,-1.236064 0.297357,-0.443738 0.635539,-0.801594 0.953849,-1.101292 0.31831,-0.299699 0.616451,-0.540929 0.992665,-0.760083 0.376213,-0.219154 0.830037,-0.416012 1.904377,-0.444873 1.074341,-0.02886 2.767977,0.110365 4.340647,0.240311 1.57267,0.129946 3.020938,0.250325 3.734728,0.615043 0.71379,0.364719 0.68262,0.970279 0.54422,1.569657 -0.1384,0.599379 -0.38269,1.191603 -0.75906,1.786947 -0.37636,0.595343 -0.881739,1.189021 -1.266396,1.656242 -0.384656,0.467221 -0.64221,0.800092 -1.158731,0.848782 -0.516521,0.04869 -1.289978,-0.193371 -1.832665,-0.383855 -0.542687,-0.190484 -0.854637,-0.329737 -1.239212,-0.687718 -0.384574,-0.35798 -0.841302,-0.936142 -1.359115,-1.275334 -0.517813,-0.339192 -1.087724,-0.435666 -1.740947,-0.335232 -0.653222,0.100434 -1.383746,0.399738 -2.05147,0.394741 -0.667724,-0.005 -1.269298,-0.314074 -1.570286,-0.468717 C 88.28585,37.626431 88.28583,37.626431 88.41352,37.362518 Z"
+       id="path23122"
+       inkscape:path-effect="#path-effect23124"
+       inkscape:original-d="m 88.28583,37.626431 c 0.255629,-0.527705 0.511295,-1.056119 0.766996,-1.585241 0.338985,-0.358266 0.677164,-0.716125 1.015411,-1.074484 0.298345,-0.24101 0.596483,-0.482244 0.894489,-0.723745 0.454347,-0.196779 0.908171,-0.393635 1.362251,-0.590911 1.694471,0.139515 3.388108,0.278726 5.080624,0.417653 1.452822,0.12099 2.901089,0.241339 4.359989,0.362401 -0.0311,0.608185 -0.0623,1.213744 -0.0935,1.816684 -0.24552,0.59591 -0.48981,1.188135 -0.73529,1.782538 -0.50728,0.596372 -1.012653,1.190052 -1.52131,1.787128 -0.26065,0.337352 -0.518204,0.670224 -0.780478,1.008716 -0.771445,-0.23987 -1.544901,-0.481933 -2.320392,-0.726189 -0.309917,-0.137061 -0.62187,-0.276308 -0.935841,-0.417755 -0.454681,-0.575604 -0.911406,-1.153768 -1.370184,-1.734485 -0.576903,-0.09744 -1.146809,-0.193946 -1.72433,-0.291894 -0.728786,0.298898 -1.459311,0.598199 -2.191567,0.89791 -0.603345,-0.309872 -1.204919,-0.618949 -1.806848,-0.928326 z"
+       sodipodi:nodetypes="ccccccccccccccccc">
+      <title
+         id="title5440">amygdala_medial_lateral_L</title>
+    </path>
+    <path
+       style="fill:#b800ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 66.868549,18.353599 c 0.391341,-0.633415 1.170988,-1.895331 1.958997,-3.138276 0.788009,-1.242945 1.582317,-2.463644 2.477084,-3.430057 0.894767,-0.966414 1.88428,-1.672544 2.864152,-2.1944519 0.979873,-0.5219074 1.947153,-0.8578453 2.873396,-1.0019836 0.926243,-0.1441382 1.80987,-0.09617 2.306045,0.1261277 0.496175,0.2222974 0.606873,0.6238887 0.998922,1.3644338 0.39205,0.740546 1.066691,1.827654 1.415285,2.465216 0.348595,0.637561 0.372381,0.825653 0.300533,1.055926 -0.07185,0.230274 -0.238604,0.504447 -0.549009,0.866219 -0.310404,0.361771 -0.764822,0.81178 -1.058129,1.127964 -0.293307,0.316183 -0.425239,0.498144 -1.009591,1.083173 -0.584351,0.58503 -1.621425,1.573562 -2.463653,2.367 -0.842228,0.793438 -1.489636,1.391806 -2.091043,2.007704 -0.601407,0.615898 -1.156605,1.249092 -1.81914,1.472676 -0.662535,0.223584 -1.435015,0.03721 -2.401351,-0.08534 -0.966336,-0.122552 -2.126373,-0.180816 -2.858631,-0.74645 -0.732258,-0.565634 -1.032796,-1.632708 -1.184003,-2.169579 -0.151208,-0.53687 -0.151205,-0.536886 0.240136,-1.170301 z"
+       id="path23142"
+       inkscape:path-effect="#path-effect23144"
+       inkscape:original-d="m 66.477208,18.987014 c 0.782928,-1.266678 1.562574,-2.528595 2.343248,-3.792722 0.795339,-1.221758 1.589648,-2.442456 2.386051,-3.6669 0.993061,-0.708301 1.982576,-1.414428 2.973887,-2.1222072 0.96835,-0.3360205 1.935629,-0.6719635 2.9038,-1.0084935 0.884216,0.048204 1.767844,0.096146 2.650865,0.1439044 0.109473,0.3966229 0.220169,0.7982148 0.327952,1.1897468 0.676662,1.0892985 1.351306,2.1764045 2.023922,3.2613245 0.02585,0.19028 0.04963,0.378372 0.07136,0.564271 -0.16473,0.27636 -0.33148,0.550536 -0.500264,0.822517 -0.452383,0.452186 -0.906801,0.902195 -1.36323,1.350003 -0.129917,0.184156 -0.261846,0.366119 -0.395802,0.54589 -1.035059,0.990728 -2.07213,1.979263 -3.111236,2.965613 -0.645387,0.600554 -1.292794,1.198923 -1.942228,1.795106 -0.553168,0.635384 -1.108371,1.268574 -1.665594,1.899579 -0.770463,-0.184188 -1.542945,-0.370553 -2.317446,-0.559119 -1.157793,-0.05794 -2.31783,-0.1162 -3.480159,-0.174793 -0.302044,-1.072926 -0.60258,-2.140001 -0.905129,-3.213704 z"
+       sodipodi:nodetypes="cccccccccccccccccc">
+      <title
+         id="title5370">caudate_anterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#ff0017;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 89.429405,37.10939 c 0.21302,-0.146005 0.638463,-0.437604 1.253099,-0.578195 0.614637,-0.140592 1.408898,-0.130239 2.181423,0.103704 0.772526,0.233944 1.479846,0.675912 1.914708,1.024204 0.434861,0.348292 0.573618,0.586536 0.977814,0.969227 0.404197,0.38269 1.083352,0.918699 1.591963,1.258253 0.50861,0.339555 0.841688,0.479639 0.86687,1.147575 0.02518,0.667936 -0.254647,1.863148 -0.429632,2.543782 -0.174984,0.680634 -0.245021,0.847167 -0.341156,1.139812 -0.09614,0.292645 -0.218418,0.711073 -0.564479,1.437795 -0.346061,0.726722 -0.915875,1.762384 -1.343741,2.48764 -0.427867,0.725255 -0.714684,1.141575 -1.308693,1.425512 -0.59401,0.283936 -1.491257,0.434256 -2.319752,0.47367 -0.828494,0.03941 -1.587479,-0.03278 -2.080959,-0.125759 -0.49348,-0.09297 -0.721743,-0.207772 -0.90681,-0.352066 -0.185068,-0.144295 -0.326321,-0.319153 -0.417948,-0.408528 -0.09163,-0.08938 -0.133898,-0.09104 -0.287753,-0.212531 -0.153856,-0.121489 -0.419384,-0.364721 -0.562193,-0.518186 -0.142809,-0.153464 -0.161432,-0.217648 -0.293833,-0.889491 -0.132401,-0.671842 -0.378306,-1.95124 -0.513418,-2.824289 -0.135112,-0.873048 -0.159072,-1.339552 -0.03476,-2.339627 0.124308,-1.000075 0.394238,-2.515917 0.638018,-3.400743 0.24378,-0.884826 0.458755,-1.126542 0.748803,-1.388806 0.290048,-0.262265 0.654448,-0.544391 0.836932,-0.685675 0.182485,-0.141284 0.18248,-0.141274 0.395501,-0.287278 z"
+       id="path23112"
+       inkscape:path-effect="#path-effect23114"
+       inkscape:original-d="m 89.216384,37.255394 c 0.426209,-0.291764 0.851654,-0.583359 1.277016,-0.875268 0.803739,0.01066 1.597999,0.02103 2.411216,0.03143 0.731796,0.457352 1.439116,0.899321 2.168662,1.355084 0.140774,0.240431 0.27953,0.478676 0.416266,0.714728 0.671072,0.52969 1.35023,1.065696 2.031903,1.603635 0.335097,0.142271 0.668175,0.282357 0.999226,0.42025 -0.277804,1.197404 -0.557635,2.392616 -0.839485,3.585634 -0.06805,0.168727 -0.138059,0.335271 -0.210117,0.499613 -0.12026,0.420614 -0.242539,0.839043 -0.366846,1.255278 -0.56779,1.037856 -1.1376,2.07352 -1.709445,3.10699 -0.286134,0.415839 -0.572948,0.832161 -0.860452,1.248959 -0.900716,0.151151 -1.797963,0.301474 -2.698217,0.452045 -0.756966,-0.06999 -1.515949,-0.142209 -2.276953,-0.216595 -0.226237,-0.112609 -0.454502,-0.227403 -0.684786,-0.344389 -0.139231,-0.172659 -0.280482,-0.347519 -0.423752,-0.524565 -0.04023,8.1e-4 -0.0825,-8.55e-4 -0.126778,-0.005 -0.263507,-0.241043 -0.529033,-0.484278 -0.796586,-0.729699 -0.01662,-0.06206 -0.03523,-0.126248 -0.0559,-0.192659 -0.243879,-1.277196 -0.489785,-2.556594 -0.73771,-3.838176 -0.02192,-0.464317 -0.0459,-0.93082 -0.07188,-1.399515 0.272923,-1.531316 0.542853,-3.047158 0.814581,-4.57443 0.215824,-0.242224 0.430799,-0.48394 0.645917,-0.726263 0.36494,-0.282165 0.729336,-0.564296 1.094125,-0.847097 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccc">
+      <title
+         id="title5438">amygdala_lateral_lateral_L</title>
+    </path>
+    <path
+       style="fill:#0074ff;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 79.486203,6.7348838 c 0.712294,-0.5566823 1.823186,-0.9597057 3.098083,-1.415648 1.274898,-0.4559423 2.701941,-0.9605721 4.347857,-1.2857617 1.645915,-0.3251896 3.499551,-0.4685706 5.226544,-0.3383924 1.726994,0.1301782 3.318524,0.5337949 4.195886,0.8749459 0.877362,0.3411509 1.039251,0.6141533 0.926414,0.9663482 -0.112836,0.3521948 -0.500074,0.7759855 -0.953563,1.2483885 -0.453489,0.4724031 -0.972138,0.9922098 -1.630707,1.6584033 -0.658569,0.6661935 -1.456339,1.4780446 -3.016923,2.3252974 -1.560584,0.847252 -3.884686,1.729961 -5.267237,2.21139 -1.382552,0.481429 -1.824089,0.561469 -2.31104,0.566934 -0.486951,0.0055 -1.020017,-0.06423 -1.429474,-0.177238 -0.409457,-0.113009 -0.695525,-0.270401 -1.240531,-0.65696 -0.545007,-0.38656 -1.348816,-1.002716 -1.937125,-1.711703 C 78.906078,10.291902 78.540294,9.5020082 78.50701,8.7448226 78.473726,7.987637 78.77391,7.2915661 79.486203,6.7348838 Z"
+       id="path23032"
+       inkscape:path-effect="#path-effect23034"
+       inkscape:original-d="m 79.078883,6.5843893 c 1.119707,-0.4059318 2.230598,-0.8089566 3.345457,-1.2137074 1.434935,-0.5071317 2.861979,-1.0117587 4.294381,-1.5185754 1.859355,-0.1435866 3.712991,-0.2869677 5.573004,-0.4310787 1.593556,0.4058097 3.185086,0.8094263 4.774587,1.2108496 0.165677,0.2792693 0.327564,0.5522725 0.492005,0.8296988 -0.389949,0.4271925 -0.777188,0.8509826 -1.165892,1.2759433 -0.518283,0.5198544 -1.03693,1.0396627 -1.555942,1.5594167 -0.798121,0.8126348 -1.595892,1.6244858 -2.39421,2.4364668 -2.322081,0.884901 -4.646182,1.76761 -6.972301,2.648125 -0.439519,0.08223 -0.881056,0.162269 -1.324614,0.240122 -0.531043,-0.06748 -1.064105,-0.137199 -1.599186,-0.209081 -0.284041,-0.155199 -0.570109,-0.312591 -0.858188,-0.472168 -0.801788,-0.613966 -1.605595,-1.230126 -2.411429,-1.84847 -0.370391,-0.800069 -0.736174,-1.589963 -1.108889,-2.3945972 0.30631,-0.709589 0.606489,-1.4056619 0.911217,-2.1129445 z"
+       sodipodi:nodetypes="cccccccccccccccc">
+      <title
+         id="title5372">caudate_posterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#ff007c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 80.252546,13.948992 c 0.217907,-0.11339 0.653026,-0.339809 1.116032,-0.488981 0.463006,-0.149172 0.952935,-0.221217 1.456487,-0.246906 0.503551,-0.02569 1.020285,-0.0053 1.468376,0.05259 0.44809,0.05794 0.82403,0.152145 0.936664,0.802334 0.112634,0.65019 -0.04458,1.842245 0.166254,2.855753 0.210831,1.013509 0.78645,1.858137 1.101292,2.357711 0.314841,0.499574 0.369647,0.653938 0.55885,0.88944 0.189204,0.235502 0.511598,0.552624 0.756976,0.882192 0.245378,0.329567 0.414593,0.671104 0.538504,0.995635 0.123912,0.324532 0.203137,0.632084 0.466412,1.296986 0.263275,0.664903 0.710128,1.68712 1.010612,2.398946 0.300485,0.711826 0.452272,1.106842 0.666257,1.497464 0.213986,0.390622 0.486208,0.768204 0.806486,1.132845 0.320278,0.364641 0.684694,0.713181 0.933432,1.119049 0.248739,0.405868 0.376854,0.862889 0.253347,1.264089 -0.123507,0.401199 -0.499114,0.749513 -1.454912,1.202499 -0.955797,0.452985 -2.476757,1.003961 -3.797693,1.562271 -1.320935,0.558309 -2.442245,1.12473 -3.590865,1.353072 -1.148619,0.228341 -2.331674,0.120886 -3.475009,-0.111468 -1.143334,-0.232355 -2.256764,-0.593304 -3.37641,-1.068074 -1.119647,-0.47477 -2.217382,-1.051017 -2.926401,-1.465823 -0.709019,-0.414806 -1.033804,-0.671135 -1.536935,-1.19806 -0.503132,-0.526926 -1.185108,-1.325914 -1.531181,-2.241058 -0.346074,-0.915144 -0.353364,-1.933904 -0.228445,-2.624314 0.124919,-0.69041 0.382444,-1.045589 0.658704,-1.491186 0.276259,-0.445597 0.571361,-0.981958 1.034492,-1.745055 0.463131,-0.763097 1.094093,-1.752505 1.816552,-2.698605 0.722459,-0.9461 1.535346,-1.847589 2.543265,-2.868978 1.007918,-1.021389 2.207504,-2.159351 2.809227,-2.730164 0.601724,-0.570813 0.601723,-0.570812 0.81963,-0.684202 z"
+       id="path23132"
+       inkscape:path-effect="#path-effect23134"
+       inkscape:original-d="m 80.034639,14.062382 c 0.437141,-0.22423 0.872262,-0.450644 1.305349,-0.679252 0.491955,-0.06985 0.981883,-0.141903 1.469784,-0.216136 0.51875,0.02281 1.035484,0.04315 1.550201,0.06102 0.381517,0.09578 0.757458,0.189984 1.141571,0.28607 -0.158576,1.204163 -0.31579,2.396218 -0.471633,3.57614 0.57764,0.846819 1.15326,1.691446 1.726853,2.533879 0.05684,0.156567 0.111641,0.310933 0.164428,0.463123 0.324412,0.319309 0.646805,0.636433 0.967178,0.951364 0.171234,0.343729 0.340448,0.685266 0.507644,1.024609 0.08125,0.309738 0.160473,0.61729 0.237673,0.922649 0.448874,1.024409 0.895728,2.046625 1.340556,3.066648 0.155352,0.40398 0.307133,0.798998 0.461414,1.200799 0.273618,0.379461 0.545843,0.757041 0.816673,1.132756 0.369686,0.353599 0.7341,0.702141 1.102919,1.054868 0.128799,0.458961 0.256917,0.915981 0.384346,1.37106 -0.374374,0.347574 -0.74998,0.695889 -1.127979,1.046016 -1.533706,0.555881 -3.054666,1.106856 -4.579757,1.659041 -1.116742,0.564438 -2.238052,1.130858 -3.354574,1.694539 -1.181028,-0.105267 -2.364083,-0.21272 -3.549158,-0.322365 -1.101458,-0.356915 -2.214887,-0.717866 -3.340336,-1.082863 -1.113845,-0.584595 -2.211583,-1.160835 -3.307096,-1.736032 -0.322766,-0.254141 -0.647552,-0.510468 -0.974357,-0.768988 -0.679159,-0.795706 -1.361132,-1.594697 -2.045934,-2.396973 -0.0071,-1.028004 -0.01444,-2.046763 -0.02199,-3.072877 0.25955,-0.352987 0.517073,-0.708168 0.772577,-1.065541 0.297125,-0.534174 0.59223,-1.070534 0.885307,-1.609087 0.630948,-0.98885 1.26191,-1.978258 1.892886,-2.968224 0.81392,-0.90219 1.626808,-1.803678 2.440314,-2.706299 1.202313,-1.140142 2.401901,-2.278102 3.605142,-3.419945 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccc">
+      <title
+         id="title5444">putamen_anterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#ffc800;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 84.704168,16.912994 c 0.03568,-0.556197 0.106781,-1.664624 0.167709,-2.426013 0.06093,-0.76139 0.111645,-1.173386 0.26243,-1.496157 0.150786,-0.32277 0.401397,-0.554397 0.808124,-0.797343 0.406726,-0.242945 0.968713,-0.496823 2.136965,-0.92242 1.168252,-0.425598 2.944681,-1.023658 4.361316,-1.2902132 1.416635,-0.2665549 2.462796,-0.200305 3.816597,0.066728 1.353802,0.267034 3.004457,0.732727 4.426991,1.318347 1.42254,0.58562 2.60293,1.28511 3.75654,1.900889 1.1536,0.615779 2.27133,1.14277 3.0321,1.535147 0.76076,0.392376 1.16462,0.649764 1.68282,1.067136 0.51821,0.417372 1.15099,0.994268 1.61472,1.478454 0.46373,0.484186 0.75883,0.8753 0.94167,1.469011 0.18284,0.593711 0.25499,1.390029 0.18703,2.232238 -0.068,0.84221 -0.27545,1.731027 -0.4018,2.312632 -0.12634,0.581604 -0.17164,0.855815 -0.22995,1.025115 -0.0583,0.1693 -0.12989,0.235459 -0.35376,0.658391 -0.22386,0.422931 -0.5995,1.20163 -0.87881,1.725156 -0.27931,0.523526 -0.46239,0.792321 -0.66544,1.129457 -0.20305,0.337137 -0.426,0.742353 -1.11767,1.66361 -0.69166,0.921257 -1.85224,2.359043 -3.20308,3.220044 -1.35085,0.861001 -2.89361,1.145807 -4.32012,0.986146 -1.426516,-0.159661 -2.738669,-0.76554 -3.934483,-1.228587 -1.195814,-0.463047 -2.288596,-0.788674 -3.185225,-1.326069 -0.896628,-0.537394 -1.586261,-1.27837 -2.062001,-1.879779 C 91.0711,28.733505 90.81316,28.274859 90.365165,27.118728 89.91717,25.962598 89.278612,24.105898 88.294944,22.376821 87.311275,20.647743 85.993584,19.062926 85.331037,18.266065 84.66849,17.469205 84.66849,17.46919 84.704168,16.912994 Z"
+       id="path23042"
+       inkscape:path-effect="#path-effect23044"
+       inkscape:original-d="m 84.66849,17.46919 c 0.07154,-1.112381 0.142688,-2.220805 0.213835,-3.333519 0.05274,-0.409802 0.103489,-0.821794 0.152148,-1.235983 0.252646,-0.229442 0.503256,-0.46107 0.751847,-0.694891 0.564,-0.251687 1.125989,-0.505559 1.685943,-0.761624 1.775471,-0.597454 3.551899,-1.195517 5.33318,-1.7954936 1.051889,0.066847 2.098052,0.1330701 3.148422,0.1993789 1.657204,0.4676997 3.307859,0.9333947 4.965825,1.4009877 1.18711,0.703568 2.3675,1.403059 3.55451,2.106375 1.11976,0.529184 2.2375,1.056167 3.35321,1.580973 0.40589,0.259575 0.80974,0.516973 1.21158,0.77217 0.63481,0.579088 1.26758,1.155992 1.89834,1.730695 0.29712,0.393298 0.59222,0.784412 0.88529,1.173324 0.0742,0.798522 0.14633,1.594842 0.21646,2.388977 -0.20546,0.891009 -0.41295,1.779825 -0.62245,2.666449 -0.0433,0.276404 -0.0886,0.550614 -0.13588,0.822633 -0.0696,0.0684 -0.14119,0.134552 -0.21482,0.198543 -0.37362,0.780887 -0.74926,1.559588 -1.12693,2.336096 -0.18105,0.270973 -0.36413,0.539768 -0.54923,0.806362 -0.22092,0.407408 -0.44387,0.812622 -0.66884,1.215652 -1.15855,1.439973 -2.31912,2.877762 -3.48172,4.313357 -1.54134,0.284802 -3.0841,0.569605 -4.62827,0.854416 C 99.301987,33.60979 97.989835,33.00391 96.686564,32.40201 95.598211,32.077855 94.505427,31.752234 93.408227,31.425131 92.712213,30.6773 92.022581,29.936323 91.327616,29.189617 91.071703,28.733166 90.813763,28.27452 90.553796,27.813682 89.917282,25.962559 89.278723,24.10586 88.638119,22.243569 87.311285,20.647735 85.993597,19.062915 84.66849,17.469205 Z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title5442">putamen_posterior_lateral_L</title>
+    </path>
+    <path
+       style="fill:#6cff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 6.5275298,20.639154 c 0.1186439,0.105231 0.3545432,0.314463 0.5255444,0.733139 0.1710012,0.418676 0.2781097,1.045828 0.4065671,1.546363 0.1284573,0.500536 0.2776755,0.874233 0.417053,1.514612 0.1393774,0.640379 0.2687589,1.542079 0.3339672,1.996536 0.065208,0.454457 2.4092065,2.31817 2.7240005,2.372686 0.314795,0.05452 0.939918,0.162774 1.651978,0.615843 0.712059,0.453068 1.513406,1.249627 1.931596,1.644742 0.418189,0.395116 0.453268,0.391111 0.508143,0.403238 0.05487,0.01213 0.129023,0.03919 0.546698,0.275939 0.417675,0.23675 1.178992,0.682661 1.780098,0.968902 0.601106,0.286241 1.041891,0.413534 1.822265,0.715369 0.780374,0.301836 1.90035,0.777858 2.589064,1.05429 0.688715,0.276432 0.946173,0.353607 1.332361,0.469372 0.386189,0.115766 0.901104,0.270119 1.128752,0.543985 0.227648,0.273865 0.170912,0.666467 -0.07328,1.107771 -0.244195,0.441305 -0.674721,0.929351 -1.006394,1.307454 -0.331672,0.378104 -0.562638,0.644157 -1.049882,1.102931 -0.487244,0.458774 -1.231921,1.111342 -1.954336,1.477952 -0.722416,0.366611 -1.423697,0.446659 -1.994456,0.42354 -0.570758,-0.02312 -1.011542,-0.150411 -1.508922,-0.306701 -0.49738,-0.15629 -1.051357,-0.3417 -1.574313,-0.565932 C 14.541075,39.816953 14.049216,39.553403 13.411608,39.126553 12.774,38.699703 11.997899,38.114459 11.263955,37.578569 10.530012,37.042678 9.8348187,36.553695 8.8324915,35.70917 7.8301644,34.864645 6.5209496,33.664284 5.5834664,32.571755 4.6459832,31.479225 4.0814591,30.494851 3.5673946,29.575262 3.05333,28.655672 2.5945053,27.809585 2.2288161,26.98898 1.863127,26.168374 1.5957492,25.38191 1.6967674,24.55107 c 0.1010181,-0.830839 0.567711,-1.697125 1.1905492,-2.352682 0.6228381,-0.655557 1.3962238,-1.092946 2.0077882,-1.33384 0.6115644,-0.240894 1.060886,-0.285574 1.2873345,-0.308092 0.2264484,-0.02252 0.2264466,-0.02253 0.3450905,0.0827 z"
+       id="path28406"
+       inkscape:path-effect="#path-effect28408"
+       inkscape:original-d="m 6.4088859,20.533922 c 0.2372978,0.210452 0.473197,0.419684 0.7077065,0.627703 0.1094173,0.629014 0.2165364,1.256164 0.3213267,1.881462 0.1515513,0.375557 0.3007728,0.749253 0.4476575,1.121099 0.1306783,0.909435 0.2600723,1.811133 0.3902932,2.720075 l 2.3439982,1.863713 c 0.629565,0.109169 1.254687,0.217434 1.87538,0.324777 0.803688,0.798412 1.605031,1.594975 2.404044,2.389679 0.0374,-0.0019 0.07248,-0.0059 0.105194,-0.01201 0.07645,0.02889 0.150596,0.05596 0.222389,0.08117 0.763664,0.447776 1.524981,0.893687 2.283969,1.337746 0.443122,0.129151 0.883907,0.256444 1.322353,0.381878 1.122305,0.47788 2.242281,0.9539 3.359918,1.428062 0.259786,0.07903 0.517243,0.156207 0.772371,0.231526 0.517251,0.156206 1.032165,0.310562 1.544742,0.463059 -0.05671,0.394211 -0.113446,0.786813 -0.170553,1.180195 -0.431311,0.489387 -0.861837,0.977433 -1.294049,1.466939 -0.231135,0.266697 -0.462094,0.532756 -0.693073,0.798361 -0.743544,0.651965 -1.488221,1.304533 -2.234055,1.957723 -0.69892,0.08218 -1.400201,0.162233 -2.103852,0.240146 C 17.576192,40.891796 17.135408,40.764504 16.692294,40.635351 16.14064,40.451798 15.586664,40.266384 15.030342,40.079113 14.540826,39.817418 14.048964,39.553874 13.554773,39.288469 12.773998,38.699706 11.997892,38.114468 11.222774,37.529952 10.529911,37.042821 9.8347178,36.553838 9.1371874,36.062996 7.8303036,34.864493 6.52109,33.664131 5.2095387,32.46191 4.6460757,31.479172 4.0815518,30.494798 3.5159669,29.508789 3.0534298,28.655618 2.5946049,27.809531 2.1296986,26.952467 1.8646571,26.167854 1.5972789,25.38139 1.327563,24.593068 c 0.4704777,-0.8727 0.937172,-1.738985 1.4069188,-2.611554 0.7758086,-0.438443 1.549195,-0.875831 2.3217484,-1.313068 0.4504183,-0.045 0.8997847,-0.08923 1.3526575,-0.134508 z"
+       sodipodi:nodetypes="cccccscccccccccccccccccccccccccc">
+      <title
+         id="title5115">hippocampus_posterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#ffc800;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 22.547022,27.588015 c 0.659908,-0.07533 1.977632,-0.225739 2.828554,-0.30252 0.850922,-0.07678 1.234825,-0.08015 1.799975,-0.0028 0.56515,0.07737 1.311255,0.234914 2.041611,0.34351 0.730355,0.108597 1.445097,0.168591 2.245446,0.269485 0.800349,0.100894 1.686217,0.242486 2.441197,0.389021 0.75498,0.146535 1.37901,0.297784 2.002166,0.530374 0.623157,0.23259 1.245459,0.545844 1.569097,0.822654 0.323638,0.27681 0.350984,0.516393 0.364824,0.727056 0.01384,0.210662 0.01441,0.392632 -0.0066,0.551177 -0.021,0.158545 -0.06359,0.295651 -0.245227,0.478359 -0.181641,0.182707 -0.502096,0.410774 -1.099009,0.584498 -0.596912,0.173723 -1.473107,0.29395 -2.247213,0.615371 -0.774107,0.321422 -1.443761,0.843512 -2.203103,1.182098 -0.759342,0.338586 -1.615088,0.49694 -2.622224,0.369871 -1.007137,-0.12707 -2.168133,-0.542254 -3.26013,-1.28671 -1.091997,-0.744456 -2.157569,-1.846372 -2.866013,-2.774506 -0.708444,-0.928133 -1.05478,-1.672658 -1.403212,-2.421687 0,0 -5.7e-5,5.6e-5 0.65985,-0.07527 z"
+       id="path28396"
+       inkscape:path-effect="#path-effect28398"
+       inkscape:original-d="m 21.887115,27.663341 c 1.320086,-0.148276 2.63781,-0.298689 3.953164,-0.451238 0.386236,-0.0015 0.770138,-0.0049 1.151705,-0.01011 0.748441,0.159398 1.494545,0.316946 2.238318,0.472626 0.717077,0.06185 1.431818,0.121851 2.144228,0.179983 0.888196,0.143446 1.774064,0.28504 2.657594,0.424775 0.626366,0.153104 1.250395,0.304357 1.872095,0.453751 0.624637,0.315106 1.246938,0.628362 1.866901,0.939759 0.02996,0.24141 0.05731,0.480993 0.08204,0.718756 0.0029,0.183826 0.0034,0.365796 0.0017,0.545903 -0.04226,0.137081 -0.08488,0.274178 -0.127763,0.411297 -0.320499,0.228443 -0.640952,0.456513 -0.960775,0.68378 -0.873868,0.122127 -1.750063,0.242353 -2.628607,0.360683 -0.669787,0.522567 -1.339444,1.044654 -2.005862,1.563853 -0.852408,0.157937 -1.708149,0.316319 -2.567265,0.475069 -1.155231,-0.413018 -2.316227,-0.828202 -3.453779,-1.235105 -1.04638,-1.082129 -2.111951,-2.184046 -3.178342,-3.286751 -0.350404,-0.75359 -1.045295,-2.247087 -1.045295,-2.247087 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title5111">putamen_posterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff007c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 45.467802,14.843528 c 0.4136,-0.09739 1.230633,-0.28978 2.125199,0.697374 0.894566,0.987155 1.859238,3.152609 2.659765,4.575358 0.800526,1.422749 1.436106,2.103356 1.868983,2.597948 0.432878,0.494592 0.663344,0.803021 0.860033,1.059502 0.196688,0.256482 0.359513,0.461049 0.398185,0.930378 0.03867,0.469328 -0.04482,1.204118 -0.101536,2.173074 -0.05671,0.968955 -0.08677,2.171856 -0.112872,3.165086 -0.0261,0.99323 -0.04824,1.776807 -0.02773,2.444104 0.02051,0.667298 0.08337,1.218014 -0.340115,1.655635 -0.423485,0.43762 -1.334554,0.764772 -2.443068,0.947372 -1.108514,0.1826 -2.415271,0.220183 -3.707744,-0.05738 -1.292472,-0.277561 -2.562424,-0.867561 -3.715966,-1.255967 -1.153541,-0.388407 -2.173957,-0.570316 -2.990005,-0.864046 -0.816048,-0.29373 -1.403054,-0.690255 -1.884643,-1.401692 -0.481588,-0.711436 -0.846677,-1.723491 -0.831589,-2.326741 0.01509,-0.603251 0.41241,-0.788076 0.686848,-0.832202 0.274438,-0.04413 0.424684,0.0503 0.740157,0.125229 0.315473,0.07493 0.79615,0.131639 1.714096,0.110295 0.917945,-0.02134 2.273483,-0.120285 3.27025,-0.304045 0.996766,-0.18376 1.635618,-0.451942 2.060365,-0.639915 0.424747,-0.187972 0.635604,-0.295725 0.82102,-0.497774 0.185416,-0.202048 0.346734,-0.499404 0.02462,-1.493675 -0.322113,-0.994271 -1.129059,-2.687411 -1.546397,-3.895329 -0.417338,-1.207918 -0.443987,-1.930133 -0.487088,-2.552752 -0.0431,-0.622619 -0.102819,-1.1458 -0.07862,-1.66504 0.0242,-0.51924 0.132844,-1.033739 0.250889,-1.465844 0.118045,-0.432104 0.245542,-0.781391 0.309452,-0.956477 0.06391,-0.175086 0.06391,-0.175086 0.477505,-0.272477 z"
+       id="path28324"
+       inkscape:path-effect="#path-effect28326"
+       inkscape:original-d="m 45.054203,14.940919 c 0.827253,-0.194552 1.644286,-0.386943 2.467486,-0.581025 0.966,2.168109 1.930671,4.333563 2.894011,6.496354 0.637911,0.682464 1.273492,1.363069 1.906736,2.041815 0.232803,0.310279 0.46327,0.618708 0.691399,0.925287 0.165163,0.206422 0.327982,0.410994 0.488478,0.613706 -0.08116,0.736646 -0.16466,1.471435 -0.250488,2.204371 -0.02772,1.20475 -0.05779,2.40765 -0.09018,3.60869 -0.0198,0.785428 -0.04194,1.569005 -0.06641,2.350724 0.06548,0.552537 0.128339,1.103254 0.188586,1.652145 -0.908734,0.329011 -1.819806,0.656155 -2.733214,0.981457 -1.30442,0.03943 -2.611177,0.07702 -3.920262,0.112746 -1.275946,-0.592703 -2.545897,-1.182706 -3.822539,-1.775891 -1.030437,-0.183548 -2.050853,-0.365457 -3.086613,-0.550251 -0.596323,-0.40279 -1.183331,-0.799313 -1.778157,-1.201152 -0.368187,-1.02111 -0.733279,-2.033164 -1.101781,-3.054223 0.399658,-0.182969 0.796979,-0.367796 1.191963,-0.554475 0.152591,0.09629 0.302837,0.190715 0.450753,0.283284 0.483022,0.05857 0.963699,0.115281 1.442045,0.170133 1.357876,-0.09709 2.713415,-0.196021 4.066623,-0.296825 0.64119,-0.266324 1.280042,-0.534507 1.916564,-0.804549 0.213194,-0.1059 0.424052,-0.213651 0.632573,-0.32326 0.163655,-0.295506 0.324973,-0.592862 0.483962,-0.892078 -0.804614,-1.691289 -1.611558,-3.38443 -2.420838,-5.079421 -0.02432,-0.720364 -0.05096,-1.44258 -0.07995,-2.166653 -0.0571,-0.521353 -0.116823,-1.044533 -0.179156,-1.569539 0.11098,-0.512651 0.219616,-1.027151 0.325922,-1.54351 0.129832,-0.347431 0.257326,-0.696719 0.382491,-1.04786 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title4562">putamen_anterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 58.617972,23.397113 c 0.661168,-0.200724 1.981888,-0.60168 2.727976,-0.811789 0.746089,-0.21011 0.91708,-0.229627 1.257964,-0.07811 0.340884,0.151522 0.863982,0.480267 1.187587,1.271648 0.323606,0.791381 0.451336,2.043725 0.05844,2.982933 -0.392893,0.939209 -1.307041,1.564838 -1.901837,1.931824 -0.594795,0.366987 -0.871109,0.475516 -1.084906,0.538608 -0.213797,0.06309 -0.365783,0.08044 -0.509792,-0.161754 -0.144009,-0.242195 -0.278557,-0.746489 -0.347476,-1.094923 -0.06892,-0.348435 -0.07162,-0.54059 -0.441931,-1.094667 -0.370313,-0.554078 -1.110041,-1.470447 -1.490455,-2.014208 -0.380414,-0.543761 -0.399931,-0.714752 -0.359318,-0.864796 0.04061,-0.150045 0.141594,-0.277048 0.192082,-0.340548 0.05049,-0.0635 0.05049,-0.0635 0.711663,-0.264223 z"
+       id="path28225"
+       inkscape:path-effect="#path-effect28227"
+       inkscape:original-d="m 57.956804,23.597836 c 1.323049,-0.399098 2.643768,-0.800057 3.962151,-1.202866 0.173353,-0.01738 0.344344,-0.0369 0.512966,-0.05855 0.512858,0.322347 1.035953,0.651098 1.555023,0.977268 0.128349,1.256541 0.25606,2.508887 0.383705,3.762067 -0.91344,0.625487 -1.827586,1.251119 -2.742431,1.876878 -0.273973,0.110359 -0.550279,0.218907 -0.828916,0.325579 -0.149628,0.01949 -0.301616,0.03683 -0.455974,0.05205 -0.132187,-0.502444 -0.266758,-1.006732 -0.403642,-1.512875 -3.87e-4,-0.190299 -0.0031,-0.382454 -0.0081,-0.576472 -0.737396,-0.914511 -1.477123,-1.830881 -2.219178,-2.749103 -0.0169,-0.169164 -0.03642,-0.340155 -0.05855,-0.512965 0.103316,-0.125153 0.204296,-0.252156 0.302939,-0.38101 z"
+       sodipodi:nodetypes="scccccccccccss">
+      <title
+         id="title4423">accumbens_core_medial_L</title>
+    </path>
+    <path
+       style="fill:#5400ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 56.172704,24.090649 c 0.99684,-0.01679 1.653352,0.06066 2.578204,0.50039 0.924853,0.439731 2.102631,1.235934 2.351958,2.242928 0.249326,1.006995 -0.433653,2.221075 -1.042406,3.093456 -0.608753,0.872382 -1.143469,1.403607 -1.872117,2.095138 -0.728647,0.69153 -1.650138,1.542249 -2.575078,2.180436 -0.92494,0.638187 -1.862327,1.07067 -2.802514,1.19359 -0.940188,0.12292 -1.869291,-0.06449 -2.802644,-0.252762 -0.372213,-0.30886 -0.747146,-0.619978 -1.058853,-0.882786 -0.311708,-0.262809 -0.567886,-0.483768 -0.725175,-0.841158 -0.15729,-0.357389 -0.213674,-0.85136 -0.104363,-1.501446 0.109311,-0.650086 0.382735,-1.448873 0.872608,-2.379772 0.489873,-0.930899 1.196835,-1.994016 1.826619,-2.883871 0.629785,-0.889855 1.182972,-1.60733 2.117386,-2.02195 0.934413,-0.41462 2.239535,-0.525399 3.236375,-0.542193 z"
+       id="path28235"
+       inkscape:path-effect="#path-effect28237"
+       inkscape:original-d="m 56.500929,23.994972 c 0.668596,0.07904 1.325108,0.156498 1.989911,0.234767 1.184908,0.80105 2.362687,1.597252 3.544781,2.396345 -0.683171,1.215023 -1.366152,2.429102 -2.048937,3.642236 -0.534764,0.531699 -1.069486,1.062919 -1.606,1.595516 -0.92079,0.85047 -1.842281,1.701188 -2.758174,2.546343 -0.934072,0.43125 -1.871461,0.863728 -2.814344,1.298455 -0.93763,-0.188993 -2.800059,-0.564809 -2.800059,-0.564809 0,0 -0.747139,-0.619986 -1.116639,-0.926581 -0.253845,-0.219103 -0.510021,-0.440065 -0.768533,-0.662878 -0.05377,-0.492145 -0.110155,-0.986116 -0.169154,-1.481906 0.275509,-0.804021 0.548937,-1.602807 0.822698,-2.403451 0.705964,-1.061081 1.412923,-2.1242 2.11903,-3.186557 0.553454,-0.717334 1.106644,-1.434807 1.659672,-2.152566 1.315581,-0.111427 2.620702,-0.222222 3.945748,-0.334914 z"
+       sodipodi:nodetypes="ccccccccccccccc">
+      <title
+         id="title4427">accumbens_shell_medial_L</title>
+    </path>
+    <path
+       style="fill:#d0ff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 33.677872,30.910557 c -0.31436,-0.02136 -0.945696,-0.06427 -1.612755,-0.219689 -0.667059,-0.155421 -1.358022,-0.419662 -2.012732,-0.679973 -0.65471,-0.260312 -1.257506,-0.510562 -1.788715,-0.831137 -0.531208,-0.320575 -0.994536,-0.714002 -1.262354,-1.015467 -0.267819,-0.301465 -0.339572,-0.51412 -0.279879,-0.703798 0.05969,-0.189678 0.241747,-0.342224 0.458398,-0.451956 0.216652,-0.109732 0.45207,-0.167686 0.713393,-0.142435 0.261323,0.02525 0.538424,0.133425 1.4029,0.187514 0.864477,0.05409 2.311922,0.05319 3.636969,0.08151 1.325048,0.02832 2.526946,0.08572 3.350145,0.300129 0.823199,0.214413 1.255848,0.583449 1.418607,1.20597 0.16276,0.622521 0.05805,1.499206 -0.603855,1.922941 -0.661906,0.423735 -1.889074,0.395604 -2.497418,0.381659 -0.608344,-0.01394 -0.608344,-0.0139 -0.922704,-0.03526 z"
+       id="path28334"
+       inkscape:path-effect="#path-effect28336"
+       inkscape:original-d="m 33.992232,30.93192 c -0.628731,-0.04256 -1.260068,-0.08546 -1.894011,-0.128713 -0.700195,-0.267677 -1.391158,-0.531916 -2.093405,-0.80057 -0.607172,-0.251979 -1.209969,-0.502227 -1.811303,-0.75196 -0.460988,-0.391569 -0.924314,-0.784997 -1.389977,-1.180276 -0.0699,-0.207622 -0.141641,-0.420281 -0.215266,-0.637986 0.19305,-0.161374 0.375101,-0.313922 0.565531,-0.473867 0.242733,-0.05955 0.478161,-0.117464 0.719291,-0.177071 0.281427,0.109958 0.558528,0.218132 0.837977,0.327129 1.449536,-7.01e-4 2.896981,-0.0016 4.342336,-0.0027 1.204732,0.0577 2.40663,0.115108 3.61812,0.172788 0.434982,0.370892 0.867635,0.739924 1.297943,1.107106 -0.104605,0.877972 -0.209316,1.754657 -0.314127,2.630046 -1.219257,-0.02777 -2.446425,-0.0559 -3.663109,-0.08397 z"
+       sodipodi:nodetypes="cccccccccccccc">
+      <title
+         id="title5109">pallidum_posterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#000fff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 12.744225,17.771149 c 0.846256,0.422151 2.536164,1.265152 3.566104,1.914981 1.029941,0.64983 1.400696,1.105537 1.753004,1.752617 0.352309,0.647081 0.687053,1.485401 0.930787,2.314058 0.243733,0.828658 0.397003,1.647844 0.3648,2.328079 -0.0322,0.680236 -0.249151,1.222949 -0.641898,1.615879 -0.392747,0.39293 -0.962037,0.637058 -1.420141,0.908946 -0.458104,0.271889 -0.80227,0.569934 -1.389491,0.915493 -0.587221,0.345559 -1.418802,0.739296 -2.126001,0.820912 -0.7072,0.08162 -1.291486,-0.150508 -1.903536,-0.430671 -0.61205,-0.280164 -1.249342,-0.607379 -1.71082,-0.841264 C 9.7055557,28.836293 9.410049,28.690737 8.9502589,28.23829 8.4904687,27.785843 7.8753851,27.035571 7.4903458,26.267041 7.1053066,25.498511 6.9467662,24.699173 6.8205063,23.971663 6.6942464,23.244153 6.5982667,22.577801 6.6879333,22.137892 c 0.089666,-0.439908 0.3628824,-0.649369 0.6860615,-0.827437 0.323179,-0.178069 0.6917335,-0.322105 1.0692441,-0.501781 0.3775105,-0.179677 0.7598027,-0.392867 1.0397252,-0.804375 0.2799226,-0.411508 0.4496362,-1.008962 0.6274319,-1.381863 0.177796,-0.372901 0.360979,-0.51334 0.54174,-0.673337 0.180761,-0.159996 0.359453,-0.339764 0.567719,-0.443117 0.208267,-0.103353 0.444239,-0.130289 0.561184,-0.143638 0.116945,-0.01335 0.116929,-0.01335 0.963186,0.408805 z"
+       id="path28386"
+       inkscape:path-effect="#path-effect28388"
+       inkscape:original-d="m 11.897968,17.348998 c 1.692234,0.844862 3.382145,1.687856 5.069712,2.529 0.373088,0.457556 0.743847,0.91326 1.112261,1.367115 0.337081,0.840164 0.671819,1.678486 1.004226,2.514941 0.15564,0.821043 0.308879,1.640235 0.459812,2.457564 -0.214609,0.544563 -0.431555,1.087276 -0.650839,1.62813 -0.568761,0.244188 -1.13805,0.488317 -1.709229,0.732966 -0.344941,0.299106 -0.689106,0.597153 -1.033347,0.894872 -0.829251,0.395591 -1.66083,0.789331 -2.494747,1.181212 -0.581947,-0.230266 -1.166232,-0.46239 -1.752846,-0.696367 -0.637195,-0.3271 -1.274485,-0.654318 -1.904513,-0.977865 C 9.7052774,28.836858 9.4097689,28.691306 9.1119305,28.543895 8.4905163,27.785804 7.8754329,27.035532 7.2616949,26.286999 7.1055152,25.49847 6.9469552,24.699136 6.7899187,23.908371 6.6962614,23.243863 6.6003079,22.577507 6.5019761,21.90929 c 0.2757995,-0.211077 0.5490166,-0.420536 0.8243117,-0.631957 0.3709794,-0.144708 0.7395327,-0.288747 1.1092008,-0.43349 0.3853955,-0.214604 0.7676877,-0.427794 1.1549835,-0.644091 0.1726764,-0.606887 0.3423872,-1.204341 0.5139639,-1.809338 0.185514,-0.138586 0.368698,-0.279023 0.549538,-0.42131 0.181024,-0.177913 0.35972,-0.357677 0.53607,-0.539299 0.238349,-0.0248 0.474321,-0.05174 0.70794,-0.08081 z"
+       sodipodi:nodetypes="sccccccccccccccccccccss">
+      <title
+         id="title5107">thalamus_DP_medial_L</title>
+    </path>
+    <path
+       style="fill:#00d8ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 22.531605,37.627678 c 0.253911,-0.150998 0.760824,-0.452453 1.118363,-0.642097 0.357539,-0.189643 0.565195,-0.267483 0.857977,-0.314167 0.292781,-0.04668 0.669878,-0.06266 1.170318,-0.06558 0.500441,-0.0029 1.124108,0.0071 1.816744,0.183597 0.692636,0.176504 1.454698,0.518683 2.509121,1.128531 1.054424,0.609848 2.402891,1.488077 3.370541,2.0727 0.96765,0.584623 1.543352,0.868822 2.019597,1.136917 0.476246,0.268096 0.855984,0.521586 1.172327,0.78539 0.316343,0.263804 0.563632,0.533302 0.758579,0.822384 0.194947,0.289082 0.338419,0.597502 0.38163,0.994717 0.04321,0.397214 -0.01185,0.878111 -0.20745,1.497488 -0.195603,0.619378 -0.530845,1.371983 -0.772809,2.201526 -0.241963,0.829543 -0.391894,1.742028 -0.717552,2.236665 -0.325659,0.494637 -0.830251,0.579299 -1.927177,0.48726 -1.096926,-0.09204 -2.776433,-0.359869 -4.371353,-0.917061 -1.594919,-0.557192 -3.11027,-1.406011 -4.683123,-2.352227 -1.572853,-0.946216 -3.190806,-1.98218 -4.12612,-2.636189 -0.935314,-0.654009 -1.182607,-0.92351 -1.566866,-1.32626 -0.38426,-0.402751 -0.90556,-0.938703 -1.02583,-1.278229 -0.120269,-0.339525 0.161431,-0.479944 0.663508,-0.821424 0.502076,-0.34148 1.225052,-0.88413 1.812638,-1.424696 0.587586,-0.540565 1.040332,-1.079437 1.266678,-1.348842 0.226347,-0.269405 0.226347,-0.269407 0.480259,-0.420406 z"
+       id="path28416"
+       inkscape:path-effect="#path-effect28418"
+       inkscape:original-d="m 22.277693,37.778677 c 0.50925,-0.299598 1.016162,-0.601054 1.520744,-0.90437 0.209981,-0.07594 0.417625,-0.153811 0.622934,-0.233505 0.379438,-0.01412 0.756533,-0.03013 1.131306,-0.04793 0.625998,0.01187 1.249665,0.02187 1.870996,0.03003 0.76394,0.343104 1.526001,0.685284 2.286202,1.026545 1.34866,0.878392 2.697126,1.756623 4.054008,2.640293 0.578407,0.285606 1.15411,0.569803 1.727127,0.852606 0.379488,0.253352 0.759225,0.506844 1.142639,0.762755 0.249632,0.271359 0.496918,0.540859 0.741875,0.808501 0.145807,0.310272 0.289278,0.618693 0.430412,0.925256 -0.05567,0.488458 -0.110729,0.969355 -0.166538,1.454564 -0.335385,0.753634 -0.670623,1.506241 -1.005723,2.257805 -0.148837,0.907445 -0.298766,1.819931 -0.447717,2.724829 -0.502257,0.08653 -1.006856,0.171155 -1.513778,0.253988 -1.687316,-0.268922 -3.366822,-0.536755 -5.044941,-0.804513 -1.511721,-0.84673 -3.027072,-1.695548 -4.546039,-2.546448 -1.626735,-1.041543 -3.244685,-2.077512 -4.869993,-3.118224 -0.244958,-0.267649 -0.492252,-0.537149 -0.741875,-0.8085 -0.518967,-0.5341 -1.04027,-1.07005 -1.563902,-1.60786 0.284028,-0.138561 0.565727,-0.278982 0.845098,-0.421255 0.725312,-0.540792 1.448287,-1.083443 2.168933,-1.627954 0.455079,-0.537009 0.90782,-1.075884 1.358232,-1.616611 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccc">
+      <title
+         id="title5117">hippocampus_anterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff0017;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 37.004232,48.613357 c -0.24059,-0.257327 -0.406612,-0.658985 -0.454247,-0.939912 -0.04764,-0.280927 0.02441,-0.439368 0.08297,-0.715981 0.05856,-0.276614 0.103527,-0.672315 0.297877,-0.95086 0.194349,-0.278546 0.536693,-0.437796 0.804606,-0.588535 0.267912,-0.150738 0.461971,-0.293064 1.212191,-0.43859 0.75022,-0.145526 2.055141,-0.294478 2.946617,-0.381144 0.891477,-0.08667 1.369382,-0.111174 1.616912,0.357174 0.247529,0.468347 0.266886,1.427538 0.143546,2.056505 -0.12334,0.628966 -0.389445,0.929734 -0.954778,1.369653 -0.565332,0.439918 -1.430544,1.019376 -2.122784,1.264215 -0.69224,0.244838 -1.213343,0.154101 -1.635755,0.0076 -0.422411,-0.146508 -0.746065,-0.349913 -1.064567,-0.509135 -0.318501,-0.159223 -0.632,-0.273656 -0.872591,-0.530984 z"
+       id="path28436"
+       inkscape:path-effect="#path-effect28438"
+       inkscape:original-d="m 36.928669,48.755282 c -0.163688,-0.399806 -0.329712,-0.801463 -0.498067,-1.204979 0.07438,-0.156588 0.146428,-0.315027 0.216136,-0.475324 0.0473,-0.393843 0.09226,-0.789544 0.134889,-1.187105 0.344683,-0.157396 0.687029,-0.316642 1.027036,-0.477755 0.196391,-0.140469 0.390454,-0.282789 0.582177,-0.426976 1.307283,-0.146815 2.612204,-0.295766 3.914755,-0.446854 0.480232,-0.02265 0.958139,-0.04712 1.4337,-0.07352 0.02169,0.961041 0.04105,1.920232 0.05807,2.877564 -0.26377,0.302618 -0.529877,0.603385 -0.798313,0.902301 -0.862874,0.581311 -1.728085,1.160771 -2.595634,1.738373 -0.518758,-0.08888 -1.039861,-0.179617 -1.563294,-0.27221 -0.32132,-0.201551 -0.644976,-0.404953 -0.970961,-0.610215 -0.311164,-0.11258 -0.624664,-0.22701 -0.940494,-0.3433 z">
+      <title
+         id="title4425">amygdala_lateral_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff00e0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 29.755041,37.362642 c -0.149038,-0.387323 -0.44804,-1.16437 -0.378078,-1.609363 0.06996,-0.444992 0.508046,-0.555084 1.778382,-0.745047 1.270336,-0.189963 3.372608,-0.459972 4.997663,-0.555391 1.625056,-0.09542 2.772019,-0.01671 3.613439,0.21916 0.841419,0.235871 1.366715,0.626565 1.92352,1.311041 0.556805,0.684476 1.14956,1.667913 1.639897,2.620601 0.490336,0.952688 0.871598,1.860782 0.895105,3.120911 0.02351,1.260128 -0.312698,2.865441 -0.641137,3.700627 -0.32844,0.835186 -0.651283,0.902081 -0.916391,0.94745 -0.265107,0.04537 -0.47271,0.06907 -0.813906,-0.02644 -0.341195,-0.0955 -0.816521,-0.311637 -1.456649,-0.52424 -0.640129,-0.212603 -1.44507,-0.421161 -1.877479,-0.522515 -0.43241,-0.101355 -0.491704,-0.09459 -0.735044,-0.38101 C 37.541022,44.632008 37.114046,44.049831 36.5653,43.451378 36.016553,42.852926 35.345552,42.238518 34.962372,41.906392 34.579192,41.574265 34.483468,41.525116 34.108469,41.267671 33.73347,41.010226 33.079393,40.544104 32.332431,39.923472 31.58547,39.30284 30.745865,38.527408 30.324972,38.138685 29.90408,37.749962 29.90408,37.749964 29.755041,37.362642 Z"
+       id="path28426"
+       inkscape:path-effect="#path-effect28428"
+       inkscape:original-d="m 29.90408,37.749964 c -0.296666,-0.775188 -0.595671,-1.552234 -0.897005,-2.331141 0.440421,-0.108263 0.878512,-0.218329 1.314261,-0.330279 2.104618,-0.268146 4.206886,-0.538189 6.306831,-0.810029 1.149885,0.07908 2.296849,0.157782 3.452008,0.236883 0.527633,0.392552 1.052929,0.783245 1.575888,1.17208 0.590797,0.979987 1.183552,1.963424 1.778996,2.951519 0.385274,0.917278 0.766533,1.825374 1.149928,2.738912 -0.336253,1.606827 -0.672454,3.212141 -1.008618,4.81595 -0.320512,0.06875 -0.643349,0.135678 -0.968531,0.200684 -0.205233,0.02583 -0.412836,0.04953 -0.622801,0.07109 -0.472995,-0.214285 -0.94832,-0.430421 -1.425982,-0.648407 -0.8026,-0.206708 -1.607543,-0.415257 -2.414818,-0.625674 -0.05697,0.0089 -0.116262,0.01568 -0.177943,0.02031 -0.424638,-0.580319 -0.851614,-1.162496 -1.280928,-1.746533 -0.668673,-0.612556 -1.339674,-1.226964 -2.013013,-1.84323 -0.09342,-0.04733 -0.189154,-0.09646 -0.287226,-0.147476 -0.651746,-0.464273 -1.305821,-0.930397 -1.962241,-1.398372 -0.837267,-0.773573 -1.676872,-1.549005 -2.518806,-2.326289 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title5224">amygdala_medial_medial_L</title>
+    </path>
+    <path
+       style="fill:#07ff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 46.441332,21.952606 c 0.467573,0.421958 1.400512,1.263879 1.888001,1.877644 0.487489,0.613764 0.531492,0.999263 0.531242,1.487215 -2.5e-4,0.487953 -0.04439,1.078771 -0.179074,1.609654 -0.134686,0.530883 -0.359753,1.002887 -1.031953,1.451742 -0.672199,0.448855 -1.79418,0.876066 -2.995188,1.25074 -1.201008,0.374674 -2.483417,0.697099 -3.239145,0.870238 -0.755729,0.173139 -1.003554,0.201426 -1.451782,0.183121 -0.448227,-0.01831 -1.097267,-0.08369 -1.551905,-0.157023 -0.454638,-0.07333 -0.715027,-0.155184 -0.997554,-0.666223 -0.282526,-0.511039 -0.585285,-1.452793 -0.495677,-2.133868 0.08961,-0.681075 0.571933,-1.098766 1.099794,-1.368161 0.527862,-0.269396 1.099824,-0.390471 1.565374,-0.58319 0.46555,-0.192719 0.825906,-0.45701 1.267437,-0.744535 0.44153,-0.287526 0.963955,-0.598209 1.455524,-0.933229 0.491569,-0.33502 0.952641,-0.69449 1.558972,-1.126355 0.606331,-0.431864 1.357726,-0.936053 1.733043,-1.187892 0.375317,-0.251839 0.375317,-0.251835 0.842891,0.170122 z"
+       id="path28314"
+       inkscape:path-effect="#path-effect28316"
+       inkscape:original-d="m 45.973758,21.530649 c 0.935274,0.843774 1.868212,1.685697 2.798821,2.525769 0.04662,0.387325 0.09062,0.772824 0.13201,1.156503 -0.04181,0.59268 -0.08594,1.183499 -0.132416,1.772468 -0.222735,0.473864 -0.4478,0.945869 -0.675203,1.416015 -1.11953,0.426552 -2.241511,0.853761 -3.365982,1.281647 -1.277578,0.321455 -2.559987,0.64388 -3.825776,0.96188 -0.245455,0.03042 -0.49328,0.05871 -0.743467,0.08486 -0.646701,-0.06353 -1.29574,-0.128922 -1.947116,-0.196163 -0.25806,-0.08 -0.518449,-0.161853 -0.781184,-0.245567 -0.30042,-0.939893 -0.603186,-1.881645 -0.908272,-2.825249 0.484649,-0.415827 0.966976,-0.833516 1.446958,-1.253054 0.574299,-0.119213 1.14626,-0.240294 1.715892,-0.363226 0.362691,-0.262439 0.723053,-0.526722 1.081069,-0.792871 0.524767,-0.308828 1.047189,-0.619515 1.567281,-0.932052 0.463406,-0.35761 0.924473,-0.717086 1.383212,-1.078406 0.753725,-0.502335 1.505121,-1.006522 2.254173,-1.512558 z"
+       sodipodi:nodetypes="ccccccccccccccccc">
+      <title
+         id="title5113">pallidum_anterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#b800ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 47.247979,17.162813 c -0.09115,-0.433743 -0.273916,-1.303473 0.143396,-2.159528 0.417312,-0.856056 1.434701,-1.695794 2.097322,-2.230664 0.662621,-0.534869 0.970348,-0.764812 1.207464,-1.000343 0.237116,-0.235532 0.404342,-0.477272 0.908637,-0.938633 0.504295,-0.46136 1.345056,-1.1417823 2.396375,-1.20522 1.051319,-0.063438 2.311058,0.488541 3.188726,0.987118 0.877668,0.498576 1.37368,0.942915 1.92798,1.533785 0.5543,0.59087 1.167233,1.328008 1.573254,1.838315 0.406021,0.510307 0.605356,0.793695 1.001421,1.480536 0.396065,0.68684 0.998096,1.793426 1.310985,2.805326 0.312888,1.0119 0.338773,1.929537 0.116381,2.642361 -0.222391,0.712824 -0.693155,1.219437 -1.218026,1.639222 -0.52487,0.419785 -1.104895,0.753316 -1.887343,0.975815 -0.782448,0.222499 -1.771475,0.335392 -3.140926,0.490508 -1.369452,0.155115 -3.119525,0.352473 -4.290171,0.113424 -1.170646,-0.239049 -1.753306,-0.907587 -2.537101,-2.080066 -0.783795,-1.172479 -1.741448,-2.808463 -2.707248,-4.458363 0,0 2.2e-5,1.51e-4 -0.09113,-0.433593 z"
+       id="path28215"
+       inkscape:path-effect="#path-effect28217"
+       inkscape:original-d="m 47.339127,17.596557 c -0.180436,-0.867878 -0.363202,-1.737608 -0.548305,-2.609196 1.01972,-0.837884 2.037111,-1.67762 3.052165,-2.519215 0.310056,-0.228085 0.617782,-0.45803 0.92318,-0.689827 0.169556,-0.239881 0.336782,-0.481621 0.501671,-0.725212 0.843086,-0.678559 1.683843,-1.3589865 2.522271,-2.0412574 1.262077,0.5538369 2.521816,1.1058154 3.779226,1.6559414 0.498345,0.446202 0.99436,0.890537 1.488047,1.333028 0.615264,0.73899 1.228198,1.476128 1.838795,2.211408 0.201664,0.28524 0.400998,0.568628 0.598004,0.850164 0.594536,1.092575 1.196575,2.199156 1.796257,3.301675 0.02624,0.921332 0.05211,1.838969 0.0778,2.758069 -0.470492,0.506757 -0.941257,1.013369 -1.412294,1.519843 -0.578781,0.333137 -1.158808,0.666665 -1.736904,0.998769 -0.986666,0.11503 -1.975693,0.227924 -2.96709,0.338681 -1.747777,0.197096 -3.49785,0.394453 -5.250228,0.592073 -0.588875,-0.675749 -1.171529,-1.344292 -1.765218,-2.025395 -0.973854,-1.66387 -2.897399,-4.9497 -2.897399,-4.9497 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title4421">caudate_anterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#0074ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="M 35.435067,6.5768809 C 34.256556,5.645594 33.09925,5.0824103 33.603102,4.4485597 c 0.503852,-0.6338506 2.660703,-1.3326513 4.343659,-1.6554958 1.682955,-0.3228445 2.885993,-0.2686701 5.110579,0.4119443 2.224585,0.6806144 5.458603,1.981933 7.427657,2.9797189 1.969053,0.997786 2.615414,1.6613845 2.75386,2.3925736 0.138447,0.7311891 -0.237172,1.5193103 -1.044996,2.3852243 -0.807825,0.865914 -2.047753,1.808873 -2.926584,2.530772 -0.878831,0.721899 -1.396208,1.222471 -2.001769,1.578837 -0.60556,0.356366 -1.298437,0.568237 -1.755695,0.544626 -0.457258,-0.02361 -0.678654,-0.28558 -1.102312,-0.644364 -0.423659,-0.358784 -1.050099,-0.813898 -1.727443,-1.502337 -0.677344,-0.68844 -1.404981,-1.610732 -2.023583,-2.210754 C 40.037874,10.659283 39.527527,10.382417 38.671309,9.5948291 37.815091,8.8072415 36.613577,7.5081677 35.435067,6.5768809 Z"
+       id="path28205"
+       inkscape:path-effect="#path-effect28207"
+       inkscape:original-d="M 35.410059,6.2069266 C 34.25653,5.6456483 33.099222,5.0824673 31.938152,4.5173817 c 2.168877,-0.7024412 4.325729,-1.4012399 6.486119,-2.101445 1.205366,0.056029 2.408404,0.1102056 3.609112,0.162523 3.248512,1.3072383 6.482529,2.6085595 9.762412,3.9282428 0.658283,0.6757835 1.304645,1.3393806 1.958518,2.0107507 -0.376748,0.791161 -0.752368,1.5792818 -1.128749,2.3683308 -1.239354,0.942883 -2.479285,1.885839 -3.71977,2.828867 -0.517144,0.500756 -1.034518,1.001331 -1.552137,1.501724 -0.693639,0.212355 -1.386514,0.42423 -2.081588,0.636516 C 45.053004,15.59277 44.831603,15.330805 44.607872,15.066974 43.983764,14.613719 43.357395,14.158508 42.728559,13.701639 42.002769,12.781576 41.275614,11.858903 40.545635,10.934747 40.037627,10.659738 39.52728,10.382872 39.014605,10.104153 37.815427,8.8069309 36.613912,7.5078581 35.410059,6.2069266 Z"
+       sodipodi:nodetypes="ccccccccccccccc">
+      <title
+         id="title4419">caudate_posterior_medial_L</title>
+    </path>
+    <path
+       style="fill:#00ff5c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 19.207227,19.472845 c 0.545468,-0.06226 1.634314,-0.18655 3.225823,-0.343621 1.59151,-0.157071 3.679059,-0.346374 4.776096,0.591549 1.097036,0.937923 1.194513,3.000485 1.184022,4.15157 -0.01049,1.151085 -0.128505,1.393487 -0.188263,1.598659 -0.05976,0.205172 -0.06152,0.371879 -0.1521,0.673034 -0.09057,0.301155 -0.26966,0.737831 -0.948023,1.074963 -0.678363,0.337132 -1.858208,0.575864 -2.91371,0.717315 -1.055501,0.141451 -1.987026,0.185346 -2.631969,0.186341 -0.644944,9.94e-4 -1.003584,-0.04131 -1.340527,-0.07574 -0.336942,-0.03443 -0.652143,-0.06089 -0.907966,-0.114481 -0.255824,-0.05359 -0.45245,-0.135206 -0.807476,-0.416823 -0.355025,-0.281618 -0.867968,-0.764178 -1.168457,-1.291843 -0.30049,-0.527666 -0.386685,-1.10056 -0.417309,-1.732044 -0.03062,-0.631484 -0.0053,-1.321172 -0.03585,-2.04592 -0.03056,-0.724748 -0.117328,-1.484881 0.170711,-1.976853 0.288039,-0.491971 0.949579,-0.713166 1.279581,-0.823507 0.330002,-0.110341 0.32995,-0.110333 0.875418,-0.172596 z"
+       id="path28344"
+       inkscape:path-effect="#path-effect28346"
+       inkscape:original-d="m 18.661759,19.535108 c 1.091207,-0.122151 2.180053,-0.246438 3.26653,-0.372861 2.096291,-0.189874 4.183839,-0.379192 6.280256,-0.569506 0.09786,2.065944 0.195342,4.128506 0.292431,6.187704 -0.115685,0.244255 -0.233699,0.486658 -0.354043,0.727201 5.51e-4,0.168553 -0.0013,0.335259 -0.0053,0.500093 -0.176757,0.438537 -0.355837,0.875215 -0.537261,1.310042 -1.1775,0.240588 -2.357346,0.479317 -3.539521,0.716195 -0.929188,0.04575 -1.860712,0.08965 -2.794567,0.131685 -0.356309,-0.04045 -0.714949,-0.08276 -1.075925,-0.126926 -0.312864,-0.0246 -0.628065,-0.05106 -0.945595,-0.07938 -0.194291,-0.07976 -0.390919,-0.161371 -0.589876,-0.244842 -0.510609,-0.480704 -1.023548,-0.963267 -1.538832,-1.447681 -0.08387,-0.571034 -0.170038,-1.143932 -0.258584,-1.718685 0.02768,-0.687822 0.05301,-1.37751 0.07601,-2.06905 -0.08415,-0.758315 -0.170918,-1.518448 -0.260299,-2.280409 0.663878,-0.219337 1.325418,-0.440532 1.984628,-0.663588 z"
+       sodipodi:nodetypes="scccccccccccccccss">
+      <title
+         id="title5105">thalamus_VP_medial_L</title>
+    </path>
+    <path
+       style="fill:#00ffc0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 20.756102,7.1529497 c 1.114175,-0.2042966 3.3406,-0.612537 4.606012,-0.8339629 1.265411,-0.2214259 1.569657,-0.2561543 2.079514,-0.179014 0.509857,0.07714 1.224786,0.265214 1.660885,0.8902349 0.436098,0.6250208 0.595675,1.6855265 0.703637,2.4629441 0.107962,0.7774172 0.164395,1.2718072 -0.04845,2.2779362 -0.212841,1.006129 -0.694398,2.525078 -1.099194,3.534042 -0.404795,1.008963 -0.733009,1.508742 -0.939049,1.898662 -0.20604,0.389921 -0.289741,0.669152 -0.487243,0.960749 -0.197503,0.291598 -0.509394,0.596881 -0.766537,0.876764 -0.257144,0.279884 -0.459279,0.534111 -1.592564,0.72132 -1.133284,0.187209 -3.199937,0.307533 -4.480524,0.395857 -1.280587,0.08832 -1.774978,0.144757 -2.510362,0.113419 -0.735384,-0.03134 -1.712185,-0.150994 -2.564502,-0.361509 -0.852316,-0.210515 -1.580271,-0.512678 -2.252359,-0.747165 -0.672088,-0.234487 -1.288711,-0.401021 -1.615071,-0.744163 -0.326361,-0.343142 -0.358954,-0.854772 -0.06196,-1.563785 0.296994,-0.709012 0.916949,-1.596947 1.559464,-2.524764 0.642514,-0.927816 1.302896,-1.888781 1.888194,-2.66841 0.585297,-0.779628 1.094977,-1.377166 1.88331,-2.0642451 0.788332,-0.6870796 1.854738,-1.4633085 2.388679,-1.8519611 0.533942,-0.3886525 0.533943,-0.3886525 1.648118,-0.5929491 z"
+       id="path28304"
+       inkscape:path-effect="#path-effect28306"
+       inkscape:original-d="m 19.641927,7.3572463 c 2.228755,-0.4063831 4.45518,-0.8146258 6.679261,-1.2247183 0.306608,-0.032592 0.610854,-0.06732 0.912724,-0.1041837 0.717267,0.1899308 1.432197,0.3780029 2.144798,0.5642233 0.16193,1.0623556 0.321483,2.1228649 0.47873,3.181512 0.05905,0.4962184 0.11548,0.9906084 0.169299,1.4831804 -0.479219,1.5208 -0.960776,3.039749 -1.444669,4.556839 -0.325876,0.501623 -0.654088,1.001403 -0.98463,1.499316 -0.08137,0.281092 -0.16507,0.560324 -0.251106,0.837706 -0.309552,0.30713 -0.62144,0.612417 -0.935659,0.915836 -0.199805,0.256087 -0.40194,0.510314 -0.606405,0.762681 -2.064323,0.122179 -4.130975,0.242506 -6.199964,0.360974 -0.49203,0.05857 -0.986421,0.115002 -1.483181,0.169299 -0.974469,-0.117797 -1.951269,-0.237462 -2.930405,-0.358969 -0.725623,-0.300307 -1.453576,-0.602473 -2.183867,-0.906491 -0.613603,-0.165597 -1.230225,-0.332133 -1.849857,-0.499601 -0.03285,-0.518941 -0.06542,-1.030573 -0.09877,-1.55041 0.62735,-0.898002 1.247307,-1.785936 1.871038,-2.679803 0.661298,-0.961769 1.321678,-1.922735 1.982281,-2.884545 0.512012,-0.595683 1.021695,-1.193218 1.529041,-1.7926122 1.06722,-0.7764679 2.133624,-1.5526984 3.20134,-2.3302335 z"
+       sodipodi:nodetypes="ccccccccccccccccccccc">
+      <title
+         id="title5103">thalamus_DA_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff6400;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 31.613038,5.4277074 c 0.517886,0.055966 1.548465,0.1673367 2.932952,0.7290153 1.384487,0.5616787 3.1122,1.5703327 4.426817,2.4510642 1.314616,0.8807316 2.218431,1.6343061 2.813769,2.2480421 0.595338,0.613737 0.883037,1.087158 1.224346,1.51539 0.341309,0.428231 0.735553,0.811599 1.078583,1.434551 0.34303,0.622952 0.636164,1.485177 0.905652,2.311144 0.269488,0.825967 0.515403,1.615692 0.719467,2.352981 0.204065,0.73729 0.366113,1.420701 0.370905,2.317516 0.0048,0.896816 -0.148196,2.001238 -0.428858,2.809293 -0.280662,0.808055 -0.68931,1.322011 -0.972331,1.744031 -0.28302,0.422019 -0.440125,0.7515 -1.324332,1.12464 -0.884206,0.373139 -2.49722,0.790915 -3.913939,0.97376 -1.416718,0.182845 -2.628112,0.130717 -3.869473,0.115871 -1.241361,-0.01485 -2.485836,0.0079 -3.304119,0.04118 -0.818284,0.03328 -1.202698,0.07716 -1.984458,0.123186 -0.781761,0.04602 -1.961812,0.09408 -2.420226,-0.420125 -0.458414,-0.5142 -0.193869,-1.584025 -0.361629,-2.735628 -0.16776,-1.151604 -0.76656,-2.372978 -1.117544,-3.307403 -0.350983,-0.934425 -0.450705,-1.57271 -0.459205,-2.209448 -0.0085,-0.636737 0.07506,-1.269356 0.465065,-2.28793 0.390006,-1.018573 1.086539,-2.422136 1.595185,-3.578112 0.508647,-1.155975 0.828456,-2.061896 0.928172,-3.067723 0.09972,-1.0058273 -0.02113,-2.1027737 -0.0906,-2.7306514 -0.06947,-0.6278778 -0.08703,-0.7816476 0.304442,-1.0406485 0.391467,-0.259001 1.171785,-0.6119115 1.567627,-0.7909371 0.395842,-0.1790256 0.395846,-0.1790276 0.913732,-0.1230616 z"
+       id="path28245"
+       inkscape:path-effect="#path-effect28247"
+       inkscape:original-d="m 31.095152,5.3717414 c 1.035755,0.1120926 2.066334,0.2234607 3.103035,0.3353332 1.73227,1.0113617 3.45998,2.0200195 5.183129,3.0259575 0.906157,0.755427 1.809969,1.5090039 2.711451,2.2607299 0.290032,0.475266 0.577728,0.948689 0.863086,1.420246 0.396586,0.385228 0.790827,0.768599 1.182739,1.15011 0.295472,0.864084 0.588606,1.726309 0.879403,2.586675 0.248248,0.791591 0.494166,1.581314 0.737747,2.369187 0.163129,0.687162 0.325172,1.370574 0.48788,2.057559 -0.153047,1.106723 -0.306037,2.211145 -0.458961,3.313258 -0.406317,0.515818 -0.814964,1.029776 -1.225949,1.541876 -0.154769,0.331332 -0.311876,0.660812 -0.471312,0.988433 -1.611538,0.417639 -3.224552,0.835415 -4.83905,1.253328 -1.219007,-0.05228 -2.430401,-0.104407 -3.654897,-0.157273 -1.258214,0.02319 -2.502689,0.04594 -3.756928,0.06867 -0.38206,0.04602 -0.766474,0.0899 -1.153265,0.13164 -1.176994,0.04812 -2.357045,0.09618 -3.540096,0.144154 0.266478,-1.07651 0.531025,-2.146335 0.796855,-3.22249 -0.601502,-1.227172 -1.200298,-2.448549 -1.802164,-3.67588 -0.100013,-0.641493 -0.199741,-1.279777 -0.3003,-1.922114 0.08589,-0.630773 0.169454,-1.263391 0.250679,-1.897875 0.698862,-1.401703 1.395395,-2.805266 2.089597,-4.210689 0.320748,-0.907729 0.640555,-1.81365 0.961193,-2.722762 -0.121054,-1.1026822 -0.242092,-2.1996072 -0.363945,-3.303666 -0.01494,-0.1519432 -0.03249,-0.3057134 -0.05266,-0.4613028 0.800836,-0.3619006 1.581154,-0.71481 2.372729,-1.0731028 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc">
+      <title
+         id="title4966">thalamus_VA_medial_L</title>
+    </path>
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 191.08691,23.859554 c -0.0504,-0.385572 -0.15148,-1.158613 -0.40051,-1.772764 -0.24903,-0.614152 -0.6427,-1.064018 -1.09671,-1.211209 -0.45401,-0.14719 -0.9648,0.01084 -1.33927,0.05887 -0.37448,0.04804 -0.61235,-0.01324 -1.14351,-0.03925 -0.53115,-0.02601 -1.35491,-0.01714 -1.83398,0.07351 -0.47906,0.09065 -0.61365,0.260771 -0.5465,0.740376 0.0671,0.479606 0.3337,1.269675 0.53912,2.003448 0.20542,0.733772 0.34981,1.410918 0.53379,1.897509 0.18398,0.486591 0.40759,0.78389 0.57159,1.060358 0.16399,0.276467 0.26821,0.531372 0.34253,0.657347 0.0743,0.125975 0.12132,0.12411 0.18256,0.157012 0.0612,0.0329 0.13453,0.10065 0.42873,0.124387 0.29421,0.02374 0.81141,0.0034 1.1729,-0.08068 0.36149,-0.08406 0.56752,-0.233439 0.84402,-0.3859 0.27649,-0.152461 0.62358,-0.307399 0.94416,-0.543159 0.32058,-0.235759 0.61418,-0.553418 0.75231,-0.95913 0.13813,-0.405712 0.1187,-0.89942 0.10894,-1.147319 -0.01,-0.247899 -0.01,-0.247837 -0.0602,-0.633409 z"
+       id="path23152-5"
+       inkscape:path-effect="#path-effect23154-3"
+       inkscape:original-d="m 191.13732,24.245126 c -0.10308,-0.770848 -0.20416,-1.543888 -0.3032,-2.319114 -0.39697,-0.453178 -0.79065,-0.903042 -1.18661,-1.355973 -0.51179,0.158493 -1.02257,0.316524 -1.53234,0.474077 -0.23989,-0.05907 -0.47776,-0.120355 -0.71361,-0.183822 -0.82578,0.01105 -1.64954,0.01995 -2.47127,0.02662 -0.1366,0.172309 -0.27118,0.342432 -0.40374,0.510354 0.26454,0.792263 0.5311,1.582332 0.79968,2.370209 0.14236,0.67934 0.28674,1.356487 0.43315,2.031441 0.22159,0.299483 0.44521,0.596782 0.67085,0.891887 0.10219,0.257089 0.20641,0.511993 0.31265,0.764704 0.045,6.21e-4 0.092,-0.0012 0.14106,-0.0056 0.0713,0.06993 0.14458,0.137697 0.21991,0.203256 0.5152,-0.01789 1.0324,-0.03825 1.55162,-0.06108 0.20402,-0.147192 0.41005,-0.296577 0.61811,-0.448155 0.34506,-0.152752 0.69215,-0.307689 1.04126,-0.464812 0.29157,-0.315464 0.58517,-0.633121 0.88078,-0.952964 -0.0217,-0.491492 -0.0412,-0.985197 -0.0583,-1.48109 z"
+       sodipodi:nodetypes="sccccccccccccccccss">
+      <title
+         id="title5446-9">accumbens_core_lateral_R</title>
+    </path>
+    <path
+       style="fill:#ff6400;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 163.40121,8.6969075 c -0.0896,-0.052736 -0.26825,-0.157893 -0.54232,-0.3269321 -0.27406,-0.1690391 -0.64131,-0.4005314 -1.06538,-0.6436747 -0.42408,-0.2431433 -0.91291,-0.5024183 -1.37867,-0.7118311 -0.46577,-0.2094129 -0.90326,-0.3670519 -1.32655,-0.4621215 -0.4233,-0.09507 -0.82274,-0.125617 -1.16373,-0.1357136 -0.34098,-0.010097 -0.60789,4.085e-4 -1.09968,0.075623 -0.49178,0.075214 -1.16872,0.2091322 -1.42775,0.5743508 -0.25903,0.3652186 -0.0856,0.9487782 0.0193,1.3404105 0.10481,0.3916323 0.13674,0.5755441 0.31094,0.8805394 0.17421,0.3049952 0.49006,0.7288427 0.75441,0.9612387 0.26435,0.232397 0.4767,0.273623 0.77229,0.293378 0.29559,0.01975 0.66519,0.01755 0.96565,0.03782 0.30046,0.02027 0.52052,0.06212 0.92764,-0.02713 0.40713,-0.08925 0.99669,-0.311902 1.64627,-0.5928799 0.64958,-0.2809778 1.35918,-0.6205349 1.81831,-0.8319182 0.45913,-0.2113834 0.66777,-0.2943887 0.77334,-0.3363872 0.10557,-0.041998 0.10557,-0.042041 0.016,-0.094777 z"
+       id="path23052-1"
+       inkscape:path-effect="#path-effect23054-7"
+       inkscape:original-d="m 163.49081,8.7496433 c -0.18067,-0.102963 -0.35933,-0.208119 -0.53596,-0.315461 -0.37018,-0.232998 -0.73742,-0.464493 -1.10176,-0.694499 -0.48379,-0.256272 -0.97263,-0.515544 -1.46157,-0.775202 -0.44254,-0.159162 -0.88003,-0.3168 -1.3217,-0.476243 -0.40485,-0.03072 -0.80429,-0.06127 -1.21032,-0.09256 -0.27591,0.01107 -0.54282,0.02158 -0.82143,0.03233 -0.70494,0.139635 -1.38188,0.273549 -2.07626,0.410743 0.17605,0.593148 0.34951,1.176709 0.52685,1.772399 0.0324,0.187526 0.0642,0.371459 0.0967,0.55712 0.31594,0.424459 0.63179,0.8483067 0.94755,1.2715377 0.21313,0.04162 0.42548,0.08286 0.64061,0.124368 0.3761,-0.002 0.7457,-0.0042 1.12159,-0.0067 0.22498,0.04306 0.44504,0.08489 0.67227,0.127851 0.58754,-0.22046 1.1771,-0.443114 1.76869,-0.667953 0.70758,-0.3373657 1.41718,-0.6769257 2.12882,-1.0186787 0.20662,-0.08079 0.41526,-0.16381 0.62592,-0.249009 z"
+       sodipodi:nodetypes="sccccccccccccccccs">
+      <title
+         id="title5374-8">thalamus_VA_lateral_R</title>
+    </path>
+    <path
+       style="fill:#00ffc0;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 154.58853,6.9173825 c -0.29363,-0.048313 -0.87548,-0.1440498 -1.55035,-0.1876942 -0.67486,-0.043644 -1.4291,-0.03445 -2.01109,-0.021916 -0.58198,0.012534 -0.98024,0.02821 -1.52914,0.1811684 -0.54889,0.1529581 -1.24802,0.4422495 -1.85378,0.728027 -0.60577,0.2857774 -1.11821,0.5677177 -1.78242,1.0344666 -0.66421,0.466749 -1.49275,1.1277138 -2.11425,1.742039 -0.62151,0.614326 -1.04783,1.19245 -1.40552,1.910507 -0.35769,0.718058 -0.64117,1.560804 -0.742,2.036801 -0.10083,0.475997 -0.0133,0.564766 0.30178,0.716195 0.31506,0.15143 0.85954,0.366833 1.20799,0.508936 0.34845,0.142104 0.50075,0.210907 0.76524,0.287771 0.2645,0.07686 0.64178,0.161731 1.17316,0.20951 0.53138,0.04778 1.21736,0.05817 1.9438,-0.0076 0.72643,-0.06577 1.49366,-0.20815 2.26069,-0.512051 0.76704,-0.303901 1.53398,-0.770369 2.06891,-1.115392 0.53492,-0.345023 0.83773,-0.568845 1.06702,-0.764617 0.2293,-0.195772 0.38472,-0.363932 0.64382,-0.586253 0.25911,-0.22232 0.62219,-0.498383 1.06515,-0.802633 0.44295,-0.30425 0.96587,-0.63646 1.3376,-0.850764 0.37172,-0.214304 0.59232,-0.310244 0.85806,-0.532031 0.26574,-0.221786 0.5761,-0.57056 0.71088,-0.819262 0.13479,-0.2487008 0.0916,-0.3965725 -0.123,-0.7811868 -0.21458,-0.3846143 -0.60049,-1.0051426 -0.96252,-1.4324242 -0.36203,-0.4272816 -0.69808,-0.6594926 -0.86724,-0.7763802 -0.16916,-0.1168875 -0.16917,-0.1169065 -0.46279,-0.1652193 z"
+       id="path23062-4"
+       inkscape:path-effect="#path-effect23064-3"
+       inkscape:original-d="m 154.88215,6.9656953 c -0.58729,-0.09638 -1.16914,-0.192113 -1.75611,-0.288949 -0.76272,0.0095 -1.51696,0.01872 -2.28056,0.0278 -0.40028,0.01815 -0.79854,0.03383 -1.1948,0.04703 -0.70114,0.291479 -1.40027,0.580764 -2.09736,0.867865 -0.51447,0.284122 -1.02691,0.566067 -1.53731,0.845811 -0.81844,0.652967 -1.64698,1.313932 -2.46546,1.9668117 -0.42458,0.575719 -0.8509,1.153842 -1.27802,1.733098 -0.28835,0.856838 -0.57184,1.699583 -0.8618,2.561963 0.0882,0.08987 0.17576,0.178627 0.26261,0.266271 0.54246,0.217595 1.08693,0.433006 1.63344,0.646215 0.15026,0.07097 0.30256,0.139781 0.45687,0.206394 0.37527,0.08706 0.75256,0.17192 1.13188,0.254607 0.68397,0.01256 1.36995,0.02296 2.05797,0.03117 0.76521,-0.140196 1.53243,-0.282586 2.3017,-0.427161 0.76491,-0.464277 1.53185,-0.93074 2.30081,-1.399404 0.3008,-0.221631 0.60361,-0.445455 0.90845,-0.67148 0.15341,-0.165968 0.30883,-0.334136 0.46629,-0.50449 0.36106,-0.273873 0.72415,-0.549931 1.08925,-0.828182 0.5209,-0.330019 1.04382,-0.66223 1.56877,-0.996634 0.21857,-0.09375 0.43917,-0.18969 0.66179,-0.287816 0.30834,-0.346582 0.6187,-0.695358 0.93109,-1.0463257 -0.0452,-0.145691 -0.0884,-0.293567 -0.12965,-0.443635 -0.38794,-0.618344 -0.77385,-1.238874 -1.15774,-1.861588 -0.33789,-0.233129 -0.67395,-0.465333 -1.0121,-0.699352 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccccc">
+      <title
+         id="title5376-0">thalamus_DA_lateral_R</title>
+    </path>
+    <path
+       style="fill:#000fff;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 145.94362,17.076293 c -0.0159,-0.403435 -0.0477,-1.212421 -0.0742,-1.728738 -0.0265,-0.516316 -0.0478,-0.739844 -0.52347,-0.927954 -0.47571,-0.188109 -1.40405,-0.338546 -2.01704,-0.38274 -0.61298,-0.04419 -0.9064,0.01638 -1.30923,0.270004 -0.40284,0.25362 -0.90451,0.69378 -1.32605,1.123969 -0.42155,0.430189 -0.75108,0.838115 -1.0794,1.311952 -0.32833,0.473837 -0.64659,1.000867 -1.17478,1.559254 -0.52819,0.558386 -1.26053,1.140657 -1.56642,1.659888 -0.30589,0.519232 -0.1882,0.975812 -0.071,1.419925 0.11721,0.444112 0.23392,0.875793 0.33381,1.195794 0.0999,0.32 0.1829,0.528628 0.25415,0.756636 0.0713,0.228008 0.13083,0.474955 0.24095,0.738206 0.11013,0.263252 0.27075,0.543628 0.4331,0.867713 0.16235,0.324085 0.32639,0.69158 0.57313,1.116973 0.24674,0.425393 0.57922,0.913524 0.92081,1.223272 0.34159,0.309749 0.69595,0.445382 1.21303,0.456558 0.51708,0.01118 1.19817,-0.10289 1.67261,-0.239447 0.47445,-0.136558 0.74238,-0.296689 1.3284,-0.606511 0.58601,-0.309823 1.49035,-0.769237 2.08065,-1.173625 0.59029,-0.404387 0.86289,-0.751148 0.79718,-1.632621 -0.0657,-0.881473 -0.47053,-2.299023 -0.64224,-3.49023 -0.17171,-1.191206 -0.11004,-2.150719 -0.0791,-2.632781 0.031,-0.482062 0.0309,-0.482062 0.0151,-0.885497 z"
+       id="path23072-8"
+       inkscape:path-effect="#path-effect23074-0"
+       inkscape:original-d="m 145.9595,17.479728 c -0.0341,-0.806778 -0.066,-1.615761 -0.0955,-2.42694 -0.0233,-0.221338 -0.0445,-0.444872 -0.0638,-0.670597 -0.93036,-0.148246 -1.8587,-0.298684 -2.78501,-0.451308 -0.29923,0.06194 -0.59264,0.122533 -0.89025,0.183799 -0.50808,0.445825 -1.00975,0.885984 -1.51817,1.33203 -0.33471,0.414293 -0.66424,0.822218 -0.99842,1.235949 -0.3225,0.53393 -0.64076,1.060961 -0.9623,1.593537 -0.73477,0.584259 -1.4671,1.166534 -2.19701,1.746822 0.11567,0.458765 0.23337,0.915344 0.35308,1.369731 0.11469,0.433873 0.23141,0.865552 0.35014,1.295054 0.081,0.210831 0.16398,0.419467 0.24902,0.625919 0.0576,0.249139 0.11714,0.496095 0.17874,0.740865 0.15859,0.282567 0.31921,0.562941 0.48185,0.84113 0.16203,0.369682 0.32607,0.73718 0.49214,1.102484 0.32967,0.484531 0.66215,0.97266 0.99223,1.456752 0.35235,0.137821 0.70671,0.273458 1.06309,0.406901 0.67907,-0.111875 1.36016,-0.225943 2.04328,-0.342196 0.2659,-0.157939 0.53383,-0.31807 0.80378,-0.480387 0.9017,-0.457954 1.80604,-0.917368 2.713,-1.378233 0.27356,-0.348021 0.54616,-0.694783 0.81909,-1.041917 -0.40457,-1.415724 -0.8094,-2.833272 -1.21447,-4.252652 0.0617,-0.963119 0.12337,-1.922632 0.18553,-2.886743 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccc">
+      <title
+         id="title5432-9">thalamus_DP_lateral_R</title>
+    </path>
+    <path
+       style="fill:#00ff5c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 147.59398,15.118537 c 0.003,-0.109963 0.009,-0.332125 -0.0261,-0.472519 -0.0352,-0.140393 -0.11135,-0.196573 -0.34171,-0.30238 -0.23037,-0.105808 -0.60507,-0.257354 -0.91092,-0.173552 -0.30585,0.0838 -0.52262,0.403043 -0.64481,0.631622 -0.1222,0.228579 -0.1536,0.370373 -0.17748,0.511817 -0.0239,0.141444 -0.0405,0.282643 -0.0475,0.47515 -0.007,0.192507 -0.005,0.43654 -0.002,0.695338 0.003,0.258799 0.006,0.532387 0.0463,0.703556 0.04,0.171168 0.11684,0.242145 0.3608,0.147546 0.24397,-0.0946 0.66111,-0.358535 0.91561,-0.565463 0.25451,-0.206927 0.35919,-0.366401 0.42877,-0.483732 0.0696,-0.117331 0.1036,-0.192644 0.17165,-0.343278 0.068,-0.150633 0.17012,-0.376576 0.21387,-0.508453 0.0437,-0.131877 0.0275,-0.168231 0.0191,-0.18696 -0.008,-0.01873 -0.009,-0.01873 -0.006,-0.128692 z"
+       id="path23082-5"
+       inkscape:path-effect="#path-effect23084-5"
+       inkscape:original-d="m 147.59098,15.228501 c 0.004,-0.219982 0.0101,-0.442143 0.0182,-0.666495 -0.0782,-0.05402 -0.1544,-0.110179 -0.22857,-0.16855 -0.3849,-0.155369 -0.75961,-0.306912 -1.15013,-0.465155 -0.22111,0.325563 -0.43787,0.644806 -0.65027,0.957688 -0.0334,0.143978 -0.0648,0.285772 -0.0942,0.425372 -0.0187,0.143398 -0.0353,0.284601 -0.0499,0.42362 2e-4,0.246222 0.002,0.49026 0.007,0.732095 0.001,0.275765 0.005,0.549346 0.0101,0.820732 0.0747,0.07314 0.15151,0.144099 0.23031,0.212863 0.4112,-0.260095 0.82834,-0.524029 1.23424,-0.780941 0.10265,-0.157278 0.20734,-0.31675 0.31405,-0.478408 0.032,-0.07312 0.066,-0.148443 0.10207,-0.225946 0.10005,-0.223754 0.20211,-0.449701 0.30621,-0.677833 -0.0182,-0.03413 -0.0344,-0.0705 -0.0487,-0.109043 z"
+       sodipodi:nodetypes="scccccccccccccss">
+      <title
+         id="title5378-8">thalamus_VP_lateral_R</title>
+    </path>
+    <path
+       style="fill:#6cff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 150.23217,33.834305 c -0.45916,-0.204907 -1.37722,-0.614597 -2.44175,-1.058484 -1.06454,-0.443887 -2.27369,-0.921255 -3.36471,-1.558618 -1.09103,-0.637362 -2.06051,-1.432991 -2.99283,-2.085534 -0.93231,-0.652543 -1.82938,-1.163307 -2.43159,-1.848782 -0.60222,-0.685476 -0.90792,-1.541197 -1.1321,-2.169175 -0.22418,-0.627977 -0.36236,-1.015635 -0.54982,-1.597605 -0.18746,-0.58197 -0.42059,-1.347132 -0.6061,-1.912723 -0.18551,-0.565592 -0.32251,-0.928352 -0.48168,-1.229306 -0.15917,-0.300953 -0.34036,-0.539251 -0.65537,-0.791619 -0.31502,-0.252368 -0.77059,-0.522561 -1.30519,-0.488977 -0.53459,0.03358 -1.12382,0.365232 -1.8608,0.970729 -0.73698,0.605497 -1.60687,1.472904 -2.02111,2.496904 -0.41424,1.024 -0.36726,2.197128 -0.32589,3.018934 0.0414,0.821806 0.077,1.291502 0.31254,2.002483 0.23554,0.710982 0.67521,1.674688 1.037,2.345958 0.36179,0.671269 0.64679,1.052754 1.11051,1.611175 0.46371,0.55842 1.10626,1.293981 1.97197,2.094124 0.86572,0.800142 1.95547,1.665628 2.67848,2.263039 0.72301,0.59741 1.0796,0.926985 1.46019,1.243333 0.38059,0.316348 0.78561,0.619781 1.2388,0.920697 0.45319,0.300915 0.95585,0.600198 1.54491,0.906118 0.58906,0.305919 1.26597,0.619074 1.81087,0.708432 0.54489,0.08936 0.95271,-0.04497 1.27041,-0.267859 0.3177,-0.222886 0.54457,-0.537069 0.86088,-0.888254 0.31631,-0.351185 0.70757,-0.724345 1.16266,-1.036795 0.45508,-0.31245 0.95553,-0.550648 1.4923,-0.841492 0.53677,-0.290843 1.09601,-0.627011 1.54778,-1.069599 0.45177,-0.442588 0.78989,-0.986632 0.95943,-1.259429 0.16954,-0.272798 0.16938,-0.272768 -0.28979,-0.477675 z"
+       id="path23092-2"
+       inkscape:path-effect="#path-effect23094-2"
+       inkscape:original-d="m 150.69134,34.039212 c -0.91845,-0.409555 -1.83651,-0.819237 -2.75414,-1.229056 -1.21142,-0.477959 -2.42057,-0.95533 -3.63216,-1.433961 -0.97055,-0.796126 -1.94003,-1.591751 -2.90846,-2.386907 -0.89615,-0.509917 -1.79322,-1.020675 -2.69023,-1.531739 -0.30752,-0.860051 -0.61322,-1.715772 -0.9215,-2.579486 -0.14009,-0.392239 -0.27827,-0.779895 -0.41788,-1.172384 -0.23532,-0.771464 -0.46844,-1.536627 -0.70268,-2.306371 -0.13903,-0.360571 -0.27602,-0.723335 -0.411,-1.088292 -0.18321,-0.236115 -0.36439,-0.474415 -0.54356,-0.714908 -0.44868,-0.265766 -0.90425,-0.535965 -1.36661,-0.810515 -0.60664,0.341552 -1.19587,0.6732 -1.79171,1.008465 -0.87815,0.875659 -1.74804,1.743066 -2.62358,2.616087 0.0468,1.17498 0.094,2.348099 0.14093,3.519382 0.0357,0.472338 0.0713,0.942037 0.10691,1.409098 0.43539,0.955004 0.87506,1.918709 1.31357,2.879221 0.28298,0.383663 0.56798,0.765149 0.85499,1.144435 0.64053,0.737753 1.28308,1.473313 1.92765,2.206688 1.0889,0.865199 2.17865,1.730683 3.26828,2.595693 0.35456,0.331766 0.71114,0.661346 1.06975,0.988725 0.40442,0.303364 0.80944,0.606793 1.21388,0.909423 0.50063,0.301467 1.00329,0.600749 1.50797,0.897846 0.67481,0.3125 1.35172,0.625651 2.03072,0.939461 0.41096,-0.135208 0.81878,-0.269543 1.23007,-0.405172 0.22403,-0.310301 0.4509,-0.624486 0.68063,-0.942565 0.40293,-0.384256 0.7942,-0.757414 1.19542,-1.140096 0.50898,-0.242132 1.00943,-0.480331 1.51782,-0.722432 0.56514,-0.339615 1.12438,-0.675784 1.68852,-1.014993 0.33931,-0.546068 0.67743,-1.090111 1.01656,-1.635677 z"
+       sodipodi:nodetypes="sccccccccccccccccccccccccccsss">
+      <title
+         id="title5434-3">hippocampus_posterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#00d8ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 155.47288,35.893933 c -0.49591,-0.234415 -1.01382,-0.489134 -1.61629,-0.761295 -0.60247,-0.272161 -1.28815,-0.561249 -1.81462,-0.689456 -0.52647,-0.128208 -0.88482,-0.09294 -1.13594,-0.01878 -0.25111,0.07416 -0.39485,0.185628 -0.93556,0.488412 -0.54071,0.302783 -1.4982,0.807913 -2.08428,1.130385 -0.58608,0.322472 -0.79238,0.457562 -1.05906,0.669291 -0.26668,0.21173 -0.59393,0.499713 -0.95069,0.787166 -0.35676,0.287453 -0.7453,0.576371 -1.00316,0.822017 -0.25786,0.245646 -0.37714,0.440795 -0.49793,0.604102 -0.12079,0.163307 -0.24257,0.295073 -0.39792,0.47218 -0.15535,0.177107 -0.34455,0.399697 -0.30874,0.76856 0.0358,0.368863 0.29714,0.883212 0.99669,1.615256 0.69955,0.732045 1.84011,1.684166 2.55087,2.310628 0.71077,0.626462 0.99867,0.93339 1.6966,1.464693 0.69793,0.531303 1.80574,1.287198 2.90217,1.96449 1.09643,0.677293 2.18392,1.276966 3.03951,1.675769 0.8556,0.398803 1.50426,0.608091 2.71905,0.692447 1.21479,0.08436 3.01732,0.04552 4.02884,-0.194085 1.01152,-0.239606 1.25583,-0.683198 1.21485,-1.311964 -0.041,-0.628765 -0.36923,-1.44116 -0.73125,-2.305164 -0.36201,-0.864004 -0.7578,-1.779551 -1.06034,-2.476569 -0.30254,-0.697019 -0.51184,-1.175508 -0.97102,-2.088662 -0.45919,-0.913153 -1.16826,-2.26077 -1.65593,-3.08837 -0.48767,-0.8276 -0.75369,-1.13455 -0.93033,-1.307812 -0.17664,-0.173262 -0.26282,-0.212197 -0.33905,-0.282727 -0.0762,-0.07053 -0.14379,-0.173709 -0.41518,-0.332842 -0.2714,-0.159134 -0.74539,-0.373257 -1.24129,-0.607673 z"
+       id="path23102-2"
+       inkscape:path-effect="#path-effect23104-3"
+       inkscape:original-d="m 155.49565,35.914613 c -0.51994,-0.252529 -1.03785,-0.507251 -1.55374,-0.764158 -0.6879,-0.289717 -1.37358,-0.578804 -2.06582,-0.870967 -0.36039,0.03748 -0.71875,0.07272 -1.07509,0.105803 -0.14578,0.11366 -0.28952,0.225127 -0.43124,0.334409 -0.93995,0.495987 -1.89744,1.001118 -2.86093,1.509301 -0.20832,0.13728 -0.41462,0.272368 -0.6189,0.405271 -0.32928,0.290183 -0.65653,0.578165 -0.98176,0.863962 -0.38846,0.288916 -0.777,0.577836 -1.17193,0.871441 -0.12132,0.197339 -0.2406,0.392493 -0.35787,0.585454 -0.1238,0.133962 -0.24559,0.265723 -0.36535,0.395299 -0.19095,0.224628 -0.38014,0.447226 -0.56992,0.6705 0.26115,0.514576 0.52248,1.028929 0.78403,1.543074 1.13761,0.950045 2.27817,1.902167 3.41341,2.849457 0.28626,0.305608 0.57416,0.612538 0.86146,0.918383 1.10861,0.756804 2.21642,1.512698 3.32714,2.270217 1.08217,0.59707 2.16966,1.196738 3.24283,1.788197 0.63808,0.206159 1.28674,0.415443 1.92907,0.622408 1.78733,-0.03829 3.58987,-0.07711 5.37011,-0.115697 0.24273,-0.440892 0.48703,-0.884485 0.7329,-1.330772 -0.33027,-0.810196 -0.65851,-1.622593 -0.98473,-2.437174 -0.39782,-0.913353 -0.79361,-1.8289 -1.18737,-2.746632 -0.21132,-0.476293 -0.42062,-0.95478 -0.62788,-1.435453 -0.71109,-1.345422 -1.42016,-2.693037 -2.12719,-4.042838 -0.26806,-0.304768 -0.53408,-0.611722 -0.79809,-0.920869 -0.0882,-0.03672 -0.17438,-0.07567 -0.25854,-0.116798 -0.0695,-0.100958 -0.13711,-0.204106 -0.20263,-0.309449 -0.47601,-0.211933 -0.95,-0.426059 -1.42197,-0.642369 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title5436-6">hippocampus_anterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#ff00e0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 169.04367,36.318605 c -0.12769,-0.263912 -0.38336,-0.792327 -0.68072,-1.236063 -0.29735,-0.443736 -0.63554,-0.801593 -0.95384,-1.101291 -0.31831,-0.299698 -0.61646,-0.54093 -0.99267,-0.760083 -0.37621,-0.219154 -0.83004,-0.416013 -1.90438,-0.444874 -1.07434,-0.02886 -2.76798,0.110364 -4.34064,0.24031 -1.57267,0.129946 -3.02094,0.250325 -3.73473,0.615043 -0.71379,0.364719 -0.68262,0.970279 -0.54422,1.569657 0.1384,0.599379 0.38269,1.191603 0.75906,1.786947 0.37636,0.595343 0.88174,1.18902 1.2664,1.656241 0.38465,0.467221 0.64221,0.800091 1.15873,0.848783 0.51652,0.04869 1.28998,-0.193371 1.83266,-0.383855 0.54269,-0.190485 0.85464,-0.329737 1.23921,-0.687718 0.38458,-0.35798 0.84131,-0.936145 1.35912,-1.275336 0.51781,-0.33919 1.08772,-0.435663 1.74094,-0.33523 0.65323,0.100433 1.38376,0.399739 2.05148,0.394741 0.66772,-0.005 1.26929,-0.314074 1.57028,-0.468717 0.30099,-0.154642 0.30101,-0.154642 0.17332,-0.418555 z"
+       id="path23122-6"
+       inkscape:path-effect="#path-effect23124-6"
+       inkscape:original-d="m 169.17136,36.582518 c -0.25563,-0.527705 -0.5113,-1.056119 -0.767,-1.585241 -0.33898,-0.358266 -0.67716,-0.716125 -1.01541,-1.074484 -0.29834,-0.24101 -0.59648,-0.482244 -0.89449,-0.723745 -0.45434,-0.196779 -0.90817,-0.393635 -1.36225,-0.590911 -1.69447,0.139515 -3.38811,0.278726 -5.08062,0.417653 -1.45282,0.12099 -2.90109,0.241339 -4.35999,0.362401 0.0311,0.608185 0.0623,1.213744 0.0935,1.816684 0.24552,0.59591 0.48981,1.188135 0.73529,1.782538 0.50728,0.596372 1.01265,1.190052 1.52131,1.787128 0.26065,0.337352 0.5182,0.670224 0.78048,1.008716 0.77144,-0.23987 1.5449,-0.481933 2.32039,-0.726189 0.30992,-0.137061 0.62187,-0.276308 0.93584,-0.417755 0.45468,-0.575604 0.91141,-1.153768 1.37018,-1.734485 0.57691,-0.09744 1.14681,-0.193946 1.72434,-0.291894 0.72878,0.298898 1.45931,0.598199 2.19156,0.89791 0.60335,-0.309872 1.20492,-0.618949 1.80685,-0.928326 z"
+       sodipodi:nodetypes="ccccccccccccccccc">
+      <title
+         id="title5440-6">amygdala_medial_lateral_R</title>
+    </path>
+    <path
+       style="fill:#b800ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 190.58864,17.309686 c -0.39134,-0.633415 -1.17099,-1.895329 -1.959,-3.138275 -0.78801,-1.242947 -1.58231,-2.463641 -2.47708,-3.430057 -0.89477,-0.9664154 -1.88428,-1.6725441 -2.86415,-2.1944519 -0.97987,-0.5219077 -1.94715,-0.8578458 -2.8734,-1.0019838 -0.92624,-0.144138 -1.80987,-0.09617 -2.30604,0.1261273 -0.49618,0.2222971 -0.60688,0.6238897 -0.99892,1.3644346 -0.39205,0.7405449 -1.06669,1.8276548 -1.41529,2.4652118 -0.3486,0.637557 -0.3724,0.825649 -0.30056,1.055926 0.0718,0.230278 0.23859,0.504451 0.54899,0.866222 0.31041,0.36177 0.76483,0.81178 1.05813,1.127964 0.29331,0.316185 0.42524,0.498146 1.00959,1.083174 0.58436,0.585029 1.62143,1.57356 2.46366,2.366999 0.84223,0.79344 1.48963,1.391803 2.09104,2.007701 0.60141,0.615898 1.15661,1.249096 1.81914,1.47268 0.66253,0.223583 1.43502,0.03721 2.40136,-0.08534 0.96633,-0.122552 2.12637,-0.180816 2.85863,-0.74645 0.73225,-0.565634 1.03279,-1.63271 1.18399,-2.169579 0.15121,-0.53687 0.15125,-0.536886 -0.24009,-1.170301 z"
+       id="path23142-3"
+       inkscape:path-effect="#path-effect23144-3"
+       inkscape:original-d="m 190.97998,17.943101 c -0.78293,-1.266678 -1.56257,-2.528595 -2.34325,-3.792722 -0.79534,-1.221758 -1.58964,-2.442456 -2.38605,-3.6669 -0.99306,-0.7082997 -1.98257,-1.4144267 -2.97388,-2.1222067 -0.96835,-0.33602 -1.93563,-0.671963 -2.9038,-1.008493 -0.88422,0.0482 -1.76785,0.09615 -2.65087,0.143904 -0.10947,0.396623 -0.22017,0.798215 -0.32795,1.189747 -0.67666,1.089299 -1.35131,2.1764037 -2.02392,3.2613237 -0.0258,0.19028 -0.0496,0.378372 -0.0714,0.564271 0.16473,0.27636 0.33148,0.550536 0.50026,0.822517 0.45238,0.452186 0.9068,0.902195 1.36323,1.350003 0.12992,0.184156 0.26185,0.366119 0.3958,0.54589 1.03506,0.990728 2.07213,1.979263 3.11124,2.965613 0.64539,0.600554 1.29279,1.198923 1.94223,1.795106 0.55316,0.635384 1.10837,1.268574 1.66559,1.899579 0.77046,-0.184188 1.54295,-0.370553 2.31745,-0.559119 1.15779,-0.05794 2.31783,-0.1162 3.48016,-0.174793 0.30204,-1.072926 0.60258,-2.140001 0.90512,-3.213704 z"
+       sodipodi:nodetypes="cccccccccccccccccc">
+      <title
+         id="title5370-4">caudate_anterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#ff0017;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 168.02779,36.065477 c -0.21302,-0.146005 -0.63847,-0.437605 -1.25311,-0.578196 -0.61463,-0.140591 -1.40889,-0.130238 -2.18142,0.103704 -0.77252,0.233942 -1.47984,0.675911 -1.9147,1.024203 -0.43487,0.348293 -0.57362,0.58654 -0.97782,0.969231 -0.4042,0.382691 -1.08335,0.918695 -1.59196,1.258249 -0.50861,0.339555 -0.84169,0.479641 -0.86687,1.147577 -0.0252,0.667935 0.25465,1.863148 0.42963,2.543773 0.17498,0.680625 0.24502,0.847175 0.34116,1.139821 0.0961,0.292646 0.21841,0.711075 0.56447,1.437796 0.34606,0.726721 0.91588,1.762382 1.34374,2.487637 0.42787,0.725256 0.71469,1.141579 1.3087,1.425515 0.59401,0.283936 1.49125,0.434254 2.31975,0.473669 0.82849,0.03942 1.58748,-0.03278 2.08096,-0.125759 0.49348,-0.09298 0.72174,-0.20777 0.90681,-0.352065 0.18507,-0.144296 0.32632,-0.319154 0.41793,-0.408529 0.0916,-0.08937 0.13392,-0.09104 0.28777,-0.21253 0.15385,-0.121487 0.41938,-0.364723 0.56219,-0.518184 0.14281,-0.153462 0.16143,-0.217643 0.29383,-0.88949 0.1324,-0.671846 0.37831,-1.951245 0.51342,-2.824293 0.13512,-0.873047 0.15909,-1.339552 0.0348,-2.339627 -0.1243,-1.000075 -0.39423,-2.515917 -0.63801,-3.400742 -0.24378,-0.884826 -0.45876,-1.126546 -0.7488,-1.388808 -0.29005,-0.262263 -0.65445,-0.54439 -0.83693,-0.685674 -0.18249,-0.141284 -0.1825,-0.141274 -0.39552,-0.287278 z"
+       id="path23112-4"
+       inkscape:path-effect="#path-effect23114-7"
+       inkscape:original-d="m 168.24081,36.211481 c -0.42621,-0.291764 -0.85166,-0.583359 -1.27702,-0.875268 -0.80374,0.01066 -1.598,0.02103 -2.41122,0.03143 -0.73179,0.457352 -1.43911,0.899321 -2.16866,1.355084 -0.14077,0.240431 -0.27953,0.478676 -0.41626,0.714728 -0.67108,0.52969 -1.35023,1.065696 -2.03191,1.603635 -0.33509,0.142271 -0.66817,0.282357 -0.99922,0.42025 0.2778,1.197404 0.55763,2.392616 0.83948,3.585634 0.068,0.168727 0.13806,0.335271 0.21012,0.499613 0.12026,0.420614 0.24254,0.839043 0.36684,1.255278 0.56779,1.037856 1.1376,2.07352 1.70945,3.10699 0.28613,0.415839 0.57295,0.832161 0.86045,1.248959 0.90072,0.151151 1.79796,0.301474 2.69822,0.452045 0.75696,-0.06999 1.51595,-0.142209 2.27695,-0.216595 0.22624,-0.112609 0.4545,-0.227403 0.68479,-0.344389 0.13923,-0.172659 0.28048,-0.347519 0.42375,-0.524565 0.0402,8.1e-4 0.0825,-8.55e-4 0.12678,-0.005 0.2635,-0.241043 0.52903,-0.484278 0.79658,-0.729699 0.0166,-0.06206 0.0352,-0.126248 0.0559,-0.192659 0.24388,-1.277196 0.48979,-2.556594 0.73771,-3.838176 0.0219,-0.464317 0.0459,-0.93082 0.0719,-1.399515 -0.27292,-1.531316 -0.54285,-3.047158 -0.81458,-4.57443 -0.21582,-0.242224 -0.4308,-0.48394 -0.64591,-0.726263 -0.36494,-0.282165 -0.72934,-0.564296 -1.09413,-0.847097 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccc">
+      <title
+         id="title5438-2">amygdala_lateral_lateral_R</title>
+    </path>
+    <path
+       style="fill:#0074ff;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="M 177.97099,5.6909707 C 177.25869,5.1342889 176.1478,4.7312663 174.8729,4.2753232 173.598,3.81938 172.17096,3.3147512 170.52505,2.9895618 168.87913,2.6643723 167.0255,2.5209921 165.2985,2.6511697 c -1.72699,0.1301775 -3.31852,0.5337947 -4.19588,0.8749459 -0.87737,0.3411512 -1.03926,0.6141548 -0.92642,0.9663492 0.11284,0.3521944 0.50007,0.7759859 0.95356,1.2483894 0.4535,0.4724035 0.97214,0.9922053 1.63071,1.6584 0.65857,0.6661946 1.45634,1.4780453 3.01693,2.3252981 1.56058,0.8472527 3.88468,1.7299607 5.26724,2.2113897 1.38255,0.481429 1.82408,0.561469 2.31103,0.566934 0.48695,0.0055 1.02002,-0.06423 1.42948,-0.177238 0.40946,-0.113008 0.69552,-0.270401 1.24053,-0.656959 0.545,-0.386558 1.34881,-1.002718 1.93712,-1.7117051 0.58831,-0.7089872 0.95409,-1.4988796 0.98738,-2.2560649 0.0333,-0.7571853 -0.2669,-1.4532566 -0.97919,-2.0099383 z"
+       id="path23032-9"
+       inkscape:path-effect="#path-effect23034-5"
+       inkscape:original-d="m 178.37831,5.5404773 c -1.11971,-0.405932 -2.2306,-0.808957 -3.34546,-1.213707 -1.43494,-0.507132 -2.86198,-1.011759 -4.29438,-1.518576 -1.85936,-0.143586 -3.71299,-0.286967 -5.57301,-0.431078 -1.59355,0.405809 -3.18508,0.809426 -4.77458,1.210849 -0.16568,0.279269 -0.32757,0.552273 -0.49201,0.829699 0.38995,0.427192 0.77719,0.850982 1.16589,1.275943 0.51829,0.519855 1.03693,1.039663 1.55595,1.559417 0.79812,0.812635 1.59589,1.624486 2.39421,2.436467 2.32208,0.8848997 4.64618,1.7676087 6.9723,2.6481237 0.43952,0.08223 0.88105,0.162269 1.32461,0.240122 0.53104,-0.06748 1.06411,-0.137199 1.59919,-0.209081 0.28404,-0.155199 0.57011,-0.312591 0.85819,-0.472168 0.80178,-0.613966 1.60559,-1.230126 2.41142,-1.84847 0.3704,-0.8000677 0.73618,-1.5899617 1.10889,-2.3945967 -0.30631,-0.709589 -0.60649,-1.405661 -0.91121,-2.112944 z"
+       sodipodi:nodetypes="cccccccccccccccc">
+      <title
+         id="title5372-2">caudate_posterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#ff007c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 177.20464,12.905079 c -0.2179,-0.11339 -0.65302,-0.339808 -1.11603,-0.48898 -0.463,-0.149172 -0.95293,-0.221218 -1.45648,-0.246907 -0.50355,-0.02569 -1.02029,-0.0053 -1.46838,0.05259 -0.44809,0.05794 -0.82403,0.152145 -0.93666,0.802333 -0.11264,0.650189 0.0446,1.842245 -0.16626,2.855754 -0.21083,1.013508 -0.78645,1.858137 -1.10129,2.357704 -0.31483,0.499567 -0.36965,0.653947 -0.55885,0.889446 -0.1892,0.2355 -0.5116,0.552626 -0.75698,0.882192 -0.24537,0.329566 -0.41459,0.671106 -0.5385,0.995642 -0.12391,0.324537 -0.20314,0.632077 -0.46641,1.296979 -0.26328,0.664903 -0.71013,1.687122 -1.01062,2.398948 -0.30048,0.711826 -0.45227,1.106841 -0.66625,1.497463 -0.21399,0.390622 -0.48621,0.768202 -0.80649,1.132845 -0.32028,0.364642 -0.68469,0.713179 -0.93343,1.119048 -0.24874,0.405868 -0.37686,0.862889 -0.25335,1.26409 0.12351,0.401201 0.49911,0.749512 1.45491,1.202498 0.9558,0.452986 2.47676,1.003962 3.7977,1.562271 1.32093,0.558309 2.44224,1.124731 3.59086,1.353072 1.14862,0.228341 2.33168,0.120886 3.47501,-0.111469 1.14333,-0.232354 2.25677,-0.593303 3.37641,-1.068072 1.11965,-0.47477 2.21738,-1.051018 2.9264,-1.465825 0.70902,-0.414807 1.03381,-0.671137 1.53694,-1.19806 0.50313,-0.526924 1.18511,-1.32591 1.53118,-2.241055 0.34608,-0.915145 0.35337,-1.933905 0.22846,-2.624315 -0.12492,-0.69041 -0.38245,-1.045593 -0.65871,-1.491189 -0.27626,-0.445596 -0.57136,-0.981956 -1.03449,-1.745054 -0.46313,-0.763098 -1.09409,-1.752506 -1.81655,-2.698604 -0.72246,-0.946099 -1.53535,-1.847588 -2.54327,-2.868977 -1.00792,-1.021389 -2.2075,-2.159352 -2.80923,-2.730165 -0.60172,-0.570813 -0.60173,-0.570812 -0.81964,-0.684202 z"
+       id="path23132-8"
+       inkscape:path-effect="#path-effect23134-6"
+       inkscape:original-d="m 177.42255,13.018469 c -0.43714,-0.22423 -0.87226,-0.450644 -1.30535,-0.679252 -0.49195,-0.06985 -0.98188,-0.141903 -1.46978,-0.216136 -0.51875,0.02281 -1.03549,0.04315 -1.5502,0.06102 -0.38152,0.09578 -0.75746,0.189984 -1.14157,0.28607 0.15857,1.204163 0.31579,2.396218 0.47163,3.57614 -0.57764,0.846819 -1.15326,1.691446 -1.72685,2.533879 -0.0568,0.156567 -0.11165,0.310933 -0.16443,0.463123 -0.32441,0.319309 -0.64681,0.636433 -0.96718,0.951364 -0.17123,0.343729 -0.34045,0.685266 -0.50764,1.024609 -0.0813,0.309738 -0.16048,0.61729 -0.23768,0.922649 -0.44887,1.024409 -0.89573,2.046625 -1.34055,3.066648 -0.15536,0.40398 -0.30714,0.798998 -0.46142,1.200799 -0.27362,0.379461 -0.54584,0.757041 -0.81667,1.132756 -0.36969,0.353599 -0.7341,0.702141 -1.10292,1.054868 -0.1288,0.458961 -0.25692,0.915981 -0.38435,1.37106 0.37438,0.347574 0.74998,0.695889 1.12798,1.046016 1.53371,0.555881 3.05467,1.106856 4.57976,1.659041 1.11674,0.564438 2.23805,1.130858 3.35457,1.694539 1.18103,-0.105267 2.36409,-0.21272 3.54916,-0.322365 1.10146,-0.356915 2.21489,-0.717866 3.34034,-1.082863 1.11384,-0.584595 2.21158,-1.160835 3.30709,-1.736032 0.32277,-0.254141 0.64756,-0.510468 0.97436,-0.768988 0.67916,-0.795706 1.36113,-1.594697 2.04594,-2.396973 0.007,-1.028004 0.0144,-2.046763 0.022,-3.072877 -0.25955,-0.352987 -0.51708,-0.708168 -0.77258,-1.065541 -0.29713,-0.534174 -0.59223,-1.070534 -0.88531,-1.609087 -0.63095,-0.98885 -1.26191,-1.978258 -1.89288,-2.968224 -0.81392,-0.90219 -1.62681,-1.803678 -2.44032,-2.706299 -1.20231,-1.140142 -2.4019,-2.278102 -3.60514,-3.419945 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccc">
+      <title
+         id="title5444-9">putamen_anterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#ffc800;fill-opacity:1;stroke:#000000;stroke-width:0.398457;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 172.75302,15.869082 c -0.0357,-0.556195 -0.10678,-1.664625 -0.16771,-2.426012 -0.0609,-0.761388 -0.11164,-1.173388 -0.26243,-1.496159 -0.15078,-0.322772 -0.40139,-0.554398 -0.80812,-0.797343 -0.40673,-0.242946 -0.96871,-0.496824 -2.13696,-0.92242 -1.16825,-0.4255968 -2.94468,-1.023658 -4.36132,-1.2902126 -1.41663,-0.2665547 -2.4628,-0.2003045 -3.8166,0.066729 -1.3538,0.2670332 -3.00445,0.7327247 -4.42699,1.3183449 -1.42254,0.585621 -2.60293,1.285111 -3.75654,1.90089 -1.1536,0.615779 -2.27133,1.14277 -3.0321,1.535147 -0.76076,0.392376 -1.16462,0.649764 -1.68282,1.067136 -0.51821,0.417372 -1.15099,0.994268 -1.61472,1.478454 -0.46373,0.484186 -0.75883,0.8753 -0.94167,1.469011 -0.18284,0.593711 -0.25499,1.390029 -0.18703,2.232238 0.068,0.84221 0.27545,1.731027 0.4018,2.312632 0.12634,0.581604 0.17164,0.855815 0.22995,1.025115 0.0583,0.1693 0.12989,0.235459 0.35376,0.658391 0.22386,0.422931 0.5995,1.20163 0.87881,1.725156 0.27931,0.523526 0.46239,0.792321 0.66544,1.129457 0.20305,0.337137 0.426,0.742353 1.11767,1.66361 0.69166,0.921257 1.85224,2.359043 3.20308,3.220044 1.35085,0.861001 2.89361,1.145807 4.32012,0.986147 1.42651,-0.15966 2.73866,-0.765538 3.93448,-1.228586 1.19582,-0.463049 2.2886,-0.788676 3.18523,-1.326072 0.89663,-0.537396 1.58626,-1.278371 2.062,-1.879781 0.47574,-0.601409 0.73368,-1.060055 1.18167,-2.216185 0.448,-1.15613 1.08656,-3.01283 2.07022,-4.741905 0.98367,-1.729076 2.30136,-3.313894 2.96391,-4.110755 0.66255,-0.796861 0.66255,-0.796876 0.62687,-1.353071 z"
+       id="path23042-2"
+       inkscape:path-effect="#path-effect23044-3"
+       inkscape:original-d="m 172.7887,16.425277 c -0.0715,-1.112381 -0.14269,-2.220805 -0.21384,-3.333519 -0.0527,-0.409802 -0.10348,-0.821794 -0.15214,-1.235983 -0.25265,-0.229442 -0.50326,-0.46107 -0.75185,-0.694891 -0.564,-0.251687 -1.12599,-0.505559 -1.68594,-0.761624 -1.77547,-0.5974527 -3.5519,-1.1955157 -5.33318,-1.7954927 -1.05189,0.06685 -2.09806,0.13307 -3.14843,0.199379 -1.6572,0.4677 -3.30785,0.933395 -4.96582,1.4009867 -1.18711,0.703568 -2.3675,1.403059 -3.55451,2.106375 -1.11976,0.529184 -2.2375,1.056167 -3.35321,1.580973 -0.40589,0.259575 -0.80974,0.516973 -1.21158,0.77217 -0.63481,0.579088 -1.26758,1.155992 -1.89834,1.730695 -0.29712,0.393298 -0.59222,0.784412 -0.88529,1.173324 -0.0742,0.798522 -0.14633,1.594842 -0.21646,2.388977 0.20546,0.891009 0.41295,1.779825 0.62245,2.666449 0.0433,0.276404 0.0886,0.550614 0.13588,0.822633 0.0696,0.0684 0.14119,0.134552 0.21482,0.198543 0.37362,0.780887 0.74926,1.559588 1.12693,2.336096 0.18105,0.270973 0.36413,0.539768 0.54923,0.806362 0.22092,0.407408 0.44387,0.812622 0.66884,1.215652 1.15855,1.439973 2.31912,2.877762 3.48172,4.313357 1.54134,0.284802 3.0841,0.569605 4.62827,0.854416 1.30895,-0.604278 2.6211,-1.210158 3.92438,-1.812058 1.08835,-0.324155 2.18113,-0.649776 3.27833,-0.976879 0.69602,-0.747831 1.38565,-1.488808 2.08061,-2.235514 0.25592,-0.456451 0.51386,-0.915097 0.77382,-1.375935 0.63652,-1.851123 1.27508,-3.707822 1.91568,-5.570113 1.32683,-1.595834 2.64452,-3.180654 3.96963,-4.774364 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title5442-5">putamen_posterior_lateral_R</title>
+    </path>
+    <path
+       style="fill:#6cff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 250.92547,21.429205 c -0.11864,0.105231 -0.35454,0.314464 -0.52554,0.733141 -0.171,0.418677 -0.27811,1.045828 -0.40657,1.546363 -0.12846,0.500535 -0.27768,0.874232 -0.41706,1.514611 -0.13937,0.640379 -0.26875,1.54208 -0.33396,1.996537 -0.0652,0.454457 -2.40921,2.31817 -2.724,2.372685 -0.31479,0.05452 -0.93992,0.162774 -1.65198,0.615844 -0.71206,0.45307 -1.51341,1.249628 -1.93159,1.644743 -0.41819,0.395115 -0.45329,0.391108 -0.50814,0.403228 -0.0548,0.01212 -0.12903,0.0392 -0.54671,0.27595 -0.41767,0.23675 -1.17899,0.682663 -1.7801,0.968903 -0.6011,0.286239 -1.04189,0.41353 -1.82226,0.715366 -0.78037,0.301835 -1.90035,0.777859 -2.58906,1.054291 -0.68872,0.276431 -0.94618,0.353607 -1.33237,0.469372 -0.38619,0.115764 -0.9011,0.270117 -1.12875,0.543982 -0.22764,0.273866 -0.17091,0.666469 0.0733,1.107774 0.24419,0.441305 0.67471,0.929349 1.00639,1.307454 0.33167,0.378104 0.56264,0.644157 1.04988,1.10293 0.48724,0.458773 1.23192,1.111343 1.95434,1.477953 0.72241,0.36661 1.42369,0.446658 1.99445,0.423538 0.57076,-0.02312 1.01154,-0.150409 1.50892,-0.306699 0.49739,-0.15629 1.05137,-0.341702 1.57432,-0.565932 0.52295,-0.224231 1.01482,-0.487783 1.65242,-0.914632 0.63761,-0.426849 1.41371,-1.012094 2.14766,-1.547985 0.73394,-0.535891 1.42913,-1.024874 2.43146,-1.8694 1.00233,-0.844527 2.31154,-2.044886 3.24902,-3.137414 0.93748,-1.092529 1.50201,-2.076906 2.01607,-2.996495 0.51407,-0.919589 0.97289,-1.765678 1.33858,-2.586281 0.36569,-0.820604 0.63307,-1.607068 0.53205,-2.437909 -0.10101,-0.83084 -0.56771,-1.697124 -1.19054,-2.352682 -0.62284,-0.655557 -1.39623,-1.092948 -2.0078,-1.333841 -0.61156,-0.240893 -1.06088,-0.285572 -1.28733,-0.308091 -0.22645,-0.02252 -0.22645,-0.02253 -0.34509,0.0827 z"
+       id="path28406-6"
+       inkscape:path-effect="#path-effect28408-1"
+       inkscape:original-d="m 251.04411,21.323975 c -0.23729,0.210452 -0.47319,0.419684 -0.7077,0.627703 -0.10942,0.629014 -0.21654,1.256164 -0.32133,1.881462 -0.15155,0.375557 -0.30077,0.749253 -0.44766,1.121099 -0.13067,0.909435 -0.26007,1.811133 -0.39029,2.720075 l -2.344,1.863713 c -0.62956,0.109169 -1.25468,0.217434 -1.87538,0.324777 -0.80369,0.798412 -1.60503,1.594975 -2.40404,2.389679 -0.0374,-0.0019 -0.0725,-0.0059 -0.1052,-0.01201 -0.0764,0.02889 -0.15059,0.05596 -0.22238,0.08117 -0.76367,0.447776 -1.52499,0.893687 -2.28397,1.337746 -0.44313,0.129151 -0.88391,0.256444 -1.32236,0.381878 -1.1223,0.47788 -2.24228,0.9539 -3.35991,1.428062 -0.25979,0.07903 -0.51725,0.156207 -0.77238,0.231526 -0.51725,0.156206 -1.03216,0.310562 -1.54474,0.463059 0.0567,0.394211 0.11345,0.786813 0.17056,1.180195 0.43131,0.489387 0.86183,0.977433 1.29404,1.466939 0.23114,0.266697 0.4621,0.532756 0.69308,0.798361 0.74354,0.651965 1.48822,1.304533 2.23405,1.957723 0.69892,0.08218 1.4002,0.162233 2.10385,0.240146 0.43846,-0.125429 0.87924,-0.252721 1.32236,-0.381874 0.55165,-0.183553 1.10563,-0.368967 1.66195,-0.556238 0.48951,-0.261695 0.98138,-0.525239 1.47557,-0.790644 0.78077,-0.588763 1.55688,-1.174001 2.332,-1.758517 0.69286,-0.487131 1.38805,-0.976114 2.08558,-1.466956 1.30689,-1.198503 2.6161,-2.398865 3.92765,-3.601086 0.56346,-0.982738 1.12799,-1.967112 1.69357,-2.953121 0.46254,-0.853171 0.92137,-1.699258 1.38627,-2.556322 0.26504,-0.784613 0.53242,-1.571077 0.80214,-2.359399 -0.47048,-0.8727 -0.93717,-1.738985 -1.40692,-2.611554 -0.77581,-0.438443 -1.5492,-0.875831 -2.32175,-1.313068 -0.45042,-0.045 -0.89978,-0.08923 -1.35266,-0.134508 z"
+       sodipodi:nodetypes="cccccscccccccccccccccccccccccccc">
+      <title
+         id="title5115-7">hippocampus_posterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#ffc800;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 234.90598,28.378068 c -0.65991,-0.07533 -1.97763,-0.225738 -2.82855,-0.30252 -0.85092,-0.07678 -1.23483,-0.08015 -1.79998,-0.0028 -0.56515,0.07737 -1.31126,0.234915 -2.04161,0.343511 -0.73036,0.108596 -1.4451,0.16859 -2.24545,0.269485 -0.80035,0.100894 -1.68621,0.242485 -2.44119,0.38902 -0.75498,0.146535 -1.37902,0.297785 -2.00217,0.530375 -0.62316,0.23259 -1.24546,0.545844 -1.56909,0.822656 -0.32363,0.276813 -0.35097,0.516392 -0.36485,0.727054 -0.0139,0.210663 -0.0145,0.39263 0.006,0.551181 0.0209,0.158551 0.0635,0.295652 0.24517,0.478356 0.18164,0.182705 0.5021,0.410769 1.09901,0.584495 0.59692,0.173725 1.47311,0.293951 2.24721,0.615373 0.77411,0.321421 1.44377,0.843511 2.20311,1.182096 0.75934,0.338585 1.61509,0.496942 2.62222,0.369872 1.00714,-0.12707 2.16814,-0.542254 3.26013,-1.28671 1.092,-0.744456 2.15757,-1.846373 2.86601,-2.774507 0.70845,-0.928134 1.05479,-1.672657 1.40322,-2.421686 0,0 3.2e-4,5.6e-5 -0.65959,-0.07527 z"
+       id="path28396-2"
+       inkscape:path-effect="#path-effect28398-2"
+       inkscape:original-d="m 235.56589,28.453394 c -1.32009,-0.148276 -2.63781,-0.298689 -3.95317,-0.451238 -0.38623,-0.0015 -0.77014,-0.0049 -1.1517,-0.01011 -0.74844,0.159398 -1.49455,0.316946 -2.23832,0.472626 -0.71708,0.06185 -1.43182,0.121851 -2.14423,0.179983 -0.8882,0.143446 -1.77406,0.28504 -2.65759,0.424775 -0.62637,0.153104 -1.2504,0.304357 -1.8721,0.453751 -0.62464,0.315106 -1.24694,0.628362 -1.8669,0.939759 -0.03,0.24141 -0.0573,0.480993 -0.082,0.718756 -0.003,0.183826 -0.003,0.365796 -0.002,0.545903 0.0423,0.137081 0.0849,0.274178 0.12776,0.411297 0.3205,0.228443 0.64095,0.456513 0.96078,0.68378 0.87387,0.122127 1.75006,0.242353 2.6286,0.360683 0.66979,0.522567 1.33945,1.044654 2.00587,1.563853 0.8524,0.157937 1.70815,0.316319 2.56726,0.475069 1.15523,-0.413018 2.31623,-0.828202 3.45378,-1.235105 1.04638,-1.082129 2.11195,-2.184046 3.17834,-3.286751 0.35041,-0.75359 1.0453,-2.247087 1.0453,-2.247087 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title5111-8">putamen_posterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#ff007c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 211.9852,15.63358 c -0.41361,-0.09739 -1.23064,-0.28978 -2.1252,0.697375 -0.89457,0.987155 -1.85924,3.152609 -2.65977,4.575358 -0.80052,1.422748 -1.4361,2.103353 -1.86898,2.597946 -0.43288,0.494592 -0.66335,0.803023 -0.86004,1.059504 -0.19668,0.256482 -0.35951,0.461051 -0.39818,0.930381 -0.0387,0.46933 0.0448,1.204115 0.10154,2.173071 0.0567,0.968955 0.0868,2.171856 0.11288,3.165086 0.0261,0.99323 0.0482,1.776809 0.0277,2.444106 -0.0205,0.667298 -0.0834,1.218012 0.34011,1.655632 0.42348,0.43762 1.33455,0.764772 2.44306,0.947373 1.10852,0.1826 2.41528,0.220183 3.70775,-0.05738 1.29247,-0.277562 2.56242,-0.867562 3.71596,-1.255968 1.15354,-0.388406 2.17396,-0.570316 2.99001,-0.864045 0.81605,-0.293729 1.40305,-0.690256 1.88464,-1.401693 0.48159,-0.711436 0.84667,-1.723491 0.83159,-2.326739 -0.0151,-0.603249 -0.41241,-0.788074 -0.68685,-0.832201 -0.27444,-0.04413 -0.42468,0.0503 -0.74015,0.125228 -0.31547,0.07493 -0.79615,0.131638 -1.7141,0.110295 -0.91794,-0.02134 -2.27348,-0.120286 -3.27025,-0.304046 -0.99677,-0.18376 -1.63562,-0.451942 -2.06037,-0.639915 -0.42474,-0.187974 -0.6356,-0.295723 -0.82101,-0.497771 -0.18542,-0.202049 -0.34674,-0.499406 -0.0246,-1.493678 0.32212,-0.994273 1.12906,-2.687411 1.54639,-3.895329 0.41733,-1.207918 0.44397,-1.930136 0.48706,-2.552754 0.0431,-0.622617 0.10281,-1.145797 0.0786,-1.665037 -0.0242,-0.51924 -0.13285,-1.03374 -0.2509,-1.465844 -0.11804,-0.432105 -0.24554,-0.78139 -0.30945,-0.956477 -0.0639,-0.175087 -0.0639,-0.175087 -0.47745,-0.272479 z"
+       id="path28324-0"
+       inkscape:path-effect="#path-effect28326-1"
+       inkscape:original-d="m 212.3988,15.730972 c -0.82726,-0.194552 -1.64429,-0.386943 -2.46749,-0.581025 -0.966,2.168109 -1.93067,4.333563 -2.89401,6.496354 -0.63791,0.682464 -1.27349,1.363069 -1.90674,2.041815 -0.2328,0.310279 -0.46327,0.618708 -0.6914,0.925287 -0.16516,0.206422 -0.32798,0.410994 -0.48847,0.613706 0.0812,0.736646 0.16466,1.471435 0.25048,2.204371 0.0277,1.20475 0.0578,2.40765 0.0902,3.60869 0.0198,0.785428 0.042,1.569005 0.0664,2.350724 -0.0655,0.552537 -0.12834,1.103254 -0.18859,1.652145 0.90873,0.329011 1.8198,0.656155 2.73321,0.981457 1.30442,0.03943 2.61118,0.07702 3.92026,0.112746 1.27595,-0.592703 2.5459,-1.182706 3.82254,-1.775891 1.03044,-0.183548 2.05086,-0.365457 3.08662,-0.550251 0.59632,-0.40279 1.18333,-0.799313 1.77815,-1.201152 0.36819,-1.02111 0.73328,-2.033164 1.10178,-3.054223 -0.39965,-0.182969 -0.79697,-0.367796 -1.19196,-0.554475 -0.15259,0.09629 -0.30284,0.190715 -0.45075,0.283284 -0.48302,0.05857 -0.9637,0.115281 -1.44205,0.170133 -1.35787,-0.09709 -2.71341,-0.196021 -4.06662,-0.296825 -0.64119,-0.266324 -1.28004,-0.534507 -1.91656,-0.804549 -0.2132,-0.1059 -0.42405,-0.213651 -0.63258,-0.32326 -0.16365,-0.295506 -0.32497,-0.592862 -0.48396,-0.892078 0.80462,-1.691289 1.61156,-3.38443 2.42084,-5.079421 0.0243,-0.720364 0.051,-1.44258 0.0799,-2.166653 0.0571,-0.521353 0.11682,-1.044533 0.17916,-1.569539 -0.11098,-0.512651 -0.21962,-1.027151 -0.32593,-1.54351 -0.12983,-0.347431 -0.25732,-0.696719 -0.38249,-1.04786 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccc">
+      <title
+         id="title4562-0">putamen_anterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 198.83503,24.187166 c -0.66117,-0.200723 -1.98189,-0.601679 -2.72798,-0.811789 -0.74609,-0.210109 -0.91708,-0.229627 -1.25796,-0.0781 -0.34089,0.151522 -0.86398,0.480266 -1.18759,1.271647 -0.3236,0.791381 -0.45133,2.043725 -0.0584,2.982933 0.39289,0.939209 1.30704,1.56484 1.90183,1.931825 0.5948,0.366984 0.87111,0.475515 1.08491,0.538607 0.2138,0.06309 0.36578,0.08044 0.50979,-0.161755 0.14401,-0.242195 0.27856,-0.746489 0.34746,-1.094923 0.0689,-0.348435 0.0716,-0.540589 0.44186,-1.094667 0.3703,-0.554078 1.11003,-1.470449 1.49044,-2.014209 0.3804,-0.543761 0.3999,-0.714752 0.35928,-0.864794 -0.0406,-0.150042 -0.1416,-0.277045 -0.19209,-0.340546 -0.0505,-0.0635 -0.0503,-0.0635 -0.71151,-0.264225 z"
+       id="path28225-8"
+       inkscape:path-effect="#path-effect28227-6"
+       inkscape:original-d="m 199.4962,24.387889 c -1.32305,-0.399098 -2.64377,-0.800057 -3.96216,-1.202866 -0.17335,-0.01738 -0.34434,-0.0369 -0.51296,-0.05855 -0.51286,0.322347 -1.03595,0.651098 -1.55502,0.977268 -0.12835,1.256541 -0.25606,2.508887 -0.38371,3.762067 0.91344,0.625487 1.82759,1.251119 2.74243,1.876878 0.27397,0.110359 0.55028,0.218907 0.82892,0.325579 0.14963,0.01949 0.30161,0.03683 0.45597,0.05205 0.13219,-0.502444 0.26676,-1.006732 0.40364,-1.512875 3.9e-4,-0.190299 0.003,-0.382454 0.008,-0.576472 0.7374,-0.914511 1.47713,-1.830881 2.21918,-2.749103 0.0169,-0.169164 0.0364,-0.340155 0.0585,-0.512965 -0.10331,-0.125153 -0.20429,-0.252156 -0.30294,-0.38101 z"
+       sodipodi:nodetypes="scccccccccccss">
+      <title
+         id="title4423-2">accumbens_core_medial_R</title>
+    </path>
+    <path
+       style="fill:#5400ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 201.2803,24.880702 c -0.99685,-0.01679 -1.65336,0.06066 -2.57821,0.500391 -0.92485,0.439731 -2.10263,1.235934 -2.35196,2.242928 -0.24932,1.006993 0.43366,2.221072 1.04241,3.093453 0.60875,0.872382 1.14347,1.403606 1.87212,2.095139 0.72865,0.691532 1.65014,1.542251 2.57507,2.180437 0.92494,0.638187 1.86233,1.07067 2.80252,1.19359 0.94018,0.12292 1.86929,-0.06449 2.80264,-0.252762 0.37221,-0.30886 0.74715,-0.619978 1.05886,-0.882788 0.3117,-0.26281 0.56788,-0.483767 0.72517,-0.841157 0.15729,-0.357391 0.21367,-0.851359 0.10436,-1.501445 -0.10931,-0.650086 -0.38273,-1.448874 -0.8726,-2.379771 -0.48988,-0.930898 -1.19684,-1.994015 -1.82662,-2.88387 -0.62979,-0.889856 -1.18297,-1.607331 -2.11739,-2.021952 -0.93441,-0.41462 -2.23953,-0.525399 -3.23637,-0.542193 z"
+       id="path28235-5"
+       inkscape:path-effect="#path-effect28237-7"
+       inkscape:original-d="m 200.95207,24.785025 c -0.6686,0.07904 -1.32511,0.156498 -1.98991,0.234767 -1.18491,0.80105 -2.36269,1.597252 -3.54478,2.396345 0.68317,1.215023 1.36615,2.429102 2.04894,3.642236 0.53476,0.531699 1.06948,1.062919 1.606,1.595516 0.92079,0.85047 1.84228,1.701188 2.75817,2.546343 0.93407,0.43125 1.87146,0.863728 2.81434,1.298455 0.93763,-0.188993 2.80006,-0.564809 2.80006,-0.564809 0,0 0.74714,-0.619986 1.11664,-0.926581 0.25385,-0.219103 0.51002,-0.440065 0.76853,-0.662878 0.0538,-0.492145 0.11016,-0.986116 0.16916,-1.481906 -0.27551,-0.804021 -0.54894,-1.602807 -0.8227,-2.403451 -0.70596,-1.061081 -1.41292,-2.1242 -2.11903,-3.186557 -0.55345,-0.717334 -1.10664,-1.434807 -1.65967,-2.152566 -1.31558,-0.111427 -2.6207,-0.222222 -3.94575,-0.334914 z"
+       sodipodi:nodetypes="ccccccccccccccc">
+      <title
+         id="title4427-8">accumbens_shell_medial_R</title>
+    </path>
+    <path
+       style="fill:#d0ff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 223.77513,31.70061 c 0.31436,-0.02136 0.9457,-0.06427 1.61275,-0.219688 0.66706,-0.155421 1.35803,-0.419665 2.01274,-0.679976 0.65471,-0.260312 1.2575,-0.510558 1.78871,-0.831135 0.53121,-0.320577 0.99453,-0.714002 1.26235,-1.015467 0.26782,-0.301465 0.33958,-0.514122 0.27988,-0.703799 -0.0597,-0.189678 -0.24174,-0.342223 -0.45839,-0.451954 -0.21665,-0.109732 -0.45207,-0.167687 -0.7134,-0.142436 -0.26132,0.02525 -0.53842,0.133425 -1.4029,0.187514 -0.86447,0.05409 -2.31192,0.05319 -3.63697,0.08151 -1.32505,0.02832 -2.52694,0.08572 -3.35014,0.300129 -0.8232,0.214412 -1.25585,0.583448 -1.41861,1.205969 -0.16276,0.622522 -0.0581,1.499207 0.60386,1.922942 0.66191,0.423735 1.88907,0.395604 2.49741,0.381659 0.60835,-0.01394 0.60835,-0.0139 0.92271,-0.03526 z"
+       id="path28334-0"
+       inkscape:path-effect="#path-effect28336-6"
+       inkscape:original-d="m 223.46077,31.721973 c 0.62873,-0.04256 1.26007,-0.08546 1.89401,-0.128713 0.70019,-0.267677 1.39116,-0.531916 2.0934,-0.80057 0.60718,-0.251979 1.20997,-0.502227 1.81131,-0.75196 0.46099,-0.391569 0.92431,-0.784997 1.38997,-1.180276 0.0699,-0.207622 0.14165,-0.420281 0.21527,-0.637986 -0.19305,-0.161374 -0.3751,-0.313922 -0.56553,-0.473867 -0.24273,-0.05955 -0.47816,-0.117464 -0.71929,-0.177071 -0.28143,0.109958 -0.55853,0.218132 -0.83798,0.327129 -1.44953,-7.01e-4 -2.89698,-0.0016 -4.34233,-0.0027 -1.20474,0.0577 -2.40663,0.115108 -3.61813,0.172788 -0.43498,0.370892 -0.86763,0.739924 -1.29794,1.107106 0.10461,0.877972 0.20932,1.754657 0.31413,2.630046 1.21926,-0.02777 2.44642,-0.0559 3.66311,-0.08397 z"
+       sodipodi:nodetypes="cccccccccccccc">
+      <title
+         id="title5109-3">pallidum_posterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#000fff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 244.70877,18.561201 c -0.84625,0.42215 -2.53616,1.265152 -3.5661,1.914982 -1.02994,0.649831 -1.4007,1.105538 -1.753,1.752618 -0.35231,0.647079 -0.68706,1.485399 -0.93079,2.314057 -0.24374,0.828658 -0.39701,1.647844 -0.3648,2.32808 0.0322,0.680235 0.24915,1.222949 0.6419,1.615879 0.39274,0.392929 0.96203,0.637057 1.42014,0.908945 0.4581,0.271888 0.80227,0.569935 1.38949,0.915494 0.58722,0.345559 1.4188,0.739296 2.126,0.820911 0.7072,0.08161 1.29149,-0.15051 1.90354,-0.430671 0.61204,-0.280162 1.24934,-0.607377 1.71081,-0.841263 0.46148,-0.233886 0.75699,-0.379442 1.21678,-0.831888 0.45979,-0.452446 1.07488,-1.202721 1.45992,-1.97125 0.38504,-0.768529 0.54357,-1.567867 0.66983,-2.295381 0.12626,-0.727514 0.22224,-1.39386 0.13257,-1.833769 -0.0897,-0.439909 -0.36288,-0.649366 -0.68606,-0.827436 -0.32318,-0.17807 -0.69173,-0.322105 -1.06924,-0.501781 -0.37751,-0.179676 -0.7598,-0.39287 -1.03973,-0.804377 -0.27992,-0.411508 -0.44963,-1.00896 -0.62743,-1.381861 -0.17779,-0.372901 -0.36097,-0.51334 -0.54173,-0.673338 -0.18077,-0.159999 -0.35946,-0.339764 -0.56772,-0.443117 -0.20827,-0.103353 -0.44424,-0.130289 -0.56118,-0.143638 -0.11695,-0.01335 -0.11694,-0.01335 -0.9632,0.408804 z"
+       id="path28386-2"
+       inkscape:path-effect="#path-effect28388-2"
+       inkscape:original-d="m 245.55503,18.139051 c -1.69223,0.844862 -3.38214,1.687856 -5.06971,2.529 -0.37309,0.457556 -0.74385,0.91326 -1.11226,1.367115 -0.33708,0.840164 -0.67182,1.678486 -1.00423,2.514941 -0.15564,0.821043 -0.30888,1.640235 -0.45981,2.457564 0.21461,0.544563 0.43156,1.087276 0.65084,1.62813 0.56876,0.244188 1.13805,0.488317 1.70923,0.732966 0.34494,0.299106 0.68911,0.597153 1.03335,0.894872 0.82925,0.395591 1.66083,0.789331 2.49474,1.181212 0.58195,-0.230266 1.16624,-0.46239 1.75285,-0.696367 0.63719,-0.3271 1.27448,-0.654318 1.90451,-0.977865 0.29318,-0.143708 0.58869,-0.28926 0.88653,-0.436671 0.62141,-0.758091 1.2365,-1.508363 1.85024,-2.256896 0.15617,-0.788529 0.31473,-1.587863 0.47177,-2.378628 0.0937,-0.664508 0.18961,-1.330864 0.28794,-1.999081 -0.2758,-0.211077 -0.54901,-0.420536 -0.82431,-0.631957 -0.37098,-0.144708 -0.73953,-0.288747 -1.1092,-0.43349 -0.38539,-0.214604 -0.76769,-0.427794 -1.15498,-0.644091 -0.17268,-0.606887 -0.34239,-1.204341 -0.51397,-1.809338 -0.18551,-0.138586 -0.36869,-0.279023 -0.54953,-0.42131 -0.18103,-0.177913 -0.35972,-0.357677 -0.53607,-0.539299 -0.23835,-0.0248 -0.47432,-0.05174 -0.70794,-0.08081 z"
+       sodipodi:nodetypes="sccccccccccccccccccccss">
+      <title
+         id="title5107-3">thalamus_DP_medial_R</title>
+    </path>
+    <path
+       style="fill:#00d8ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 234.9214,38.417732 c -0.25391,-0.150998 -0.76083,-0.452452 -1.11837,-0.642097 -0.35754,-0.189645 -0.56519,-0.267483 -0.85797,-0.314168 -0.29279,-0.04668 -0.66988,-0.06266 -1.17032,-0.06558 -0.50044,-0.0029 -1.12411,0.0071 -1.81674,0.183597 -0.69264,0.176504 -1.4547,0.518683 -2.50912,1.128531 -1.05443,0.609848 -2.4029,1.488078 -3.37055,2.072701 -0.96765,0.584623 -1.54335,0.86882 -2.0196,1.136916 -0.47624,0.268096 -0.85598,0.521588 -1.17232,0.785391 -0.31635,0.263803 -0.56364,0.533303 -0.75858,0.822384 -0.19495,0.289081 -0.33842,0.5975 -0.38163,0.994717 -0.0432,0.397216 0.0118,0.87811 0.20745,1.497488 0.1956,0.619378 0.53085,1.371982 0.77281,2.201525 0.24196,0.829542 0.39189,1.742028 0.71755,2.236665 0.32566,0.494637 0.83025,0.5793 1.92718,0.48726 1.09693,-0.09204 2.77643,-0.359869 4.37135,-0.917061 1.59492,-0.557192 3.11027,-1.406009 4.68312,-2.352227 1.57286,-0.946218 3.19081,-1.982183 4.12612,-2.63619 0.93531,-0.654008 1.18261,-0.923511 1.56687,-1.326261 0.38426,-0.40275 0.90556,-0.938702 1.02583,-1.278228 0.12027,-0.339525 -0.16144,-0.479944 -0.66351,-0.821423 -0.50208,-0.34148 -1.22505,-0.884128 -1.81264,-1.424695 -0.58758,-0.540567 -1.04033,-1.079438 -1.26667,-1.348843 -0.22635,-0.269405 -0.22635,-0.269407 -0.48026,-0.420405 z"
+       id="path28416-3"
+       inkscape:path-effect="#path-effect28418-2"
+       inkscape:original-d="m 235.17531,38.56873 c -0.50925,-0.299598 -1.01616,-0.601054 -1.52075,-0.90437 -0.20998,-0.07594 -0.41762,-0.153811 -0.62293,-0.233505 -0.37944,-0.01412 -0.75653,-0.03013 -1.13131,-0.04793 -0.62599,0.01187 -1.24966,0.02187 -1.87099,0.03003 -0.76394,0.343104 -1.526,0.685284 -2.2862,1.026545 -1.34866,0.878392 -2.69713,1.756623 -4.05401,2.640293 -0.57841,0.285606 -1.15411,0.569803 -1.72713,0.852606 -0.37949,0.253352 -0.75923,0.506844 -1.14264,0.762755 -0.24963,0.271359 -0.49692,0.540859 -0.74187,0.808501 -0.14581,0.310272 -0.28928,0.618693 -0.43042,0.925256 0.0557,0.488458 0.11073,0.969355 0.16654,1.454564 0.33539,0.753634 0.67063,1.506241 1.00573,2.257805 0.14883,0.907445 0.29876,1.819931 0.44771,2.724829 0.50226,0.08653 1.00686,0.171155 1.51378,0.253988 1.68732,-0.268922 3.36682,-0.536755 5.04494,-0.804513 1.51172,-0.84673 3.02707,-1.695548 4.54604,-2.546448 1.62674,-1.041543 3.24469,-2.077512 4.86999,-3.118224 0.24496,-0.267649 0.49226,-0.537149 0.74188,-0.8085 0.51897,-0.5341 1.04027,-1.07005 1.5639,-1.60786 -0.28403,-0.138561 -0.56573,-0.278982 -0.8451,-0.421255 -0.72531,-0.540792 -1.44828,-1.083443 -2.16893,-1.627954 -0.45508,-0.537009 -0.90782,-1.075884 -1.35823,-1.616611 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccc">
+      <title
+         id="title5117-2">hippocampus_anterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#ff0017;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 220.60684,49.345709 c 0.0825,-0.199627 0.24854,-0.601283 0.29617,-0.882214 0.0476,-0.280931 -0.0244,-0.439364 -0.083,-0.715978 -0.0586,-0.276614 -0.10353,-0.672319 -0.29788,-0.950862 -0.19434,-0.278543 -0.53669,-0.437796 -0.8046,-0.588533 -0.26791,-0.150737 -0.46197,-0.293065 -1.21219,-0.438591 -0.75022,-0.145525 -2.05514,-0.294476 -2.94662,-0.381143 -0.89148,-0.08667 -1.36938,-0.111174 -1.61692,0.357174 -0.24754,0.468347 -0.2669,1.427537 -0.14357,2.056503 0.12334,0.628967 0.38945,0.929735 0.95478,1.369653 0.56533,0.439919 1.43054,1.019377 2.12278,1.264216 0.69225,0.244839 1.21335,0.154103 1.63576,0.0076 0.42242,-0.146508 0.74606,-0.34991 1.06457,-0.509134 0.3185,-0.159223 0.632,-0.273657 0.79007,-0.331358 0.15808,-0.0577 0.15811,-0.0577 0.24062,-0.257328 z"
+       id="path28436-1"
+       inkscape:path-effect="#path-effect28438-0"
+       inkscape:original-d="m 220.52433,49.545335 c 0.16369,-0.399806 0.32971,-0.801463 0.49807,-1.204979 -0.0744,-0.156588 -0.14643,-0.315027 -0.21614,-0.475324 -0.0473,-0.393843 -0.0923,-0.789544 -0.13489,-1.187105 -0.34468,-0.157396 -0.68703,-0.316642 -1.02703,-0.477755 -0.19639,-0.140469 -0.39046,-0.282789 -0.58218,-0.426976 -1.30728,-0.146815 -2.6122,-0.295766 -3.91476,-0.446854 -0.48023,-0.02265 -0.95813,-0.04712 -1.4337,-0.07352 -0.0217,0.961041 -0.041,1.920232 -0.0581,2.877564 0.26377,0.302618 0.52988,0.603385 0.79832,0.902301 0.86287,0.581311 1.72808,1.160771 2.59563,1.738373 0.51876,-0.08888 1.03986,-0.179617 1.5633,-0.27221 0.32132,-0.201551 0.64497,-0.404953 0.97096,-0.610215 0.31116,-0.11258 0.62466,-0.22701 0.94049,-0.3433 z">
+      <title
+         id="title4425-9">amygdala_lateral_medial_R</title>
+    </path>
+    <path
+       style="fill:#ff00e0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 227.69796,38.152694 c 0.14904,-0.387323 0.44804,-1.164368 0.37808,-1.609362 -0.07,-0.444993 -0.50805,-0.555085 -1.77838,-0.745047 -1.27034,-0.189962 -3.37261,-0.459972 -4.99767,-0.555391 -1.62505,-0.09542 -2.77202,-0.01671 -3.61344,0.21916 -0.84142,0.235871 -1.36671,0.626563 -1.92351,1.31104 -0.55681,0.684478 -1.14957,1.667916 -1.6399,2.620602 -0.49034,0.952686 -0.8716,1.860781 -0.89511,3.120911 -0.0235,1.260129 0.3127,2.865442 0.64114,3.700627 0.32843,0.835185 0.65128,0.902081 0.91639,0.94745 0.2651,0.04537 0.47271,0.06907 0.81391,-0.02644 0.34119,-0.0955 0.81651,-0.311637 1.45664,-0.52424 0.64013,-0.212602 1.44508,-0.421162 1.8775,-0.522514 0.43242,-0.101353 0.49168,-0.09459 0.73502,-0.38101 0.24335,-0.286421 0.67032,-0.868601 1.21907,-1.467054 0.54875,-0.598454 1.21975,-1.212859 1.60292,-1.544982 0.38318,-0.332122 0.47891,-0.381279 0.85391,-0.638725 0.375,-0.257446 1.02907,-0.723566 1.77604,-1.344198 0.74696,-0.620633 1.58657,-1.396067 2.00746,-1.784789 0.42089,-0.388721 0.42089,-0.388719 0.56993,-0.776042 z"
+       id="path28426-1"
+       inkscape:path-effect="#path-effect28428-8"
+       inkscape:original-d="m 227.54892,38.540017 c 0.29667,-0.775188 0.59567,-1.552234 0.89701,-2.331141 -0.44043,-0.108263 -0.87852,-0.218329 -1.31427,-0.330279 -2.10461,-0.268146 -4.20688,-0.538189 -6.30683,-0.810029 -1.14988,0.07908 -2.29685,0.157782 -3.45201,0.236883 -0.52763,0.392552 -1.05292,0.783245 -1.57588,1.17208 -0.5908,0.979987 -1.18356,1.963424 -1.779,2.951519 -0.38527,0.917278 -0.76653,1.825374 -1.14993,2.738912 0.33626,1.606827 0.67246,3.212141 1.00862,4.81595 0.32051,0.06875 0.64335,0.135678 0.96853,0.200684 0.20523,0.02583 0.41284,0.04953 0.6228,0.07109 0.473,-0.214285 0.94832,-0.430421 1.42598,-0.648407 0.8026,-0.206708 1.60755,-0.415257 2.41482,-0.625674 0.057,0.0089 0.11626,0.01568 0.17795,0.02031 0.42463,-0.580319 0.85161,-1.162496 1.28092,-1.746533 0.66868,-0.612556 1.33968,-1.226964 2.01302,-1.84323 0.0934,-0.04733 0.18915,-0.09646 0.28722,-0.147476 0.65175,-0.464273 1.30582,-0.930397 1.96224,-1.398372 0.83727,-0.773573 1.67688,-1.549005 2.51881,-2.326289 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title5224-6">amygdala_medial_medial_R</title>
+    </path>
+    <path
+       style="fill:#07ff00;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 211.01167,22.742658 c -0.46757,0.421957 -1.40051,1.26388 -1.888,1.877643 -0.48749,0.613764 -0.5315,0.999263 -0.53125,1.487216 2.6e-4,0.487953 0.0444,1.078769 0.17908,1.609653 0.13469,0.530884 0.35975,1.00289 1.03195,1.451745 0.6722,0.448854 1.79418,0.876065 2.99519,1.250739 1.20101,0.374675 2.48342,0.697099 3.23914,0.870238 0.75573,0.173139 1.00356,0.201427 1.45179,0.183121 0.44823,-0.01831 1.09726,-0.08369 1.5519,-0.157023 0.45464,-0.07333 0.71503,-0.155185 0.99755,-0.666223 0.28253,-0.511038 0.58529,-1.452793 0.49568,-2.133868 -0.0896,-0.681076 -0.57193,-1.098767 -1.09979,-1.368162 -0.52786,-0.269395 -1.09982,-0.39047 -1.56537,-0.583189 -0.46555,-0.192719 -0.82591,-0.457013 -1.26744,-0.744538 -0.44153,-0.287525 -0.96396,-0.598206 -1.45553,-0.933227 -0.49157,-0.33502 -0.95264,-0.69449 -1.55897,-1.126353 -0.60633,-0.431863 -1.35773,-0.936054 -1.73304,-1.187893 -0.37532,-0.251839 -0.37532,-0.251835 -0.84289,0.170121 z"
+       id="path28314-3"
+       inkscape:path-effect="#path-effect28316-9"
+       inkscape:original-d="m 211.47924,22.320702 c -0.93527,0.843774 -1.86821,1.685697 -2.79882,2.525769 -0.0466,0.387325 -0.0906,0.772824 -0.13201,1.156503 0.0418,0.59268 0.0859,1.183499 0.13242,1.772468 0.22273,0.473864 0.4478,0.945869 0.6752,1.416015 1.11953,0.426552 2.24151,0.853761 3.36598,1.281647 1.27758,0.321455 2.55999,0.64388 3.82578,0.96188 0.24545,0.03042 0.49328,0.05871 0.74346,0.08486 0.64671,-0.06353 1.29574,-0.128922 1.94712,-0.196163 0.25806,-0.08 0.51845,-0.161853 0.78118,-0.245567 0.30042,-0.939893 0.60319,-1.881645 0.90828,-2.825249 -0.48465,-0.415827 -0.96698,-0.833516 -1.44696,-1.253054 -0.5743,-0.119213 -1.14626,-0.240294 -1.71589,-0.363226 -0.36269,-0.262439 -0.72306,-0.526722 -1.08107,-0.792871 -0.52477,-0.308828 -1.04719,-0.619515 -1.56728,-0.932052 -0.46341,-0.35761 -0.92448,-0.717086 -1.38322,-1.078406 -0.75372,-0.502335 -1.50512,-1.006522 -2.25417,-1.512558 z"
+       sodipodi:nodetypes="ccccccccccccccccc">
+      <title
+         id="title5113-9">pallidum_anterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#b800ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 210.20502,17.952866 c 0.0911,-0.433743 0.27392,-1.303472 -0.14339,-2.159527 -0.41732,-0.856056 -1.4347,-1.695793 -2.09733,-2.230662 -0.66262,-0.534869 -0.97035,-0.764814 -1.20746,-1.000345 -0.23712,-0.23553 -0.40434,-0.477273 -0.90864,-0.938632 -0.50429,-0.461359 -1.34505,-1.141784 -2.39637,-1.205221 -1.05133,-0.06344 -2.31107,0.488541 -3.18873,0.987116 -0.87767,0.498576 -1.37368,0.942918 -1.92798,1.533788 -0.5543,0.59087 -1.16723,1.328005 -1.57325,1.838312 -0.40602,0.510307 -0.60536,0.793698 -1.00143,1.480538 -0.39606,0.686841 -0.99809,1.793426 -1.31098,2.805325 -0.31289,1.011899 -0.33877,1.929536 -0.11638,2.64236 0.22239,0.712823 0.69316,1.219438 1.21803,1.639223 0.52487,0.419786 1.10489,0.753314 1.88734,0.975814 0.78245,0.2225 1.77147,0.335393 3.14093,0.490509 1.36945,0.155116 3.11952,0.352473 4.29017,0.113425 1.17064,-0.239047 1.7533,-0.907588 2.5371,-2.080067 0.78379,-1.172479 1.74144,-2.808463 2.70724,-4.458363 0,0 -2e-5,1.51e-4 0.0911,-0.433593 z"
+       id="path28215-1"
+       inkscape:path-effect="#path-effect28217-6"
+       inkscape:original-d="m 210.11387,18.38661 c 0.18044,-0.867878 0.3632,-1.737608 0.54831,-2.609196 -1.01972,-0.837884 -2.03711,-1.67762 -3.05217,-2.519215 -0.31005,-0.228085 -0.61778,-0.45803 -0.92318,-0.689827 -0.16955,-0.239881 -0.33678,-0.481621 -0.50167,-0.725212 -0.84308,-0.678559 -1.68384,-1.358987 -2.52227,-2.0412577 -1.26208,0.5538367 -2.52182,1.1058157 -3.77923,1.6559417 -0.49834,0.446202 -0.99436,0.890537 -1.48804,1.333028 -0.61527,0.73899 -1.2282,1.476128 -1.8388,2.211408 -0.20166,0.28524 -0.401,0.568628 -0.598,0.850164 -0.59454,1.092575 -1.19658,2.199156 -1.79626,3.301675 -0.0262,0.921332 -0.0521,1.838969 -0.0778,2.758069 0.47049,0.506757 0.94126,1.013369 1.4123,1.519843 0.57878,0.333137 1.1588,0.666665 1.7369,0.998769 0.98667,0.11503 1.97569,0.227924 2.96709,0.338681 1.74778,0.197096 3.49785,0.394453 5.25023,0.592073 0.58887,-0.675749 1.17153,-1.344292 1.76522,-2.025395 0.97385,-1.66387 2.89739,-4.9497 2.89739,-4.9497 z"
+       sodipodi:nodetypes="ccccccccccccccccccc">
+      <title
+         id="title4421-7">caudate_anterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#0074ff;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 222.01793,7.3669332 c 1.17851,-0.9312856 2.33582,-1.4944698 1.83197,-2.1283206 -0.50386,-0.6338508 -2.6607,-1.3326507 -4.34366,-1.655495 -1.68296,-0.3228444 -2.886,-0.2686699 -5.11058,0.4119452 -2.22459,0.680615 -5.4586,1.98193 -7.42766,2.9797166 -1.96905,0.9977866 -2.61541,1.6613855 -2.75386,2.3925747 -0.13844,0.7311889 0.23718,1.5193069 1.045,2.3852209 0.80783,0.865915 2.04775,1.808874 2.92658,2.530773 0.87884,0.7219 1.39621,1.222472 2.00177,1.578838 0.60556,0.356367 1.29844,0.568239 1.7557,0.544627 0.45726,-0.02361 0.67865,-0.285581 1.10231,-0.644365 0.42366,-0.358785 1.05009,-0.813894 1.72744,-1.502335 0.67734,-0.688442 1.40498,-1.610737 2.02358,-2.210757 0.6186,-0.600021 1.12895,-0.876888 1.98517,-1.664475 0.85622,-0.7875865 2.05773,-2.0866622 3.23624,-3.0179478 z"
+       id="path28205-9"
+       inkscape:path-effect="#path-effect28207-5"
+       inkscape:original-d="m 222.04294,6.9969803 c 1.15353,-0.561279 2.31084,-1.12446 3.47191,-1.689545 -2.16888,-0.702442 -4.32573,-1.40124 -6.48612,-2.101445 -1.20537,0.05603 -2.40841,0.110205 -3.60911,0.162523 -3.24852,1.307238 -6.48253,2.608559 -9.76242,3.928242 -0.65828,0.675784 -1.30464,1.339381 -1.95851,2.010751 0.37675,0.7911607 0.75236,1.5792817 1.12875,2.3683307 1.23935,0.942883 2.47928,1.885839 3.71977,2.828867 0.51714,0.500756 1.03451,1.001331 1.55213,1.501724 0.69364,0.212355 1.38652,0.42423 2.08159,0.636516 0.21907,-0.260121 0.44047,-0.522086 0.6642,-0.785917 0.62411,-0.453255 1.25047,-0.908466 1.87931,-1.365335 0.72579,-0.920063 1.45295,-1.842736 2.18292,-2.766892 0.50801,-0.275009 1.01836,-0.551875 1.53103,-0.830594 1.19918,-1.2972217 2.4007,-2.5962947 3.60455,-3.8972257 z"
+       sodipodi:nodetypes="ccccccccccccccc">
+      <title
+         id="title4419-6">caudate_posterior_medial_R</title>
+    </path>
+    <path
+       style="fill:#00ff5c;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 238.24577,20.262898 c -0.54547,-0.06226 -1.63431,-0.18655 -3.22582,-0.343621 -1.59151,-0.157071 -3.67906,-0.346375 -4.7761,0.591549 -1.09703,0.937924 -1.19451,3.000485 -1.18402,4.15157 0.0105,1.151086 0.12851,1.393486 0.18822,1.59866 0.0597,0.205174 0.0614,0.371878 0.1519,0.673032 0.0905,0.301153 0.26961,0.737829 0.94797,1.074963 0.67836,0.337133 1.8582,0.575864 2.91371,0.717316 1.0555,0.141451 1.98702,0.185346 2.63197,0.186341 0.64495,9.94e-4 1.00359,-0.04131 1.34053,-0.07574 0.33694,-0.03443 0.65214,-0.06089 0.90796,-0.11448 0.25583,-0.05359 0.45245,-0.135207 0.80748,-0.416825 0.35502,-0.281617 0.86796,-0.764177 1.16845,-1.291844 0.30049,-0.527667 0.38669,-1.100557 0.41731,-1.732042 0.0306,-0.631484 0.005,-1.321171 0.0359,-2.045916 0.0306,-0.724745 0.11733,-1.484884 -0.17071,-1.976856 -0.28804,-0.491972 -0.94958,-0.713167 -1.27958,-0.823507 -0.33,-0.110341 -0.32966,-0.110333 -0.87513,-0.172596 z"
+       id="path28344-6"
+       inkscape:path-effect="#path-effect28346-1"
+       inkscape:original-d="m 238.79124,20.325161 c -1.09121,-0.122151 -2.18005,-0.246438 -3.26653,-0.372861 -2.09629,-0.189874 -4.18384,-0.379192 -6.28025,-0.569506 -0.0979,2.065944 -0.19535,4.128506 -0.29244,6.187704 0.11569,0.244255 0.2337,0.486658 0.35405,0.727201 -5.5e-4,0.168553 0.001,0.335259 0.005,0.500093 0.17675,0.438537 0.35583,0.875215 0.53726,1.310042 1.1775,0.240588 2.35734,0.479317 3.53952,0.716195 0.92919,0.04575 1.86071,0.08965 2.79457,0.131685 0.35631,-0.04045 0.71495,-0.08276 1.07592,-0.126926 0.31287,-0.0246 0.62807,-0.05106 0.9456,-0.07938 0.19429,-0.07976 0.39092,-0.161371 0.58987,-0.244842 0.51061,-0.480704 1.02355,-0.963267 1.53883,-1.447681 0.0839,-0.571034 0.17004,-1.143932 0.25859,-1.718685 -0.0277,-0.687822 -0.053,-1.37751 -0.076,-2.06905 0.0841,-0.758315 0.17092,-1.518448 0.2603,-2.280409 -0.66388,-0.219337 -1.32542,-0.440532 -1.98463,-0.663588 z"
+       sodipodi:nodetypes="scccccccccccccccss">
+      <title
+         id="title5105-6">thalamus_VP_medial_R</title>
+    </path>
+    <path
+       style="fill:#00ffc0;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 236.6969,7.9430032 c -1.11417,-0.2042962 -3.34061,-0.6125374 -4.60602,-0.8339634 -1.26541,-0.221426 -1.56965,-0.2561541 -2.07951,-0.1790134 -0.50986,0.077141 -1.22479,0.2652143 -1.66088,0.8902347 -0.4361,0.6250205 -0.59568,1.6855254 -0.70364,2.4629409 -0.10796,0.777415 -0.1644,1.27181 0.0485,2.277939 0.21284,1.00613 0.69439,2.525079 1.09919,3.534043 0.4048,1.008964 0.73301,1.508742 0.93905,1.898666 0.20604,0.389923 0.28974,0.669147 0.48725,0.960743 0.1975,0.291597 0.50939,0.596882 0.76653,0.876764 0.25715,0.279883 0.45928,0.534113 1.59256,0.721321 1.13329,0.187209 3.19995,0.307534 4.48053,0.395857 1.28058,0.08832 1.77498,0.144757 2.51036,0.11342 0.73538,-0.03134 1.71218,-0.150994 2.5645,-0.361509 0.85232,-0.210514 1.58028,-0.51268 2.25236,-0.747166 0.67209,-0.234487 1.28871,-0.401021 1.61507,-0.744161 0.32637,-0.34314 0.35897,-0.854772 0.062,-1.563786 -0.29698,-0.709015 -0.91693,-1.596947 -1.55945,-2.524765 -0.64251,-0.927818 -1.30289,-1.888782 -1.88819,-2.668412 -0.5853,-0.779629 -1.09498,-1.377163 -1.88332,-2.064243 -0.78833,-0.6870799 -1.85473,-1.4633069 -2.38868,-1.8519603 -0.53394,-0.3886534 -0.53397,-0.3886534 -1.64814,-0.5929495 z"
+       id="path28304-4"
+       inkscape:path-effect="#path-effect28306-1"
+       inkscape:original-d="m 237.81107,8.1472993 c -2.22875,-0.406383 -4.45518,-0.814626 -6.67926,-1.224718 -0.30661,-0.03259 -0.61085,-0.06732 -0.91272,-0.104184 -0.71727,0.189931 -1.4322,0.378003 -2.1448,0.564224 -0.16193,1.062355 -0.32148,2.122864 -0.47873,3.1815107 -0.059,0.496219 -0.11548,0.990609 -0.1693,1.483181 0.47922,1.5208 0.96078,3.039749 1.44467,4.556839 0.32588,0.501623 0.65409,1.001403 0.98463,1.499316 0.0814,0.281092 0.16507,0.560324 0.25111,0.837706 0.30955,0.30713 0.62144,0.612417 0.93566,0.915836 0.1998,0.256087 0.40194,0.510314 0.6064,0.762681 2.06432,0.122179 4.13098,0.242506 6.19996,0.360974 0.49203,0.05857 0.98643,0.115002 1.48319,0.169299 0.97446,-0.117797 1.95126,-0.237462 2.9304,-0.358969 0.72562,-0.300307 1.45358,-0.602473 2.18387,-0.906491 0.6136,-0.165597 1.23022,-0.332133 1.84985,-0.499601 0.0328,-0.518941 0.0654,-1.030573 0.0988,-1.55041 -0.62735,-0.898002 -1.2473,-1.785936 -1.87103,-2.679803 -0.6613,-0.961769 -1.32168,-1.922735 -1.98228,-2.884545 -0.51202,-0.595683 -1.0217,-1.193218 -1.52905,-1.792613 -1.06722,-0.7764667 -2.13362,-1.5526977 -3.20134,-2.3302327 z"
+       sodipodi:nodetypes="ccccccccccccccccccccc">
+      <title
+         id="title5103-4">thalamus_DA_medial_R</title>
+    </path>
+    <path
+       style="fill:#ff6400;fill-opacity:1;stroke:#000000;stroke-width:0.398456;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="m 225.83996,6.2177606 c -0.51789,0.055966 -1.54847,0.1673372 -2.93295,0.7290156 -1.38449,0.5616784 -3.1122,1.5703322 -4.42682,2.4510621 -1.31461,0.8807297 -2.21843,1.6343087 -2.81377,2.2480447 -0.59533,0.613736 -0.88303,1.08716 -1.22434,1.515391 -0.34131,0.428231 -0.73555,0.811598 -1.07858,1.434549 -0.34303,0.62295 -0.63617,1.485176 -0.90566,2.311143 -0.26949,0.825967 -0.5154,1.615692 -0.71946,2.352982 -0.20407,0.73729 -0.36611,1.420701 -0.37091,2.317516 -0.005,0.896816 0.1482,2.001237 0.42886,2.809293 0.28066,0.808056 0.68931,1.322009 0.97233,1.74403 0.28302,0.422021 0.44013,0.751499 1.32433,1.12464 0.88421,0.373141 2.49722,0.790915 3.91394,0.97376 1.41672,0.182845 2.62811,0.130718 3.86947,0.115872 1.24136,-0.01485 2.48584,0.0079 3.30412,0.04118 0.81828,0.03328 1.2027,0.07716 1.98446,0.123186 0.78176,0.04602 1.96182,0.09408 2.42023,-0.420125 0.45841,-0.5142 0.19387,-1.584026 0.36163,-2.735628 0.16776,-1.151602 0.76656,-2.372978 1.11754,-3.307403 0.35099,-0.934424 0.45071,-1.57271 0.45921,-2.209448 0.008,-0.636739 -0.0751,-1.269357 -0.46507,-2.287931 -0.39,-1.018575 -1.08654,-2.422137 -1.59518,-3.578112 -0.50865,-1.155975 -0.82846,-2.061897 -0.92817,-3.067723 -0.0997,-1.0058265 0.0211,-2.1027723 0.0906,-2.7306469 0.0695,-0.6278746 0.087,-0.7816483 -0.30441,-1.0406494 -0.39146,-0.2590011 -1.17178,-0.6119123 -1.56763,-0.7909389 -0.39584,-0.1790265 -0.39588,-0.1790285 -0.91377,-0.1230622 z"
+       id="path28245-4"
+       inkscape:path-effect="#path-effect28247-6"
+       inkscape:original-d="m 226.35785,6.1617943 c -1.03576,0.112093 -2.06634,0.223461 -3.10304,0.335334 -1.73227,1.011361 -3.45998,2.020019 -5.18313,3.025957 -0.90615,0.7554267 -1.80997,1.5090037 -2.71145,2.2607297 -0.29003,0.475266 -0.57773,0.948689 -0.86308,1.420246 -0.39659,0.385228 -0.79083,0.768599 -1.18274,1.15011 -0.29547,0.864084 -0.58861,1.726309 -0.87941,2.586675 -0.24824,0.791591 -0.49416,1.581314 -0.73774,2.369187 -0.16313,0.687162 -0.32517,1.370574 -0.48788,2.057559 0.15305,1.106723 0.30603,2.211145 0.45896,3.313258 0.40632,0.515818 0.81496,1.029776 1.22595,1.541876 0.15477,0.331332 0.31187,0.660812 0.47131,0.988433 1.61154,0.417639 3.22455,0.835415 4.83905,1.253328 1.21901,-0.05228 2.4304,-0.104407 3.6549,-0.157273 1.25821,0.02319 2.50269,0.04594 3.75693,0.06867 0.38205,0.04602 0.76647,0.0899 1.15326,0.13164 1.17699,0.04812 2.35705,0.09618 3.5401,0.144154 -0.26648,-1.07651 -0.53103,-2.146335 -0.79686,-3.22249 0.6015,-1.227172 1.2003,-2.448549 1.80217,-3.67588 0.10001,-0.641493 0.19974,-1.279777 0.3003,-1.922114 -0.0859,-0.630773 -0.16946,-1.263391 -0.25068,-1.897875 -0.69887,-1.401703 -1.3954,-2.805266 -2.0896,-4.210689 -0.32075,-0.907729 -0.64056,-1.81365 -0.96119,-2.722762 0.12105,-1.1026827 0.24209,-2.1996067 0.36394,-3.3036657 0.0149,-0.151943 0.0325,-0.305713 0.0527,-0.461303 -0.80083,-0.3619 -1.58115,-0.71481 -2.37273,-1.073103 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccc">
+      <title
+         id="title4966-5">thalamus_VA_medial_R</title>
+    </path>
+  </g>
+</svg>
