@@ -113,25 +113,11 @@ We have a dedicated folder for a custom segmentation pipeline that will walk you
 1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using the [`nii2mesh`](https://github.com/neurolabusc/nii2mesh) software developed by Chris Rorden; and 
 2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
 
-### 🕸️ Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation
+Check out the walkthrough in the [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) folder for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
 
-First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering using the [`nii2mesh` tool](https://github.com/neurolabusc/nii2mesh) developed by Chris Rorden:
+## 🙏 Acknowledgments
 
-<img src="images/volume_to_mesh_schematic.png" width="90%">
-
-In the tutorial Jupyter notebook, you can rotate the rendered mesh in 3D right in your notebook!
-
-<img src="images/mesh_rotation_interactive.gif" width="60%">
-
-
-### 🎨 Tracing the outline of each region in vector graphic editing software
-
-Next, pour yourself a big mug of coffee to sit and trace the outline of each region in Inkscape (or a similar vector graphic editing program) ☕️
-
-<img src="images/tracing_region.gif" width="60%">
-
-The first pass at tracing each region can be pretty quick, since you can edit individual points in the path afterwards.
-If your atlas is homotopically symmetric (i.e., symmetric between hemispheres), the silver lining here is that you only need to trace for one hemisphere (e.g., left hemisphere) and then save the flipped (mirrored) version for the other hemisphere. 
+Thank you very much to [Ye Tian](https://github.com/yetianmed), [Chris Rorden](https://github.com/rordenlab), and [Sid Chopra](https://github.com/sidchop) for their suggestions and continued development of open tools for neuroimaging visualization that enabled development of this project!
 
 ## ❓📧 Questions, comments, or suggestions always welcome!
 
