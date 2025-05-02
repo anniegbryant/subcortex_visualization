@@ -1,3 +1,32 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "subcortex_visualization"
+version = "0.1.0"
+authors = [
+  { name="Annie G. Bryant", email="anniegbryant@gmail.com" },
+]
+description = "A package to visualize subcortical brain data in two dimensions."
+readme = "README.md"
+requires-python = ">=3.9"
+
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Development Status :: 1 - Planning",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Environment :: Console",
+    "Environment :: Other Environment",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+license = {text = "GNU General Public License v3 (GPLv3)"}
+
+[project.urls]
+Homepage = "https://github.com/anniegbryant/subcortex_visualization"
+Issues = "https://github.com/anniegbryant/subcortex_visualization/issues"

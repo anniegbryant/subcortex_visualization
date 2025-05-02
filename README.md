@@ -49,7 +49,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
 
 ### 📚 Tutorial
 
-For a guide that goes through all the functionality and atlases available in this package,  we compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb).
+For a guide that goes through all the functionality and atlases available in this package, we compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb).
 To plot real data in the subcortex, your `subcortex_data` should be  a `pandas.DataFrame` structured as follows (here we've just assigned an integer index to each region):
 
 | region        | value         | Hemisphere  |
@@ -65,6 +65,7 @@ To plot real data in the subcortex, your `subcortex_data` should be  a `pandas.D
 Briefly, all functionality is contained within the `plot_subcortical_data` function, which takes in the following arguments: 
 * `subcortex_data`: The three-column dataframe in a format as shown above; this is optional, if left out the plot will just color each region by its index
 * `atlas`: The name of the subcortical segmentation atlas (default is 'aseg', which is currently the only supported atlas)
+* `value_column`: The name of the column in your `subcortex_data` to plot, defaults to 'value'
 * `line_thickness`: How thick the lines around each subcortical region should be drawn, in mm (default is 1.5)
 * `line_color`: What color the lines around each subcortical region should be (default is 'black')
 * `hemisphere`: Which hemisphere ('L' or 'R') the `subcortex_data` is from; can also be 'both' (default is 'L')
