@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "subcortex_visualization"
-version = "0.1.0"
+version = "0.1.11"
 authors = [
   { name="Annie G. Bryant", email="anniegbryant@gmail.com" },
 ]

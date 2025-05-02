@@ -1,8 +1,16 @@
 from setuptools import setup, find_packages
 
+install_requires = [
+        'numpy',
+        'pandas',
+        'matplotlib',
+        'svgpath2mpl',
+        'ipython',
+]
+
 setup(
     name='subcortex_visualization',
-    version='0.1',
+    version='0.1.11',
     description='Visualize subcortical brain data from SVG templates',
     author='Annie G. Bryant',
     packages=find_packages(),
