@@ -17,10 +17,10 @@ There is currently no other software available to visualize the Melbourne Subcor
 ## 🖥️ Installation
 
 The package can be installed from GitHub in two ways.
-First, you can install directly with pip:
+First, you can install directly with pip from the [PyPI repository](https://pypi.org/project/subcortex-visualization/):
 
 ```bash
-pip install git+https://github.com/anniegbryant/subcortex_visualization.git#egg=subcortex_visualization
+pip install subcortex-visualization
 ```
 
 If you would like to make your own modifications before installing, you can also clone this repository first and then install from your local version:
