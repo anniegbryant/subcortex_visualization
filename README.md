@@ -2,7 +2,7 @@
 
 This python package currently includes the following six subcortical atlases for data visualization in two-dimensional vector graphics:
 
-<img src="images/all_atlas_showcase.png" width="90%">
+<img src="images/all_atlas_showcase.png" width="100%">
 
 More information about these atlases, including the process of rendering the surfaces and tracing the outlines for each, can be found in the [`atlas_info/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/atlas_info) directory.
 
