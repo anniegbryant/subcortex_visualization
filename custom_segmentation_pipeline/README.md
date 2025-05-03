@@ -7,7 +7,14 @@ These are the exact same steps we implemented to generate the segmentation visua
 
 ### Generating mesh files (.obj) per region
 
-First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering using the [`nii2mesh` tool](https://github.com/neurolabusc/nii2mesh) developed by Chris Rorden:
+First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering.
+There are many tools out there to accomplish this depending on your preference; here, we'll suggest and walk through two options, both developed by [Chris Rorden's lab](): [`nii2mesh`](https://github.com/neurolabusc/nii2mesh) or [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas).
+If you want a quick and simple mesh generation with outputs that can be viewed interactively in a Jupyter notebook (with control over the color maps, etc), follow along with option 1 (`nii2mesh` and `pyvista` combo).
+If you want smoother mesh generation and more control over properties of the 3D rendering specifically geared towards brain data (and have Matlab), follow along with option 2 (`surfice_atlas` and `Surf Ice` combo).
+
+### Option 1: `nii2mesh` + `pyvista`
+
+Here, we'll use the [`nii2mesh` tool](https://github.com/neurolabusc/nii2mesh) developed by Chris Rorden:
 
 <img src="../images/volume_to_mesh_schematic.png" width="90%">
 
@@ -40,6 +47,41 @@ We've included a [simple Jupyter notebook](https://github.com/anniegbryant/subco
 <img src="../images/mesh_rotation_interactive.gif" width="60%">
 
 If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then exporting as a snapshot PNG image(s) by clicking the 'PNG' icon as shown in the above video.
+
+### Option 2: `surfice_atlas` + `Surf Ice`
+
+This method will generate one color-coded 3D mesh file (`.mz3`) for your segmentation, which can then be rendered interactively in the `Surf Ice` GUI software.
+There are a few prerequisites for this step, which should be completed before you can crack on with your mesh generation: 
+
+1. Clone the [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) repository to your local machine with `git clone https://github.com/neurolabusc/surfice_atlas.git`
+2. Clone the [`surfice_atlas`](https://github.com/neurolabusc/spmScripts) repository to your local machine with `git clone https://github.com/neurolabusc/spmScripts.git`
+3. Download the [latest SPM](https://www.fil.ion.ucl.ac.uk/spm/software/) (Statistical Parametric Mapping) to wherever you store Matlab plugins
+4. Download and install the `Surf Ice` (Version 6) graphical rendering software for your given operating systen from [NITRC](https://www.nitrc.org/projects/surfice/).
+
+Once you've completed those four steps, we'll generate the `.mz3` file for an example segmentation in Matlab.
+First, we'll add the relevant paths to Matlab:
+
+```matlab
+addpath('/path/to/github/surfice_atlas/'); % Change to where you cloned surfice_atlas
+addpath('/path/to/github/spmScripts/'); % Change to where you cloned spmScripts
+addpath('/path/to/MATLAB/spm/'); % Change to where you copied the spm folder
+```
+
+Now, it's a very simple process to convert our atlas segmentation to an `.mz3` file to read into Surf Ice:
+
+```matlab
+our_example_segmentation = '/path/to/example_segmentation.nii.gz';
+lut = '/path/to/github/surfice_atlas/mylut.lut'; % We use the default LUT that came with surfice_atlas, you can create your own
+
+nii_nii2atlas(our_example_segmentation, lut);
+```
+
+This will generate a file called `merge.mz3`, which contains color-coded mesh volumes for each region in your example segmentation.
+Boot up Surf Ice and open the `merge.mz3` file (using File > Open to select merge.mz3), and you should have a color-coded three-dimensional mesh rendered on your screen.
+
+<img src="../images/surfice_example.gif" width="80%">
+
+If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then taking a screenshot from the medial and lateral perspectives.
 
 ## 🎨 Tracing the outline of each region in vector graphic editing software
 
@@ -77,29 +119,29 @@ Once you add the title to each region, congrats, you've finished creating the ve
 
 ### Repeating for the other hemisphere
 
-You may notice that the above SVG image is saved as 'subcortex_Tian_S1_base_L.svg', which indicates that this file corresponds to: 
+You may notice that the above SVG image is saved as 'subcortex_Melbourne_S1_L.svg', which indicates that this file corresponds to: 
 * subcortex
-* Ye Tian's atlas (Melbourne Subcortical Atlas), granularity level 1
+* Melbourne Subcortex Atlas, granularity level 1 (S1)
 * left hemisphere (L)
 
-If your atlas is left-right symmetric, you can just copy-paste the SVG objects into a new file named e.g., 'subcortex_Tian_S1_base_R.svg', making sure you (1) flip the image along the $y$-axis (i.e., left-right mirror) and update each region's Title to end with '_R' rather than '_L'.
+If your atlas is left-right symmetric, you can just copy-paste the SVG objects into a new file named e.g., 'subcortex_Melbourne_S1_R.svg', making sure you (1) flip the image along the $y$-axis (i.e., left-right mirror) and update each region's Title to end with '_R' rather than '_L'.
 
 ### Combining the left and right hemispheres into one image
 
-Once you have both hemispheres traced, the last step here is to copy-paste the left and right hemisphere vector graphics into the same image for an SVG corresponding to both hemispheres, named e.g. 'subcortex_Tian_S1_base_both.svg'.
+Once you have both hemispheres traced, the last step here is to copy-paste the left and right hemisphere vector graphics into the same image for an SVG corresponding to both hemispheres, named e.g. 'subcortex_Melbourne_S1_both.svg'.
 Make sure all the individual regions have appropriate Title text fields corresponding to the region name, face, and hemisphere.
 
 
-<img src="../images/Tian_S1_both_inkscape.png" width="90%">
+<img src="../images/Melbourne_S1_both_inkscape.png" width="90%">
 
 
 ## 🗂️ Organizing the file structure correctly for your custom atlas
 
-Once you have all your regions traced in the left and right hemispheres for your segmentation, in the `subcortex_visualization/data/` folder, make sure you have the following SVG files--in this case, corresponding to the Tian S1 subcortical atlas:
+Once you have all your regions traced in the left and right hemispheres for your segmentation, in the `subcortex_visualization/data/` folder, make sure you have the following SVG files--in this case, corresponding to the Melbourne S1 subcortical atlas:
 
-* subcortex_Tian_S1_base_both.svg
-* subcortex_Tian_S1_base_L.svg
-* subcortex_Tian_S1_base_R.svg
+* subcortex_Melbourne_S1_both.svg
+* subcortex_Melbourne_S1_L.svg
+* subcortex_Melbourne_S1_R.svg
 
 ### 🔎 Lookup tables to indicate the order for drawing regions
 
@@ -112,12 +154,12 @@ Each table, in .csv format, should have the following four columns:
 3. `plot_order`: in which order should this region be plotted? A value of 1 means this region will be drawn first (i.e., on the bottom) and higher values mean the region will be drawn higher in the stack (i.e., closer to the top). This is only relevant if some regions are overlapping and you care about plotting order.
 4. `Hemisphere`: which hemisphere the corresponding region belongs to (should be all 'L' for left hemisphere and 'R' for right hemisphere).
 
-Take a look at the examine lookup tables provided for the Tian S1 segmentation in the [left hemisphere], [right hemisphere], and both hemispheres to see exactly how these files are organized.
-In the case of the Tian S1 subcortical atlas, this corresponds to three lookup table files:
+Take a look at the examine lookup tables provided for the Melbourne Subcortex Atlas S1 segmentation in the [left hemisphere], [right hemisphere], and both hemispheres to see exactly how these files are organized.
+In the case of the Melbourne Subcortex Atlas S1 subcortical atlas, this corresponds to three lookup table files:
 
-* Tian_S1_both_ordering.csv
-* Tian_S1_L_ordering.csv
-* Tian_S1_R_ordering.csv
+* Melbourne_S1_both_ordering.csv
+* Melbourne_S1_L_ordering.csv
+* Melbourne_S1_R_ordering.csv
 
 And with that, you'll just need to reinstall the python package once you've added your new vector graphics and lookup tables! 
 That can be accomplished by simply navigating to the base level of this repository and running:

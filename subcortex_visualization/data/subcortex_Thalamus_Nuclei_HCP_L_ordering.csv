@@ -1,0 +1,14 @@
+﻿region,face,plot_order,Hemisphere
+Medio_Dorsal,lateral,1,L
+Ventral_Latero_Dorsal,lateral,2,L
+Ventral_Anterior,lateral,3,L
+Anterior,lateral,4,L
+Pulvinar,lateral,5,L
+Ventral_Latero_Ventral,lateral,6,L
+Ventral_Latero_Ventral,medial,7,L
+Anterior,medial,8,L
+Pulvinar,medial,9,L
+Ventral_Anterior,medial,10,L
+Ventral_Latero_Dorsal,medial,11,L
+Central_Lateral-Lateral_Posterior-Medial_Pulvinar,medial,12,L
+Medio_Dorsal,medial,13,L
