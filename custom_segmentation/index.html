@@ -1,0 +1,843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../atlas_info/">
+      
+      
+      
+      <link rel="icon" href="../images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>DIY atlas - Subcortex visualization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Subcortex visualization" class="md-header__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Subcortex visualization
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DIY atlas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Subcortex visualization" class="md-nav__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Subcortex visualization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Atlas information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DIY atlas
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DIY atlas
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-creating-and-visualizing-a-custom-triangulated-mesh-from-a-volumetric-segmentationparcellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-mesh-files-obj-per-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating mesh files (.obj) per region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-nii2mesh-pyvista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: nii2mesh + pyvista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-your-mesh-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing your mesh objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-surfice_atlas-surf-ice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: surfice_atlas + Surf Ice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracing-the-outline-of-each-region-in-vector-graphic-editing-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Tracing the outline of each region in vector graphic editing software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Tracing the outline of each region in vector graphic editing software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-outlines-for-each-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating outlines for each region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labeling-each-region-in-the-svg-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labeling each region in the SVG metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeating-for-the-other-hemisphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repeating for the other hemisphere
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-the-left-and-right-hemispheres-into-one-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining the left and right hemispheres into one image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-the-file-structure-correctly-for-your-custom-atlas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Organizing the file structure correctly for your custom atlas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ Organizing the file structure correctly for your custom atlas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lookup-tables-to-indicate-the-order-for-drawing-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔎 Lookup tables to indicate the order for drawing regions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-creating-and-visualizing-a-custom-triangulated-mesh-from-a-volumetric-segmentationparcellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-mesh-files-obj-per-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating mesh files (.obj) per region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-nii2mesh-pyvista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: nii2mesh + pyvista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-your-mesh-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing your mesh objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-surfice_atlas-surf-ice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: surfice_atlas + Surf Ice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracing-the-outline-of-each-region-in-vector-graphic-editing-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Tracing the outline of each region in vector graphic editing software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Tracing the outline of each region in vector graphic editing software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-outlines-for-each-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating outlines for each region
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labeling-each-region-in-the-svg-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labeling each region in the SVG metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeating-for-the-other-hemisphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repeating for the other hemisphere
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-the-left-and-right-hemispheres-into-one-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining the left and right hemispheres into one image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-the-file-structure-correctly-for-your-custom-atlas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Organizing the file structure correctly for your custom atlas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ Organizing the file structure correctly for your custom atlas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lookup-tables-to-indicate-the-order-for-drawing-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔎 Lookup tables to indicate the order for drawing regions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>DIY atlas</h1>
+
+<h2 id="usage-example">Usage Example</h2>
+<p>This package provides six subcortical atlases as a starting point.
+The workflow can readily be extended to your favorite segmentation atlas, though! 
+We have a dedicated folder for a custom segmentation pipeline that will walk you through the two key steps:  </p>
+<ol>
+<li>Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using either the <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code></a> or <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a> software, both developed by Chris Rorden; and </li>
+<li>Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.</li>
+</ol>
+<p>If you use a particular segmentation atlas in your research and would like to visualize data in that atlas in two dimensions, you can follow along with this guide!
+These are the exact same steps we implemented to generate the segmentation visuals included in this python package for all atlases.</p>
+<h2 id="step-1-creating-and-visualizing-a-custom-triangulated-mesh-from-a-volumetric-segmentationparcellation">Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation</h2>
+<h3 id="generating-mesh-files-obj-per-region">Generating mesh files (.obj) per region</h3>
+<p>First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering.
+There are many tools out there to accomplish this depending on your preference; here, we'll suggest and walk through two options, both developed by <a href="">Chris Rorden's lab</a>: <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code></a> or <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a>.
+If you want a quick and simple mesh generation with outputs that can be viewed interactively in a Jupyter notebook (with control over the color maps, etc), follow along with option 1 (<code>nii2mesh</code> and <code>pyvista</code> combo).
+If you want smoother mesh generation and more control over properties of the 3D rendering specifically geared towards brain data (and have Matlab), follow along with option 2 (<code>surfice_atlas</code> and <code>Surf Ice</code> combo).</p>
+<h3 id="option-1-nii2mesh-pyvista">Option 1: <code>nii2mesh</code> + <code>pyvista</code></h3>
+<p>Here, we'll use the <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code> tool</a> developed by Chris Rorden:</p>
+<p><img src="../images/volume_to_mesh_schematic.png" width="90%"></p>
+<p>The repository for this tool has really helpful documentation as well as a web-based platform that converts a NIFTI volume to a triangulated mesh (.obj) file without any installation or repository cloning.
+It's an awesome resource, though we'll need to clone the repository to have full (local) access to the functionality needed to generate a mesh per index (i.e., region) in the segmentation volume.
+Once you clone the repository, it's very straightforward to compile in C++.
+Here are the steps, as copied from the <code>nii2mesh</code> <a href="https://github.com/neurolabusc/nii2mesh">repository README</a>:</p>
+<pre><code>git clone https://github.com/neurolabusc/nii2mesh
+cd nii2mesh/src
+make
+</code></pre>
+<p>Check that after running <code>make</code>, there is a binary file <code>nii2mesh</code> in the <code>nii2mesh/src/</code> directory, since that's the key function.
+If everything looks good there, we'll use the <code>nii2mesh</code> program to generate an individual <code>.obj</code> mesh file per region in our segmentation atlas by setting the <code>-a 1</code> flag.
+For example, if you're using a hippocampal subfield segmentation volume with 10 regions (voxels labeled 1 through 10 accordingly), the below script will generate 10 individual <code>.obj</code> mesh files:</p>
+<pre><code>nii2mesh my_custom_segmentation.nii.gz -a 1 my_custom_segmentation.obj
+</code></pre>
+<h3 id="visualizing-your-mesh-objects">Visualizing your mesh objects</h3>
+<p>There are a variety of programs that can render the <code>.obj</code> mesh files, including <a href="https://www.blender.org/">Blender</a> and <a href="https://www.slicer.org/">3D Slicer</a>, as well as <a href="https://3dviewer.net/">online tools</a>.
+If you're using a Mac, the Quick Look feature can also interactively render .obj meshes!</p>
+<p>We've included a <a href="https://github.com/anniegbryant/subcortex_visualization/blob/main/custom_segmentation_pipeline/render_mesh_interactively.ipynb">simple Jupyter notebook</a> guide to combine and render the meshes into one object that is interactive and color-coded by region:</p>
+<p><img src="../images/mesh_rotation_interactive.gif" width="60%"></p>
+<p>If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then exporting as a snapshot PNG image(s) by clicking the 'PNG' icon as shown in the above video.</p>
+<h3 id="option-2-surfice_atlas-surf-ice">Option 2: <code>surfice_atlas</code> + <code>Surf Ice</code></h3>
+<p>This method will generate one color-coded 3D mesh file (<code>.mz3</code>) for your segmentation, which can then be rendered interactively in the <code>Surf Ice</code> GUI software.
+There are a few prerequisites for this step, which should be completed before you can crack on with your mesh generation:  </p>
+<ol>
+<li>
+<p>Clone the <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a> repository to your local machine with <code>git clone https://github.com/neurolabusc/surfice_atlas.git</code> </p>
+</li>
+<li>
+<p>Clone the <a href="https://github.com/neurolabusc/spmScripts"><code>surfice_atlas</code></a> repository to your local machine with <code>git clone https://github.com/neurolabusc/spmScripts.git</code> </p>
+</li>
+<li>
+<p>Download the <a href="https://www.fil.ion.ucl.ac.uk/spm/software/">latest SPM</a> (Statistical Parametric Mapping) to wherever you store Matlab plugins </p>
+</li>
+<li>
+<p>Download and install the <code>Surf Ice</code> (Version 6) graphical rendering software for your given operating systen from <a href="https://www.nitrc.org/projects/surfice/">NITRC</a>. </p>
+</li>
+</ol>
+<p>Once you've completed those four steps, we'll generate the <code>.mz3</code> file for an example segmentation in Matlab.
+First, we'll add the relevant paths to Matlab:</p>
+<pre><code class="language-matlab">addpath('/path/to/github/surfice_atlas/'); % Change to where you cloned surfice_atlas
+addpath('/path/to/github/spmScripts/'); % Change to where you cloned spmScripts
+addpath('/path/to/MATLAB/spm/'); % Change to where you copied the spm folder
+</code></pre>
+<p>Now, it's a very simple process to convert our atlas segmentation to an <code>.mz3</code> file to read into Surf Ice:</p>
+<pre><code class="language-matlab">our_example_segmentation = '/path/to/example_segmentation.nii.gz';
+lut = '/path/to/github/surfice_atlas/mylut.lut'; % We use the default LUT that came with surfice_atlas, you can create your own
+
+nii_nii2atlas(our_example_segmentation, lut);
+</code></pre>
+<p>This will generate a file called <code>merge.mz3</code>, which contains color-coded mesh volumes for each region in your example segmentation.
+Boot up Surf Ice and open the <code>merge.mz3</code> file (using File &gt; Open to select merge.mz3), and you should have a color-coded three-dimensional mesh rendered on your screen.</p>
+<p><img src="../images/surfice_example.gif" width="80%"></p>
+<p>If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then taking a screenshot from the medial and lateral perspectives.</p>
+<h2 id="tracing-the-outline-of-each-region-in-vector-graphic-editing-software">🎨 Tracing the outline of each region in vector graphic editing software</h2>
+<h3 id="creating-outlines-for-each-region">Creating outlines for each region</h3>
+<p>Next, pour yourself a big mug of coffee to sit and trace the outline of each region in Inkscape (or a similar vector graphic editing program) ☕️
+We'll walk you through the steps using Inkscape.</p>
+<p>Open up a new image (.svg) in Inkscape, and import the PNG snapshot generated from the above rendered mesh by either clicking <code>⌘+I</code> (Mac) or <code>Ctrl+I</code> (Windows), or <code>File &gt; Import</code>.
+We'll use the 'Freehand lines' tool for tracing, which looks like the following along your toolbar:</p>
+<p><img src="../images/inkscape_freehand_lines.png" width="80%"></p>
+<p>And then go ahead and trace your first region in your image!
+We recommend setting 'Smoothing' in your top toolbar to around 20 (we use 22.0), which means that you can do a pretty quick first pass at tracing each region and the path won't stick to every bump you draw.</p>
+<p><img src="../images/tracing_region.gif" width="60%"></p>
+<p>Once you finish your first trace, if you want to edit any of the points in the path, just double-click on the black line and you can click and drag the points to adjust their spacing.
+Rinse and repeat: go ahead and trace the outline for all of the regions in your atlas.
+Once you finish, when you take away the 3D mesh PNG underneath, you should have a set of outlines that resemble a minimalist aesthetic line-art tattoo like so:</p>
+<p><img src="../images/trace_outline_combined.png" width="50%"></p>
+<h3 id="labeling-each-region-in-the-svg-metadata">Labeling each region in the SVG metadata</h3>
+<p>After you finish tracing the outline for each region, you can store the name of that region along with the face (medial or lateral) and hemisphere (right or left) to identify that region programmatically in python.
+In Inkscape, you can accomplish this by selecting a given region (here, the left putamen shown on the lateral face).
+In the 'Object Properties' pane shown on the right, in the 'Title' text box, you should then put the name of the region (e.g., 'putamen'), face (e.g., 'lateral'), and abbreviation (e.g., 'L'), all as one string separated by underscores, as shown in the screenshot.
+In other words, for the highlighted region, its Title should be 'putamen_lateral_L':</p>
+<p><img src="../images/inkscape_region_metadata.png" width="90%"></p>
+<p>Once you add the title to each region, congrats, you've finished creating the vector graphic for the given hemisphere for your custom atlas!</p>
+<h3 id="repeating-for-the-other-hemisphere">Repeating for the other hemisphere</h3>
+<p>You may notice that the above SVG image is saved as 'subcortex_Melbourne_S1_L.svg', which indicates that this file corresponds to: 
+* subcortex
+* Melbourne Subcortex Atlas, granularity level 1 (S1)
+* left hemisphere (L)</p>
+<p>If your atlas is left-right symmetric, you can just copy-paste the SVG objects into a new file named e.g., 'subcortex_Melbourne_S1_R.svg', making sure you (1) flip the image along the $y$-axis (i.e., left-right mirror) and update each region's Title to end with '_R' rather than '_L'.</p>
+<h3 id="combining-the-left-and-right-hemispheres-into-one-image">Combining the left and right hemispheres into one image</h3>
+<p>Once you have both hemispheres traced, the last step here is to copy-paste the left and right hemisphere vector graphics into the same image for an SVG corresponding to both hemispheres, named e.g. 'subcortex_Melbourne_S1_both.svg'.
+Make sure all the individual regions have appropriate Title text fields corresponding to the region name, face, and hemisphere.</p>
+<p><img src="../images/Melbourne_S1_both_inkscape.png" width="90%"></p>
+<h2 id="organizing-the-file-structure-correctly-for-your-custom-atlas">🗂️ Organizing the file structure correctly for your custom atlas</h2>
+<p>Once you have all your regions traced in the left and right hemispheres for your segmentation, in the <code>subcortex_visualization/data/</code> folder, make sure you have the following SVG files--in this case, corresponding to the Melbourne S1 subcortical atlas:</p>
+<ul>
+<li>subcortex_Melbourne_S1_both.svg</li>
+<li>subcortex_Melbourne_S1_L.svg</li>
+<li>subcortex_Melbourne_S1_R.svg</li>
+</ul>
+<h3 id="lookup-tables-to-indicate-the-order-for-drawing-regions">🔎 Lookup tables to indicate the order for drawing regions</h3>
+<p>Home stretch, you're almost done 🏃‍♀️</p>
+<p>One of the last steps to get plotting with your custom atlas to create a lookup table for each of the three SVG images (left, right, and both hemispheres).
+Each table, in .csv format, should have the following four columns:  </p>
+<ol>
+<li><code>region</code>: name of the region (e.g., 'accumbens')</li>
+<li><code>face</code>: which face to plot (e.g., 'lateral')</li>
+<li><code>plot_order</code>: in which order should this region be plotted? A value of 1 means this region will be drawn first (i.e., on the bottom) and higher values mean the region will be drawn higher in the stack (i.e., closer to the top). This is only relevant if some regions are overlapping and you care about plotting order.</li>
+<li><code>Hemisphere</code>: which hemisphere the corresponding region belongs to (should be all 'L' for left hemisphere and 'R' for right hemisphere).</li>
+</ol>
+<p>Take a look at the examine lookup tables provided for the Melbourne Subcortex Atlas S1 segmentation in the [left hemisphere], [right hemisphere], and both hemispheres to see exactly how these files are organized.
+In the case of the Melbourne Subcortex Atlas S1 subcortical atlas, this corresponds to three lookup table files:</p>
+<ul>
+<li>Melbourne_S1_both_ordering.csv</li>
+<li>Melbourne_S1_L_ordering.csv</li>
+<li>Melbourne_S1_R_ordering.csv</li>
+</ul>
+<p>And with that, you'll just need to reinstall the python package once you've added your new vector graphics and lookup tables! 
+That can be accomplished by simply navigating to the base level of this repository and running:</p>
+<pre><code class="language-bash"># Change to where you've cloned this repo
+cd /path/to/github/subcortex_visualization 
+
+# To reinstall the subcortex-visualization package
+python3 -m pip install . 
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
