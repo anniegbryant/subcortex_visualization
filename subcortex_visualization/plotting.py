@@ -15,7 +15,7 @@ from matplotlib.patches import PathPatch, Patch
 # Files 
 from importlib.resources import files
 
-def add_legend(ax, fig, atlas_ordering, value_column='value', cmap_colors=None, fill_title=None, cmap='plasma', norm=None):
+def add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_colors=None, fill_title=None, cmap='plasma', norm=None):
     """
     Add a legend or colorbar to the plot based on the provided data.
 
@@ -63,7 +63,7 @@ def add_legend(ax, fig, atlas_ordering, value_column='value', cmap_colors=None, 
         ]
         # Add legend to the plot
         ax.legend(handles=legend_elements, loc='lower center',
-                    bbox_to_anchor=(0.5, -0.25), ncol=4, frameon=False,
+                    bbox_to_anchor=(0.5, -0.25), ncols=ncols, frameon=False,
                     fontsize='medium', handleheight=1.2, handlelength=1.2,
                     title=fill_title, 
                     handletextpad=0.4)
@@ -311,7 +311,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     """
     
     # Load SVG
-    svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_base_{hemisphere}.svg")
+    svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}.svg")
     tree = ET.parse(svg_path)
     root = tree.getroot()
 
@@ -323,7 +323,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     paths = root.findall('.//svg:path', ns)
 
     # Load ordering file
-    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas}_{hemisphere}_ordering.csv"))
+    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}_ordering.csv"))
 
     # Handle colormap
     if isinstance(cmap, str):
@@ -353,10 +353,12 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     # Add a legend if requested
     if show_legend:
 
+        ncols = np.where(hemisphere == 'both', 8, 4)
+
         # Call add_legend function to add the legend (discrete when subcortex_data is None) or colorbar (continuous when subcortex_data is not None)
         if subcortex_data is None:
             add_legend(ax=ax, fig=fig, value_column=value_column, atlas_ordering=atlas_ordering, 
-                       cmap_colors=cmap_colors, fill_title=fill_title)
+                       cmap_colors=cmap_colors, fill_title=fill_title, ncols=ncols)
         else:
             add_legend(ax=ax, fig=fig, value_column=value_column, atlas_ordering=atlas_ordering, 
                        cmap=cmap, norm=norm, fill_title=fill_title)
