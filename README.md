@@ -2,7 +2,7 @@
 
 This python package currently includes the following six subcortical atlases for data visualization in two-dimensional vector graphics:
 
-<img src="images/all_atlas_showcase.png" width="100%">
+<img src="docs-site/docs/images/all_atlas_showcase.png" width="100%">
 
 More information about these atlases, including the process of rendering the surfaces and tracing the outlines for each, can be found in the [`atlas_info/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/atlas_info) directory.
 
@@ -14,7 +14,7 @@ We based our vector graphic outlines on the three-dimensional subcortical meshes
 
 The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the ENIGMA toolbox ('aseg' atlas, left) or a custom-rendered mesh from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)]()https://www.nature.com/articles/s41593-020-00711-6 -- ('S1' granularity level, right).
 
-<img src="images/aseg_and_Melbourne_S1_3D_to_2D_schematic.png" width="90%">
+<img src="docs-site/docs/images/aseg_and_Melbourne_S1_3D_to_2D_schematic.png" width="90%">
 
 
 While `ggseg` offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure.
@@ -51,7 +51,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
                       fill_title = "Subcortical region index")
 ```
 
-<img src="images/example_aseg_subcortex_plot.png" width="80%">
+<img src="docs-site/docs/images/example_aseg_subcortex_plot.png" width="80%">
 
 
 ### 📚 Tutorial
@@ -103,7 +103,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
                       cmap=white_blue_red_cmap, midpoint=0)
 ```
 
-<img src="images/example_aseg_subcortex_normdist.png" width="80%">
+<img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="80%">
 
 
 ## 💡 Want to generate your own mesh and/or parcellation?

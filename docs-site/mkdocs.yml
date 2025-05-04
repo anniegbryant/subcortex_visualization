@@ -1,0 +1,22 @@
+site_name: Subcortex visualization
+
+theme:
+  name: material  
+  logo: images/logo.png  # adjust the path as needed
+  favicon: images/logo.ico
+  palette:
+    scheme: default
+    primary: purple  # ← change this to your desired color
+    accent: amber   # ← optional: affects buttons/links
+
+plugins:
+  - search
+  - mkdocs-jupyter
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: tutorial.ipynb
+  - Atlas information: atlas_info.md
+  - DIY atlas: custom_segmentation.md
+  - Acknowledgments: acknowledgments.md

@@ -10,7 +10,7 @@ install_requires = [
 
 setup(
     name='subcortex_visualization',
-    version='0.1.11',
+    version='0.1.12',
     description='Visualize subcortical brain data from SVG templates',
     author='Annie G. Bryant',
     packages=find_packages(),
