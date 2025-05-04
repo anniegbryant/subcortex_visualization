@@ -13,6 +13,9 @@ plugins:
   - search
   - mkdocs-jupyter
 
+markdown_extensions:
+  - md_in_html
+
 nav:
   - Home: index.md
   - Installation: installation.md
