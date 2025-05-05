@@ -4,7 +4,7 @@ This python package currently includes the following six subcortical atlases for
 
 <img src="docs-site/docs/images/all_atlas_showcase.png" width="100%">
 
-More information about these atlases, including the process of rendering the surfaces and tracing the outlines for each, can be found in the [`atlas_info/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/atlas_info) directory.
+More information about these atlases, including the process of rendering the surfaces and tracing the outlines for each, can be found in the [`atlas_info/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/atlas_info) directory and at the [project website](https://anniegbryant.github.io/subcortex_visualization/).
 
 
 ## 🙋‍♀️ Motivation
