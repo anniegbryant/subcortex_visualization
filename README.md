@@ -71,7 +71,7 @@ To plot real data in the subcortex, your `subcortex_data` should be  a `pandas.D
 
 Briefly, all functionality is contained within the `plot_subcortical_data` function, which takes in the following arguments: 
 * `subcortex_data`: The three-column dataframe in a format as shown above; this is optional, if left out the plot will just color each region by its index
-* `atlas`: The name of the subcortical segmentation atlas (default is 'aseg', which is currently the only supported atlas)
+* `atlas`: The name of the subcortical segmentation atlas (default is 'aseg', all options listed below)
 * `value_column`: The name of the column in your `subcortex_data` to plot, defaults to 'value'
 * `line_thickness`: How thick the lines around each subcortical region should be drawn, in mm (default is 1.5)
 * `line_color`: What color the lines around each subcortical region should be (default is 'black')
@@ -104,6 +104,17 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
 ```
 
 <img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="80%">
+
+### Available atlases
+
+The following six subcortical atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
+
+* `aseg`: The `aseg` parcellation atlas from FreeSurfer
+* `Melbourne_S1`: The Melbourne Subcortex Atlas at granularity level S1, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `Melbourne_S2`: The Melbourne Subcortex Atlas at granularity level S2, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `AICHA`: The AICHA subcortex atlas, from [Joliot et al. *J Neurosci Methods* (2015)](https://pubmed.ncbi.nlm.nih.gov/26213217/).
+* `Brainnetome`: The Brainnetome subcortex atlas, from [Fan et al. *Cerebral Cortex* (2016)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/)
+* `Thalamus_Nuclei_HCP`: The thalamic nuclei atlas derived from HCP data, from [Najdenovska et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata2018270)
 
 
 ## 💡 Want to generate your own mesh and/or parcellation?
