@@ -1,0 +1,1 @@
+Thank you very much to [Chris Rorden](https://github.com/rordenlab), [Ye Tian](https://github.com/yetianmed), and [Sid Chopra](https://github.com/sidchop) for their suggestions and continued development of open tools for neuroimaging visualization that enabled development of this project!
