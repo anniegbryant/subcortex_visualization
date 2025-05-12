@@ -6,7 +6,6 @@ authors:
     orcid: 0000-0002-2217-6520
 title: "subcortex-visualization"
 version: 0.1.12
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.15385315
+doi: 0.5281/zenodo.15385315
 date-released: 2025-05-03
+url: "https://anniegbryant.github.io/subcortex_visualization/"
