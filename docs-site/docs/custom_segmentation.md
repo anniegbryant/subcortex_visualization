@@ -94,6 +94,9 @@ Boot up Surf Ice and open the `merge.mz3` file (using File > Open to select merg
 
 If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then taking a screenshot from the medial and lateral perspectives.
 
+The color map is defined in an RGB text file, where each row corresponds to a region in the segmentation volume (in order of index value) and the three columns correspond to the red, green, and blue color values (ranging from 0 to 255).
+One can construct a new color map with the desired number of colors (i.e., number of regions in the segmentation) using the following Python code snippet, which samples eight colors evenly spaced across the `plasma' colormap from \texttt{Matplotlib}~\parencite{hunter2007matplotlib} as an example.
+
 ## 🎨 Tracing the outline of each region in vector graphic editing software
 
 ### Creating outlines for each region
