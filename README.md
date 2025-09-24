@@ -121,10 +121,12 @@ The following six subcortical atlases are currently supported with more informat
 
 ## 💡 Want to generate your own mesh and/or parcellation?
 
+<img src="docs-site/docs/images/custom_vector_method.png" width="70%">
+
 This package provides six subcortical atlases as a starting point.
 The workflow can readily be extended to your favorite segmentation atlas, though! 
 We have a dedicated folder for a custom segmentation pipeline that will walk you through the two key steps:  
-1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using either the [`nii2mesh`](https://github.com/neurolabusc/nii2mesh) or [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) software, both developed by Chris Rorden; and 
+1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using either the [`nii2mesh`](https://github.com/neurolabusc/nii2mesh) or [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) software, both developed by [Chris Rorden's lab](https://github.com/rordenlab); and 
 2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
 
 Check out the walkthrough in the [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) folder for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.

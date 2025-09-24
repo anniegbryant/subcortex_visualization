@@ -20,4 +20,4 @@ testing*
 custom_segmentation_pipeline/*
 
 # Atlas info folder
-atlas_info/*
+atlas_info/raw_volumes
