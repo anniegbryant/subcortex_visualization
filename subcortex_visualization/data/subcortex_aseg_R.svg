@@ -8,7 +8,7 @@
    version="1.1"
    id="svg63908"
    inkscape:version="1.2 (dc2aeda, 2022-05-15)"
-   sodipodi:docname="subcortex_aseg_base_R.svg"
+   sodipodi:docname="subcortex_aseg_R.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +25,13 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.64521853"
-     inkscape:cx="357.2433"
-     inkscape:cy="131.73831"
-     inkscape:window-width="1309"
-     inkscape:window-height="456"
-     inkscape:window-x="161"
-     inkscape:window-y="54"
-     inkscape:window-maximized="0"
+     inkscape:cx="-14.723694"
+     inkscape:cy="132.51324"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1470"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs63905">
@@ -393,7 +393,7 @@
        inkscape:original-d="m 100.12975,25.552166 c 0.0313,-0.27876 0.0631,-0.559926 0.0954,-0.843495 -0.505322,0.125897 -1.005812,0.25039 -1.503742,0.37405 -0.33589,0.03185 -0.66428,0.06276 -0.99764,0.09389 -0.80971,0.182773 -1.61251,0.363782 -2.42053,0.545763 -1.42973,0.100189 -2.85665,0.199935 -4.28075,0.299239 -0.43764,-0.24966 -0.877,-0.500725 -1.31445,-0.751115 -0.4408,-0.748469 -0.87895,-1.499581 -1.31445,-2.253342 -0.0965,-0.779767 -0.19043,-1.562177 -0.28167,-2.347235 -0.003,-0.654579 -0.003,-1.311804 0,-1.971675 -0.4095,0.0026 -0.81636,0.0026 -1.22056,0 -0.34691,0.09654 -0.69117,0.190426 -1.03279,0.281667 -0.87895,0.816354 -1.75525,1.630061 -2.6289,2.441123 -0.4408,0.346908 -0.87895,0.691168 -1.31445,1.032782 -0.15913,0.253019 -0.31561,0.503391 -0.46945,0.751115 -0.12736,0.538667 -0.25355,1.073219 -0.37857,1.603661 0.2797,0.60307 0.5638,1.214775 0.84598,1.821527 0.8452,0.454535 1.68933,0.908091 2.53705,1.36317 0.95972,0.24378 1.91824,0.486924 2.87392,0.729017 1.10438,-0.05481 2.21936,-0.110411 3.32278,-0.165682 0.93487,-0.12442 1.88077,-0.250541 2.81668,-0.375558 0.58447,-0.06311 1.17123,-0.126712 1.76029,-0.190795 0.60685,-0.100835 1.20498,-0.200442 1.81505,-0.302254 0.47036,-0.181069 0.93146,-0.358732 1.4008,-0.539733 0.53421,-0.345576 1.07147,-0.693212 1.596112,-1.032783 0.0286,-0.185134 0.0599,-0.372911 0.0939,-0.563337 z"
        sodipodi:nodetypes="cccccccccccccccccccccccccc">
       <title
-         id="title4486">palldium_medial_R</title>
+         id="title4486">pallidum_medial_R</title>
     </path>
     <path
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.600001;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
