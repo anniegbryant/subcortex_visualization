@@ -254,7 +254,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
                           line_thickness=1.5, line_color='black',
                           hemisphere='L', fill_title="values", cmap='viridis',
                           vmin=None, vmax=None, midpoint=None, show_legend=True,
-                          show_figure=True,fontsize='medium'):
+                          show_figure=True,fontsize=12):
     
     """
     Visualize subcortical brain data on an SVG map using matplotlib.
