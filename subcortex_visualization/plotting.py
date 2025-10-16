@@ -200,6 +200,8 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
 
     norm : matplotlib.colors.Normalize or matplotlib.colors.TwoSlopeNorm, optional
         Normalization object for the colorbar. If None, a discrete legend is created.
+    
+    fontsize: font size for the figure. Default to 12.
 
     Returns
     -------
@@ -252,7 +254,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
                           line_thickness=1.5, line_color='black',
                           hemisphere='L', fill_title="values", cmap='viridis',
                           vmin=None, vmax=None, midpoint=None, show_legend=True,
-                          show_figure=True):
+                          show_figure=True,fontsize='medium'):
     
     """
     Visualize subcortical brain data on an SVG map using matplotlib.
@@ -309,7 +311,10 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     - The function loads SVG files and a lookup CSV bundled with the package, which can be found under `data/` directory.
     - The input `subcortex_data` should align with regions defined in the lookup table.
     """
-    
+        
+    if "Tian" in atlas:
+        atlas = atlas.replace("Tian","Melbourne")
+        
     # Load SVG
     svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}.svg")
     tree = ET.parse(svg_path)
@@ -362,7 +367,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
         else:
             add_legend(ax=ax, fig=fig, value_column=value_column, atlas_ordering=atlas_ordering, 
                        cmap=cmap, norm=norm, fill_title=fill_title)
-
+    plt.rcParams.update({'font.size': fontsize})  # Change global font size
     plt.tight_layout()
 
     if show_figure:
