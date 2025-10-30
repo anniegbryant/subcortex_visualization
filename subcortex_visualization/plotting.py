@@ -128,6 +128,9 @@ def prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=No
     """
 
     if subcortex_data is None:
+        # Sort by seg_index for color assignment
+        atlas_ordering = atlas_ordering.sort_values(by='seg_index').reset_index(drop=True)
+
         # Assign discrete indices per region
         unique_regions = atlas_ordering['region'].unique()
         region_to_index = {region: idx for idx, region in enumerate(unique_regions)}
@@ -138,6 +141,9 @@ def prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=No
         cmap_colors = cmap(np.linspace(0, 1, num_regions))
         color_lookup = {region: cmap_colors[i] for region, i in region_to_index.items()}
 
+        # Re-sort by plot_order again 
+        atlas_ordering = atlas_ordering.sort_values(by='plot_order').reset_index(drop=True)
+        
         return atlas_ordering, color_lookup, cmap_colors
     
     else:
@@ -217,6 +223,9 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
     else:
         fig, ax = plt.subplots(figsize=(8, 6))
     patches = []
+
+    # Ensure atlas_ordering is sorted by plot_order
+    atlas_ordering = atlas_ordering.sort_values(by='plot_order')
 
     for _, row in atlas_ordering.iterrows():
         this_region = row['region']
@@ -326,12 +335,25 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}_ordering.csv"))
 
     # Handle colormap
-    if isinstance(cmap, str):
+    # If atlas is SUIT, use a specific colormap
+    if atlas == 'SUIT': 
+        hex_colors = [
+            '#beff00', '#00ea43', '#0068ff', '#0054d4', '#df00ff', '#ff0000', '#df0000',
+            '#ff9300', '#c86b00', '#00ff00', '#00d000', '#00ffff', '#00d0ce',
+            '#3900ff', '#2e00d5', '#ff009d', '#df007c'
+        ]
+
+        # Create a ListedColormap
+        cmap = mcolors.ListedColormap(hex_colors, name='custom_discrete')
+
+    # Otherwise, use the provided colormap
+    elif isinstance(cmap, str):
         cmap = matplotlib.colormaps.get_cmap(cmap)
 
     # Prepare data for plotting
     if subcortex_data is None: 
         atlas_ordering, color_lookup, cmap_colors = prep_data(atlas_ordering, value_column=value_column, subcortex_data=None, cmap=cmap)
+
     else: 
         atlas_ordering, norm, vmin, vmax, midpoint = prep_data(atlas_ordering, value_column=value_column, 
                                                                subcortex_data=subcortex_data, 
@@ -353,7 +375,8 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     # Add a legend if requested
     if show_legend:
 
-        ncols = np.where(hemisphere == 'both', 8, 4)
+        # 8 columns if both hemispheres, else 4; only exception is for SUIT atlas, which always uses 4 columns
+        ncols = 4 if atlas == 'SUIT' else np.where(hemisphere == 'both', 8, 4)
 
         # Call add_legend function to add the legend (discrete when subcortex_data is None) or colorbar (continuous when subcortex_data is not None)
         if subcortex_data is None:
