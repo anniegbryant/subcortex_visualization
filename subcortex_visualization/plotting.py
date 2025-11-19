@@ -323,9 +323,14 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
         
     if "Tian" in atlas:
         atlas = atlas.replace("Tian","Melbourne")
+
+    # Use default of 'both' for SUIT cerebellar atlas
+    if atlas == "SUIT" and hemisphere in ['L', 'R']:
+        print("Individual-hemisphere visualization is not supported with the SUIT cerebellar atlas. Rendering both hemispheres together, along with the vermis.")
+        hemisphere = 'both'
         
     # Load SVG
-    svg_path = files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}.svg")
+    svg_path = files("subcortex_visualization.data").joinpath(f"{atlas}_{hemisphere}.svg")
     tree = ET.parse(svg_path)
     root = tree.getroot()
 
@@ -337,11 +342,11 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     paths = root.findall('.//svg:path', ns)
 
     # Load ordering file
-    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"subcortex_{atlas}_{hemisphere}_ordering.csv"))
+    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas}_{hemisphere}_ordering.csv"))
 
     # Handle colormap
     # If atlas is SUIT, use a specific colormap
-    if atlas == 'SUIT': 
+    if atlas == 'SUIT' and cmap is None: 
         hex_colors = [
             '#beff00', '#00ea43', '#0068ff', '#0054d4', '#df00ff', '#ff0000', '#df0000',
             '#ff9300', '#c86b00', '#00ff00', '#00d000', '#00ffff', '#00d0ce',
