@@ -169,7 +169,7 @@ def prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=No
         return atlas_ordering, norm, vmin, vmax, midpoint
 
 def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', subcortex_data=None, line_color='black', line_thickness=1.5,
-                color_lookup=None, cmap=None, norm=None):
+                color_lookup=None, cmap=None, NA_fill="#cccccc", norm=None, ax=None):
     """ 
     
     Helper function to plot the SVG paths with the specified colors and line properties.
@@ -204,10 +204,16 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
     cmap : str or matplotlib.colors.Colormap, optional
         Colormap to use for the colorbar. Default is 'plasma'.
 
+    NA_fill : str, default="#cccccc"
+        Color to use for regions with missing data.
+
     norm : matplotlib.colors.Normalize or matplotlib.colors.TwoSlopeNorm, optional
         Normalization object for the colorbar. If None, a discrete legend is created.
     
     fontsize: font size for the figure. Default to 12.
+
+    ax : matplotlib.axes.Axes, optional
+        Axes object to plot on. If None, a new figure and axes are created.
 
     Returns
     -------
@@ -218,13 +224,17 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
         The axes object containing the plot.
 
     """
-
-    # Start plotting
-    if hemisphere == 'both': 
-        fig, ax = plt.subplots(figsize=(17,6))
-    else:
-        fig, ax = plt.subplots(figsize=(8, 6))
+    # Define patches
     patches = []
+
+    # Create figure/axes only if none were provided
+    if ax is None:
+        if hemisphere == 'both': 
+            fig, ax = plt.subplots(figsize=(17, 6))
+        else:
+            fig, ax = plt.subplots(figsize=(8, 6))
+    else:
+        fig = ax.figure
 
     # Ensure atlas_ordering is sorted by plot_order
     atlas_ordering = atlas_ordering.sort_values(by='plot_order')
@@ -239,7 +249,7 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
             this_region_color = color_lookup[this_region]
         else:
             val = row[value_column]
-            this_region_color = cmap(norm(val)) if not pd.isnull(val) else "#cccccc"
+            this_region_color = cmap(norm(val)) if not pd.isnull(val) else NA_fill
 
         # Match title to region
         for path in paths:
@@ -261,9 +271,9 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
 
 def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value',
                           line_thickness=1.5, line_color='black',
-                          hemisphere='L', fill_title="values", cmap='viridis',
+                          hemisphere='L', fill_title="values", cmap='viridis', NA_fill="#cccccc",
                           vmin=None, vmax=None, midpoint=None, show_legend=True,
-                          show_figure=True,fontsize=12):
+                          show_figure=True, fontsize=12, ax=None):
     
     """
     Visualize subcortical brain data on an SVG map using matplotlib.
@@ -310,6 +320,12 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     show_figure : bool, default=True
         If True, displays the figure using `plt.show()`. If False, returns the matplotlib Figure object.
 
+    fontsize : int, default=12
+        Font size for the figure text elements.
+
+    ax : matplotlib.axes.Axes, optional
+        Axes object to plot on. If None, a new figure and axes are created.
+
     Returns
     -------
     matplotlib.figure.Figure or None
@@ -325,7 +341,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
         atlas = atlas.replace("Tian","Melbourne")
 
     # Use default of 'both' for SUIT cerebellar atlas
-    if atlas == "SUIT" and hemisphere in ['L', 'R']:
+    if atlas == "SUIT_cerebellar_lobule" and hemisphere in ['L', 'R']:
         print("Individual-hemisphere visualization is not supported with the SUIT cerebellar atlas. Rendering both hemispheres together, along with the vermis.")
         hemisphere = 'both'
         
@@ -346,7 +362,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
 
     # Handle colormap
     # If atlas is SUIT, use a specific colormap
-    if atlas == 'SUIT' and cmap is None: 
+    if atlas == 'SUIT_cerebellar_lobule' and cmap is None: 
         hex_colors = [
             '#beff00', '#00ea43', '#0068ff', '#0054d4', '#df00ff', '#ff0000', '#df0000',
             '#ff9300', '#c86b00', '#00ff00', '#00d000', '#00ffff', '#00d0ce',
@@ -374,19 +390,19 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
 
         fig, ax = plot_helper(atlas_ordering, paths, value_column=value_column, hemisphere=hemisphere,
                               line_color=line_color, line_thickness=line_thickness,
-                              color_lookup=color_lookup)
+                              color_lookup=color_lookup, NA_fill=NA_fill, ax=ax)
         
     else:
 
         fig, ax = plot_helper(atlas_ordering, paths, value_column=value_column, hemisphere=hemisphere,
                               line_color=line_color, line_thickness=line_thickness,
-                              subcortex_data=subcortex_data, cmap=cmap, norm=norm)
+                              subcortex_data=subcortex_data, cmap=cmap, NA_fill=NA_fill, norm=norm, ax=ax)
 
     # Add a legend if requested
     if show_legend:
 
         # 8 columns if both hemispheres, else 4; only exception is for SUIT atlas, which always uses 4 columns
-        ncols = 4 if atlas == 'SUIT' else np.where(hemisphere == 'both', 8, 4)
+        ncols = 4 if atlas == 'SUIT_cerebellar_lobule' else np.where(hemisphere == 'both', 8, 4)
 
         # Call add_legend function to add the legend (discrete when subcortex_data is None) or colorbar (continuous when subcortex_data is not None)
         if subcortex_data is None:

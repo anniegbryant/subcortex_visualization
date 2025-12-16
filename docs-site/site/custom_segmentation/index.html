@@ -353,36 +353,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generating-mesh-files-obj-per-region" class="md-nav__link">
+  <a href="#prerequisites-for-mesh-generation-and-visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      Generating mesh files (.obj) per region
+      Prerequisites for mesh generation and visualization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-1-nii2mesh-pyvista" class="md-nav__link">
+  <a href="#generating-the-mz3-file-in-matlab" class="md-nav__link">
     <span class="md-ellipsis">
-      Option 1: nii2mesh + pyvista
+      Generating the .mz3 file in Matlab
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#visualizing-your-mesh-objects" class="md-nav__link">
+  <a href="#visualizing-the-3d-mesh" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualizing your mesh objects
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-2-surfice_atlas-surf-ice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Option 2: surfice_atlas + Surf Ice
+      Visualizing the 3D mesh
     </span>
   </a>
   
@@ -564,36 +555,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generating-mesh-files-obj-per-region" class="md-nav__link">
+  <a href="#prerequisites-for-mesh-generation-and-visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      Generating mesh files (.obj) per region
+      Prerequisites for mesh generation and visualization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-1-nii2mesh-pyvista" class="md-nav__link">
+  <a href="#generating-the-mz3-file-in-matlab" class="md-nav__link">
     <span class="md-ellipsis">
-      Option 1: nii2mesh + pyvista
+      Generating the .mz3 file in Matlab
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#visualizing-your-mesh-objects" class="md-nav__link">
+  <a href="#visualizing-the-3d-mesh" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualizing your mesh objects
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-2-surfice_atlas-surf-ice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Option 2: surfice_atlas + Surf Ice
+      Visualizing the 3D mesh
     </span>
   </a>
   
@@ -702,43 +684,21 @@
 The workflow can readily be extended to your favorite segmentation atlas, though! 
 We have a dedicated folder for a custom segmentation pipeline that will walk you through the two key steps:  </p>
 <ol>
-<li>Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using either the <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code></a> or <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a> software, both developed by Chris Rorden; and </li>
+<li>Rendering a series of surface meshes from your parcellation atlas (starting from a .nii.gz volume), using <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a> software developed by the lab of <a href="https://github.com/neurolabusc">Chris Rorden</a>; and </li>
 <li>Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.</li>
 </ol>
 <p>If you use a particular segmentation atlas in your research and would like to visualize data in that atlas in two dimensions, you can follow along with this guide!
-These are the exact same steps we implemented to generate the segmentation visuals included in this python package for all atlases.</p>
+These are the exact same steps we implemented to generate the segmentation visuals included in this Python package for all atlases.</p>
 <h2 id="step-1-creating-and-visualizing-a-custom-triangulated-mesh-from-a-volumetric-segmentationparcellation">Step 1. Creating and visualizing a custom triangulated mesh from a volumetric segmentation/parcellation</h2>
-<h3 id="generating-mesh-files-obj-per-region">Generating mesh files (.obj) per region</h3>
 <p>First, you'll want to convert from your three-dimensional segmentation atlas (stored as a NIFTI image) to a triangulated mesh rendering.
-There are many tools out there to accomplish this depending on your preference; here, we'll suggest and walk through two options, both developed by <a href="">Chris Rorden's lab</a>: <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code></a> or <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a>.
-If you want a quick and simple mesh generation with outputs that can be viewed interactively in a Jupyter notebook (with control over the color maps, etc), follow along with option 1 (<code>nii2mesh</code> and <code>pyvista</code> combo).
-If you want smoother mesh generation and more control over properties of the 3D rendering specifically geared towards brain data (and have Matlab), follow along with option 2 (<code>surfice_atlas</code> and <code>Surf Ice</code> combo).</p>
-<h3 id="option-1-nii2mesh-pyvista">Option 1: <code>nii2mesh</code> + <code>pyvista</code></h3>
-<p>Here, we'll use the <a href="https://github.com/neurolabusc/nii2mesh"><code>nii2mesh</code> tool</a> developed by Chris Rorden:</p>
-<p><img alt="Volume to mesh schematic for aseg" src="../images/volume_to_mesh_schematic.png" /></p>
-<p>The repository for this tool has really helpful documentation as well as a web-based platform that converts a NIFTI volume to a triangulated mesh (.obj) file without any installation or repository cloning.
-It's an awesome resource, though we'll need to clone the repository to have full (local) access to the functionality needed to generate a mesh per index (i.e., region) in the segmentation volume.
-Once you clone the repository, it's very straightforward to compile in C++.
-Here are the steps, as copied from the <code>nii2mesh</code> <a href="https://github.com/neurolabusc/nii2mesh">repository README</a>:</p>
-<pre><code>git clone https://github.com/neurolabusc/nii2mesh
-cd nii2mesh/src
-make
-</code></pre>
-<p>Check that after running <code>make</code>, there is a binary file <code>nii2mesh</code> in the <code>nii2mesh/src/</code> directory, since that's the key function.
-If everything looks good there, we'll use the <code>nii2mesh</code> program to generate an individual <code>.obj</code> mesh file per region in our segmentation atlas by setting the <code>-a 1</code> flag.
-For example, if you're using a hippocampal subfield segmentation volume with 10 regions (voxels labeled 1 through 10 accordingly), the below script will generate 10 individual <code>.obj</code> mesh files:</p>
-<pre><code>nii2mesh my_custom_segmentation.nii.gz -a 1 my_custom_segmentation.obj
-</code></pre>
-<h3 id="visualizing-your-mesh-objects">Visualizing your mesh objects</h3>
-<p>There are a variety of programs that can render the <code>.obj</code> mesh files, including <a href="https://www.blender.org/">Blender</a> and <a href="https://www.slicer.org/">3D Slicer</a>, as well as <a href="https://3dviewer.net/">online tools</a>.
-If you're using a Mac, the Quick Look feature can also interactively render .obj meshes!</p>
-<p>We've included a <a href="https://github.com/anniegbryant/subcortex_visualization/blob/main/custom_segmentation_pipeline/render_mesh_interactively.ipynb">simple Jupyter notebook</a> guide to combine and render the meshes into one object that is interactive and color-coded by region:</p>
-<p><img alt="3D mesh rotation GIF" src="../images/mesh_rotation_interactive.gif" /></p>
-<p>If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then exporting as a snapshot PNG image(s) by clicking the 'PNG' icon as shown in the above video.</p>
-<h3 id="option-2-surfice_atlas-surf-ice">Option 2: <code>surfice_atlas</code> + <code>Surf Ice</code></h3>
-<p>This method will generate one color-coded 3D mesh file (<code>.mz3</code>) for your segmentation, which can then be rendered interactively in the <code>Surf Ice</code> GUI software.
-There are a few prerequisites for this step, which should be completed before you can crack on with your mesh generation:  </p>
+There are many tools out there to accomplish this depending on your preference; here, we'll suggest and walk through the <a href="https://github.com/neurolabusc/surfice_atlas">`surfice_atlas'</a> option, developed by the lab of <a href="https://github.com/neurolabusc">Chris Rorden</a> </p>
+<p>This method will generate one color-coded 3D mesh file (<code>.mz3</code>) for your segmentation, which can then be rendered interactively in the <a href="https://github.com/neurolabusc/surf-ice"><code>Surf Ice</code></a> GUI software (described in more detail in <a href="https://www.nature.com/articles/s41592-025-02764-6">Rorden <em>Nature Methods</em> (2025)</a>.)</p>
+<h3 id="prerequisites-for-mesh-generation-and-visualization">Prerequisites for mesh generation and visualization</h3>
+<p>There are a few prerequisites for this step, which should be completed before you can crack on with your mesh generation:  </p>
 <ol>
+<li>
+<p>Ensure your system has a working <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a> installation.</p>
+</li>
 <li>
 <p>Clone the <a href="https://github.com/neurolabusc/surfice_atlas"><code>surfice_atlas</code></a> repository to your local machine with <code>git clone https://github.com/neurolabusc/surfice_atlas.git</code> </p>
 </li>
@@ -752,8 +712,9 @@ There are a few prerequisites for this step, which should be completed before yo
 <p>Download and install the <code>Surf Ice</code> (Version 6) graphical rendering software for your given operating systen from <a href="https://www.nitrc.org/projects/surfice/">NITRC</a>. </p>
 </li>
 </ol>
-<p>Once you've completed those four steps, we'll generate the <code>.mz3</code> file for an example segmentation in Matlab.
-First, we'll add the relevant paths to Matlab:</p>
+<p>Once you've completed these steps, we'll generate the <code>.mz3</code> file for an example segmentation in Matlab.</p>
+<h3 id="generating-the-mz3-file-in-matlab">Generating the .mz3 file in Matlab</h3>
+<p>First, we'll add the relevant paths to MATLAB in a script or directly at the console:</p>
 <pre><code class="language-matlab">addpath('/path/to/github/surfice_atlas/'); % Change to where you cloned surfice_atlas
 addpath('/path/to/github/spmScripts/'); % Change to where you cloned spmScripts
 addpath('/path/to/MATLAB/spm/'); % Change to where you copied the spm folder
@@ -764,12 +725,11 @@ lut = '/path/to/github/surfice_atlas/mylut.lut'; % We use the default LUT that c
 
 nii_nii2atlas(our_example_segmentation, lut);
 </code></pre>
-<p>This will generate a file called <code>merge.mz3</code>, which contains color-coded mesh volumes for each region in your example segmentation.
-Boot up Surf Ice and open the <code>merge.mz3</code> file (using File &gt; Open to select merge.mz3), and you should have a color-coded three-dimensional mesh rendered on your screen.</p>
+<p>This will generate a file called <code>merge.mz3</code>, which contains color-coded mesh volumes for each region in your example segmentation.</p>
+<h3 id="visualizing-the-3d-mesh">Visualizing the 3D mesh</h3>
+<p>Boot up the Surf Ice GUI software and open the <code>merge.mz3</code> file (using File &gt; Open to select merge.mz3), and you should have a color-coded three-dimensional mesh rendered on your screen.</p>
 <p><img alt="3D mesh rotation GIF" src="../images/surfice_example.gif" /></p>
 <p>If you use this method, we recommend rotating the object until you reach the desired angle(s) for generating your two-dimensional atlas, then taking a screenshot from the medial and lateral perspectives.</p>
-<p>The color map is defined in an RGB text file, where each row corresponds to a region in the segmentation volume (in order of index value) and the three columns correspond to the red, green, and blue color values (ranging from 0 to 255).
-One can construct a new color map with the desired number of colors (i.e., number of regions in the segmentation) using the following Python code snippet, which samples eight colors evenly spaced across the `plasma' colormap from \texttt{Matplotlib}~\parencite{hunter2007matplotlib} as an example.</p>
 <h2 id="tracing-the-outline-of-each-region-in-vector-graphic-editing-software">🎨 Tracing the outline of each region in vector graphic editing software</h2>
 <h3 id="creating-outlines-for-each-region">Creating outlines for each region</h3>
 <p>Next, pour yourself a big mug of coffee to sit and trace the outline of each region in Inkscape (or a similar vector graphic editing program) ☕️
@@ -792,21 +752,21 @@ In other words, for the highlighted region, its Title should be 'putamen_lateral
 <p><img alt="Inkscape region metadata" src="../images/inkscape_region_metadata.png" /></p>
 <p>Once you add the title to each region, congrats, you've finished creating the vector graphic for the given hemisphere for your custom atlas!</p>
 <h3 id="repeating-for-the-other-hemisphere">Repeating for the other hemisphere</h3>
-<p>You may notice that the above SVG image is saved as 'subcortex_Melbourne_S1_L.svg', which indicates that this file corresponds to: 
+<p>You may notice that the above SVG image is saved as 'Melbourne_S1_L.svg', which indicates that this file corresponds to: 
 * subcortex
 * Melbourne Subcortex Atlas, granularity level 1 (S1)
 * left hemisphere (L)</p>
-<p>If your atlas is left-right symmetric, you can just copy-paste the SVG objects into a new file named e.g., 'subcortex_Melbourne_S1_R.svg', making sure you (1) flip the image along the $y$-axis (i.e., left-right mirror) and update each region's Title to end with '_R' rather than '_L'.</p>
+<p>If your atlas is left-right symmetric, you can just copy-paste the SVG objects into a new file named e.g., 'Melbourne_S1_R.svg', making sure you (1) flip the image along the $y$-axis (i.e., left-right mirror) and update each region's Title to end with '_R' rather than '_L'.</p>
 <h3 id="combining-the-left-and-right-hemispheres-into-one-image">Combining the left and right hemispheres into one image</h3>
-<p>Once you have both hemispheres traced, the last step here is to copy-paste the left and right hemisphere vector graphics into the same image for an SVG corresponding to both hemispheres, named e.g. 'subcortex_Melbourne_S1_both.svg'.
+<p>Once you have both hemispheres traced, the last step here is to copy-paste the left and right hemisphere vector graphics into the same image for an SVG corresponding to both hemispheres, named e.g. 'Melbourne_S1_both.svg'.
 Make sure all the individual regions have appropriate Title text fields corresponding to the region name, face, and hemisphere.</p>
 <p><img alt="Combining hemispheres Inkscape" src="../images/Melbourne_S1_both_inkscape.png" /></p>
 <h2 id="organizing-the-file-structure-correctly-for-your-custom-atlas">🗂️ Organizing the file structure correctly for your custom atlas</h2>
 <p>Once you have all your regions traced in the left and right hemispheres for your segmentation, in the <code>subcortex_visualization/data/</code> folder, make sure you have the following SVG files--in this case, corresponding to the Melbourne S1 subcortical atlas:</p>
 <ul>
-<li>subcortex_Melbourne_S1_both.svg</li>
-<li>subcortex_Melbourne_S1_L.svg</li>
-<li>subcortex_Melbourne_S1_R.svg</li>
+<li>Melbourne_S1_both.svg</li>
+<li>Melbourne_S1_L.svg</li>
+<li>Melbourne_S1_R.svg</li>
 </ul>
 <h3 id="lookup-tables-to-indicate-the-order-for-drawing-regions">🔎 Lookup tables to indicate the order for drawing regions</h3>
 <p>Home stretch, you're almost done 🏃‍♀️</p>

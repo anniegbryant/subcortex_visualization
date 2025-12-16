@@ -8,7 +8,7 @@
    version="1.1"
    id="svg2808"
    inkscape:version="1.2 (dc2aeda, 2022-05-15)"
-   sodipodi:docname="subcortex_Melbourne_S4_R.svg"
+   sodipodi:docname="Melbourne_S4_R.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +25,11 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.8213124"
-     inkscape:cx="46.944171"
+     inkscape:cx="390.10331"
      inkscape:cy="206.17001"
-     inkscape:window-width="3440"
-     inkscape:window-height="1381"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
+     inkscape:window-x="1470"
      inkscape:window-y="31"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
@@ -1904,7 +1904,7 @@
        inkscape:original-d="m 97.317214,36.807636 c 0.33101,0.66676 0.6593,1.3282 0.98915,1.99293 0.4644,1.08208 0.92819,2.16292 1.39155,3.243 -1.31461,0.68092 -2.630319,1.36218 -3.947132,2.04378 -0.282794,0.20057 -0.567124,0.3996 -0.852998,0.5971 -0.427578,0.10837 -0.857811,0.21722 -1.290722,0.32656 -0.639146,-0.0839 -1.269398,-0.16679 -1.906746,-0.25073 -0.100035,-0.59528 -0.19939,-1.18579 -0.299804,-1.78182 -0.02678,-0.68784 -0.05379,-1.37714 -0.08102,-2.06788 0.283591,-0.61964 0.565552,-1.2362 0.848712,-1.85589 0.481788,-0.64232 0.96343,-1.28481 1.444914,-1.92744 0.371507,-0.2388 0.742809,-0.4777 1.114065,-0.71684 0.17214,-0.0838 0.342737,-0.16906 0.511797,-0.2559 0.200572,0.002 0.399601,0.002 0.597099,0 0.496359,0.21896 0.985871,0.43482 1.481135,0.65313 z"
        sodipodi:nodetypes="ccccccccccccccc">
       <title
-         id="title37969">hippocampus_head_m1_medial_R</title>
+         id="title37969">hippocampus_head_med_1_medial_R</title>
     </path>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.209572;stroke-linecap:square;stroke-opacity:1;stop-color:#000000"
@@ -1914,7 +1914,7 @@
        inkscape:original-d="m 96.413697,35.691196 c 0.688728,-0.54788 1.374987,-1.09407 2.062967,-1.6419 0.72533,-0.23973 1.44911,-0.48099 2.171366,-0.72379 0.34332,0.082 0.68512,0.16238 1.02537,0.24126 0.31769,0.0559 0.63101,0.1109 0.94738,0.16631 0.62263,0.31015 1.24127,0.61824 1.8631,0.92784 -0.27362,0.96385 -0.54697,1.92608 -0.82006,2.88669 -0.72511,0.87752 -1.4505,1.75504 -2.17618,2.63257 -0.36933,0.0215 -0.73445,0.0426 -1.10827,0.064 -0.417646,-0.1159 -0.822876,-0.22846 -1.239236,-0.34422 -0.90744,-1.40088 -1.81626,-2.80379 -2.726437,-4.20873 z"
        sodipodi:nodetypes="ccccccccccc">
       <title
-         id="title38445">hippocampus_head_m2_medial_R</title>
+         id="title38445">hippocampus_head_med_2_medial_R</title>
     </path>
   </g>
 </svg>
