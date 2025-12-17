@@ -224,7 +224,7 @@ ants.image_write(Thalamus_Nuclei_HCP_R_warped, Thalamus_Nuclei_HCP_R_warped_file
 ####################### Cerebellum (SUIT) ######################
 
 # Load the atlas LUT
-SUIT_LUT = pd.read_csv("/Users/abry4213/github/subcortex_visualization/atlas_info/SUIT_cerebellar_lobule/SUIT_cerebellar_lobule_lookup.csv", header=None)
+SUIT_LUT = pd.read_csv("SUIT_cerebellar_lobule/SUIT_cerebellar_lobule_lookup.csv", header=None)
 SUIT_LUT.columns = ['Index', 'Region']
 
 # Filter atlas_data to only include index values present in atlas_LUT.index
