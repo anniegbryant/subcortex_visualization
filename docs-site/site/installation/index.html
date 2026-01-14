@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#direct-installation-from-pypi" class="md-skip">
+        <a href="#python" class="md-skip">
           Skip to content
         </a>
       
@@ -228,6 +228,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -259,6 +261,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -349,7 +353,7 @@
   
   
   <span class="md-ellipsis">
-    DIY atlas
+    Using a custom atlas
     
   </span>
   
@@ -420,6 +424,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -461,8 +467,7 @@
 
 
 
-  <h1>Installation</h1>
-
+<h1 id="python">Python</h1>
 <h2 id="direct-installation-from-pypi">Direct installation from PyPI</h2>
 <p>This package can be installed directly with pip from the <a href="https://pypi.org/project/subcortex-visualization/">PyPI repository</a>:</p>
 <pre><code class="language-bash">pip install subcortex-visualization
@@ -474,6 +479,15 @@ cd subcortex_visualization
 pip install .
 </code></pre>
 <p>This option is good if you want to make any modifications, including <a href="https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/">adding your own atlas</a>.</p>
+<h1 id="r">R</h1>
+<h2 id="installing-from-github">Installing from GitHub</h2>
+<p>To install the R version of this package (<code>subcortexVisualizationR</code>), run the following in R (either in the terminal or in RStudio):</p>
+<pre><code class="language-R"># if not already installed
+install.packages(&quot;remotes&quot;)
+
+# then install subcortexVisualizationR
+remotes::install_github(&quot;anniegbryant/subcortex_visualization&quot;, subdir = &quot;subcortexVisualizationR&quot;)
+</code></pre>
 
 
 

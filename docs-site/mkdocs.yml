@@ -15,12 +15,13 @@ plugins:
 
 markdown_extensions:
   - md_in_html
+  - attr_list
 
 nav:
   - Home: index.md
   - Installation: installation.md
   - Usage: tutorial.ipynb
   - Atlas information: atlas_info.md
-  - DIY atlas: custom_segmentation.md
+  - Using a custom atlas: custom_segmentation.md
   - Acknowledgments: acknowledgments.md
   - Cite this package: citation.md

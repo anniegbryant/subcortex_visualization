@@ -1,0 +1,16 @@
+﻿region,face,plot_order,Hemisphere,seg_index
+putamen,medial,1,R,7
+pallidum,medial,2,R,5
+accumbens,medial,3,R,6
+caudate,medial,4,R,8
+thalamus_anterior,medial,5,R,4
+amygdala,medial,6,R,2
+hippocampus,medial,7,R,1
+thalamus_posterior,medial,8,R,3
+accumbens,lateral,9,R,6
+caudate,lateral,10,R,8
+thalamus_anterior,lateral,11,R,4
+thalamus_posterior,lateral,12,R,3
+hippocampus,lateral,13,R,1
+amygdala,lateral,14,R,2
+putamen,lateral,15,R,7

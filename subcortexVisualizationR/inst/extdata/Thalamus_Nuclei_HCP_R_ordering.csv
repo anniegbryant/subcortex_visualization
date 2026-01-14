@@ -1,0 +1,14 @@
+﻿region,Hemisphere,seg_index,face,plot_order
+Medio_Dorsal,R,10,lateral,1
+Ventral_Latero_Dorsal,R,11,lateral,2
+Ventral_Anterior,R,13,lateral,3
+Anterior,R,9,lateral,4
+Pulvinar,R,8,lateral,5
+Ventral_Latero_Ventral,R,14,lateral,6
+Ventral_Latero_Ventral,R,14,medial,7
+Anterior,R,9,medial,8
+Pulvinar,R,8,medial,9
+Ventral_Anterior,R,13,medial,10
+Ventral_Latero_Dorsal,R,11,medial,11
+Central_Lateral-Lateral_Posterior-Medial_Pulvinar,R,12,medial,12
+Medio_Dorsal,R,10,medial,13

@@ -1,7 +1,7 @@
 # Subcortex visualization software
 
 Welcome to the documentation for subcortical visualization software!
-This python package currently includes the following nine subcortical, thalamic, and cerebellar atlases for data visualization in two-dimensional vector graphics:
+This package is implemented in both Python (`subcortex_visualization`) and R (`subcortexVisualizationR`) and currently includes the following nine subcortical, thalamic, and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
 ![Example plot](images/all_atlas_showcase.png)
 

@@ -13,8 +13,8 @@ def apply_atlas_to_data(functional_map, atlas, func_name='Functional map'):
     """Apply subcortical atlas to functional map and extract mean signal per region.
     Parameters
     ----------
-    functional_map : str
-        Filepath to functional map NIfTI image.
+    functional_map : str or Nifti1Image
+        Filepath to functional map NIfTI image or Nifti1Image object.
     atlas : str or list of str
         Name(s) of the subcortical atlas/atlases to apply.
     func_name : str, optional

@@ -1,0 +1,20 @@
+Package: subcortexVisualizationR
+Title: Plot Data in Subcortical and Cerebellar Structures
+Version: 0.1.0
+Authors@R: 
+    person("Annie", "Bryant", , email="anniegbryant@gmail.com", role = c("aut", "cre"))
+Description: Plot parcellated brain data in two-dimensional vector plots for non-cortical structures, including subcortex and cerebellum. The package comes with nine pre-built atlases.
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 4.0)
+Imports:
+    tidyverse,
+    xml2,
+    svgparser
+VignetteBuilder: knitr
+URL: https://github.com/anniegbryant/subcortex_visualization/subcortexVisualizationR
+BugReports: https://github.com/anniegbryant/subcortex_visualization/issues
+Language: en-US

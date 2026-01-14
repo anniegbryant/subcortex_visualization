@@ -342,7 +342,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
 
     # Use default of 'both' for SUIT cerebellar atlas
     if atlas == "SUIT_cerebellar_lobule" and hemisphere in ['L', 'R']:
-        print("Individual-hemisphere visualization is not supported with the SUIT cerebellar atlas. Rendering both hemispheres together, along with the vermis.")
+        print("Individual-hemisphere visualization is not supported with the SUIT cerebellar lobule atlas. Rendering both hemispheres together, along with the vermis.")
         hemisphere = 'both'
         
     # Load SVG

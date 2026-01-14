@@ -12,6 +12,12 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Ignore R files
+.Rhistory
+*/*.Rproj.user
+*/*.Rbuildignore
+
+
 # Readme images
 readme_images.svg
 
@@ -21,3 +27,7 @@ custom_segmentation_pipeline/*
 
 # Atlas info folder
 atlas_info/raw_volumes
+
+# While testing interactive jupyter
+interactive_online.ipynb
+create_R_package.R

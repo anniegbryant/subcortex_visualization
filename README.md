@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/965897997.svg)](https://doi.org/10.5281/zenodo.15385315)
 
-This python package currently includes the following nine subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
+This package (implemented in Python and R) currently includes the following nine subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
 <img src="docs-site/docs/images/all_atlas_showcase.png" width="100%">
 
@@ -10,19 +10,21 @@ More information about these atlases, including the process of rendering the sur
 
 ## 🙋‍♀️ Motivation
 
-This Python package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
+This visualization package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
 We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) for more information).
 
-The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the ENIGMA toolbox ('aseg' atlas, left) or a custom-rendered mesh from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)]()https://www.nature.com/articles/s41593-020-00711-6 -- ('S1' granularity level, right).
+The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)](https://www.nature.com/articles/s41593-020-00711-6) at the 'S1' resolution.
 
-<img src="docs-site/docs/images/aseg_and_Melbourne_S1_3D_to_2D_schematic.png" width="90%">
+<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="90%">
 
-While `ggseg` offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure.
-Moreover, there is currently no other software available to visualize any of the other above subcortical, thalamic, or cerebellar atlases in two dimensions with real data, hence development here.
+While [`ggseg`](https://github.com/ggseg/ggseg) offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure.
+Moreover, there is currently no other software available to visualize any of the other above subcortical, thalamic, or cerebellar atlases in two dimensions with real data, motivating the development of this package.
 
 ## 🖥️ Installation
 
-The package can be installed from GitHub in two ways.
+### Python 
+
+The Python version of this package can be installed in two ways.
 First, you can install directly with pip from the [PyPI repository](https://pypi.org/project/subcortex-visualization/):
 
 ```bash
@@ -39,11 +41,23 @@ pip install .
 
 This will install the `subcortex_visualization` package so you have access to the `plot_subcortical_data` function and associated data.
 
+### R
+
+The R version of this package can be installed from GitHub within R using the `remotes` package as follows:
+
+```R
+# if not already installed
+install.packages("remotes")
+
+# then install subcortexVisualizationR
+remotes::install_github("anniegbryant/subcortex_visualization", subdir = "subcortexVisualizationR"
+```
+
 ## 👨‍💻 Usage
 
 ### ❗️ Quick start
 
-Running the code below will produce an image of the left subcortex in the aseg atlas (the default), each region colored by its index, with the plasma color scheme:
+Running the code below (in either python or R) will produce an image of the left subcortex in the aseg atlas (the default), each region colored by its index, with the plasma color scheme:
 
 ```python
 plot_subcortical_data(hemisphere='L', cmap='plasma', 
@@ -56,7 +70,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
 ### 📚 Tutorial
 
 For a guide that goes through all the functionality and atlases available in this package, we compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb).
-To plot real data in the subcortex, your `subcortex_data` should be  a `pandas.DataFrame` structured as follows (here we've just assigned an integer index to each region):
+To plot real data in the subcortex, your `subcortex_data` should be a Python `pandas.DataFrame` or an R `data.frame` structured as follows (here we've just assigned an integer index to each region):
 
 | region        | value         | Hemisphere  |
 | :--- | :---: | :---: |
@@ -72,16 +86,16 @@ Briefly, all functionality is contained within the `plot_subcortical_data` funct
 * `subcortex_data`: The three-column dataframe in a format as shown above; this is optional, if left out the plot will just color each region by its index
 * `atlas`: The name of the subcortical, thalamic, or cerebellar segmentation atlas (default is 'aseg', all options listed below)
 * `value_column`: The name of the column in your `subcortex_data` to plot, defaults to 'value'
-* `line_thickness`: How thick the lines around each subcortical region should be drawn, in mm (default is 1.5)
+* `line_thickness`: How thick the lines around each subcortical region should be drawn
 * `line_color`: What color the lines around each subcortical region should be (default is 'black')
 * `hemisphere`: Which hemisphere ('L' or 'R') the `subcortex_data` is from; can also be 'both' (default is 'L')
 * `fill_title`: Name to add to legend (default is 'values')
-* `cmap`: name of colormap (e.g., 'plasma' or 'viridis') or a `matplotlib.colors.Colormap` (default is 'viridis')
+* `cmap`: name of colormap (e.g., 'plasma' or 'viridis') or a `matplotlib.colors.Colormap` (default is 'viridis'); for R, this could be a vector of discrete colors or a color palette generating function
 * `vmin`: Min fill value; this is optional, and you would only want to use this to manually constrain the fill range to match another figure
 * `vmax`: Max fill value; this is optional, and you would only want to use this to manually constrain the fill range to match another figure
 * `midpoint`: Midpoint value to enforce for fill range; this is optional
 
-Here's an example plotting both hemispheres, with data randomly sampled from a normal distribution, setting a color range from blue (low) to red (high) with white at the center (midpoint=0):
+Here's an example in Python for plotting both hemispheres, with data randomly sampled from a normal distribution, setting a color range from blue (low) to red (high) with white at the center (midpoint=0):
 
 ```python
 import matplotlib.colors as mcolors
