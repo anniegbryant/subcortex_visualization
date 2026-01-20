@@ -181,7 +181,7 @@ And for R, run from R (in either the terminal or Rstudio):
 
 ```R 
 # Change to where you've cloned this repo
-setwd("code/subcortexVisualizationR")
+setwd("/path/to/github/subcortex_visualization/subcortexVisualizationR")
 
 # TO reinstall the subcortexVisualizationR package
 remotes::install_local(".")

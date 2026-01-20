@@ -7,6 +7,17 @@ import numpy as np
 from importlib.resources import files
 
 def get_atlas_regions(atlas_name):
+    """Print the names of regions in a given subcortical/cerebellar atlas.
+    Parameters
+    ----------
+    atlas_name : str
+        Name of the subcortical/cerebellar atlas.
+
+    Returns
+    -------
+    np.ndarray
+        Array of region names in the specified atlas, ordered by segmentation index.
+    """
 
     # Use left hemisphere just to get names
     hemisphere='L'
