@@ -1,6 +1,6 @@
 # subcortex_visualization: A toolbox for custom data visualization in the subcortex and cerebellum
 
-[![DOI:10.5281/zenodo.15385315](https://zenodo.org/badge/965897997.svg)](https://doi.org/10.5281/zenodo.15385315) [![DOI:10.64898/2026.01.23.699785](http://img.shields.io/badge/DOI-10.1101/2021.01.08.425840-B31B1B.svg)](https://doi.org/10.64898/2026.01.23.699785)
+[![DOI:10.64898/2026.01.23.699785](http://img.shields.io/badge/DOI-10.1101/2021.01.08.425840-B31B1B.svg)](https://doi.org/10.64898/2026.01.23.699785)
 
 This package (implemented in Python and R) currently includes the following nine subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
@@ -11,7 +11,7 @@ More information about these atlases, including the process of rendering the sur
 ## 🙋‍♀️ Motivation
 
 This visualization package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
-We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) for more information).
+We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information).
 
 The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)](https://www.nature.com/articles/s41593-020-00711-6) at the 'S1' resolution.
 
@@ -143,7 +143,7 @@ We have a dedicated folder for a custom segmentation pipeline that will walk you
 1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using the [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) software, both developed by [Chris Rorden's lab](https://github.com/rordenlab); and 
 2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
 
-Check out the walkthrough in the [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) folder for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
+Check out the walkthrough in the [`custom_segmentation/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) folder or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
 
 ## 🔗 Citing this package
 
