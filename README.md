@@ -1,6 +1,6 @@
-# Subcortical data visualization in 2D
+# subcortex_visualization: A toolbox for custom data visualization in the subcortex and cerebellum
 
-[![DOI](https://zenodo.org/badge/965897997.svg)](https://doi.org/10.5281/zenodo.15385315)
+[![DOI:10.64898/2026.01.23.699785](http://img.shields.io/badge/DOI-10.1101/2021.01.08.425840-B31B1B.svg)](https://doi.org/10.64898/2026.01.23.699785)
 
 This package (implemented in Python and R) currently includes the following nine subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
@@ -11,11 +11,11 @@ More information about these atlases, including the process of rendering the sur
 ## 🙋‍♀️ Motivation
 
 This visualization package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
-We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) for more information).
+We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information).
 
 The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)](https://www.nature.com/articles/s41593-020-00711-6) at the 'S1' resolution.
 
-<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="90%">
+<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="50%">
 
 While [`ggseg`](https://github.com/ggseg/ggseg) offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure.
 Moreover, there is currently no other software available to visualize any of the other above subcortical, thalamic, or cerebellar atlases in two dimensions with real data, motivating the development of this package.
@@ -64,7 +64,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
                       fill_title = "Subcortical region index")
 ```
 
-<img src="docs-site/docs/images/example_aseg_subcortex_plot.png" width="80%">
+<img src="docs-site/docs/images/example_aseg_subcortex_plot.png" width="60%">
 
 
 ### 📚 Tutorial
@@ -116,11 +116,11 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
                       cmap=white_blue_red_cmap, midpoint=0)
 ```
 
-<img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="80%">
+<img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="75%">
 
 ### Available atlases
 
-The following nine subcortical atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
+The following subcortical and cerebellar atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
 
 * `aseg`: The `aseg` parcellation atlas from FreeSurfer
 * `Melbourne_S1`: The Melbourne Subcortex Atlas at granularity level S1, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
@@ -135,7 +135,7 @@ The following nine subcortical atlases are currently supported with more informa
 
 ## 💡 Want to generate your own mesh and/or parcellation?
 
-<img src="docs-site/docs/images/custom_vector_method.png" width="70%">
+<img src="docs-site/docs/images/custom_vector_method.png" width="60%">
 
 This package provides nine subcortical, thalamic, and cerebellar atlases as a starting point.
 The workflow can readily be extended to your favorite segmentation atlas, though! 
@@ -143,21 +143,39 @@ We have a dedicated folder for a custom segmentation pipeline that will walk you
 1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using the [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) software, both developed by [Chris Rorden's lab](https://github.com/rordenlab); and 
 2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
 
-Check out the walkthrough in the [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation_pipeline) folder for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
+Check out the walkthrough in the [`custom_segmentation/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) folder or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
+
+## 🔗 Citing this package
+
+If you use this package in a scientific publication, blog post, etc., please read and cite the [associated preprint](https://www.biorxiv.org/content/10.64898/2026.01.23.699785):
+
+* 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *bioRxiv*, 2026-01. doi:10.64898/2026.01.23.699785.
+
+<details closed>
+    <summary>Click here for a BibTex reference:</summary>
+
+```
+@article{bryant2026subcortex,
+	title = {Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum},
+	url = {https://www.biorxiv.org/content/10.64898/2026.01.23.699785},
+	doi = {10.64898/2026.01.23.699785},
+	journal = {bioRxiv},
+  publisher={Cold Spring Harbor Laboratory},
+	author = {Bryant, Annie G.},
+  pages = {2026--01},
+	year = {20236}
+}
+```
+
+</details>
 
 ## 🙏 Acknowledgments
 
-Thank you very much to [Chris Rorden](https://github.com/rordenlab), [Ye Tian](https://github.com/yetianmed), and [Sid Chopra](https://github.com/sidchop) for their suggestions and continued development of open tools for neuroimaging visualization that enabled the development of this project!
+Thank you very much to [Sidhant Chopra](https://github.com/sidchop), [Chris Rorden](https://github.com/rordenlab), [Justine Hansen](https://github.com/justinehansen), and [Ye Tian](https://github.com/yetianmed) for their suggestions and continued development of open tools for neuroimaging visualization that enabled the development of this project!
 
 We're also very grateful for ongoing contributions from members of the GitHub community: 
 
 [![Contributors](https://contrib.rocks/image?repo=anniegbryant/subcortex_visualization)](https://github.com/anniegbryant/subcortex_visualization/graphs/contributors)
-
-## 🔗 Citing this package
-
-If you use this package in a scientific publication, blog post, etc., please cite the corresponding Zenodo release as follows:
-
-Annie G. Bryant. (2025). anniegbryant/subcortex_visualization: Initial Zenodo release (initial_release). Zenodo. https://doi.org/10.5281/zenodo.15385316
 
 ## ❓📧 Questions, comments, or suggestions always welcome!
 
