@@ -3,14 +3,14 @@ import os
 import numpy as np
 import pandas as pd
 
-# Imaging masker
-from nilearn.maskers import NiftiLabelsMasker
+# neuromaps imports
+from neuromaps.parcellate import Parcellater
 
 # Files 
 from importlib.resources import files
 
 def apply_atlas_to_data(functional_map, atlas, func_name='Functional map'):
-    """Apply subcortical atlas to functional map and extract mean signal per region.
+    """Apply subcortical atlas(es) to a given functional map and extract mean signal per region.
     Parameters
     ----------
     functional_map : str or Nifti1Image
@@ -45,18 +45,9 @@ def apply_atlas_to_data(functional_map, atlas, func_name='Functional map'):
         this_atlas_LUT = pd.read_csv(files("subcortex_visualization.atlases").joinpath(f"{this_atlas_file}_lookup.csv"), header=None)
         this_atlas_LUT.columns = ['Index', 'Region']
 
-        # Apply example_seg to example_functional_map
-        masker = NiftiLabelsMasker(
-            labels_img=this_atlas_volume_path,
-            memory="nilearn_cache",
-            standardize=False
-        )
-
-        # Apply masker to functional map
-        functional_map_parc = masker.fit_transform(functional_map)
-
-        # Make sure the results are one-column
-        functional_map_parc = functional_map_parc.flatten()
+        # Use the Parcellator object from neuromaps to apply the atlas to the functional map
+        parcellator = Parcellater(this_atlas_volume_path, 'MNI152')
+        functional_map_parc = parcellator.fit_transform(functional_map, 'MNI152', True).squeeze()
 
         # Merge region and index 
         functional_map_parc_df = pd.DataFrame({'Functional_Map': func_name,

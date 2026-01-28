@@ -6,6 +6,7 @@
 \usage{
 plot_individual_regions(
   atlas_SVG_df_labeled,
+  region_order,
   line_color = "black",
   line_thickness = 0.5,
   cmap = "plasma",
@@ -18,6 +19,8 @@ plot_individual_regions(
 }
 \arguments{
 \item{atlas_SVG_df_labeled}{Dataframe containing individual path nodes from SVG plus atlas information}
+
+\item{region_order}{Character vector containing the order in which regions should be plotted}
 
 \item{line_color}{Color for lines outlining each region (default 'black')}
 

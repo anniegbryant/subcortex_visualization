@@ -69,7 +69,7 @@ prep_data <- function(atlas, hemisphere, subcortex_data=NULL, value_column='valu
   }
   
   # Return the labeled data
-  return(atlas_SVG_df_labeled)
+  return(list(atlas_SVG_df_labeled, region_order))
 }
 
 #' Helper function to select appropriate color palette and fill type for data
@@ -160,6 +160,7 @@ resolve_fill_scale <- function(cmap='viridis',
 #' according to the atlas-specific plotting order.
 #'
 #' @param atlas_SVG_df_labeled Dataframe containing individual path nodes from SVG plus atlas information
+#' @param region_order Character vector containing the order in which regions should be plotted
 #' @param line_color Color for lines outlining each region (default 'black')
 #' @param line_thickness Thickness of lines outlining each region (default 0.5)
 #' @param cmap Colormap to fill in regions (can be character name of palette, vector of colors, or a colormap function)
@@ -170,7 +171,7 @@ resolve_fill_scale <- function(cmap='viridis',
 #' @param midpoint Value to center colors at between vmin and vmax
 #' @return A ggplot2 object containing all of the brain regions for the given atlas
 #' @export
-plot_individual_regions <- function(atlas_SVG_df_labeled, line_color='black', line_thickness=0.5, cmap='plasma',
+plot_individual_regions <- function(atlas_SVG_df_labeled, region_order, line_color='black', line_thickness=0.5, cmap='plasma',
                                     discrete=TRUE, NA_fill="#cccccc", vmin=NULL, vmax=NULL, midpoint=NULL) {
   # We need to loop over each region individually to layer according to plot_order
   iterated_plot <- ggplot()
@@ -199,7 +200,7 @@ plot_individual_regions <- function(atlas_SVG_df_labeled, line_color='black', li
     scale_y_reverse() +
     theme_void() 
   
-  # ChatGPT solution to fill
+  # Way to solve fill that works for both discrete and continuous data dynamically
   iterated_plot <- iterated_plot +
     resolve_fill_scale(
       cmap        = cmap,
@@ -258,16 +259,19 @@ plot_subcortical_data <- function(subcortex_data=NULL,
   }
   
   # Prepare the SVG data and user-supplied subcortex data, if applicable
-  atlas_SVG_df_labeled <- prep_data(atlas=atlas, 
-                                    hemisphere=hemisphere, 
-                                    value_column=value_column, 
-                                    subcortex_data=subcortex_data)
+  prepped_data <- prep_data(atlas=atlas, 
+                            hemisphere=hemisphere, 
+                            value_column=value_column, 
+                            subcortex_data=subcortex_data)
+  atlas_SVG_df_labeled <- prepped_data[[1]]
+  region_order <- prepped_data[[2]]
   
   # Discrete plot unless subcortex_data is provided
   discrete <- is.null(subcortex_data)
   
   # Create the ggplot2 object for this atlas/hemisphere/data
-  subcortical_plot <- plot_individual_regions(atlas_SVG_df_labeled, 
+  subcortical_plot <- plot_individual_regions(atlas_SVG_df_labeled=atlas_SVG_df_labeled, 
+                                              region_order=region_order,
                                               line_color=line_color, 
                                               line_thickness=line_thickness, 
                                               cmap=cmap,
