@@ -69,7 +69,7 @@ plot_subcortical_data(hemisphere='L', cmap='plasma',
 
 ### 📚 Tutorial
 
-For a guide that goes through all the functionality and atlases available in this package, we compiled a simple walkthrough tutorial in [tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb).
+For a guide that goes through all the functionality and atlases available in this package, we compiled a simple walkthrough tutorial in Python ([tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb)) and R ([tutorial_R.md](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial_R.md)).
 To plot real data in the subcortex, your `subcortex_data` should be a Python `pandas.DataFrame` or an R `data.frame` structured as follows (here we've just assigned an integer index to each region):
 
 | region        | value         | Hemisphere  |
