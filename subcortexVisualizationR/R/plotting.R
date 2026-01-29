@@ -132,7 +132,10 @@ resolve_fill_scale <- function(
         vmax <- midpoint + max_dev
         
       }
-      return(scale_fill_gradientn(colours=cmap, limits=c(vmin, vmax)))
+      return(scale_fill_gradientn(
+        colours=cmap, 
+        limits=c(vmin, vmax), 
+        na.value = NA_fill))
     }
     
     return(
@@ -140,9 +143,7 @@ resolve_fill_scale <- function(
         values = cmap,
         limits = region_order,
         drop   = FALSE,
-        na.value = NA_fill
-      )
-    )
+        na.value = NA_fill))
   }
   
   # Case 3: continuous palette function
@@ -150,7 +151,9 @@ resolve_fill_scale <- function(
     
     if (discrete) {
       # Generate one color per region
-      return(scale_fill_manual(values=cmap(length(region_order))))
+      return(scale_fill_manual(
+        values=cmap(length(region_order)), 
+        na.value=NA_fill))
     }
     
     return(
