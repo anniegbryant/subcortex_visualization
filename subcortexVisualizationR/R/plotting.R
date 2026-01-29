@@ -78,6 +78,7 @@ prep_data <- function(atlas, hemisphere, subcortex_data=NULL, value_column='valu
 #' user-specified atlas and hemisphere combination. The SVG is read in as both a 
 #' dataframe and an XML file to enable linking between paths and Inkscape metadata.
 #'
+#' @param atlas_SVG_df_labeled Dataframe containing individual path nodes from SVG plus atlas information
 #' @param cmap Palette name in the viridis family, a colour vector (for discrete data), or a palette function (for continuous data)
 #' @param discrete Whether the data is discrete (e.g., names of regions) or not (e.g., continuous empirical data)
 #' @param region_order Order in which regions should be filled and plotted
@@ -87,13 +88,15 @@ prep_data <- function(atlas, hemisphere, subcortex_data=NULL, value_column='valu
 #' @param midpoint Value to center colors at between vmin and vmax
 #' @return A fill function that can be applied to discrete or continuous data as appropriate
 #' @export
-resolve_fill_scale <- function(cmap='viridis',
-                               discrete=TRUE,
-                               region_order = NULL,
-                               NA_fill = "#cccccc",
-                               vmin = NULL,
-                               vmax = NULL,
-                               midpoint = NULL) {
+resolve_fill_scale <- function(
+    atlas_SVG_df_labeled,
+    cmap='viridis',
+    discrete=TRUE,
+    region_order = NULL,
+    NA_fill = "#cccccc",
+    vmin = NULL,
+    vmax = NULL,
+    midpoint = NULL) {
   
   # Case 1: character palette name (viridis family only)
   if (is.character(cmap) && length(cmap) == 1) {
@@ -122,7 +125,14 @@ resolve_fill_scale <- function(cmap='viridis',
   if (is.character(cmap) && length(cmap) > 1) {
     
     if (!discrete) {
-      stop("A vector of colours can only be used for discrete fills.")
+      # If vmin and vmax are null, set limits to be symmetric around midpoint
+      if (is.null(vmin) & is.null(vmax) & !is.null(midpoint)) {
+        max_dev = max(abs(atlas_SVG_df_labeled$fill_var - midpoint))
+        vmin <- midpoint - max_dev
+        vmax <- midpoint + max_dev
+        
+      }
+      return(scale_fill_gradientn(colours=cmap, limits=c(vmin, vmax)))
     }
     
     return(
@@ -139,7 +149,8 @@ resolve_fill_scale <- function(cmap='viridis',
   if (is.function(cmap)) {
     
     if (discrete) {
-      stop("A palette function can only be used for continuous fills.")
+      # Generate one color per region
+      return(scale_fill_manual(values=cmap(length(region_order))))
     }
     
     return(
@@ -203,6 +214,7 @@ plot_individual_regions <- function(atlas_SVG_df_labeled, region_order, line_col
   # Way to solve fill that works for both discrete and continuous data dynamically
   iterated_plot <- iterated_plot +
     resolve_fill_scale(
+      atlas_SVG_df_labeled = atlas_SVG_df_labeled,
       cmap        = cmap,
       discrete    = discrete,
       region_order = region_order,
@@ -279,7 +291,8 @@ plot_subcortical_data <- function(subcortex_data=NULL,
                                               NA_fill=NA_fill, 
                                               vmin=vmin, 
                                               vmax=vmax, 
-                                              midpoint=midpoint)
+                                              midpoint=midpoint) +
+    coord_equal() # Ensures regions are drawn in correct aspect ratio
   
   
   # Add legend if requested in function

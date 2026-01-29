@@ -5,6 +5,7 @@
 \title{Helper function to select appropriate color palette and fill type for data}
 \usage{
 resolve_fill_scale(
+  atlas_SVG_df_labeled,
   cmap = "viridis",
   discrete = TRUE,
   region_order = NULL,
@@ -15,6 +16,8 @@ resolve_fill_scale(
 )
 }
 \arguments{
+\item{atlas_SVG_df_labeled}{Dataframe containing individual path nodes from SVG plus atlas information}
+
 \item{cmap}{Palette name in the viridis family, a colour vector (for discrete data), or a palette function (for continuous data)}
 
 \item{discrete}{Whether the data is discrete (e.g., names of regions) or not (e.g., continuous empirical data)}
