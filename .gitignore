@@ -31,3 +31,4 @@ atlas_info/raw_volumes
 # While testing interactive jupyter
 interactive_online.ipynb
 create_R_package.R
+test_R_package.R
