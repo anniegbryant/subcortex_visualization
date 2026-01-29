@@ -20,7 +20,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Installation: installation.md
-  - Usage: tutorial.ipynb
+  - Usage (Python): python_tutorial.ipynb
+  - Usage (R): R_tutorial.md
   - Atlas information: atlas_info.md
   - Using a custom atlas: custom_segmentation.md
   - Acknowledgments: acknowledgments.md

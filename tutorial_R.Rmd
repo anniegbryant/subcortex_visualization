@@ -35,7 +35,8 @@ example_subcortex_data = data.frame(region = c("accumbens", "amygdala",
 example_subcortex_data
 ```
 
-Now, we can plot this data with the `plasma` colormap as an example in the left cortex. Note the following arguments: 
+Now, we can plot this data with the `plasma` colormap as an example in the left cortex. Note the following arguments:  
+
 * `subcortex_data`: The three-column data.frame shown above
 * `atlas`: The name of the atlas to plot
 * `line_thickness`: How thick the lines around each subcortical region should be drawn, in mm (default is 0.5)

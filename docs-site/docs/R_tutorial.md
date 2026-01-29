@@ -88,7 +88,7 @@ plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 If we wanted to plot this with the `inferno` color palette instead, just
 swap out the `cmap` argument values:
@@ -103,7 +103,7 @@ plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 By default, `plot_subcortical_data` will plot the index values of each
 region, so we actually don’t need to pass in a dataframe for this
@@ -121,7 +121,7 @@ plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='R',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 To plot both hemispheres using gray lines at thickness 1.0, we can set
 the `hemisphere` argument to ‘both’ and adjust the `line_thickness` and
@@ -137,7 +137,7 @@ plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='both',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 We can also use the S2 level of granularity from the Melbourne Subcortex
 (Tian 2020) Atlas:
@@ -151,7 +151,7 @@ plot_subcortical_data(atlas = 'Melbourne_S2', hemisphere='both',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Lastly, let’s view the atlas for (1) [AICHA
 subcortex](https://www.sciencedirect.com/science/article/abs/pii/S0165027015002678);
@@ -169,7 +169,7 @@ plot_subcortical_data(atlas = 'AICHA', hemisphere='both',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 # Brainnetome
@@ -181,7 +181,7 @@ plot_subcortical_data(atlas = 'Brainnetome', hemisphere='both',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 # SUIT cerebellum
@@ -195,7 +195,7 @@ plot_subcortical_data(atlas = 'SUIT_cerebellar_lobule', hemisphere='both',
 
     ## Joining with `by = join_by(region, Hemisphere, face)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## Simulating and visualizing continuous data
 
@@ -255,7 +255,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data_L, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 Right hemisphere:
 
@@ -270,7 +270,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data_R, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 Both hemispheres together:
 
@@ -285,7 +285,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 You can pass in a custom colormap too! For example, if you want to fill
 in with a gradient ranging from white to purple:
@@ -301,7 +301,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 Since this data has positive and negative values,
 
@@ -324,4 +324,4 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',
     ## Joining with `by = join_by(region, Hemisphere, face)`
     ## Joining with `by = join_by(region, Hemisphere)`
 
-![](tutorial_R_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](images/tutorial_R_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
