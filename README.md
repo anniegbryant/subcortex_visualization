@@ -163,7 +163,7 @@ If you use this package in a scientific publication, blog post, etc., please rea
   publisher={Cold Spring Harbor Laboratory},
 	author = {Bryant, Annie G.},
   pages = {2026--01},
-	year = {20236}
+	year = {2026}
 }
 ```
 
