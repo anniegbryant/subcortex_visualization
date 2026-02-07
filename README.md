@@ -118,7 +118,7 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
 
 <img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="75%">
 
-### Available atlases
+### 🗺️ Available atlases
 
 The following subcortical and cerebellar atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
 
@@ -132,6 +132,13 @@ The following subcortical and cerebellar atlases are currently supported with mo
 * `Thalamus_Nuclei_HCP`: The thalamic nuclei atlas derived from HCP data, from [Najdenovska et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata2018270)
 * `SUIT`: The SUIT cerebellum atlas, from [Diedrichsen *Neuroimage* (2006)](https://doi.org/10.1016/j.neuroimage.2006.05.056)
 
+### 🌟 Atlas wishlist
+
+These atlases are on the 'vision board' for me to add to the package next (community pull requests absolutely welcome to incorporate these in the meantime):
+
+* Thalamus-Optimized Multi-Atlas Segmentation (THOMAS) atlas: High-resolution segmentation of thalamic nuclei ([file link](https://zenodo.org/records/5499504)), recently expanded to all deep grey nuclei as described in [Saranathan et al. (2025)](https://doi.org/10.1002/hbm.70350)
+* Brainstem (suggested by [@RaviBot](https://github.com/RaviBot)): Brainstem Navigator atlas ([file link](https://www.nitrc.org/projects/brainstemnavig)), as described in [Bianciardi et al. (2015)](https://doi.org/10.1089/brain.2015.0347)
+* CIT168 Reinforcement Learning Atlas (suggested by [@GalKepler](https://github.com/GalKepler)): Subcortical atlas ([file link](https://osf.io/jkzwp/wiki)) that includes the principal nuclei involved in reinforcement learning, as described in [Pauli et al. (2018)](https://doi.org/10.1038/sdata.2018.63)
 
 ## 💡 Want to generate your own mesh and/or parcellation?
 
