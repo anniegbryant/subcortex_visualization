@@ -1,0 +1,890 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../python_tutorial/">
+      
+      
+        <link rel="next" href="../atlas_info/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Usage (R) - Subcortex visualization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#subcortexvisualizationr-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Subcortex visualization" class="md-header__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Subcortex visualization
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage (R)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Subcortex visualization" class="md-nav__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Subcortex visualization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage (R)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage (R)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load required packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-data-just-to-show-the-different-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example data just to show the different regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-and-visualizing-continuous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulating and visualizing continuous data
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using a custom atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cite this package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load required packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-data-just-to-show-the-different-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example data just to show the different regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-and-visualizing-continuous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulating and visualizing continuous data
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="subcortexvisualizationr-tutorial">subcortexVisualizationR tutorial</h1>
+<p>2026-01-29</p>
+<h2 id="load-required-packages">Load required packages</h2>
+<pre><code class="language-r">library(subcortexVisualizationR)
+</code></pre>
+<pre><code>## Loading required package: tidyverse
+
+## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.6
+## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+## ✔ ggplot2   4.0.1     ✔ tibble    3.3.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+## ✔ purrr     1.2.1     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
+</code></pre>
+<pre><code class="language-r">library(tidyverse)
+</code></pre>
+<h2 id="example-data-just-to-show-the-different-regions">Example data just to show the different regions</h2>
+<p>First, let’s create a simple dataframe with the left hemisphere cortical
+regions, assigning a different value to each region for visual clarity.
+Note that all data passed to <code>plot_subcortical_data</code> needs to follow the
+same three-column structure as shown below: <code>region</code> (the name of the
+subcortical region with the same nomenclature as shown), <code>value</code> (the
+value to be plotted in the subcortex map), and <code>Hemisphere</code> (either ‘L’,
+‘R’, or ‘both’).</p>
+<pre><code class="language-r"># Set seed for reproducibility
+
+example_subcortex_data = data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
+                                               &quot;caudate&quot;, &quot;hippocampus&quot;, 
+                                               &quot;pallidum&quot;, &quot;putamen&quot;, 
+                                               &quot;thalamus&quot;),
+                                    value = 1:7,
+                                    Hemisphere = &quot;L&quot;)
+
+example_subcortex_data
+</code></pre>
+<pre><code>##        region value Hemisphere
+## 1   accumbens     1          L
+## 2    amygdala     2          L
+## 3     caudate     3          L
+## 4 hippocampus     4          L
+## 5    pallidum     5          L
+## 6     putamen     6          L
+## 7    thalamus     7          L
+</code></pre>
+<p>Now, we can plot this data with the <code>plasma</code> colormap as an example in
+the left cortex. Note the following arguments:</p>
+<ul>
+<li><code>subcortex_data</code>: The three-column data.frame shown above</li>
+<li><code>atlas</code>: The name of the atlas to plot</li>
+<li><code>line_thickness</code>: How thick the lines around each subcortical region
+  should be drawn, in mm (default is 0.5)</li>
+<li><code>line_color</code>: What color the lines around each subcortical region
+  should be (default is ‘black’)</li>
+<li><code>hemisphere</code>: Which hemisphere (‘L’ or ‘R’) the <code>subcortex_data</code> is
+  from; can also be ‘both’ (default is ‘L’)</li>
+<li><code>fill_title</code>: Name to add to legend</li>
+<li><code>cmap</code>: Name of colormap (e.g., ‘plasma’ or ‘viridis’) or a
+  <code>matplotlib.colors.Colormap</code> (default is ‘viridis’)</li>
+<li><code>vmin</code>: Min fill value; this is optional, and you would only want to
+  use this to manually constrain the fill range to match another figure</li>
+<li><code>vmax</code>: Max fill value; this is optional, and you would only want to
+  use this to manually constrain the fill range to match another figure</li>
+</ul>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg',
+                      line_thickness=0.5, line_color='black',
+                          hemisphere='L', fill_title = &quot;aseg region index&quot;, cmap='plasma', 
+                          vmin=NA, vmax=NA)
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-3-1.png" /><!-- --></p>
+<p>If we wanted to plot this with the <code>inferno</code> color palette instead, just
+swap out the <code>cmap</code> argument values:</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg', 
+                      hemisphere='L', fill_title = &quot;aseg region index&quot;, cmap='inferno')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-4-1.png" /><!-- --></p>
+<p>By default, <code>plot_subcortical_data</code> will plot the index values of each
+region, so we actually don’t need to pass in a dataframe for this
+visualization purpose. Here, we can plot the region indices for the
+Melbourne Subcortex S1 atlas in the right hemisphere without passing in
+any data:</p>
+<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='R', 
+                      fill_title = &quot;Melbourne Subcortex S1 atlas region&quot;, 
+                      cmap='viridis')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-5-1.png" /><!-- --></p>
+<p>To plot both hemispheres using gray lines at thickness 1.0, we can set
+the <code>hemisphere</code> argument to ‘both’ and adjust the <code>line_thickness</code> and
+<code>line_color</code> arguments accordingly:</p>
+<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='both', 
+                      line_color='gray', line_thickness=1,
+                      fill_title = &quot;Melbourne Subcortex S1 atlas region&quot;, cmap='viridis')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-6-1.png" /><!-- --></p>
+<p>We can also use the S2 level of granularity from the Melbourne Subcortex
+(Tian 2020) Atlas:</p>
+<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S2', hemisphere='both', 
+                      fill_title = &quot;Melbourne Subcortex S2 atlas&quot;, cmap=rainbow)
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-7-1.png" /><!-- --></p>
+<p>Lastly, let’s view the atlas for (1) <a href="https://www.sciencedirect.com/science/article/abs/pii/S0165027015002678">AICHA
+subcortex</a>;
+(2) <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/">Brainnetome
+subcortex</a>; and (3)
+<a href="https://doi.org/10.1016/j.neuroimage.2006.05.056">SUIT cerebellum</a>:</p>
+<pre><code class="language-r"># AICHA
+plot_subcortical_data(atlas = 'AICHA', hemisphere='both', 
+                      fill_title = &quot;AICHA subcortex atlas&quot;, cmap=rainbow)
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-8-1.png" /><!-- --></p>
+<pre><code class="language-r"># Brainnetome
+plot_subcortical_data(atlas = 'Brainnetome', hemisphere='both', 
+                      fill_title = &quot;Brainnetome subcortex atlas&quot;, cmap=rainbow)
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-9-1.png" /><!-- --></p>
+<pre><code class="language-r"># SUIT cerebellum
+plot_subcortical_data(atlas = 'SUIT_cerebellar_lobule', hemisphere='both', 
+                      fill_title = &quot;SUIT cerebellum atlas&quot;, cmap=rainbow)
+</code></pre>
+<pre><code>## [1] "Individual-hemisphere visualization is not supported with the SUIT cerebellar lobule atlas. Rendering both hemispheres together, along with the vermis."
+
+## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-10-1.png" /><!-- --></p>
+<h2 id="simulating-and-visualizing-continuous-data">Simulating and visualizing continuous data</h2>
+<pre><code class="language-r">set.seed(127)
+
+
+
+example_continuous_data_L &lt;- data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
+                                                &quot;caudate&quot;, &quot;hippocampus&quot;, 
+                                                &quot;pallidum&quot;, &quot;putamen&quot;, 
+                                                &quot;thalamus&quot;),
+                                       Hemisphere = 'L',
+                                    value = rnorm(7))
+
+example_continuous_data_R &lt;- data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
+                                                &quot;caudate&quot;, &quot;hippocampus&quot;, 
+                                                &quot;pallidum&quot;, &quot;putamen&quot;, 
+                                                &quot;thalamus&quot;),
+                                       Hemisphere = 'R',
+                                    value = rnorm(7))
+
+
+example_continuous_data &lt;- rbind(example_continuous_data_L, example_continuous_data_R)
+
+
+# See what the left hemisphere data, randomly sampled from a normal distribution, looks like
+example_continuous_data
+</code></pre>
+<pre><code>##         region Hemisphere        value
+## 1    accumbens          L -0.567733740
+## 2     amygdala          L -0.814760579
+## 3      caudate          L -0.493939596
+## 4  hippocampus          L  0.001818846
+## 5     pallidum          L  0.819784933
+## 6      putamen          L  0.996757858
+## 7     thalamus          L  0.751782219
+## 8    accumbens          R -0.125547223
+## 9     amygdala          R  0.564619888
+## 10     caudate          R  0.133508557
+## 11 hippocampus          R -0.105963209
+## 12    pallidum          R  0.605929618
+## 13     putamen          R  0.013250975
+## 14    thalamus          R -0.278788699
+</code></pre>
+<p>Plot the left hemisphere:</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data_L, atlas = 'aseg',
+                      hemisphere='L', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
+                      cmap='viridis')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-12-1.png" /><!-- --></p>
+<p>Right hemisphere:</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data_R, atlas = 'aseg',
+                      hemisphere='R', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
+                      cmap='viridis')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-13-1.png" /><!-- --></p>
+<p>Both hemispheres together:</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
+                      hemisphere='both', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
+                      cmap='viridis')
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-14-1.png" /><!-- --></p>
+<p>You can pass in a custom colormap too! For example, if you want to fill
+in with a gradient ranging from white to purple:</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
+                      hemisphere='both', fill_title = &quot;Normal distribution sample&quot;, 
+                      cmap=c('white', '#76167D'))
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-15-1.png" /><!-- --></p>
+<p>Since this data has positive and negative values,</p>
+<p>Since this data has positive and negative values, we can pass in a color
+palette from blue (negative) to white (0) to red (positive).
+<code>plot_subcortical_data</code> takes an argument <code>midpoint</code> that specifies the
+center point for the color palette. Setting this to 0 here enforces the
+center value to be white. Without setting vmin/vmax explicitly, the
+color range will be defined symmetrically around <code>midpoint</code> to capture
+the full range of the data.</p>
+<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',  
+                      hemisphere='both', fill_title = &quot;Normal distribution sample&quot;, 
+                      cmap=c(&quot;blue&quot;, &quot;white&quot;, &quot;red&quot;), midpoint=0)
+</code></pre>
+<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+
+## Joining with `by = join_by(region, Hemisphere, face)`
+## Joining with `by = join_by(region, Hemisphere)`
+</code></pre>
+<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-16-1.png" /><!-- --></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

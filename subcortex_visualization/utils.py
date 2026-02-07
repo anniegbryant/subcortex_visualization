@@ -2,7 +2,6 @@
 import pandas as pd
 import numpy as np
 
-
 # Files 
 from importlib.resources import files
 
@@ -19,13 +18,28 @@ def get_atlas_regions(atlas_name):
         Array of region names in the specified atlas, ordered by segmentation index.
     """
 
-    # Use left hemisphere just to get names
-    hemisphere='L'
+    # If the atlas is the SUIT cerebellar lobules, use hemisphere of 'both'
+    if atlas_name == 'SUIT_cerebellar_lobule':
+        hemisphere = 'both'
 
-    # Load ordering file
-    atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas_name}_{hemisphere}_ordering.csv"))
+        # Load ordering file
+        atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas_name}_{hemisphere}_ordering.csv"))
 
-    # Sort by segmentation index and print the array of region names
-    unique_regions = atlas_ordering.sort_values('seg_index').region.unique()
+        # Identify regions for left/right cerebellar cortex versus vermis
+        hemisphere_regions = atlas_ordering.query("Hemisphere == 'L'").sort_values('seg_index').region.unique()
+        vermis_regions = atlas_ordering.query("Hemisphere=='V'").sort_values('seg_index').region.unique()
 
-    return unique_regions
+        # Return both lists of regions as a tuple
+        return (hemisphere_regions, vermis_regions)
+
+    # Else, use left hemisphere just to get names
+    else:
+        hemisphere='L'
+
+        # Load ordering file
+        atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas_name}_{hemisphere}_ordering.csv"))
+
+        # Sort by segmentation index and print the array of region names
+        unique_regions = atlas_ordering.sort_values('seg_index').region.unique()
+
+        return unique_regions
