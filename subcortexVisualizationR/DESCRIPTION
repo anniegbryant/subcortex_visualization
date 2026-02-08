@@ -1,6 +1,6 @@
 Package: subcortexVisualizationR
 Title: Plot Data in Subcortical and Cerebellar Structures
-Version: 0.1.0
+Version: 1.2.1
 Authors@R: 
     person("Annie", "Bryant", , email="anniegbryant@gmail.com", role = c("aut", "cre"))
 Description: Plot parcellated brain data in two-dimensional vector plots for non-cortical structures, including subcortex and cerebellum. The package comes with nine pre-built atlases.

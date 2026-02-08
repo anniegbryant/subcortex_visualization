@@ -25,7 +25,7 @@ def get_atlas_regions(atlas_name):
         # Load ordering file
         atlas_ordering = pd.read_csv(files("subcortex_visualization.data").joinpath(f"{atlas_name}_{hemisphere}_ordering.csv"))
 
-        # Identify regions for left/right cerebellar cortex versus vermis
+        # Identify regions for left/right cerebellar hemispheres versus vermis
         hemisphere_regions = atlas_ordering.query("Hemisphere == 'L'").sort_values('seg_index').region.unique()
         vermis_regions = atlas_ordering.query("Hemisphere=='V'").sort_values('seg_index').region.unique()
 
