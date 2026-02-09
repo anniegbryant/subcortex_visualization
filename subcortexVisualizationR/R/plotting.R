@@ -49,9 +49,12 @@ prep_data <- function(atlas, hemisphere, subcortex_data=NULL, value_column='valu
   # Join with the path lookup to map the names
   atlas_SVG_df_labeled <- atlas_SVG_df %>%
     left_join(path_lookup, by = "elem_idx") %>% 
-    mutate(Hemisphere = ifelse(str_detect(region, '_L$'), 'L', 'R'),
+    # Set hemisphere based on region name end; either left, right, or vermis (CB)
+    mutate(Hemisphere = case_when(str_detect(region, '_L$') ~ 'L',
+                                  str_detect(region, '_V$') ~ 'V',
+                                  T ~ 'R'),
            face = ifelse(str_detect(region, '_lateral'), 'lateral', 'medial'), 
-           region = str_replace_all(region, "_L$|_R$", '')) %>% 
+           region = str_replace_all(region, "_L$|_R$|_V$", '')) %>% 
     mutate(region = str_replace(region, '_lateral|_medial', '')) %>%
     left_join(., atlas_ordering) %>%
     arrange(plot_order, elem_idx, path_idx) %>% 
