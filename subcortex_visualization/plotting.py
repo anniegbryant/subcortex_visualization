@@ -195,8 +195,11 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
     line_color : str, default='black'
         Color of the outline around each subcortical region.
 
-    line_thickness : float, default=1.5
-        Thickness of the outline for each region (in mm)
+    line_thickness : float or str, default=1.5
+        Thickness of the outline for each region. If a float, a uniform thickness 
+        is applied to all regions. If a string, it must correspond to a column 
+        name in `subcortex_data` (or `atlas_ordering`) to allow for 
+        region-specific line widths.
 
     color_lookup : dict, optional
         Dictionary mapping region names to colors for discrete colormap.
@@ -244,21 +247,28 @@ def plot_helper(atlas_ordering, paths, value_column='value', hemisphere='L', sub
         this_region_side = row['face']
         this_region_hemi = row['Hemisphere']
 
-        # Determine color
+        # Determine Color
         if subcortex_data is None:
             this_region_color = color_lookup[this_region]
         else:
             val = row[value_column]
             this_region_color = cmap(norm(val)) if not pd.isnull(val) else NA_fill
 
-        # Match title to region
+        # If line_thickness is a string, treat it as a column name in the dataframe
+        if isinstance(line_thickness, str):
+            current_lw = row[line_thickness] if line_thickness in row else 1.5
+        else:
+            current_lw = line_thickness
+
+        # Match title to region and apply thickness
         for path in paths:
             for child in path:
                 if child.tag.endswith('title') and child.text == f"{this_region}_{this_region_side}_{this_region_hemi}":
                     d = path.attrib['d']
                     path_obj = parse_path(d)
+                    # Apply current_lw here
                     patch = PathPatch(path_obj, facecolor=this_region_color,
-                                      edgecolor=line_color, lw=line_thickness)
+                                      edgecolor=line_color, lw=current_lw)
                     ax.add_patch(patch)
                     patches.append(patch)
 
@@ -290,8 +300,11 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
     value_column : str, default='value'
         The name of the column in `subcortex_data` that contains the values to be visualized.
 
-    line_thickness : float, default=1.5
-        Thickness of the outline for each region.
+    line_thickness : float or str, default=1.5
+        Thickness of the outline for each region. If a float, a uniform thickness 
+        is applied to all regions. If a string, it must correspond to a column 
+        name in `subcortex_data` (or `atlas_ordering`) to allow for 
+        region-specific line widths.
 
     line_color : str, default='black'
         Color of the outline around each subcortical region.
@@ -387,13 +400,10 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg', value_column='value
 
     # Let's get plottin
     if subcortex_data is None:
-
         fig, ax = plot_helper(atlas_ordering, paths, value_column=value_column, hemisphere=hemisphere,
                               line_color=line_color, line_thickness=line_thickness,
                               color_lookup=color_lookup, NA_fill=NA_fill, ax=ax)
-        
     else:
-
         fig, ax = plot_helper(atlas_ordering, paths, value_column=value_column, hemisphere=hemisphere,
                               line_color=line_color, line_thickness=line_thickness,
                               subcortex_data=subcortex_data, cmap=cmap, NA_fill=NA_fill, norm=norm, ax=ax)
