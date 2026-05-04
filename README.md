@@ -99,7 +99,7 @@ The core plotting function in both Python and R is `plot_subcortical_data`, whic
 | `subcortex_data` | `None` / `NULL` | Optional dataframe with columns `region`, `Hemisphere`, and `value_column`. If omitted, regions are colored by index. |
 | `atlas` | `'aseg_subcortex'` | Atlas name (see full list below). |
 | `value_column` | `'value'` | Column in `subcortex_data` to visualize. |
-| `hemisphere` | `'L'` | `'L'`, `'R'`, or `'both'`. |
+| `hemisphere` | `'L'` | `'L'`, `'R'`, `'V'`, or `'B'`. |
 | `views` | `['medial', 'lateral']` | Which faces to show. Options: `'medial'`, `'lateral'`, `'superior'`, `'inferior'`. Not applicable to SUIT. |
 | `line_color` | `'black'` | Outline color for each region. |
 | `line_thickness` | `0.5` | Outline thickness, or a column name in `subcortex_data` for per-region thickness. |
@@ -115,7 +115,7 @@ The core plotting function in both Python and R is `plot_subcortical_data`, whic
 | `fontsize` | `12` | Font size for figure text. |
 
 Two additional utility functions are also available.
-Check out the full [Python API](https://anniegbryant.github.io/subcortex_visualization/api_reference/) or [R API](https://anniegbryant.github.io/subcortex_visualization/R_api/) reference:
+Check out the full [Python API](https://anniegbryant.github.io/subcortex_visualization/python_api/) or [R API](https://anniegbryant.github.io/subcortex_visualization/R_api/) reference:
 
 * `parcel_segstats`: Extract and summarize voxel values from a NIfTI volume across atlas parcels (supports multiple atlases and summary statistics, with optional resampling).
 * `get_atlas_regions`: Return the region names for a given atlas.
@@ -179,7 +179,7 @@ This package provides twelve subcortical, thalamic, and cerebellar atlases as a 
 The workflow can readily be extended to your favorite segmentation atlas, though!
 We provide two pipelines in the [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) folder:
 
-1. **Semi-automated pipeline**: Uses Python scripts to automatically trace per-region surface meshes via [YABplot](https://github.com/teanijarv/yabplot) and [Potrace](http://potrace.sourceforge.net/); faster and fully scriptable for atlases with clearly separable regions.
+1. **Semi-automated pipeline**: Uses Python scripts to automatically trace per-region surface meshes via [YABplot](https://github.com/teanijarv/yabplot) and [Potrace](http://potrace.sourceforge.net/); faster and fully scriptable (with the exception of one manual region order definition step at the end), ideal for atlases with clearly separable regions.
 2. **Manual pipeline**: Interactively renders a composite mesh in [Surf Ice](https://github.com/neurolabusc/surf-ice) and traces each region by hand in [Inkscape](https://inkscape.org/); more time-consuming, but more interactive and offers finer control for atlases with many small or closely-packed nuclei.
 
 Check out the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for a full walkthrough of both approaches.

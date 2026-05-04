@@ -4,7 +4,7 @@
 programmatically visualizing region-level data across twelve popular
 atlases for the subcortex (including thalamic nuclei and the brainstem)
 and cerebellum. Visualizations are rendered as resolution-independent
-two-dimensional vector graphics, inspired by the `ggseg` R package for
+two-dimensional vector graphics, inspired by the [`ggseg` R package](https://github.com/ggsegverse/ggseg) for
 cortical data, with standardized rendering conventions that make results
 directly comparable across atlases.
 
@@ -468,7 +468,7 @@ for (atlas in all_atlases) {
 
 Since `subcortexVisualizationR` produces `ggplot2` objects, it is
 straightforward to combine subcortical and cerebellar plots with
-cortical surface plots from `ggseg` using the `patchwork` package, all
+cortical surface plots from `ggseg` using the [`patchwork`](https://patchwork.data-imaginist.com/) package, all
 within the `ggplot2` framework. This allows for direct comparison of
 receptor density across cortical and non-cortical structures with a
 unified color scale.
