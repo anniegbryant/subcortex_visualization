@@ -1,39 +1,64 @@
-#' Print the names of regions in a given subcortical atlas
+#' Return the names of regions in a given subcortical or cerebellar atlas.
 #'
-#' This function takes in the name of a given subcortical/cerebellar atlas (e.g., 'aseg')
-#' and returns the list of regions in that atlas, ordered by segmentation index
-#'
-#' @param atlas_name Name of the atlas to get regions frmo (e.g., 'aseg')
-#' @return A list of regions in the specified atlas, ordered by segmentation index
+#' @param atlas_name Name of the subcortical/cerebellar atlas (e.g., \code{"aseg_subcortex"}).
+#' @return For most atlases: a character vector of region names ordered by segmentation index.
+#'   For \code{"SUIT_cerebellar_lobule"}: a named list with \code{hemisphere_regions} and
+#'   \code{vermis_regions}. For \code{"Brainstem_Navigator"}: a named list with
+#'   \code{hemisphere_regions} and \code{midline_regions}.
 #' @export
 get_atlas_regions <- function(atlas_name) {
 
-  # If the atlas is the SUIT cerebellar lobules, use hemisphere of 'both'
-  if (atlas_name == 'SUIT_cerebellar_lobule') {
-    hemisphere='both'
+  if (atlas_name == "SUIT_cerebellar_lobule") {
+    hemisphere <- "both"
 
-    # Load ordering file
-    atlas_ordering <- read.csv(system.file("extdata", paste0(atlas_name, "_", hemisphere, "_ordering.csv"), package = "subcortexVisualizationR"))
+    atlas_ordering <- read.csv(system.file("extdata", "data", atlas_name,
+                                           paste0(atlas_name, "_", hemisphere, "_ordering.csv"),
+                                           package = "subcortexVisualizationR"))
 
-    # Identify regions for left/right cerebellar hemispheres versus vermis
-    hemisphere_regions <- atlas_ordering %>% filter(Hemisphere=='L') %>% arrange(seg_index) %>% distinct(region) %>% pull(region)
-    vermis_regions <- atlas_ordering %>% filter(Hemisphere=='V') %>% arrange(seg_index) %>% distinct(region) %>% pull(region)
+    hemisphere_regions <- atlas_ordering |>
+      dplyr::filter(Hemisphere == "L") |>
+      dplyr::arrange(seg_index) |>
+      dplyr::distinct(region) |>
+      dplyr::pull(region)
 
-    # Return both lists of regions as a tuple
-    return(list(hemisphere_regions=hemisphere_regions, vermis_regions=vermis_regions))
+    vermis_regions <- atlas_ordering |>
+      dplyr::filter(Hemisphere == "V") |>
+      dplyr::arrange(seg_index) |>
+      dplyr::distinct(region) |>
+      dplyr::pull(region)
+
+    return(list(hemisphere_regions = hemisphere_regions, vermis_regions = vermis_regions))
   }
-  
-  # Otherwise, use just the left hemisphere to get region names 
-  else {  
-    hemisphere='L'
-    
-    # Load ordering file
-    atlas_ordering <- read.csv(system.file("extdata", paste0(atlas_name, "_", hemisphere, "_ordering.csv"), package = "subcortexVisualizationR"))
-    
-    # Sort by segmentation index and print the array of region names
-    unique_regions <- atlas_ordering %>% arrange(seg_index) %>% distinct(region) %>% pull(region)
-    
-    # Return the list of regions
-    return(unique_regions)
+
+  if (atlas_name == "Brainstem_Navigator") {
+    atlas_ordering <- read.csv(system.file("extdata", "data", atlas_name,
+                                           paste0(atlas_name, "_L_ordering.csv"),
+                                           package = "subcortexVisualizationR"))
+
+    hemisphere_regions <- atlas_ordering |>
+      dplyr::filter(Hemisphere == "L") |>
+      dplyr::arrange(seg_index) |>
+      dplyr::distinct(region) |>
+      dplyr::pull(region)
+
+    midline_regions <- atlas_ordering |>
+      dplyr::filter(Hemisphere == "B") |>
+      dplyr::arrange(seg_index) |>
+      dplyr::distinct(region) |>
+      dplyr::pull(region)
+
+    return(list(hemisphere_regions = hemisphere_regions, midline_regions = midline_regions))
   }
+
+  hemisphere <- "L"
+  atlas_ordering <- read.csv(system.file("extdata", "data", atlas_name,
+                                         paste0(atlas_name, "_", hemisphere, "_ordering.csv"),
+                                         package = "subcortexVisualizationR"))
+
+  unique_regions <- atlas_ordering |>
+    dplyr::arrange(seg_index) |>
+    dplyr::distinct(region) |>
+    dplyr::pull(region)
+
+  return(unique_regions)
 }

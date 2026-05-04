@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="1000"
+   height="600"
+   viewBox="0 0 1000 600"
+   id="svg250652"
+   sodipodi:docname="rTtha_L_lateral.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs250656" />
+  <sodipodi:namedview
+     id="namedview250654"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.77177732"
+     inkscape:cx="334.29332"
+     inkscape:cy="357.6161"
+     inkscape:window-width="1309"
+     inkscape:window-height="456"
+     inkscape:window-x="0"
+     inkscape:window-y="340"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg250652" />
+  <path
+     d="M 440.355,403.528 C 441.377,401.358 444.344,397.191 446.949,394.268 C 450.366,390.434 452.139,387.320 453.317,383.084 C 456.228,372.614 462.292,368.164 472.069,369.322 C 484.441,370.787 493.425,380.671 488.617,387.527 C 487.266,389.455 487.453,389.494 496.867,389.218 C 510.518,388.818 510.687,388.760 510.202,384.602 C 509.413,377.842 513.136,371.157 519.000,368.805 C 520.375,368.254 524.425,367.852 528.000,367.912 L 534.500,368.022 L 528.872,362.761 C 525.776,359.867 522.484,356.003 521.556,354.173 C 520.628,352.342 518.361,348.870 516.519,346.457 C 511.315,339.639 508.746,331.748 509.209,324.000 C 509.907,312.291 514.524,306.639 526.755,302.519 L 533.268,300.326 L 522.884,300.341 C 510.758,300.359 502.642,298.386 496.234,293.863 C 490.729,289.978 483.650,289.126 476.000,291.428 C 472.975,292.338 465.830,293.502 460.123,294.014 C 446.853,295.204 443.249,296.958 431.924,307.735 C 425.335,314.005 421.712,318.474 417.994,324.916 C 415.230,329.705 410.677,336.296 407.877,339.562 C 401.487,347.015 399.998,350.449 400.007,357.718 C 400.013,363.696 401.189,366.349 405.844,370.898 C 407.973,372.978 410.307,377.539 416.992,392.684 C 419.900,399.272 425.482,404.739 431.107,406.508 C 437.149,408.408 438.219,408.063 440.355,403.528 Z"
+     fill="#c7c7c7"
+     stroke="black"
+     stroke-width="0.5"
+     fill-rule="evenodd"
+     id="path250642" />
+</svg>

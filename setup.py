@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,  # ← IMPORTANT
     package_data={
-        'subcortex_visualization': ['data/*.svg', 'data/*.csv', 'atlases/*.nii.gz', 'atlases/*.csv'],
+        'subcortex_visualization': ['data/*/*.svg', 'data/*/vectors/*', 'data/*/meshes/*', 'data/*/*.csv', 'atlases/*/*/*.nii.gz', 'atlases/*/*/*.csv'],
     },
     install_requires=[
         'numpy',

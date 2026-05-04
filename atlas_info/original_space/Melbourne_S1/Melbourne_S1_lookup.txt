@@ -1,0 +1,16 @@
+1	hippocampus-rh	1
+2	amygdala-rh	2
+3	thalamus_posterior-rh	3
+4	thalamus_anterior-rh	4
+5	accumbens-rh	5
+6	pallidum-rh	6
+7	putamen-rh	7
+8	caudate-rh	8
+9	hippocampus-lh	9
+10	amygdala-lh	10
+11	thalamus_posterior-lh	11
+12	thalamus_anterior-lh	12
+13	accumbens-lh	13
+14	pallidum-lh	14
+15	putamen-lh	15
+16	caudate-lh	16

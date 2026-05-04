@@ -2,7 +2,7 @@
 
 [![DOI:10.64898/2026.01.23.699785](http://img.shields.io/badge/DOI-10.1101/2021.01.08.425840-B31B1B.svg)](https://doi.org/10.64898/2026.01.23.699785)
 
-This package (implemented in Python and R) currently includes the following nine subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
+This package (implemented in Python and R) currently includes the following twelve subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
 <img src="docs-site/docs/images/all_atlas_showcase.png" width="100%">
 
@@ -10,15 +10,24 @@ More information about these atlases, including the process of rendering the sur
 
 ## 🙋‍♀️ Motivation
 
-This visualization package was created to generate two-dimensional subcortex images in the style of the popular [`ggseg` package](https://github.com/ggseg/ggseg) in R.
-We based our vector graphic outlines on the three-dimensional subcortical meshes either (1) provided as part of the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA) for the aseg atlas or (2) meshes generated in-house using rendering software from [Chris Rorden's lab](https://github.com/neurolabusc) ([Surf Ice](https://github.com/neurolabusc/surf-ice); check out [`custom_segmentation_pipeline/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information).
+If you work with subcortical or cerebellar data, you've probably hit this wall: there are plenty of beautiful tools for visualizing cortical results (as elegantly laid out by [Chopra et al. *Aperture Neuro* 2023](https://apertureneuro.org/article/85104-a-practical-guide-for-generating-reproducible-and-programmatic-neuroimaging-visualizations)), but far fewer options by comparison once you venture below the cortical mantle. 
+Most research groups end up building their own one-off plotting pipelines per atlas, which often amounts to lot of duplicated effort and figures that are hard to compare across studies.
 
-The below graphic summarizes the transformation from 3D volumetric meshes to 2D surfaces, starting from the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) as published in [Tian et al. (2020)](https://www.nature.com/articles/s41593-020-00711-6) at the 'S1' resolution.
+This package takes inspiration from the fantastic [`ggseg`](https://github.com/ggseg/ggseg) R package (and its [Python extension](https://github.com/ggseg/python-ggseg/)), which unifies cortical atlas visualization into clean, standardized 2D vector plots. 
+We admire this approach for a few reasons: vector graphics aren't subject to the lighting artifacts that make 3D renderings tricky to interpret (especially with color-mapped values), and they produce crisp, resolution-independent figures that are publication-ready straight out of the box (and easy to touch up in Inkscape or Illustrator afterwards).
 
-<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="50%">
+While `ggseg` does support subcortical plotting via the FreeSurfer `aseg` atlas, it's [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) together in one figure, and the atlas coverage for the broader subcortex, thalamic nuclei, brainstem, and cerebellum is quite limited across the field.
 
-While [`ggseg`](https://github.com/ggseg/ggseg) offers subcortical plotting with the `aseg` atlas, it is [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show data from all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) in the same figure.
-Moreover, there is currently no other software available to visualize any of the other above subcortical, thalamic, or cerebellar atlases in two dimensions with real data, motivating the development of this package.
+`subcortex_visualization` is our attempt to fill that gap: twelve commonly used non-cortical atlases, all in the same consistent 2D vector format, with a single function call in Python or R. 
+To our knowledge, it's the largest collection of non-cortical atlases in one unified vector-based visualization toolbox.
+
+The below graphic shows the journey from 3D volumetric segmentation to 2D vector scaffold, using the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) (S1 resolution) as an example:
+
+<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="90%">
+
+Vector outlines are derived from three-dimensional subcortical meshes (like the one for the aseg atlas offered by the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA)), either through a semi-automated or manual tracing pipeline.
+Check out [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) as well as the [package documentation website](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation) for more information.
+Those same pipelines are there for you if you want to add your own custom atlas to the mix.
 
 ## 🖥️ Installation
 
@@ -50,26 +59,27 @@ The R version of this package can be installed from GitHub within R using the `r
 install.packages("remotes")
 
 # then install subcortexVisualizationR
-remotes::install_github("anniegbryant/subcortex_visualization", subdir = "subcortexVisualizationR"
+remotes::install_github("anniegbryant/subcortex_visualization", subdir = "subcortexVisualizationR")
 ```
 
 ## 👨‍💻 Usage
 
 ### ❗️ Quick start
 
-Running the code below (in either python or R) will produce an image of the left subcortex in the aseg atlas (the default), each region colored by its index, with the plasma color scheme:
+Running the code below (in either Python or R) will produce an image of the left subcortex in the `aseg_subcortex` atlas (the default), each region colored by its index, with the viridis color scheme:
 
 ```python
-plot_subcortical_data(hemisphere='L', cmap='plasma', 
-                      fill_title = "Subcortical region index")
+plot_subcortical_data(hemisphere='L', fill_title="Subcortical region index", atlas='Melbourne_S1')
 ```
 
-<img src="docs-site/docs/images/example_aseg_subcortex_plot.png" width="60%">
+<img src="docs-site/docs/images/default_params.png" width="60%">
+
+Note that we specified `atlas='Melbourne_S1'` to demonstrate default functionality with the S1 resolution of the Melbourne Subcortex Atlas.
 
 
 ### 📚 Tutorial
 
-For a guide that goes through all the functionality and atlases available in this package, we compiled a simple walkthrough tutorial in Python ([tutorial.ipynb](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial.ipynb)) and R ([tutorial_R.md](https://github.com/anniegbryant/subcortex_visualization/blob/main/tutorial_R.md)).
+For a guide that goes through all the functionality and atlases available in this package, we compiled walkthrough tutorials for [Python](https://anniegbryant.github.io/subcortex_visualization/python_tutorial/) and [R](https://anniegbryant.github.io/subcortex_visualization/R_tutorial/) on the project website.
 To plot real data in the subcortex, your `subcortex_data` should be a Python `pandas.DataFrame` or an R `data.frame` structured as follows (here we've just assigned an integer index to each region):
 
 | region        | value         | Hemisphere  |
@@ -82,20 +92,35 @@ To plot real data in the subcortex, your `subcortex_data` should be a Python `pa
 | putamen | 5 | L |
 | thalamus | 6 | L |
 
-Briefly, all functionality is contained within the `plot_subcortical_data` function, which takes in the following arguments: 
-* `subcortex_data`: The three-column dataframe in a format as shown above; this is optional, if left out the plot will just color each region by its index
-* `atlas`: The name of the subcortical, thalamic, or cerebellar segmentation atlas (default is 'aseg', all options listed below)
-* `value_column`: The name of the column in your `subcortex_data` to plot, defaults to 'value'
-* `line_thickness`: How thick the lines around each subcortical region should be drawn
-* `line_color`: What color the lines around each subcortical region should be (default is 'black')
-* `hemisphere`: Which hemisphere ('L' or 'R') the `subcortex_data` is from; can also be 'both' (default is 'L')
-* `fill_title`: Name to add to legend (default is 'values')
-* `cmap`: name of colormap (e.g., 'plasma' or 'viridis') or a `matplotlib.colors.Colormap` (default is 'viridis'); for R, this could be a vector of discrete colors or a color palette generating function
-* `vmin`: Min fill value; this is optional, and you would only want to use this to manually constrain the fill range to match another figure
-* `vmax`: Max fill value; this is optional, and you would only want to use this to manually constrain the fill range to match another figure
-* `midpoint`: Midpoint value to enforce for fill range; this is optional
+The core plotting function in both Python and R is `plot_subcortical_data`, which takes the following arguments:
 
-Here's an example in Python for plotting both hemispheres, with data randomly sampled from a normal distribution, setting a color range from blue (low) to red (high) with white at the center (midpoint=0):
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `subcortex_data` | `None` / `NULL` | Optional dataframe with columns `region`, `Hemisphere`, and `value_column`. If omitted, regions are colored by index. |
+| `atlas` | `'aseg_subcortex'` | Atlas name (see full list below). |
+| `value_column` | `'value'` | Column in `subcortex_data` to visualize. |
+| `hemisphere` | `'L'` | `'L'`, `'R'`, or `'both'`. |
+| `views` | `['medial', 'lateral']` | Which faces to show. Options: `'medial'`, `'lateral'`, `'superior'`, `'inferior'`. Not applicable to SUIT. |
+| `line_color` | `'black'` | Outline color for each region. |
+| `line_thickness` | `0.5` | Outline thickness, or a column name in `subcortex_data` for per-region thickness. |
+| `cmap` | `'viridis'` | Colormap name, a `matplotlib.colors.Colormap`, or (in R) a vector of hex colors or palette function. |
+| `NA_fill` | `'#cccccc'` | Fill color for regions with missing data. |
+| `fill_alpha` | `1.0` | Region opacity (0–1). |
+| `fill_by_significance` | `False` / `FALSE` | If `True`, dims non-significant regions (requires a `p_value` column in `subcortex_data`). |
+| `nonsig_fill_alpha` | `0.5` | Opacity for non-significant regions when `fill_by_significance=True`. |
+| `vmin` / `vmax` | `None` / `NULL` | Manually constrain the colormap range. |
+| `midpoint` | `None` / `NULL` | Center a diverging colormap at this value. |
+| `show_legend` | `True` / `TRUE` | Whether to display the colorbar/legend. |
+| `fill_title` | `'values'` | Colorbar label. |
+| `fontsize` | `12` | Font size for figure text. |
+
+Two additional utility functions are also available.
+Check out the full [Python API](https://anniegbryant.github.io/subcortex_visualization/api_reference/) or [R API](https://anniegbryant.github.io/subcortex_visualization/R_api/) reference:
+
+* `parcel_segstats`: Extract and summarize voxel values from a NIfTI volume across atlas parcels (supports multiple atlases and summary statistics, with optional resampling).
+* `get_atlas_regions`: Return the region names for a given atlas.
+
+Here's an example in Python for plotting both hemispheres with data randomly sampled from a normal distribution, using a blue–white–red diverging colormap centered at zero:
 
 ```python
 import matplotlib.colors as mcolors
@@ -103,58 +128,65 @@ import numpy as np
 
 np.random.seed(127)
 
-example_continuous_data_L = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"],
-                                          "value": np.random.normal(0, 1, 7)}).assign(Hemisphere = "L")
-example_continuous_data_R = pd.DataFrame({"region": ["accumbens", "amygdala", "caudate", "hippocampus", "pallidum", "putamen", "thalamus"],
-                                            "value": np.random.normal(0, 1, 7)}).assign(Hemisphere = "R")
+# Get region names for the aseg subcortex atlas
+aseg_subcortex_regions = get_atlas_regions("aseg_subcortex")
+
+# Sample random values from a normal distribution for each hemisphere
+example_continuous_data_L = (pd.DataFrame({
+    "region": aseg_subcortex_regions,
+    "value": np.random.normal(0, 1, len(aseg_subcortex_regions))
+}).assign(Hemisphere="L"))
+
+example_continuous_data_R = (pd.DataFrame({
+    "region": aseg_subcortex_regions,
+    "value": np.random.normal(0, 1, len(aseg_subcortex_regions))
+}).assign(Hemisphere="R"))
+
+# Combine left and right hemisphere data for bilateral plotting
 example_continuous_data = pd.concat([example_continuous_data_L, example_continuous_data_R], axis=0)
 
 white_blue_red_cmap = mcolors.LinearSegmentedColormap.from_list("BlueWhiteRed", ["blue", "white", "red"])
 
-plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg',
-                      hemisphere='both', fill_title = "Normal distribution sample",
+plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg_subcortex',
+                      hemisphere='both', fill_title="Normal distribution sample",
                       cmap=white_blue_red_cmap, midpoint=0)
 ```
 
-<img src="docs-site/docs/images/example_aseg_subcortex_normdist.png" width="75%">
+<img src="docs-site/docs/images/aseg_continuous_bwr.png" width="85%">
 
 ### 🗺️ Available atlases
 
 The following subcortical and cerebellar atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
 
-* `aseg`: The `aseg` parcellation atlas from FreeSurfer
+* `aseg_subcortex`: The `aseg` parcellation atlas from FreeSurfer
 * `Melbourne_S1`: The Melbourne Subcortex Atlas at granularity level S1, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
 * `Melbourne_S2`: The Melbourne Subcortex Atlas at granularity level S2, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
 * `Melbourne_S3`: The Melbourne Subcortex Atlas at granularity level S3, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
 * `Melbourne_S4`: The Melbourne Subcortex Atlas at granularity level S4, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
-* `AICHA`: The AICHA subcortex atlas, from [Joliot et al. *J Neurosci Methods* (2015)](https://pubmed.ncbi.nlm.nih.gov/26213217/).
-* `Brainnetome`: The Brainnetome subcortex atlas, from [Fan et al. *Cerebral Cortex* (2016)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/)
-* `Thalamus_Nuclei_HCP`: The thalamic nuclei atlas derived from HCP data, from [Najdenovska et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata2018270)
-* `SUIT`: The SUIT cerebellum atlas, from [Diedrichsen *Neuroimage* (2006)](https://doi.org/10.1016/j.neuroimage.2006.05.056)
-
-### 🌟 Atlas wishlist
-
-These atlases are on the 'vision board' for me to add to the package next (community pull requests absolutely welcome to incorporate these in the meantime):
-
-* Thalamus-Optimized Multi-Atlas Segmentation (THOMAS) atlas: High-resolution segmentation of thalamic nuclei ([file link](https://zenodo.org/records/5499504)), recently expanded to all deep grey nuclei as described in [Saranathan et al. (2025)](https://doi.org/10.1002/hbm.70350)
-* Brainstem (suggested by [@RaviBot](https://github.com/RaviBot)): Brainstem Navigator atlas ([file link](https://www.nitrc.org/projects/brainstemnavig)), as described in [Bianciardi et al. (2015)](https://doi.org/10.1089/brain.2015.0347)
-* CIT168 Reinforcement Learning Atlas (suggested by [@GalKepler](https://github.com/GalKepler)): Subcortical atlas ([file link](https://osf.io/jkzwp/wiki)) that includes the principal nuclei involved in reinforcement learning, as described in [Pauli et al. (2018)](https://doi.org/10.1038/sdata.2018.63)
+* `AICHA_subcortex`: The AICHA subcortex atlas, from [Joliot et al. *J Neurosci Methods* (2015)](https://pubmed.ncbi.nlm.nih.gov/26213217/)
+* `Brainnetome_subcortex`: The Brainnetome subcortex atlas, from [Fan et al. *Cerebral Cortex* (2016)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/)
+* `CIT168_subcortex`: The CIT168 reinforcement learning atlas, from [Pauli et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata201863)
+* `Thalamus_HCP`: The thalamic nuclei atlas derived from HCP data, from [Najdenovska et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata2018270)
+* `Thalamus_THOMAS`: The THOMAS thalamic nuclei atlas, from [Su et al. *NeuroImage* (2019)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6536348/)
+* `Brainstem_Navigator`: The Brainstem Navigator atlas, from [Bianciardi et al. *Brain Connectivity* (2015)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4684653/)
+* `SUIT_cerebellar_lobule`: The SUIT cerebellum atlas, from [Diedrichsen *Neuroimage* (2006)](https://doi.org/10.1016/j.neuroimage.2006.05.056)
 
 ## 💡 Want to generate your own mesh and/or parcellation?
 
-<img src="docs-site/docs/images/custom_vector_method.png" width="60%">
+<img src="docs-site/docs/images/custom_vector_method.png" width="805%">
 
-This package provides nine subcortical, thalamic, and cerebellar atlases as a starting point.
-The workflow can readily be extended to your favorite segmentation atlas, though! 
-We have a dedicated folder for a custom segmentation pipeline that will walk you through the two key steps:  
-1. Rendering a series of triangulated surface meshes from your parcellation atlas (starting from a .nii.gz volume), using the [`surfice_atlas`](https://github.com/neurolabusc/surfice_atlas) software, both developed by [Chris Rorden's lab](https://github.com/rordenlab); and 
-2. Tracing the outline of each region in the rendered mesh in vector graphic editing software (we use Inkscape in the tutorial as a powerful and free option), to yield a two-dimensional image of your atlas in scalable vector graphic (.svg) format.
+This package provides twelve subcortical, thalamic, and cerebellar atlases as a starting point.
+The workflow can readily be extended to your favorite segmentation atlas, though!
+We provide two pipelines in the [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) folder:
 
-Check out the walkthrough in the [`custom_segmentation/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/custom_segmentation) folder or the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for more information on how to render your own volumetric segmentation with an interactive mesh and convert to a two-dimensional vector graphic that can be integrated with this package.
+1. **Semi-automated pipeline**: Uses Python scripts to automatically trace per-region surface meshes via [YABplot](https://github.com/teanijarv/yabplot) and [Potrace](http://potrace.sourceforge.net/); faster and fully scriptable for atlases with clearly separable regions.
+2. **Manual pipeline**: Interactively renders a composite mesh in [Surf Ice](https://github.com/neurolabusc/surf-ice) and traces each region by hand in [Inkscape](https://inkscape.org/); more time-consuming, but more interactive and offers finer control for atlases with many small or closely-packed nuclei.
+
+Check out the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for a full walkthrough of both approaches.
 
 ## 🔗 Citing this package
 
-If you use this package in a scientific publication, blog post, etc., please read and cite the [associated preprint](https://www.biorxiv.org/content/10.64898/2026.01.23.699785):
+If you use this package in a scientific publication, blog post, etc., we ask that you please read and cite the [associated preprint](https://www.biorxiv.org/content/10.64898/2026.01.23.699785):
 
 * 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *bioRxiv*, 2026-01. doi:10.64898/2026.01.23.699785.
 
@@ -184,9 +216,16 @@ We're also very grateful for ongoing contributions from members of the GitHub co
 
 [![Contributors](https://contrib.rocks/image?repo=anniegbryant/subcortex_visualization)](https://github.com/anniegbryant/subcortex_visualization/graphs/contributors)
 
+## Publications that have used this package 👯‍♀️
+
+📜 Diano et al. (2025) *PNAS*: https://www.pnas.org/doi/10.1073/pnas.2518549122
+ 
+📜 Wu et al. (2026) *NeuroImage*: https://www.sciencedirect.com/science/article/pii/S1053811926000315
+
+
 ## ❓📧 Questions, comments, or suggestions always welcome!
 
 Please feel free to ask questions, report bugs, or share suggestions by creating an issue or by emailing me (Annie) at ([anniegbryant@gmail.com](mailto:anniegbryant@gmail.com)) 😊
 
 As an [open-source tool](https://opensource.guide/how-to-contribute/), pull requests are always welcome from the community, too.
-If you create your own custom vector graphic for your segmentation atlas of choice, feel free to create a pull request to incorporate and be acknowledged.
+If you create your own custom vector graphic scaffold for your segmentation atlas of choice, feel free to create a pull request to incorporate and be acknowledged.

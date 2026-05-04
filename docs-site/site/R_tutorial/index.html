@@ -12,18 +12,18 @@
         <link rel="prev" href="../python_tutorial/">
       
       
-        <link rel="next" href="../atlas_info/">
+        <link rel="next" href="../api_reference/">
       
       
         
       
       
       <link rel="icon" href="../images/logo.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Usage (R) - Subcortex visualization</title>
+        <title>R tutorial - Subcortex visualization</title>
       
     
     
@@ -49,6 +49,10 @@
       
     
     
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#subcortexvisualizationr-tutorial" class="md-skip">
+        <a href="#r-tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage (R)
+              R tutorial
             
           </span>
         </div>
@@ -253,6 +257,62 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../tutorials_overview/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -263,7 +323,7 @@
   <span class="md-ellipsis">
     
   
-    Usage (Python)
+    Python tutorial
   
 
     
@@ -275,9 +335,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
     
@@ -299,7 +360,7 @@
   <span class="md-ellipsis">
     
   
-    Usage (R)
+    R tutorial
   
 
     
@@ -317,7 +378,7 @@
   <span class="md-ellipsis">
     
   
-    Usage (R)
+    R tutorial
   
 
     
@@ -354,10 +415,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-data-just-to-show-the-different-regions" class="md-nav__link">
+  <a href="#1-exploring-the-built-in-atlases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example data just to show the different regions
+        1. Exploring the built-in atlases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Exploring the built-in atlases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot_subcortical_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot_subcortical_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-choosing-view-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Choosing view angles
       
     </span>
   </a>
@@ -365,10 +454,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulating-and-visualizing-continuous-data" class="md-nav__link">
+  <a href="#3-controlling-transparency" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulating and visualizing continuous data
+        3. Controlling transparency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Controlling transparency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-alpha-with-fill_alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global alpha with fill_alpha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#significance-based-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance-based transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-working-with-your-own-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Working with your own data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Working with your own data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotting-continuous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting continuous data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-colormaps-and-the-midpoint-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom colormaps and the midpoint argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extracting-regional-statistics-from-volumetric-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Extracting regional statistics from volumetric data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Extracting regional statistics from volumetric data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atlas-space-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atlas space compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-multiple-atlases-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying multiple atlases simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-combining-cortical-and-subcortical-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Combining cortical and subcortical visualizations
       
     </span>
   </a>
@@ -378,6 +584,133 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../api_reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -424,7 +757,7 @@
   <span class="md-ellipsis">
     
   
-    Using a custom atlas
+    Adding a new atlas
   
 
     
@@ -529,10 +862,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-data-just-to-show-the-different-regions" class="md-nav__link">
+  <a href="#1-exploring-the-built-in-atlases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example data just to show the different regions
+        1. Exploring the built-in atlases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Exploring the built-in atlases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plot_subcortical_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plot_subcortical_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-choosing-view-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Choosing view angles
       
     </span>
   </a>
@@ -540,10 +901,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulating-and-visualizing-continuous-data" class="md-nav__link">
+  <a href="#3-controlling-transparency" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulating and visualizing continuous data
+        3. Controlling transparency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Controlling transparency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-alpha-with-fill_alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global alpha with fill_alpha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#significance-based-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance-based transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-working-with-your-own-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Working with your own data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Working with your own data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotting-continuous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting continuous data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-colormaps-and-the-midpoint-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom colormaps and the midpoint argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extracting-regional-statistics-from-volumetric-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Extracting regional statistics from volumetric data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Extracting regional statistics from volumetric data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atlas-space-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atlas space compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-multiple-atlases-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying multiple atlases simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-combining-cortical-and-subcortical-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Combining cortical and subcortical visualizations
       
     </span>
   </a>
@@ -567,270 +1045,507 @@
 
 
 
-<h1 id="subcortexvisualizationr-tutorial">subcortexVisualizationR tutorial</h1>
-<p>2026-01-29</p>
+<h1 id="r-tutorial">R tutorial</h1>
+<p><code>subcortexVisualizationR</code> is an open-source R package for
+programmatically visualizing region-level data across twelve popular
+atlases for the subcortex (including thalamic nuclei and the brainstem)
+and cerebellum. Visualizations are rendered as resolution-independent
+two-dimensional vector graphics, inspired by the <code>ggseg</code> R package for
+cortical data, with standardized rendering conventions that make results
+directly comparable across atlases.</p>
+<p>This tutorial covers the core functionality of the package:</p>
+<ol>
+<li><strong>Exploring the built-in atlases</strong>: Viewing the twelve included
+    atlases with default and custom colormaps</li>
+<li><strong>Choosing view angles</strong>: Displaying medial, lateral, superior, and
+    inferior views</li>
+<li><strong>Controlling transparency</strong>: Global alpha and significance-based
+    transparency</li>
+<li><strong>Working with your own data</strong>: Formatting and plotting empirical
+    region-level data</li>
+<li><strong>Extracting regional statistics from volumetric data</strong>: Using
+    <code>parcel_segstats</code> to parcellate NIfTI images</li>
+<li><strong>Combining cortical and subcortical visualizations</strong>: Integrating
+    with <code>ggseg</code> for whole-brain figures</li>
+</ol>
+<p>An equivalent Python package, <code>subcortex_visualization</code>, provides the
+same functionality and atlases with a nearly identical interface.</p>
 <h2 id="load-required-packages">Load required packages</h2>
-<pre><code class="language-r">library(subcortexVisualizationR)
-</code></pre>
-<pre><code>## Loading required package: tidyverse
+<p>The following libraries are needed to create the specific visual styles
+that are included in this tutorial.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">cowplot</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">subcortexVisualizationR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 
-## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.6
-## ✔ forcats   1.0.1     ✔ stringr   1.6.0
-## ✔ ggplot2   4.0.1     ✔ tibble    3.3.1
-## ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
-## ✔ purrr     1.2.1     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-</code></pre>
-<pre><code class="language-r">library(tidyverse)
-</code></pre>
-<h2 id="example-data-just-to-show-the-different-regions">Example data just to show the different regions</h2>
-<p>First, let’s create a simple dataframe with the left hemisphere cortical
-regions, assigning a different value to each region for visual clarity.
-Note that all data passed to <code>plot_subcortical_data</code> needs to follow the
-same three-column structure as shown below: <code>region</code> (the name of the
-subcortical region with the same nomenclature as shown), <code>value</code> (the
-value to be plotted in the subcortex map), and <code>Hemisphere</code> (either ‘L’,
-‘R’, or ‘both’).</p>
-<pre><code class="language-r"># Set seed for reproducibility
-
-example_subcortex_data = data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
-                                               &quot;caudate&quot;, &quot;hippocampus&quot;, 
-                                               &quot;pallidum&quot;, &quot;putamen&quot;, 
-                                               &quot;thalamus&quot;),
-                                    value = 1:7,
-                                    Hemisphere = &quot;L&quot;)
-
-example_subcortex_data
-</code></pre>
-<pre><code>##        region value Hemisphere
-## 1   accumbens     1          L
-## 2    amygdala     2          L
-## 3     caudate     3          L
-## 4 hippocampus     4          L
-## 5    pallidum     5          L
-## 6     putamen     6          L
-## 7    thalamus     7          L
-</code></pre>
-<p>Now, we can plot this data with the <code>plasma</code> colormap as an example in
-the left cortex. Note the following arguments:</p>
+<span class="nf">theme_set</span><span class="p">(</span><span class="nf">theme_cowplot</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="1-exploring-the-built-in-atlases">1. Exploring the built-in atlases</h2>
+<p>The package includes twelve pre-vectorized subcortical and cerebellar
+atlases that serve as scaffolds for visualizing region-level summary
+statistics:</p>
+<table>
+<thead>
+<tr>
+<th>Atlas</th>
+<th>Regions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aseg_subcortex</code></td>
+<td>FreeSurfer aseg: accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus</td>
+</tr>
+<tr>
+<td><code>Melbourne_S1</code> through <code>Melbourne_S4</code></td>
+<td>Melbourne Subcortex Atlas at four resolutions (8-27 subcortical regions per hemisphere)</td>
+</tr>
+<tr>
+<td><code>AICHA_subcortex</code></td>
+<td>AICHA subcortical atlas (20 regions per hemisphere)</td>
+</tr>
+<tr>
+<td><code>Brainnetome_subcortex</code></td>
+<td>Brainnetome subcortical atlas (18 regions per hemisphere)</td>
+</tr>
+<tr>
+<td><code>CIT168_subcortex</code></td>
+<td>CIT168 reinforcement learning atlas (14 regions per hemisphere)</td>
+</tr>
+<tr>
+<td><code>Thalamus_HCP</code></td>
+<td>HCP-based thalamic nuclei (7 nuclei per hemisphere)</td>
+</tr>
+<tr>
+<td><code>Thalamus_THOMAS</code></td>
+<td>THOMAS thalamic nuclei atlas (11 nuclei per hemisphere)</td>
+</tr>
+<tr>
+<td><code>Brainstem_Navigator</code></td>
+<td>Brainstem Navigator atlas (29 bilateral regions per hemisphere + 8 midline regions)</td>
+</tr>
+<tr>
+<td><code>SUIT_cerebellar_lobule</code></td>
+<td>SUIT cerebellar lobule atlas (17 unique regions; 10 per hemisphere, 7 midline vermis regions)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plot_subcortical_data"><code>plot_subcortical_data</code></h3>
+<p>The central function is <code>plot_subcortical_data</code>. With default
+parameters, it plots one color per region using the <code>viridis</code> colormap
+for the left hemisphere of the aseg subcortex atlas. More information
+about function arguments can be found in the API reference for
+<a href="https://anniegbryant.github.io/subcortex_visualization/python_api">Python</a>
+and <a href="https://anniegbryant.github.io/subcortex_visualization/R_api">R</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Demonstrating default parameters&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/default-params-1.png" /><!-- --></p>
+<p>We can easily swap out the atlas for any of the other eleven. Here we
+plot the AICHA subcortex atlas with the <code>plasma</code> colormap and the
+Brainnetome subcortex atlas with the <code>Spectral</code> colormap, both for both
+hemispheres:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A. AICHA subcortex atlas, plasma colormap</span>
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AICHA_subcortex&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;plasma&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AICHA subcortex with plasma colormap&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/atlas-examples-1.png" /><!-- --></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># B. Brainnetome subcortex atlas, Spectral colormap</span>
+<span class="n">rainbow_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="o">::</span><span class="nf">brewer.pal</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Spectral&#39;</span><span class="p">))</span>
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brainnetome_subcortex&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rainbow_cmap</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brainnetome subcortex with Spectral colormap&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/atlas-examples-2.png" /><!-- --></p>
+<h2 id="2-choosing-view-angles">2. Choosing view angles</h2>
+<p>For each atlas, medial, lateral, superior, and inferior views are
+available for both hemispheres, either separately or combined. By
+default, <code>plot_subcortical_data</code> shows medial and lateral views. You can
+specify any combination with the <code>views</code> argument.</p>
+<p>The one exception is the SUIT cerebellar lobule atlas, which is based on
+a two-dimensional flatmap representation of the cerebellum and is not
+designed to be shown in three-dimensional views.</p>
+<p>Here we demonstrate all four views with the THOMAS thalamic nuclei atlas
+and the Brainstem Navigator atlas:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A. THOMAS thalamic nuclei atlas</span>
+<span class="n">THOMAS_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#d14662&quot;</span><span class="p">))</span>
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Thalamus_THOMAS&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">THOMAS_cmap</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">views</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lateral&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;medial&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;superior&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;inferior&#39;</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;THOMAS thalamic nuclei&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/views-demo-THOMAS-1.png" /><!-- --></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># B. Brainstem Navigator atlas</span>
+<span class="n">Brainstem_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#c8499b&quot;</span><span class="p">))</span>
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brainstem_Navigator&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Brainstem_cmap</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">views</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lateral&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;medial&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;superior&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;inferior&#39;</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brainstem Navigator&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/views-demo-Brainstem-1.png" /><!-- --></p>
+<h2 id="3-controlling-transparency">3. Controlling transparency</h2>
+<h3 id="global-alpha-with-fill_alpha">Global alpha with <code>fill_alpha</code></h3>
+<p>The <code>fill_alpha</code> argument controls the overall opacity of all regions (0
+= fully transparent, 1 = fully opaque). This is particularly useful for
+atlases with many overlapping nuclei, where reducing transparency helps
+resolve individual regions. Here we loop through five alpha values for
+the Melbourne Subcortex S2 atlas:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">fill_alpha</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">this_alpha_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Melbourne_S2&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">fill_alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fill_alpha</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;plasma&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">this_alpha_plot</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/alpha-demo-1.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/alpha-demo-2.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/alpha-demo-3.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/alpha-demo-4.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/alpha-demo-5.png" /><!-- --></p>
+<h3 id="significance-based-transparency">Significance-based transparency</h3>
+<p><code>plot_subcortical_data</code> also supports significance-based transparency
+through <code>fill_by_significance = TRUE</code>. When enabled:</p>
 <ul>
-<li><code>subcortex_data</code>: The three-column data.frame shown above</li>
-<li><code>atlas</code>: The name of the atlas to plot</li>
-<li><code>line_thickness</code>: How thick the lines around each subcortical region
-  should be drawn, in mm (default is 0.5)</li>
-<li><code>line_color</code>: What color the lines around each subcortical region
-  should be (default is ‘black’)</li>
-<li><code>hemisphere</code>: Which hemisphere (‘L’ or ‘R’) the <code>subcortex_data</code> is
-  from; can also be ‘both’ (default is ‘L’)</li>
-<li><code>fill_title</code>: Name to add to legend</li>
-<li><code>cmap</code>: Name of colormap (e.g., ‘plasma’ or ‘viridis’) or a
-  <code>matplotlib.colors.Colormap</code> (default is ‘viridis’)</li>
-<li><code>vmin</code>: Min fill value; this is optional, and you would only want to
-  use this to manually constrain the fill range to match another figure</li>
-<li><code>vmax</code>: Max fill value; this is optional, and you would only want to
-  use this to manually constrain the fill range to match another figure</li>
+<li>Regions with <code>p_value &lt; 0.05</code> are rendered at <code>fill_alpha</code> (default
+  1.0) with full-weight borders</li>
+<li>Regions with <code>p_value &gt;= 0.05</code> are rendered at <code>nonsig_fill_alpha</code>
+  (default 0.5) with borders at <code>0.25 × line_thickness</code></li>
 </ul>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg',
-                      line_thickness=0.5, line_color='black',
-                          hemisphere='L', fill_title = &quot;aseg region index&quot;, cmap='plasma', 
-                          vmin=NA, vmax=NA)
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<p>This requires a <code>p_value</code> column in your <code>subcortex_data</code> data frame (an
+error will be thrown if it’s missing). Here we simulate data for the
+SUIT cerebellar lobule atlas and flag the four regions with the largest
+absolute effect size as significant:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">128</span><span class="p">)</span><span class="w"> </span><span class="c1"># Note: R and Python have different random number generators, so results won&#39;t be identical</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-3-1.png" /><!-- --></p>
-<p>If we wanted to plot this with the <code>inferno</code> color palette instead, just
-swap out the <code>cmap</code> argument values:</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg', 
-                      hemisphere='L', fill_title = &quot;aseg region index&quot;, cmap='inferno')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="n">this_atlas</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;SUIT_cerebellar_lobule&#39;</span>
+<span class="n">this_atlas_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="n">this_atlas</span><span class="p">)</span>
+<span class="n">this_atlas_hemisphere_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">this_atlas_regions</span><span class="o">$</span><span class="n">hemisphere_regions</span>
+<span class="n">this_atlas_vermis_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">this_atlas_regions</span><span class="o">$</span><span class="n">vermis_regions</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-4-1.png" /><!-- --></p>
-<p>By default, <code>plot_subcortical_data</code> will plot the index values of each
-region, so we actually don’t need to pass in a dataframe for this
-visualization purpose. Here, we can plot the region indices for the
-Melbourne Subcortex S1 atlas in the right hemisphere without passing in
-any data:</p>
-<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='R', 
-                      fill_title = &quot;Melbourne Subcortex S1 atlas region&quot;, 
-                      cmap='viridis')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="c1"># Simulate continuous data for plotting</span>
+<span class="n">this_atlas_simdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">this_atlas_hemisphere_regions</span><span class="p">,</span><span class="w"> </span><span class="n">this_atlas_hemisphere_regions</span><span class="p">,</span><span class="w"> </span><span class="n">this_atlas_vermis_regions</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">this_atlas_hemisphere_regions</span><span class="p">)),</span>
+<span class="w">                   </span><span class="nf">rep</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">this_atlas_hemisphere_regions</span><span class="p">)),</span>
+<span class="w">                   </span><span class="nf">rep</span><span class="p">(</span><span class="s">&#39;V&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">this_atlas_vermis_regions</span><span class="p">))))</span>
+<span class="n">this_atlas_simdata</span><span class="o">$</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">this_atlas_simdata</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="n">this_atlas_simdata</span><span class="o">$</span><span class="n">p_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">this_atlas_simdata</span><span class="p">),</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.0</span><span class="p">)</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-5-1.png" /><!-- --></p>
-<p>To plot both hemispheres using gray lines at thickness 1.0, we can set
-the <code>hemisphere</code> argument to ‘both’ and adjust the <code>line_thickness</code> and
-<code>line_color</code> arguments accordingly:</p>
-<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='both', 
-                      line_color='gray', line_thickness=1,
-                      fill_title = &quot;Melbourne Subcortex S1 atlas region&quot;, cmap='viridis')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="c1"># Set the four largest-magnitude values to be significant (p &lt; 0.05)</span>
+<span class="n">largest_indices</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">this_atlas_simdata</span><span class="o">$</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">decreasing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+<span class="n">this_atlas_simdata</span><span class="o">$</span><span class="n">p_value</span><span class="p">[</span><span class="n">largest_indices</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.01</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
+<span class="c1"># PiYG-inspired colormap</span>
+<span class="n">PiYG_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;#C51B7D&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#E9A3C9&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#FDE0EF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#F7F7F7&quot;</span><span class="p">,</span>
+<span class="w">                                 </span><span class="s">&quot;#E6F5D0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#A1D76A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#4D9221&quot;</span><span class="p">))</span>
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this_atlas</span><span class="p">,</span><span class="w"> </span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this_atlas_simdata</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">midpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiYG_cmap</span><span class="p">,</span><span class="w"> </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">line_thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.5</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Simulated statistical test results&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">fill_by_significance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">nonsig_fill_alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/significance-demo-1.png" /><!-- --></p>
+<h2 id="4-working-with-your-own-data">4. Working with your own data</h2>
+<p>The key requirement for visualizing empirical data with
+<code>plot_subcortical_data</code> is that your region names exactly match those
+defined in the atlas (including capitalization and spacing). Use
+<code>get_atlas_regions</code> to check the exact names for any atlas:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Most atlases return a character vector of region names</span>
+<span class="n">aseg_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="s">&#39;aseg_subcortex&#39;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&#39;aseg_subcortex regions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">aseg_regions</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;, &#39;</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## aseg_subcortex regions: thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens
 </code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-6-1.png" /><!-- --></p>
-<p>We can also use the S2 level of granularity from the Melbourne Subcortex
-(Tian 2020) Atlas:</p>
-<pre><code class="language-r">plot_subcortical_data(atlas = 'Melbourne_S2', hemisphere='both', 
-                      fill_title = &quot;Melbourne Subcortex S2 atlas&quot;, cmap=rainbow)
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<div class="highlight"><pre><span></span><code><span class="c1"># &gt;&gt;&gt; get_atlas_regions(&#39;Melbourne_S1&#39;)</span>
+<span class="c1"># [1] &quot;hippocampus&quot;        &quot;amygdala&quot;           &quot;thalamus_posterior&quot;</span>
+<span class="c1"># [4] &quot;thalamus_anterior&quot;  &quot;pallidum&quot;           &quot;accumbens&quot;</span>
+<span class="c1"># [7] &quot;putamen&quot;            &quot;caudate&quot;</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
+<span class="c1"># SUIT_cerebellar_lobule and Brainstem_Navigator return a named list</span>
+<span class="n">suit_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="s">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&#39;SUIT hemisphere regions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">suit_regions</span><span class="o">$</span><span class="n">hemisphere_regions</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;, &#39;</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## SUIT hemisphere regions: IV, V, VI, Crus_I, Crus_II, VIIb, VIIIa, VIIIb, IX, X
 </code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-7-1.png" /><!-- --></p>
-<p>Lastly, let’s view the atlas for (1) <a href="https://www.sciencedirect.com/science/article/abs/pii/S0165027015002678">AICHA
-subcortex</a>;
-(2) <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/">Brainnetome
-subcortex</a>; and (3)
-<a href="https://doi.org/10.1016/j.neuroimage.2006.05.056">SUIT cerebellum</a>:</p>
-<pre><code class="language-r"># AICHA
-plot_subcortical_data(atlas = 'AICHA', hemisphere='both', 
-                      fill_title = &quot;AICHA subcortex atlas&quot;, cmap=rainbow)
+<div class="highlight"><pre><span></span><code><span class="nf">cat</span><span class="p">(</span><span class="s">&#39;SUIT vermis regions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">suit_regions</span><span class="o">$</span><span class="n">vermis_regions</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;, &#39;</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## SUIT vermis regions: VI, Crus_II, VIIb, VIIIa, VIIIb, IX, X
 </code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<div class="highlight"><pre><span></span><code><span class="n">brainstem_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="s">&#39;Brainstem_Navigator&#39;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&#39;Brainstem hemisphere regions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">brainstem_regions</span><span class="o">$</span><span class="n">hemisphere_regions</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;, &#39;</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## Brainstem hemisphere regions: CnF, IC, ION, LC, LDTg_CGPn, LPB, MiTg_PBG, MPB, PCRtA, PnO_PnC, PTg, RN1, RN2, SC, SN1, SN2, SOC, SubC, Ve, VSM, VTA_PBP, iMRtl, iMRtm, isRt, mRta, mRtd, mRtl, sMRtl, sMRtm
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nf">cat</span><span class="p">(</span><span class="s">&#39;Brainstem midline regions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">brainstem_regions</span><span class="o">$</span><span class="n">midline_regions</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;, &#39;</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## Brainstem midline regions: CLi_RLi, DR, MnR, PAG, PMnR, RMg, ROb, RPa
+</code></pre>
+<p>Region names for each atlas are also listed on the <a href="https://anniegbryant.github.io/subcortex_visualization/atlas_info/">package
+website</a>.</p>
+<h3 id="plotting-continuous-data">Plotting continuous data</h3>
+<p>The <code>subcortex_data</code> data frame needs three columns:</p>
+<ul>
+<li><code>region</code>: Region names matching the atlas exactly</li>
+<li><code>value</code>: Numeric values to color-map</li>
+<li><code>Hemisphere</code>: <code>'L'</code>, <code>'R'</code>, <code>'V'</code> (vermis, for cerebellum), or <code>'B'</code>
+  (bilateral/midline regions)</li>
+</ul>
+<p>Let’s simulate random continuous data for the aseg subcortex atlas to
+demonstrate this:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">127</span><span class="p">)</span><span class="w"> </span><span class="c1"># Set random seed for reproducibility</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-8-1.png" /><!-- --></p>
-<pre><code class="language-r"># Brainnetome
-plot_subcortical_data(atlas = 'Brainnetome', hemisphere='both', 
-                      fill_title = &quot;Brainnetome subcortex atlas&quot;, cmap=rainbow)
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="c1"># Get region names for the aseg subcortex atlas</span>
+<span class="n">aseg_subcortex_regions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="s">&quot;aseg_subcortex&quot;</span><span class="p">)</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-9-1.png" /><!-- --></p>
-<pre><code class="language-r"># SUIT cerebellum
-plot_subcortical_data(atlas = 'SUIT_cerebellar_lobule', hemisphere='both', 
-                      fill_title = &quot;SUIT cerebellum atlas&quot;, cmap=rainbow)
-</code></pre>
-<pre><code>## [1] "Individual-hemisphere visualization is not supported with the SUIT cerebellar lobule atlas. Rendering both hemispheres together, along with the vermis."
+<span class="c1"># Sample random values from a normal distribution for each hemisphere</span>
+<span class="n">example_continuous_data_L</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aseg_subcortex_regions</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">aseg_subcortex_regions</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">                                        </span><span class="n">Hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;L&quot;</span><span class="p">)</span>
+<span class="n">example_continuous_data_R</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aseg_subcortex_regions</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">aseg_subcortex_regions</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">                                        </span><span class="n">Hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;R&quot;</span><span class="p">)</span>
 
-## SVG contains a tag not currently handled: &lt;namedview&gt;
-
-## Joining with `by = join_by(region, Hemisphere, face)`
+<span class="c1"># Combine left and right hemisphere data for bilateral plotting</span>
+<span class="n">example_continuous_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rbind</span><span class="p">(</span><span class="n">example_continuous_data_L</span><span class="p">,</span><span class="w"> </span><span class="n">example_continuous_data_R</span><span class="p">)</span>
+<span class="n">example_continuous_data</span>
+</code></pre></div>
+<pre><code>##         region        value Hemisphere
+## 1     thalamus -0.567733740          L
+## 2      caudate -0.814760579          L
+## 3      putamen -0.493939596          L
+## 4     pallidum  0.001818846          L
+## 5  hippocampus  0.819784933          L
+## 6     amygdala  0.996757858          L
+## 7    accumbens  0.751782219          L
+## 8     thalamus -0.125547223          R
+## 9      caudate  0.564619888          R
+## 10     putamen  0.133508557          R
+## 11    pallidum -0.105963209          R
+## 12 hippocampus  0.605929618          R
+## 13    amygdala  0.013250975          R
+## 14   accumbens -0.278788699          R
 </code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-10-1.png" /><!-- --></p>
-<h2 id="simulating-and-visualizing-continuous-data">Simulating and visualizing continuous data</h2>
-<pre><code class="language-r">set.seed(127)
+<div class="highlight"><pre><span></span><code><span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_continuous_data</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;aseg_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;viridis&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Normal distribution sample, aseg subcortex atlas&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/plot-viridis-1.png" /><!-- --></p>
+<h3 id="custom-colormaps-and-the-midpoint-argument">Custom colormaps and the <code>midpoint</code> argument</h3>
+<p>You can pass any colormap (or create a custom one with
+<code>colorRampPalette</code>) to the <code>cmap</code> argument. Since this simulated data
+spans negative and positive values, a diverging blue-white-red colormap
+is a natural choice.</p>
+<p>The <code>midpoint</code> argument specifies the center value of the color scale.
+Setting this to 0 maps the center color to 0, with symmetric bounds
+determined automatically from the data range (unless you also set <code>vmin</code>
+and <code>vmax</code> explicitly). Without explicitly setting vmin/vmax, the color
+range will be defined symmetrically around <code>midpoint</code> to capture the
+full range of the data.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a blue-white-red colormap</span>
+<span class="n">white_blue_red_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">))</span>
 
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_continuous_data</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;aseg_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Normal distribution sample, aseg subcortex atlas&quot;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">white_blue_red_cmap</span><span class="p">,</span><span class="w"> </span><span class="n">midpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/plot-bwr-1.png" /><!-- --></p>
+<h2 id="5-extracting-regional-statistics-from-volumetric-data">5. Extracting regional statistics from volumetric data</h2>
+<p>In many cases, you may have a three-dimensional volumetric image (from
+any imaging modality) and want to reduce it down to region-level summary
+statistics before plotting. The <code>parcel_segstats</code> function handles this:
+it takes a NIfTI image and an atlas name and computes a user-specified
+summary statistic for all voxels in each region.</p>
+<p>For the <code>parc_stat</code> argument, you can pass any function that takes an
+array of values and returns a single scalar — <code>mean</code>, <code>sd</code>, <code>median</code>,
+<code>max</code>, etc.</p>
+<p>The output data frame is pre-formatted for direct use with
+<code>plot_subcortical_data</code> (no reformatting needed).</p>
+<h3 id="atlas-space-compatibility">Atlas space compatibility</h3>
+<p>The atlases are provided in two MNI spaces: <code>MNI152NLin6Asym</code> (default)
+and <code>MNI152NLin2009cAsym</code>. Your input volume must be in one of these two
+spaces to use our package to compute region-aggregated statistics in one
+or more of the included atlases. If the affine or spatial dimensions
+don’t match, <code>parcel_segstats</code> will raise an error by default. You can
+specify an <code>interpolation</code> method (<code>'nearest'</code>, <code>'linear'</code>, or
+<code>'cubic'</code>) to resample the atlas to your input volume, though we
+encourage you to take care with atlas alignment and, wherever possible,
+normalize your data to the correct MNI space rather than relying on
+interpolation.</p>
+<p>Here we compute the median CB1 receptor density per region in the aseg
+subcortex atlas from a group-averaged PET map:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define file paths for download</span>
+<span class="n">CB1_density_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://github.com/netneurolab/hansen_receptorvar/blob/main/data/PET_volumes/CB1_fmpepVt2_hc20_nummenmaa_mean.nii.gz?raw=true&quot;</span>
+<span class="nf">download.file</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CB1_density_URL</span><span class="p">,</span><span class="w"> </span><span class="n">destfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CB1_mean.nii.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quiet</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">functional_map_path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;CB1_mean.nii.gz&quot;</span>
 
+<span class="n">atlas_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;aseg_subcortex&quot;</span>
+<span class="n">func_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;CB1_density&quot;</span>
 
-example_continuous_data_L &lt;- data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
-                                                &quot;caudate&quot;, &quot;hippocampus&quot;, 
-                                                &quot;pallidum&quot;, &quot;putamen&quot;, 
-                                                &quot;thalamus&quot;),
-                                       Hemisphere = 'L',
-                                    value = rnorm(7))
+<span class="c1"># The PET maps are shared in MNI152NLin6Asym space, so we specify</span>
+<span class="c1"># this space for the atlas to ensure proper alignment</span>
+<span class="n">atlas_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;MNI152NLin6Asym&#39;</span>
 
-example_continuous_data_R &lt;- data.frame(region = c(&quot;accumbens&quot;, &quot;amygdala&quot;, 
-                                                &quot;caudate&quot;, &quot;hippocampus&quot;, 
-                                                &quot;pallidum&quot;, &quot;putamen&quot;, 
-                                                &quot;thalamus&quot;),
-                                       Hemisphere = 'R',
-                                    value = rnorm(7))
+<span class="c1"># Apply the aseg subcortex atlas to extract the median value per region,</span>
+<span class="c1"># specifying interpolation = &#39;nearest&#39; to preserve discrete labels in the atlas</span>
+<span class="n">this_func_atlas_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">parcel_segstats</span><span class="p">(</span><span class="n">input_vol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">functional_map_path</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">atlas_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atlas_space</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atlas_name</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">func_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func_name</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">parc_stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">,</span>
+<span class="w">                                        </span><span class="n">interpolation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;nearest&#39;</span><span class="p">)</span>
 
+<span class="c1"># Custom color map</span>
+<span class="n">custom_cmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#00405c&quot;</span><span class="p">))</span>
 
-example_continuous_data &lt;- rbind(example_continuous_data_L, example_continuous_data_R)
-
-
-# See what the left hemisphere data, randomly sampled from a normal distribution, looks like
-example_continuous_data
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this_func_atlas_data</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atlas_name</span><span class="p">,</span><span class="w"> </span><span class="n">value_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;value&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Median CB1 density - aseg subcortex atlas&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_cmap</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-CB1-1.png" /><!-- --></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clean up downloaded file</span>
+<span class="nf">file.remove</span><span class="p">(</span><span class="s">&quot;CB1_mean.nii.gz&quot;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## [1] TRUE
 </code></pre>
-<pre><code>##         region Hemisphere        value
-## 1    accumbens          L -0.567733740
-## 2     amygdala          L -0.814760579
-## 3      caudate          L -0.493939596
-## 4  hippocampus          L  0.001818846
-## 5     pallidum          L  0.819784933
-## 6      putamen          L  0.996757858
-## 7     thalamus          L  0.751782219
-## 8    accumbens          R -0.125547223
-## 9     amygdala          R  0.564619888
-## 10     caudate          R  0.133508557
-## 11 hippocampus          R -0.105963209
-## 12    pallidum          R  0.605929618
-## 13     putamen          R  0.013250975
-## 14    thalamus          R -0.278788699
-</code></pre>
-<p>Plot the left hemisphere:</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data_L, atlas = 'aseg',
-                      hemisphere='L', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
-                      cmap='viridis')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<h3 id="applying-multiple-atlases-simultaneously">Applying multiple atlases simultaneously</h3>
+<p><code>parcel_segstats</code> accepts a vector of atlas names, running the
+parcellation for each and concatenating results into one data frame with
+an <code>Atlas</code> column. This makes it straightforward to compare how regional
+patterns differ across parcellation schemes.</p>
+<p>As long as your empirical volume is in one of the two supported MNI
+spaces, you can flexibly mix any combination of atlases and summary
+statistics in a single function call.</p>
+<p>Here we compute the mean GABA<sub>A</sub>-α1 receptor subunit density
+across all twelve atlases included in the package:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define subcortical atlases</span>
+<span class="n">all_atlases</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;aseg_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S2&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;Melbourne_S3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;AICHA_subcortex&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;Brainnetome_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CIT168_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Thalamus_HCP&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;Thalamus_THOMAS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Brainstem_Navigator&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">)</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-12-1.png" /><!-- --></p>
-<p>Right hemisphere:</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data_R, atlas = 'aseg',
-                      hemisphere='R', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
-                      cmap='viridis')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="c1"># Define file path for download</span>
+<span class="n">GABAa1_density_URL</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://github.com/netneurolab/hansen_receptorvar/blob/main/data/PET_volumes/GABAa1_ro154513_hc23_chang_mean.nii.gz?raw=true&quot;</span>
+<span class="nf">download.file</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GABAa1_density_URL</span><span class="p">,</span><span class="w"> </span><span class="n">destfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GABAa1_mean.nii.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quiet</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">functional_map_path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;GABAa1_mean.nii.gz&quot;</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-13-1.png" /><!-- --></p>
-<p>Both hemispheres together:</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
-                      hemisphere='both', fill_title = &quot;Normal distribution sample, aseg atlas&quot;, 
-                      cmap='viridis')
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="n">atlas_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;MNI152NLin6Asym&#39;</span>
+<span class="n">func_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;GABA_A_a1_density&quot;</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-14-1.png" /><!-- --></p>
-<p>You can pass in a custom colormap too! For example, if you want to fill
-in with a gradient ranging from white to purple:</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
-                      hemisphere='both', fill_title = &quot;Normal distribution sample&quot;, 
-                      cmap=c('white', '#76167D'))
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="c1"># Extract mean values for all atlases from the GABA_A_a1 density map</span>
+<span class="c1"># Use nearest neighbor interpolation to preserve discrete labels in the atlas</span>
+<span class="n">func_map_subcortical_parc_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">parcel_segstats</span><span class="p">(</span><span class="n">input_vol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">functional_map_path</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">all_atlases</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">atlas_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atlas_space</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">parc_stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">ignore_background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">func_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func_name</span><span class="p">,</span>
+<span class="w">                                                </span><span class="n">interpolation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;nearest&#39;</span><span class="p">)</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-15-1.png" /><!-- --></p>
-<p>Since this data has positive and negative values,</p>
-<p>Since this data has positive and negative values, we can pass in a color
-palette from blue (negative) to white (0) to red (positive).
-<code>plot_subcortical_data</code> takes an argument <code>midpoint</code> that specifies the
-center point for the color palette. Setting this to 0 here enforces the
-center value to be white. Without setting vmin/vmax explicitly, the
-color range will be defined symmetrically around <code>midpoint</code> to capture
-the full range of the data.</p>
-<pre><code class="language-r">plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',  
-                      hemisphere='both', fill_title = &quot;Normal distribution sample&quot;, 
-                      cmap=c(&quot;blue&quot;, &quot;white&quot;, &quot;red&quot;), midpoint=0)
-</code></pre>
-<pre><code>## SVG contains a tag not currently handled: &lt;namedview&gt;
+<span class="n">min_func_parc_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">func_map_subcortical_parc_df</span><span class="o">$</span><span class="n">value</span><span class="p">)</span>
+<span class="n">max_func_parc_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">func_map_subcortical_parc_df</span><span class="o">$</span><span class="n">value</span><span class="p">)</span>
 
-## Joining with `by = join_by(region, Hemisphere, face)`
-## Joining with `by = join_by(region, Hemisphere)`
-</code></pre>
-<p><img alt="" src="../images/tutorial_R_files/figure-gfm/unnamed-chunk-16-1.png" /><!-- --></p>
+<span class="c1"># Plot each atlas with a consistent color scale</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">all_atlases</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">this_atlas_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">func_map_subcortical_parc_df</span><span class="p">,</span><span class="w"> </span><span class="n">Atlas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">atlas</span><span class="p">)</span>
+<span class="w">    </span><span class="n">this_fill_title</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">func_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">atlas</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">this_atlas_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">plot_subcortical_data</span><span class="p">(</span>
+<span class="w">        </span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this_atlas_data</span><span class="p">,</span>
+<span class="w">        </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atlas</span><span class="p">,</span>
+<span class="w">        </span><span class="n">value_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;value&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this_fill_title</span><span class="p">,</span>
+<span class="w">        </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;both&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">vmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_func_parc_value</span><span class="p">,</span>
+<span class="w">        </span><span class="n">vmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">,</span>
+<span class="w">        </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;plasma&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">this_atlas_plot</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png" /><!-- --></p>
+<h2 id="6-combining-cortical-and-subcortical-visualizations">6. Combining cortical and subcortical visualizations</h2>
+<p>Since <code>subcortexVisualizationR</code> produces <code>ggplot2</code> objects, it is
+straightforward to combine subcortical and cerebellar plots with
+cortical surface plots from <code>ggseg</code> using the <code>patchwork</code> package, all
+within the <code>ggplot2</code> framework. This allows for direct comparison of
+receptor density across cortical and non-cortical structures with a
+unified color scale.</p>
+<p>Python package users can save outputs from <code>plot_subcortical_data</code> in
+their preferred file format (e.g., .png or .svg) and combine with saved
+<code>ggseg</code> output from R in the image editor of their choice.</p>
+<p>As a fully R-based example, we visualize the regional average
+GABA<sub>A</sub>-α1 receptor subunit density from the previous example
+in the cortex alongside the subcortex and cerebellum together. We
+selected the 1000-parcel Schaefer atlas to parcellate the cerebral
+cortex, the Melbourne Subcortex S4 atlas for subcortex, and the SUIT
+cerebellar lobule atlas for cerebellum. Note that the color range is
+consistent across all three plots, allowing for direct comparison of
+receptor subunit density across the cortical and non-cortical
+structures.</p>
+<blockquote>
+<p><strong>Note:</strong> The below code chunk does not compute/visualize the real
+cortical values for the Schaefer-1000 cortical atlas, as this is
+beyond the scope of our package and is designed to be performed in
+Python using <code>neuromaps</code>.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggseg</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggsegSchaefer</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+
+<span class="c1"># Use subcortical parcellation results from the previous code chunk</span>
+<span class="c1"># (func_map_subcortical_parc_df, min_func_parc_value, max_func_parc_value)</span>
+
+<span class="c1"># Cortical plot with ggseg</span>
+<span class="c1"># Get Schaefer 1000-parcel atlas labels, then join with parcellated GABA_A_a1 data</span>
+<span class="c1"># In practice, cortical parcellation would be done with neuromaps (Python) or</span>
+<span class="c1"># a surface-based parcellation tool; here we simulate cortical values for illustration</span>
+<span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">()</span><span class="o">$</span><span class="n">data</span><span class="o">$</span><span class="n">sf</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">as_tibble</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">label</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">label</span><span class="p">,</span><span class="w"> </span><span class="n">hemi</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">distinct</span><span class="p">()</span>
+
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
+<span class="n">cortical_sim_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="nf">n</span><span class="p">(),</span>
+<span class="w">                         </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_func_parc_value</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">))</span>
+
+<span class="n">cortex_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cortical_sim_data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">ggplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_brain</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">(),</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">),</span>
+<span class="w">               </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Schaefer-1000 Cortex&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">labs</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Mean GABAa1 Signal (VT)&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_fill_viridis_c</span><span class="p">(</span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">min_func_parc_value</span><span class="p">,</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">),</span>
+<span class="w">                         </span><span class="n">na.value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;gray80&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">option</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;plasma&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">theme_void</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">guide_colorbar</span><span class="p">(</span><span class="n">barwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">unit</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cm&quot;</span><span class="p">),</span>
+<span class="w">                                  </span><span class="n">barheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">unit</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cm&quot;</span><span class="p">),</span>
+<span class="w">                                  </span><span class="n">title.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;top&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">title.hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;bottom&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span>
+
+<span class="c1"># Melbourne S4 subcortex plot</span>
+<span class="n">subcortex_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">plot_subcortical_data</span><span class="p">(</span>
+<span class="w">    </span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">func_map_subcortical_parc_df</span><span class="p">,</span><span class="w"> </span><span class="n">Atlas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Melbourne_S4&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Melbourne_S4&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;both&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">value_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;value&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">vmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_func_parc_value</span><span class="p">,</span>
+<span class="w">    </span><span class="n">vmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;plasma&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Melbourne S4 Subcortex&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span>
+
+<span class="c1"># SUIT cerebellum plot</span>
+<span class="n">cerebellum_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">plot_subcortical_data</span><span class="p">(</span>
+<span class="w">    </span><span class="n">subcortex_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">func_map_subcortical_parc_df</span><span class="p">,</span><span class="w"> </span><span class="n">Atlas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;SUIT_cerebellar_lobule&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SUIT_cerebellar_lobule&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;both&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">value_column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;value&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">vmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_func_parc_value</span><span class="p">,</span>
+<span class="w">    </span><span class="n">vmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;plasma&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">show_legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;SUIT Cerebellum&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">))</span>
+
+<span class="c1"># Use patchwork to combine the plots; titles can be further adjusted in Inkscape</span>
+<span class="n">plot_design</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;AAA</span>
+<span class="s">                BBC&quot;</span>
+<span class="nf">wrap_plots</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cortex_p</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subcortex_p</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cerebellum_p</span><span class="p">,</span>
+<span class="w">           </span><span class="n">design</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plot_design</span><span class="p">,</span><span class="w"> </span><span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/combine-viz-1.png" /><!-- --></p>
 
 
 
@@ -880,7 +1595,7 @@ the full range of the data.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

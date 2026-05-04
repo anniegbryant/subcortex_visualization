@@ -1,327 +1,559 @@
-subcortexVisualizationR tutorial
-================
-2026-01-29
+# R tutorial
+
+`subcortexVisualizationR` is an open-source R package for
+programmatically visualizing region-level data across twelve popular
+atlases for the subcortex (including thalamic nuclei and the brainstem)
+and cerebellum. Visualizations are rendered as resolution-independent
+two-dimensional vector graphics, inspired by the `ggseg` R package for
+cortical data, with standardized rendering conventions that make results
+directly comparable across atlases.
+
+This tutorial covers the core functionality of the package:
+
+1.  **Exploring the built-in atlases**: Viewing the twelve included
+    atlases with default and custom colormaps
+2.  **Choosing view angles**: Displaying medial, lateral, superior, and
+    inferior views
+3.  **Controlling transparency**: Global alpha and significance-based
+    transparency
+4.  **Working with your own data**: Formatting and plotting empirical
+    region-level data
+5.  **Extracting regional statistics from volumetric data**: Using
+    `parcel_segstats` to parcellate NIfTI images
+6.  **Combining cortical and subcortical visualizations**: Integrating
+    with `ggseg` for whole-brain figures
+
+An equivalent Python package, `subcortex_visualization`, provides the
+same functionality and atlases with a nearly identical interface.
 
 ## Load required packages
 
+The following libraries are needed to create the specific visual styles
+that are included in this tutorial.
+
 ``` r
+library(cowplot)
+library(glue)
+library(grid)
+library(patchwork)
 library(subcortexVisualizationR)
-```
-
-    ## Loading required package: tidyverse
-
-    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.4     ✔ readr     2.1.6
-    ## ✔ forcats   1.0.1     ✔ stringr   1.6.0
-    ## ✔ ggplot2   4.0.1     ✔ tibble    3.3.1
-    ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
-    ## ✔ purrr     1.2.1     
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(tidyverse)
+
+theme_set(theme_cowplot())
 ```
 
-## Example data just to show the different regions
+## 1. Exploring the built-in atlases
 
-First, let’s create a simple dataframe with the left hemisphere cortical
-regions, assigning a different value to each region for visual clarity.
-Note that all data passed to `plot_subcortical_data` needs to follow the
-same three-column structure as shown below: `region` (the name of the
-subcortical region with the same nomenclature as shown), `value` (the
-value to be plotted in the subcortex map), and `Hemisphere` (either ‘L’,
-‘R’, or ‘both’).
+The package includes twelve pre-vectorized subcortical and cerebellar
+atlases that serve as scaffolds for visualizing region-level summary
+statistics:
+
+| Atlas | Regions |
+|----|----|
+| `aseg_subcortex` | FreeSurfer aseg: accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus |
+| `Melbourne_S1` through `Melbourne_S4` | Melbourne Subcortex Atlas at four resolutions (8-27 subcortical regions per hemisphere) |
+| `AICHA_subcortex` | AICHA subcortical atlas (20 regions per hemisphere) |
+| `Brainnetome_subcortex` | Brainnetome subcortical atlas (18 regions per hemisphere) |
+| `CIT168_subcortex` | CIT168 reinforcement learning atlas (14 regions per hemisphere) |
+| `Thalamus_HCP` | HCP-based thalamic nuclei (7 nuclei per hemisphere) |
+| `Thalamus_THOMAS` | THOMAS thalamic nuclei atlas (11 nuclei per hemisphere) |
+| `Brainstem_Navigator` | Brainstem Navigator atlas (29 bilateral regions per hemisphere + 8 midline regions) |
+| `SUIT_cerebellar_lobule` | SUIT cerebellar lobule atlas (17 unique regions; 10 per hemisphere, 7 midline vermis regions) |
+
+### `plot_subcortical_data`
+
+The central function is `plot_subcortical_data`. With default
+parameters, it plots one color per region using the `viridis` colormap
+for the left hemisphere of the aseg subcortex atlas. More information
+about function arguments can be found in the API reference for
+[Python](https://anniegbryant.github.io/subcortex_visualization/python_api)
+and [R](https://anniegbryant.github.io/subcortex_visualization/R_api).
 
 ``` r
-# Set seed for reproducibility
-
-example_subcortex_data = data.frame(region = c("accumbens", "amygdala", 
-                                               "caudate", "hippocampus", 
-                                               "pallidum", "putamen", 
-                                               "thalamus"),
-                                    value = 1:7,
-                                    Hemisphere = "L")
-
-example_subcortex_data
+plot_subcortical_data(fill_title = "Demonstrating default parameters",
+                      show_legend = TRUE)
 ```
 
-    ##        region value Hemisphere
-    ## 1   accumbens     1          L
-    ## 2    amygdala     2          L
-    ## 3     caudate     3          L
-    ## 4 hippocampus     4          L
-    ## 5    pallidum     5          L
-    ## 6     putamen     6          L
-    ## 7    thalamus     7          L
+![](images/R_tutorial_files/figure-gfm/default-params-1.png)<!-- -->
 
-Now, we can plot this data with the `plasma` colormap as an example in
-the left cortex. Note the following arguments:
-
-- `subcortex_data`: The three-column data.frame shown above
-- `atlas`: The name of the atlas to plot
-- `line_thickness`: How thick the lines around each subcortical region
-  should be drawn, in mm (default is 0.5)
-- `line_color`: What color the lines around each subcortical region
-  should be (default is ‘black’)
-- `hemisphere`: Which hemisphere (‘L’ or ‘R’) the `subcortex_data` is
-  from; can also be ‘both’ (default is ‘L’)
-- `fill_title`: Name to add to legend
-- `cmap`: Name of colormap (e.g., ‘plasma’ or ‘viridis’) or a
-  `matplotlib.colors.Colormap` (default is ‘viridis’)
-- `vmin`: Min fill value; this is optional, and you would only want to
-  use this to manually constrain the fill range to match another figure
-- `vmax`: Max fill value; this is optional, and you would only want to
-  use this to manually constrain the fill range to match another figure
+We can easily swap out the atlas for any of the other eleven. Here we
+plot the AICHA subcortex atlas with the `plasma` colormap and the
+Brainnetome subcortex atlas with the `Spectral` colormap, both for both
+hemispheres:
 
 ``` r
-plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg',
-                      line_thickness=0.5, line_color='black',
-                          hemisphere='L', fill_title = "aseg region index", cmap='plasma', 
-                          vmin=NA, vmax=NA)
+# A. AICHA subcortex atlas, plasma colormap
+plot_subcortical_data(atlas = "AICHA_subcortex", cmap = "plasma", hemisphere = 'both',
+                      fill_title = "AICHA subcortex with plasma colormap")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
-
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
-
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
-
-If we wanted to plot this with the `inferno` color palette instead, just
-swap out the `cmap` argument values:
+![](images/R_tutorial_files/figure-gfm/atlas-examples-1.png)<!-- -->
 
 ``` r
-plot_subcortical_data(subcortex_data=example_subcortex_data, atlas = 'aseg', 
-                      hemisphere='L', fill_title = "aseg region index", cmap='inferno')
+# B. Brainnetome subcortex atlas, Spectral colormap
+rainbow_cmap <- colorRampPalette(RColorBrewer::brewer.pal(11, 'Spectral'))
+plot_subcortical_data(atlas = "Brainnetome_subcortex", cmap = rainbow_cmap, hemisphere = 'both',
+                      fill_title = "Brainnetome subcortex with Spectral colormap")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/atlas-examples-2.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
+## 2. Choosing view angles
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+For each atlas, medial, lateral, superior, and inferior views are
+available for both hemispheres, either separately or combined. By
+default, `plot_subcortical_data` shows medial and lateral views. You can
+specify any combination with the `views` argument.
 
-By default, `plot_subcortical_data` will plot the index values of each
-region, so we actually don’t need to pass in a dataframe for this
-visualization purpose. Here, we can plot the region indices for the
-Melbourne Subcortex S1 atlas in the right hemisphere without passing in
-any data:
+The one exception is the SUIT cerebellar lobule atlas, which is based on
+a two-dimensional flatmap representation of the cerebellum and is not
+designed to be shown in three-dimensional views.
+
+Here we demonstrate all four views with the THOMAS thalamic nuclei atlas
+and the Brainstem Navigator atlas:
 
 ``` r
-plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='R', 
-                      fill_title = "Melbourne Subcortex S1 atlas region", 
-                      cmap='viridis')
+# A. THOMAS thalamic nuclei atlas
+THOMAS_cmap <- colorRampPalette(c("white", "#d14662"))
+plot_subcortical_data(atlas = "Thalamus_THOMAS", cmap = THOMAS_cmap, hemisphere = 'both',
+                      views = c('lateral', 'medial', 'superior', 'inferior'),
+                      show_legend = FALSE, fill_title = "THOMAS thalamic nuclei")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
-
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-
-To plot both hemispheres using gray lines at thickness 1.0, we can set
-the `hemisphere` argument to ‘both’ and adjust the `line_thickness` and
-`line_color` arguments accordingly:
+![](images/R_tutorial_files/figure-gfm/views-demo-THOMAS-1.png)<!-- -->
 
 ``` r
-plot_subcortical_data(atlas = 'Melbourne_S1', hemisphere='both', 
-                      line_color='gray', line_thickness=1,
-                      fill_title = "Melbourne Subcortex S1 atlas region", cmap='viridis')
+# B. Brainstem Navigator atlas
+Brainstem_cmap <- colorRampPalette(c("white", "#c8499b"))
+plot_subcortical_data(atlas = "Brainstem_Navigator", cmap = Brainstem_cmap, hemisphere = 'both',
+                      views = c('lateral', 'medial', 'superior', 'inferior'),
+                      show_legend = FALSE, fill_title = "Brainstem Navigator")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/views-demo-Brainstem-1.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
+## 3. Controlling transparency
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+### Global alpha with `fill_alpha`
 
-We can also use the S2 level of granularity from the Melbourne Subcortex
-(Tian 2020) Atlas:
+The `fill_alpha` argument controls the overall opacity of all regions (0
+= fully transparent, 1 = fully opaque). This is particularly useful for
+atlases with many overlapping nuclei, where reducing transparency helps
+resolve individual regions. Here we loop through five alpha values for
+the Melbourne Subcortex S2 atlas:
 
 ``` r
-plot_subcortical_data(atlas = 'Melbourne_S2', hemisphere='both', 
-                      fill_title = "Melbourne Subcortex S2 atlas", cmap=rainbow)
+for (fill_alpha in seq(0.2, 1, by = 0.2)) {
+    this_alpha_plot <- plot_subcortical_data(atlas = 'Melbourne_S2', fill_alpha = fill_alpha,
+                                             cmap = 'plasma', show_legend = FALSE)
+    print(this_alpha_plot)
+}
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/alpha-demo-1.png)<!-- -->![](images/R_tutorial_files/figure-gfm/alpha-demo-2.png)<!-- -->![](images/R_tutorial_files/figure-gfm/alpha-demo-3.png)<!-- -->![](images/R_tutorial_files/figure-gfm/alpha-demo-4.png)<!-- -->![](images/R_tutorial_files/figure-gfm/alpha-demo-5.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
+### Significance-based transparency
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+`plot_subcortical_data` also supports significance-based transparency
+through `fill_by_significance = TRUE`. When enabled:
 
-Lastly, let’s view the atlas for (1) [AICHA
-subcortex](https://www.sciencedirect.com/science/article/abs/pii/S0165027015002678);
-(2) [Brainnetome
-subcortex](https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/); and (3)
-[SUIT cerebellum](https://doi.org/10.1016/j.neuroimage.2006.05.056):
+- Regions with `p_value < 0.05` are rendered at `fill_alpha` (default
+  1.0) with full-weight borders
+- Regions with `p_value >= 0.05` are rendered at `nonsig_fill_alpha`
+  (default 0.5) with borders at `0.25 × line_thickness`
+
+This requires a `p_value` column in your `subcortex_data` data frame (an
+error will be thrown if it’s missing). Here we simulate data for the
+SUIT cerebellar lobule atlas and flag the four regions with the largest
+absolute effect size as significant:
 
 ``` r
-# AICHA
-plot_subcortical_data(atlas = 'AICHA', hemisphere='both', 
-                      fill_title = "AICHA subcortex atlas", cmap=rainbow)
+set.seed(128) # Note: R and Python have different random number generators, so results won't be identical
+
+this_atlas <- 'SUIT_cerebellar_lobule'
+this_atlas_regions <- get_atlas_regions(this_atlas)
+this_atlas_hemisphere_regions <- this_atlas_regions$hemisphere_regions
+this_atlas_vermis_regions <- this_atlas_regions$vermis_regions
+
+# Simulate continuous data for plotting
+this_atlas_simdata <- data.frame(
+    region = c(this_atlas_hemisphere_regions, this_atlas_hemisphere_regions, this_atlas_vermis_regions),
+    Hemisphere = c(rep('L', length(this_atlas_hemisphere_regions)),
+                   rep('R', length(this_atlas_hemisphere_regions)),
+                   rep('V', length(this_atlas_vermis_regions))))
+this_atlas_simdata$value <- rnorm(nrow(this_atlas_simdata), mean = 0, sd = 1)
+this_atlas_simdata$p_value <- runif(nrow(this_atlas_simdata), min = 0.05, max = 1.0)
+
+# Set the four largest-magnitude values to be significant (p < 0.05)
+largest_indices <- order(abs(this_atlas_simdata$value), decreasing = TRUE)[1:4]
+this_atlas_simdata$p_value[largest_indices] <- 0.01
+
+# PiYG-inspired colormap
+PiYG_cmap <- colorRampPalette(c("#C51B7D", "#E9A3C9", "#FDE0EF", "#F7F7F7",
+                                 "#E6F5D0", "#A1D76A", "#4D9221"))
+plot_subcortical_data(atlas = this_atlas, subcortex_data = this_atlas_simdata, hemisphere = 'both',
+                      midpoint = 0, cmap = PiYG_cmap, show_legend = TRUE, line_thickness = 1.5,
+                      fill_title = "Simulated statistical test results",
+                      fill_alpha = 1.0, fill_by_significance = TRUE, nonsig_fill_alpha = 0.5)
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/significance-demo-1.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
+## 4. Working with your own data
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+The key requirement for visualizing empirical data with
+`plot_subcortical_data` is that your region names exactly match those
+defined in the atlas (including capitalization and spacing). Use
+`get_atlas_regions` to check the exact names for any atlas:
 
 ``` r
-# Brainnetome
-plot_subcortical_data(atlas = 'Brainnetome', hemisphere='both', 
-                      fill_title = "Brainnetome subcortex atlas", cmap=rainbow)
+# Most atlases return a character vector of region names
+aseg_regions <- get_atlas_regions('aseg_subcortex')
+cat('aseg_subcortex regions:', paste(aseg_regions, collapse = ', '), '\n')
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
-
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+    ## aseg_subcortex regions: thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens
 
 ``` r
-# SUIT cerebellum
-plot_subcortical_data(atlas = 'SUIT_cerebellar_lobule', hemisphere='both', 
-                      fill_title = "SUIT cerebellum atlas", cmap=rainbow)
+# >>> get_atlas_regions('Melbourne_S1')
+# [1] "hippocampus"        "amygdala"           "thalamus_posterior"
+# [4] "thalamus_anterior"  "pallidum"           "accumbens"
+# [7] "putamen"            "caudate"
+
+# SUIT_cerebellar_lobule and Brainstem_Navigator return a named list
+suit_regions <- get_atlas_regions('SUIT_cerebellar_lobule')
+cat('SUIT hemisphere regions:', paste(suit_regions$hemisphere_regions, collapse = ', '), '\n')
 ```
 
-    ## [1] "Individual-hemisphere visualization is not supported with the SUIT cerebellar lobule atlas. Rendering both hemispheres together, along with the vermis."
-
-    ## SVG contains a tag not currently handled: <namedview>
-
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
-
-## Simulating and visualizing continuous data
+    ## SUIT hemisphere regions: IV, V, VI, Crus_I, Crus_II, VIIb, VIIIa, VIIIb, IX, X
 
 ``` r
-set.seed(127)
+cat('SUIT vermis regions:', paste(suit_regions$vermis_regions, collapse = ', '), '\n')
+```
 
+    ## SUIT vermis regions: VI, Crus_II, VIIb, VIIIa, VIIIb, IX, X
 
+``` r
+brainstem_regions <- get_atlas_regions('Brainstem_Navigator')
+cat('Brainstem hemisphere regions:', paste(brainstem_regions$hemisphere_regions, collapse = ', '), '\n')
+```
 
-example_continuous_data_L <- data.frame(region = c("accumbens", "amygdala", 
-                                                "caudate", "hippocampus", 
-                                                "pallidum", "putamen", 
-                                                "thalamus"),
-                                       Hemisphere = 'L',
-                                    value = rnorm(7))
+    ## Brainstem hemisphere regions: CnF, IC, ION, LC, LDTg_CGPn, LPB, MiTg_PBG, MPB, PCRtA, PnO_PnC, PTg, RN1, RN2, SC, SN1, SN2, SOC, SubC, Ve, VSM, VTA_PBP, iMRtl, iMRtm, isRt, mRta, mRtd, mRtl, sMRtl, sMRtm
 
-example_continuous_data_R <- data.frame(region = c("accumbens", "amygdala", 
-                                                "caudate", "hippocampus", 
-                                                "pallidum", "putamen", 
-                                                "thalamus"),
-                                       Hemisphere = 'R',
-                                    value = rnorm(7))
+``` r
+cat('Brainstem midline regions:', paste(brainstem_regions$midline_regions, collapse = ', '), '\n')
+```
 
+    ## Brainstem midline regions: CLi_RLi, DR, MnR, PAG, PMnR, RMg, ROb, RPa
 
+Region names for each atlas are also listed on the [package
+website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/).
+
+### Plotting continuous data
+
+The `subcortex_data` data frame needs three columns:
+
+- `region`: Region names matching the atlas exactly
+- `value`: Numeric values to color-map
+- `Hemisphere`: `'L'`, `'R'`, `'V'` (vermis, for cerebellum), or `'B'`
+  (bilateral/midline regions)
+
+Let’s simulate random continuous data for the aseg subcortex atlas to
+demonstrate this:
+
+``` r
+set.seed(127) # Set random seed for reproducibility
+
+# Get region names for the aseg subcortex atlas
+aseg_subcortex_regions <- get_atlas_regions("aseg_subcortex")
+
+# Sample random values from a normal distribution for each hemisphere
+example_continuous_data_L <- data.frame(region = aseg_subcortex_regions,
+                                        value = rnorm(length(aseg_subcortex_regions), mean = 0, sd = 1),
+                                        Hemisphere = "L")
+example_continuous_data_R <- data.frame(region = aseg_subcortex_regions,
+                                        value = rnorm(length(aseg_subcortex_regions), mean = 0, sd = 1),
+                                        Hemisphere = "R")
+
+# Combine left and right hemisphere data for bilateral plotting
 example_continuous_data <- rbind(example_continuous_data_L, example_continuous_data_R)
-
-
-# See what the left hemisphere data, randomly sampled from a normal distribution, looks like
 example_continuous_data
 ```
 
-    ##         region Hemisphere        value
-    ## 1    accumbens          L -0.567733740
-    ## 2     amygdala          L -0.814760579
-    ## 3      caudate          L -0.493939596
-    ## 4  hippocampus          L  0.001818846
-    ## 5     pallidum          L  0.819784933
-    ## 6      putamen          L  0.996757858
-    ## 7     thalamus          L  0.751782219
-    ## 8    accumbens          R -0.125547223
-    ## 9     amygdala          R  0.564619888
-    ## 10     caudate          R  0.133508557
-    ## 11 hippocampus          R -0.105963209
-    ## 12    pallidum          R  0.605929618
-    ## 13     putamen          R  0.013250975
-    ## 14    thalamus          R -0.278788699
-
-Plot the left hemisphere:
+    ##         region        value Hemisphere
+    ## 1     thalamus -0.567733740          L
+    ## 2      caudate -0.814760579          L
+    ## 3      putamen -0.493939596          L
+    ## 4     pallidum  0.001818846          L
+    ## 5  hippocampus  0.819784933          L
+    ## 6     amygdala  0.996757858          L
+    ## 7    accumbens  0.751782219          L
+    ## 8     thalamus -0.125547223          R
+    ## 9      caudate  0.564619888          R
+    ## 10     putamen  0.133508557          R
+    ## 11    pallidum -0.105963209          R
+    ## 12 hippocampus  0.605929618          R
+    ## 13    amygdala  0.013250975          R
+    ## 14   accumbens -0.278788699          R
 
 ``` r
-plot_subcortical_data(subcortex_data=example_continuous_data_L, atlas = 'aseg',
-                      hemisphere='L', fill_title = "Normal distribution sample, aseg atlas", 
-                      cmap='viridis')
+plot_subcortical_data(subcortex_data = example_continuous_data,
+                      atlas = 'aseg_subcortex', hemisphere = 'both', cmap = 'viridis',
+                      fill_title = "Normal distribution sample, aseg subcortex atlas")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/plot-viridis-1.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
+### Custom colormaps and the `midpoint` argument
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+You can pass any colormap (or create a custom one with
+`colorRampPalette`) to the `cmap` argument. Since this simulated data
+spans negative and positive values, a diverging blue-white-red colormap
+is a natural choice.
 
-Right hemisphere:
+The `midpoint` argument specifies the center value of the color scale.
+Setting this to 0 maps the center color to 0, with symmetric bounds
+determined automatically from the data range (unless you also set `vmin`
+and `vmax` explicitly). Without explicitly setting vmin/vmax, the color
+range will be defined symmetrically around `midpoint` to capture the
+full range of the data.
 
 ``` r
-plot_subcortical_data(subcortex_data=example_continuous_data_R, atlas = 'aseg',
-                      hemisphere='R', fill_title = "Normal distribution sample, aseg atlas", 
-                      cmap='viridis')
+# Create a blue-white-red colormap
+white_blue_red_cmap <- colorRampPalette(c("blue", "white", "red"))
+
+plot_subcortical_data(subcortex_data = example_continuous_data,
+                      atlas = 'aseg_subcortex', hemisphere = 'both',
+                      fill_title = "Normal distribution sample, aseg subcortex atlas",
+                      cmap = white_blue_red_cmap, midpoint = 0)
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/plot-bwr-1.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
+## 5. Extracting regional statistics from volumetric data
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+In many cases, you may have a three-dimensional volumetric image (from
+any imaging modality) and want to reduce it down to region-level summary
+statistics before plotting. The `parcel_segstats` function handles this:
+it takes a NIfTI image and an atlas name and computes a user-specified
+summary statistic for all voxels in each region.
 
-Both hemispheres together:
+For the `parc_stat` argument, you can pass any function that takes an
+array of values and returns a single scalar — `mean`, `sd`, `median`,
+`max`, etc.
+
+The output data frame is pre-formatted for direct use with
+`plot_subcortical_data` (no reformatting needed).
+
+### Atlas space compatibility
+
+The atlases are provided in two MNI spaces: `MNI152NLin6Asym` (default)
+and `MNI152NLin2009cAsym`. Your input volume must be in one of these two
+spaces to use our package to compute region-aggregated statistics in one
+or more of the included atlases. If the affine or spatial dimensions
+don’t match, `parcel_segstats` will raise an error by default. You can
+specify an `interpolation` method (`'nearest'`, `'linear'`, or
+`'cubic'`) to resample the atlas to your input volume, though we
+encourage you to take care with atlas alignment and, wherever possible,
+normalize your data to the correct MNI space rather than relying on
+interpolation.
+
+Here we compute the median CB1 receptor density per region in the aseg
+subcortex atlas from a group-averaged PET map:
 
 ``` r
-plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
-                      hemisphere='both', fill_title = "Normal distribution sample, aseg atlas", 
-                      cmap='viridis')
+# Define file paths for download
+CB1_density_URL = "https://github.com/netneurolab/hansen_receptorvar/blob/main/data/PET_volumes/CB1_fmpepVt2_hc20_nummenmaa_mean.nii.gz?raw=true"
+download.file(url = CB1_density_URL, destfile = "CB1_mean.nii.gz", mode = "wb", quiet=TRUE)
+functional_map_path <- "CB1_mean.nii.gz"
+
+atlas_name <- "aseg_subcortex"
+func_name <- "CB1_density"
+
+# The PET maps are shared in MNI152NLin6Asym space, so we specify
+# this space for the atlas to ensure proper alignment
+atlas_space <- 'MNI152NLin6Asym'
+
+# Apply the aseg subcortex atlas to extract the median value per region,
+# specifying interpolation = 'nearest' to preserve discrete labels in the atlas
+this_func_atlas_data <- parcel_segstats(input_vol = functional_map_path,
+                                        atlas_space = atlas_space,
+                                        atlas = atlas_name,
+                                        func_name = func_name,
+                                        parc_stat = median,
+                                        interpolation = 'nearest')
+
+# Custom color map
+custom_cmap <- colorRampPalette(c("white", "#00405c"))
+
+plot_subcortical_data(subcortex_data = this_func_atlas_data,
+                      atlas = atlas_name, value_column = 'value',
+                      fill_title = 'Median CB1 density - aseg subcortex atlas',
+                      hemisphere = 'both', show_legend = TRUE, cmap = custom_cmap)
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
-
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
-
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
-
-You can pass in a custom colormap too! For example, if you want to fill
-in with a gradient ranging from white to purple:
+![](images/R_tutorial_files/figure-gfm/parcel-CB1-1.png)<!-- -->
 
 ``` r
-plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg', 
-                      hemisphere='both', fill_title = "Normal distribution sample", 
-                      cmap=c('white', '#76167D'))
+# Clean up downloaded file
+file.remove("CB1_mean.nii.gz")
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+    ## [1] TRUE
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
+### Applying multiple atlases simultaneously
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+`parcel_segstats` accepts a vector of atlas names, running the
+parcellation for each and concatenating results into one data frame with
+an `Atlas` column. This makes it straightforward to compare how regional
+patterns differ across parcellation schemes.
 
-Since this data has positive and negative values,
+As long as your empirical volume is in one of the two supported MNI
+spaces, you can flexibly mix any combination of atlases and summary
+statistics in a single function call.
 
-Since this data has positive and negative values, we can pass in a color
-palette from blue (negative) to white (0) to red (positive).
-`plot_subcortical_data` takes an argument `midpoint` that specifies the
-center point for the color palette. Setting this to 0 here enforces the
-center value to be white. Without setting vmin/vmax explicitly, the
-color range will be defined symmetrically around `midpoint` to capture
-the full range of the data.
+Here we compute the mean GABA<sub>A</sub>-α1 receptor subunit density
+across all twelve atlases included in the package:
 
 ``` r
-plot_subcortical_data(subcortex_data=example_continuous_data, atlas = 'aseg',  
-                      hemisphere='both', fill_title = "Normal distribution sample", 
-                      cmap=c("blue", "white", "red"), midpoint=0)
+# Define subcortical atlases
+all_atlases <- c('aseg_subcortex', 'Melbourne_S1', 'Melbourne_S2',
+                 'Melbourne_S3', 'Melbourne_S4', 'AICHA_subcortex',
+                 'Brainnetome_subcortex', 'CIT168_subcortex', 'Thalamus_HCP',
+                 'Thalamus_THOMAS', 'Brainstem_Navigator', 'SUIT_cerebellar_lobule')
+
+# Define file path for download
+GABAa1_density_URL <- "https://github.com/netneurolab/hansen_receptorvar/blob/main/data/PET_volumes/GABAa1_ro154513_hc23_chang_mean.nii.gz?raw=true"
+download.file(url = GABAa1_density_URL, destfile = "GABAa1_mean.nii.gz", mode = "wb", quiet=TRUE)
+functional_map_path <- "GABAa1_mean.nii.gz"
+
+atlas_space <- 'MNI152NLin6Asym'
+func_name <- "GABA_A_a1_density"
+
+# Extract mean values for all atlases from the GABA_A_a1 density map
+# Use nearest neighbor interpolation to preserve discrete labels in the atlas
+func_map_subcortical_parc_df <- parcel_segstats(input_vol = functional_map_path,
+                                                atlas = all_atlases,
+                                                atlas_space = atlas_space,
+                                                parc_stat = mean,
+                                                ignore_background = TRUE,
+                                                func_name = func_name,
+                                                interpolation = 'nearest')
+
+min_func_parc_value <- min(func_map_subcortical_parc_df$value)
+max_func_parc_value <- max(func_map_subcortical_parc_df$value)
+
+# Plot each atlas with a consistent color scale
+for (atlas in all_atlases) {
+    this_atlas_data <- subset(func_map_subcortical_parc_df, Atlas == atlas)
+    this_fill_title <- paste(func_name, "-", atlas, sep = " ")
+    this_atlas_plot <- plot_subcortical_data(
+        subcortex_data = this_atlas_data,
+        atlas = atlas,
+        value_column = 'value',
+        fill_title = this_fill_title,
+        hemisphere = 'both',
+        vmin = min_func_parc_value,
+        vmax = max_func_parc_value,
+        cmap = 'plasma',
+        show_legend = TRUE
+    )
+    print(this_atlas_plot)
+}
 ```
 
-    ## SVG contains a tag not currently handled: <namedview>
+![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png)<!-- -->
 
-    ## Joining with `by = join_by(region, Hemisphere, face)`
-    ## Joining with `by = join_by(region, Hemisphere)`
+## 6. Combining cortical and subcortical visualizations
 
-![](images/tutorial_R_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+Since `subcortexVisualizationR` produces `ggplot2` objects, it is
+straightforward to combine subcortical and cerebellar plots with
+cortical surface plots from `ggseg` using the `patchwork` package, all
+within the `ggplot2` framework. This allows for direct comparison of
+receptor density across cortical and non-cortical structures with a
+unified color scale.
+
+Python package users can save outputs from `plot_subcortical_data` in
+their preferred file format (e.g., .png or .svg) and combine with saved
+`ggseg` output from R in the image editor of their choice.
+
+As a fully R-based example, we visualize the regional average
+GABA<sub>A</sub>-α1 receptor subunit density from the previous example
+in the cortex alongside the subcortex and cerebellum together. We
+selected the 1000-parcel Schaefer atlas to parcellate the cerebral
+cortex, the Melbourne Subcortex S4 atlas for subcortex, and the SUIT
+cerebellar lobule atlas for cerebellum. Note that the color range is
+consistent across all three plots, allowing for direct comparison of
+receptor subunit density across the cortical and non-cortical
+structures.
+
+> **Note:** The below code chunk does not compute/visualize the real
+> cortical values for the Schaefer-1000 cortical atlas, as this is
+> beyond the scope of our package and is designed to be performed in
+> Python using `neuromaps`.
+
+``` r
+library(ggseg)
+library(ggsegSchaefer)
+library(patchwork)
+library(tidyverse)
+
+# Use subcortical parcellation results from the previous code chunk
+# (func_map_subcortical_parc_df, min_func_parc_value, max_func_parc_value)
+
+# Cortical plot with ggseg
+# Get Schaefer 1000-parcel atlas labels, then join with parcellated GABA_A_a1 data
+# In practice, cortical parcellation would be done with neuromaps (Python) or
+# a surface-based parcellation tool; here we simulate cortical values for illustration
+schaefer1000_labels <- schaefer17_1000()$data$sf %>%
+    as_tibble() %>%
+    filter(!is.na(label)) %>%
+    select(label, hemi) %>%
+    distinct()
+
+set.seed(42)
+cortical_sim_data <- schaefer1000_labels %>%
+    mutate(value = runif(n(),
+                         min = min_func_parc_value,
+                         max = max_func_parc_value))
+
+cortex_p <- cortical_sim_data %>%
+    ggplot() +
+    geom_brain(atlas = schaefer17_1000(), mapping = aes(fill = value),
+               colour = "black", linewidth = 0.1) +
+    ggtitle("Schaefer-1000 Cortex") +
+    labs(fill = 'Mean GABAa1 Signal (VT)') +
+    scale_fill_viridis_c(limits = c(min_func_parc_value, max_func_parc_value),
+                         na.value = 'gray80', option = 'plasma') +
+    theme_void() +
+    guides(fill = guide_colorbar(barwidth = unit(5, "cm"),
+                                  barheight = unit(0.5, "cm"),
+                                  title.position = "top", title.hjust = 0.5)) +
+    theme(legend.position = 'bottom', plot.title = element_text(hjust = 0.5))
+
+# Melbourne S4 subcortex plot
+subcortex_p <- plot_subcortical_data(
+    subcortex_data = subset(func_map_subcortical_parc_df, Atlas == "Melbourne_S4"),
+    atlas = "Melbourne_S4", hemisphere = "both",
+    value_column = 'value', vmin = min_func_parc_value,
+    vmax = max_func_parc_value, cmap = 'plasma', show_legend = FALSE) +
+    ggtitle("Melbourne S4 Subcortex") +
+    theme(plot.title = element_text(hjust = 0.5))
+
+# SUIT cerebellum plot
+cerebellum_p <- plot_subcortical_data(
+    subcortex_data = subset(func_map_subcortical_parc_df, Atlas == "SUIT_cerebellar_lobule"),
+    atlas = "SUIT_cerebellar_lobule", hemisphere = "both",
+    value_column = 'value', vmin = min_func_parc_value,
+    vmax = max_func_parc_value, cmap = 'plasma', show_legend = FALSE) +
+    ggtitle("SUIT Cerebellum") +
+    theme(plot.title = element_text(hjust = 0.5))
+
+# Use patchwork to combine the plots; titles can be further adjusted in Inkscape
+plot_design <- "AAA
+                BBC"
+wrap_plots(A = cortex_p, B = subcortex_p, C = cerebellum_p,
+           design = plot_design, heights = c(0.6, 0.4))
+```
+
+![](images/R_tutorial_files/figure-gfm/combine-viz-1.png)<!-- -->

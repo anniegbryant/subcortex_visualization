@@ -2,17 +2,19 @@
 % Please edit documentation in R/utils.R
 \name{get_atlas_regions}
 \alias{get_atlas_regions}
-\title{Print the names of regions in a given subcortical atlas}
+\title{Return the names of regions in a given subcortical or cerebellar atlas.}
 \usage{
 get_atlas_regions(atlas_name)
 }
 \arguments{
-\item{atlas_name}{Name of the atlas to get regions frmo (e.g., 'aseg')}
+\item{atlas_name}{Name of the subcortical/cerebellar atlas (e.g., \code{"aseg_subcortex"}).}
 }
 \value{
-A list of regions in the specified atlas, ordered by segmentation index
+For most atlases: a character vector of region names ordered by segmentation index.
+For \code{"SUIT_cerebellar_lobule"}: a named list with \code{hemisphere_regions} and
+\code{vermis_regions}. For \code{"Brainstem_Navigator"}: a named list with
+\code{hemisphere_regions} and \code{midline_regions}.
 }
 \description{
-This function takes in the name of a given subcortical/cerebellar atlas (e.g., 'aseg')
-and returns the list of regions in that atlas, ordered by segmentation index
+Return the names of regions in a given subcortical or cerebellar atlas.
 }

@@ -1,0 +1,14 @@
+1	Pulvinar-lh	1
+2	Anterior-lh	2
+3	Medio_Dorsal-lh	3
+4	Ventral_Latero_Dorsal-lh	4
+5	Central_Lateral-Lateral_Posterior-Medial_Pulvinar-lh	5
+6	Ventral_Anterior-lh	6
+7	Ventral_Latero_Ventral-lh	7
+8	Pulvinar-rh	8
+9	Anterior-rh	9
+10	Medio_Dorsal-rh	10
+11	Ventral_Latero_Dorsal-rh	11
+12	Central_Lateral-Lateral_Posterior-Medial_Pulvinar-rh	12
+13	Ventral_Anterior-rh	13
+14	Ventral_Latero_Ventral-rh	14

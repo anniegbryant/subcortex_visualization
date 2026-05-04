@@ -8,21 +8,47 @@ theme:
     scheme: default
     primary: purple  # ← change this to your desired color
     accent: amber   # ← optional: affects buttons/links
+  features:
+    - navigation.expand
 
 plugins:
   - search
+  - section-index
   - mkdocs-jupyter
+  - callouts
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [".."]
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
 
 markdown_extensions:
   - md_in_html
   - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 nav:
   - Home: index.md
   - Installation: installation.md
-  - Usage (Python): python_tutorial.ipynb
-  - Usage (R): R_tutorial.md
+  - Tutorials:
+      - tutorials_overview.md
+      - Python tutorial: python_tutorial.ipynb
+      - R tutorial: R_tutorial.md
+  - API Reference:
+      - api_reference.md
+      - Python API: python_api.md
+      - R API: R_api.md
   - Atlas information: atlas_info.md
-  - Using a custom atlas: custom_segmentation.md
+  - Adding a new atlas: custom_segmentation.md
   - Acknowledgments: acknowledgments.md
   - Cite this package: citation.md
+
+extra_css:
+  - stylesheets/extra.css

@@ -2,17 +2,21 @@
 % Please edit documentation in R/plotting.R
 \name{plot_subcortical_data}
 \alias{plot_subcortical_data}
-\title{Main function to plot data in a user-selected subcortical/cerebellar atlas}
+\title{Visualize a given subcortical or cerebellar atlas template as a vector graphic, colored according to user-provided data values or, by default, a simple region-based color scheme.}
 \usage{
 plot_subcortical_data(
   subcortex_data = NULL,
-  atlas = "aseg",
-  hemisphere = "L",
+  atlas = "aseg_subcortex",
   value_column = "value",
+  hemisphere = "L",
+  views = c("medial", "lateral"),
   line_color = "black",
   line_thickness = 0.5,
   cmap = "viridis",
   NA_fill = "#cccccc",
+  fill_alpha = 1,
+  fill_by_significance = FALSE,
+  nonsig_fill_alpha = 0.5,
   vmin = NULL,
   vmax = NULL,
   midpoint = NULL,
@@ -22,38 +26,70 @@ plot_subcortical_data(
 )
 }
 \arguments{
-\item{subcortex_data}{Empirical data to plot (optional)}
+\item{subcortex_data}{Optional data.frame with columns \code{region}, \code{Hemisphere},
+and \code{value_column}. If NULL, regions will be simply colored based on their assigned
+index in the corresponding atlas. May also include a \code{p_value} column if
+\code{fill_by_significance = TRUE}.}
 
-\item{atlas}{Name of atlas to use (default='aseg')}
+\item{atlas}{The atlas used for the subcortical regions. Default is \code{"aseg_subcortex"}.
+One of \code{"aseg_subcortex"}, \code{"CIT168_subcortex"}, \code{"Melbourne_S1"} (or
+\code{"Tian_S1"}), \code{"AICHA_subcortex"}, \code{"Brainnetome_subcortex"},
+\code{"Thalamus_HCP"}, \code{"Thalamus_THOMAS"}, \code{"Brainstem_Navigator"},
+\code{"SUIT_cerebellar_lobule"}.}
 
-\item{hemisphere}{Name of hemisphere(s) to use (default='L')}
+\item{value_column}{The name of the column in \code{subcortex_data} that contains the
+values to be visualized.}
 
-\item{value_column}{If empirical data is passed, which column to plot values from}
+\item{hemisphere}{Which hemisphere(s) to display. Use \code{"L"} for left, \code{"R"} for
+right, or \code{"both"} for bilateral plots.}
 
-\item{line_color}{Color for lines outlining each region (default='black')}
+\item{views}{Which faces of the subcortical regions to display. Options include
+\code{"medial"}, \code{"lateral"}, \code{"superior"}, and \code{"inferior"}.
+Not applicable to the SUIT cerebellar lobule atlas.}
 
-\item{line_thickness}{Thickness of lines outlining each region (default=0.5)}
+\item{line_color}{Color of the outline around each subcortical region. Default is
+\code{"black"}.}
 
-\item{cmap}{Colormap to fill in regions (can be character name of palette, vector of colors, or a colormap function)}
+\item{line_thickness}{Thickness of the outline for each region in ggplot2 \code{linewidth}
+units, or a column name in \code{subcortex_data} whose value gives region-specific
+thickness. Default is \code{0.5}.}
 
-\item{NA_fill}{Color to fill in missing data for regions (string/hex code accepted; default="#cccccc")}
+\item{cmap}{Colormap used to fill in the regions. Accepts a viridis palette name (single
+string), a vector of hex colors, or a palette function. Default is \code{"viridis"}.}
 
-\item{vmin}{Lower bound for color plotting, useful for plotting multiple versions from the same data}
+\item{NA_fill}{Color to use for regions with missing data (NA values). Default is
+\code{"#cccccc"}.}
 
-\item{vmax}{Upper bound for color plotting, useful for plotting multiple versions from the same data}
+\item{fill_alpha}{Opacity level for the filled regions, between 0 (transparent) and 1
+(opaque). Default is \code{1.0}.}
 
-\item{midpoint}{Value to center colors at between vmin and vmax}
+\item{fill_by_significance}{If TRUE, adjusts fill opacity based on significance.
+Non-significant regions (\code{p_value >= 0.05}) are drawn at \code{nonsig_fill_alpha}
+over a white backing, with thinner outlines. Requires a \code{p_value} column in
+\code{subcortex_data}. Default is \code{FALSE}.}
 
-\item{show_legend}{Whether to plot legend at the bottom (default=TRUE)}
+\item{nonsig_fill_alpha}{If \code{fill_by_significance} is TRUE, this opacity level is
+applied to non-significant regions (p >= 0.05). Default is \code{0.5}.}
 
-\item{fill_title}{Title to use for legend, if requested (default='values')}
+\item{vmin}{Minimum value for colormap normalization. If NULL, the minimum of the input
+values is used.}
 
-\item{font_size}{Font size for legend (default=12)}
+\item{vmax}{Maximum value for colormap normalization. If NULL, the maximum of the input
+values is used.}
+
+\item{midpoint}{If provided, uses a diverging colormap centered around this value.}
+
+\item{show_legend}{If TRUE, displays a legend or colorbar indicating the mapping of values
+to colors.}
+
+\item{fill_title}{Label for the colorbar indicating the meaning of the fill values.
+Default is \code{"values"}.}
+
+\item{fontsize}{Font size for the figure text elements. Default is \code{12}.}
 }
 \value{
-A ggplot2 object containing all of the brain regions for the given atlas
+A \pkg{patchwork} / ggplot2 object.
 }
 \description{
-This function accepts a dataframe combining SVG elements and atlas information and plots each region individually
-according to the atlas-specific plotting order.
+Visualize a given subcortical or cerebellar atlas template as a vector graphic, colored according to user-provided data values or, by default, a simple region-based color scheme.
 }

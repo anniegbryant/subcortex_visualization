@@ -1,0 +1,14 @@
+10	thalamus-lh	10
+11	caudate-lh	11
+12	putamen-lh	12
+13	pallidum-lh	13
+17	hippocampus-lh	17
+18	amygdala-lh	18
+26	accumbens-lh	26
+49	thalamus-rh	49
+50	caudate-rh	50
+51	putamen-rh	51
+52	pallidum-rh	52
+53	hippocampus-rh	53
+54	amygdala-rh	54
+58	accumbens-rh	58

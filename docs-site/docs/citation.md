@@ -1,3 +1,16 @@
-If you use this package in a scientific publication, blog post, etc., please cite the corresponding Zenodo release as follows:
+If you use this package in a scientific publication, blog post, etc., please cite:
 
-Annie G. Bryant. (2025). anniegbryant/subcortex_visualization: Initial Zenodo release (initial_release). Zenodo. https://doi.org/10.5281/zenodo.15385316
+Bryant, A. G. (2026). *Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum*. bioRxiv. [https://www.biorxiv.org/content/10.64898/2026.01.23.699785](https://www.biorxiv.org/content/10.64898/2026.01.23.699785)
+
+??? note "Click here for .bib info"
+
+    ```bibtex
+    @article{bryant2026subcortex,
+      title={Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum},
+      author={Bryant, Annie G},
+      journal={bioRxiv},
+      pages={2026--01},
+      year={2026},
+      publisher={Cold Spring Harbor Laboratory}
+    }
+    ```

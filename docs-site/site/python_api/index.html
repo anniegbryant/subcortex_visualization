@@ -1,0 +1,2576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../api_reference/">
+      
+      
+        <link rel="next" href="../R_api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Python API - Subcortex visualization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Subcortex visualization" class="md-header__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Subcortex visualization
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Subcortex visualization" class="md-nav__button md-logo" aria-label="Subcortex visualization" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Subcortex visualization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../tutorials_overview/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../api_reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.plotting.plot_subcortical_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;plot_subcortical_data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.segmentation.parcel_segstats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;parcel_segstats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.utils.get_atlas_regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_atlas_regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding a new atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cite this package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.plotting.plot_subcortical_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;plot_subcortical_data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.segmentation.parcel_segstats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;parcel_segstats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcortex_visualization.utils.get_atlas_regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_atlas_regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-api-reference">Python API Reference</h1>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="subcortex_visualization.plotting.plot_subcortical_data" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">subcortex_visualization</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atlas</span><span class="o">=</span><span class="s1">&#39;aseg_subcortex&#39;</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">hemisphere</span><span class="o">=</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;medial&#39;</span><span class="p">,</span> <span class="s1">&#39;lateral&#39;</span><span class="p">],</span> <span class="n">line_thickness</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill_title</span><span class="o">=</span><span class="s1">&#39;values&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">NA_fill</span><span class="o">=</span><span class="s1">&#39;#cccccc&#39;</span><span class="p">,</span> <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fill_by_significance</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nonsig_fill_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_figure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Visualize a given subcortical or cerebellar atlas template as a vector graphic, colored according to user-provided data values or, by default, a simple region-based color scheme. </p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>subcortex_data</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DataFrame with columns ['region', 'value', 'Hemisphere'].
+If None, regions will be simply colored based on their assigned index in the corresponding atlas (which is arbitrary).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>atlas</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The atlas used for the subcortical regions. The default is 'aseg_subcortex'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;aseg_subcortex&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>value_column</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the column in <code>subcortex_data</code> that contains the values to be visualized.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;value&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>hemisphere</code>
+            </td>
+            <td>
+                  <code>(<span title="L">L</span>, <span title="R">R</span>, <span title="both">both</span>)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Which hemisphere(s) to display. Use 'L' for left, 'R' for right, or 'both' for bilateral plots.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;L&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>views</code>
+            </td>
+            <td>
+                  <code>list of str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Which faces of the subcortical regions to display. Options include 'medial', 'lateral', 'superior', and 'inferior'. 
+Not applicable to the SUIT cerebellar lobule atlas.</p>
+              </div>
+            </td>
+            <td>
+                  <code>[&#39;medial&#39;, &#39;lateral&#39;]</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>line_thickness</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span> or <span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Thickness of the outline for each region, or a column name in <code>subcortex_data</code> whose value gives region-specific thickness.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1.5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>line_color</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Color of the outline around each subcortical region.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;black&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fill_title</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Label for the colorbar indicating the meaning of the fill values.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#34;values&#34;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cmap</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> or <span title="matplotlib.colors.Colormap">Colormap</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Colormap used to fill in the regions. Accepts a string name or a Colormap object.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;viridis&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>NA_fill</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Color to use for regions with missing data (NaN values).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#34;#cccccc&#34;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fill_alpha</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Opacity level for the filled regions, between 0 (transparent) and 1 (opaque).</p>
+              </div>
+            </td>
+            <td>
+                  <code>1.0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fill_by_significance</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, adjusts fill_alpha based on significance (e.g., p-values) in the data. Requires a 'p_value' column in <code>subcortex_data</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>nonsig_fill_alpha</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If <code>fill_by_significance</code> is True, this alpha level is applied to non-significant regions (e.g., p &gt;= 0.05).</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>vmin</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Minimum value for colormap normalization. 
+If None, the minimum of the input values is used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>vmax</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum value for colormap normalization. 
+If None, the maximum of the input values is used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>midpoint</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, uses a diverging colormap centered around this value.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>show_legend</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, displays a legend or colorbar indicating the mapping of values to colors.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>show_figure</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, displays the figure using <code>plt.show()</code>. If False, returns the matplotlib Figure object.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fontsize</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Font size for the figure text elements.</p>
+              </div>
+            </td>
+            <td>
+                  <code>12</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ax</code>
+            </td>
+            <td>
+                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Axes object to plot on. If None, a new figure and axes are created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="matplotlib.figure.Figure">Figure</span> or None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The generated figure, if <code>show_figure</code> is False. Otherwise, displays the plot and returns None.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Notes</summary>
+  <ul>
+<li>The function loads SVG files and a lookup CSV bundled with the package, which can be found under <code>data/</code> directory.</li>
+<li>The input <code>subcortex_data</code> should align with regions defined in the lookup table.</li>
+</ul>
+</details>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>subcortex_visualization/plotting.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1040</span>
+<span class="normal">1041</span>
+<span class="normal">1042</span>
+<span class="normal">1043</span>
+<span class="normal">1044</span>
+<span class="normal">1045</span>
+<span class="normal">1046</span>
+<span class="normal">1047</span>
+<span class="normal">1048</span>
+<span class="normal">1049</span>
+<span class="normal">1050</span>
+<span class="normal">1051</span>
+<span class="normal">1052</span>
+<span class="normal">1053</span>
+<span class="normal">1054</span>
+<span class="normal">1055</span>
+<span class="normal">1056</span>
+<span class="normal">1057</span>
+<span class="normal">1058</span>
+<span class="normal">1059</span>
+<span class="normal">1060</span>
+<span class="normal">1061</span>
+<span class="normal">1062</span>
+<span class="normal">1063</span>
+<span class="normal">1064</span>
+<span class="normal">1065</span>
+<span class="normal">1066</span>
+<span class="normal">1067</span>
+<span class="normal">1068</span>
+<span class="normal">1069</span>
+<span class="normal">1070</span>
+<span class="normal">1071</span>
+<span class="normal">1072</span>
+<span class="normal">1073</span>
+<span class="normal">1074</span>
+<span class="normal">1075</span>
+<span class="normal">1076</span>
+<span class="normal">1077</span>
+<span class="normal">1078</span>
+<span class="normal">1079</span>
+<span class="normal">1080</span>
+<span class="normal">1081</span>
+<span class="normal">1082</span>
+<span class="normal">1083</span>
+<span class="normal">1084</span>
+<span class="normal">1085</span>
+<span class="normal">1086</span>
+<span class="normal">1087</span>
+<span class="normal">1088</span>
+<span class="normal">1089</span>
+<span class="normal">1090</span>
+<span class="normal">1091</span>
+<span class="normal">1092</span>
+<span class="normal">1093</span>
+<span class="normal">1094</span>
+<span class="normal">1095</span>
+<span class="normal">1096</span>
+<span class="normal">1097</span>
+<span class="normal">1098</span>
+<span class="normal">1099</span>
+<span class="normal">1100</span>
+<span class="normal">1101</span>
+<span class="normal">1102</span>
+<span class="normal">1103</span>
+<span class="normal">1104</span>
+<span class="normal">1105</span>
+<span class="normal">1106</span>
+<span class="normal">1107</span>
+<span class="normal">1108</span>
+<span class="normal">1109</span>
+<span class="normal">1110</span>
+<span class="normal">1111</span>
+<span class="normal">1112</span>
+<span class="normal">1113</span>
+<span class="normal">1114</span>
+<span class="normal">1115</span>
+<span class="normal">1116</span>
+<span class="normal">1117</span>
+<span class="normal">1118</span>
+<span class="normal">1119</span>
+<span class="normal">1120</span>
+<span class="normal">1121</span>
+<span class="normal">1122</span>
+<span class="normal">1123</span>
+<span class="normal">1124</span>
+<span class="normal">1125</span>
+<span class="normal">1126</span>
+<span class="normal">1127</span>
+<span class="normal">1128</span>
+<span class="normal">1129</span>
+<span class="normal">1130</span>
+<span class="normal">1131</span>
+<span class="normal">1132</span>
+<span class="normal">1133</span>
+<span class="normal">1134</span>
+<span class="normal">1135</span>
+<span class="normal">1136</span>
+<span class="normal">1137</span>
+<span class="normal">1138</span>
+<span class="normal">1139</span>
+<span class="normal">1140</span>
+<span class="normal">1141</span>
+<span class="normal">1142</span>
+<span class="normal">1143</span>
+<span class="normal">1144</span>
+<span class="normal">1145</span>
+<span class="normal">1146</span>
+<span class="normal">1147</span>
+<span class="normal">1148</span>
+<span class="normal">1149</span>
+<span class="normal">1150</span>
+<span class="normal">1151</span>
+<span class="normal">1152</span>
+<span class="normal">1153</span>
+<span class="normal">1154</span>
+<span class="normal">1155</span>
+<span class="normal">1156</span>
+<span class="normal">1157</span>
+<span class="normal">1158</span>
+<span class="normal">1159</span>
+<span class="normal">1160</span>
+<span class="normal">1161</span>
+<span class="normal">1162</span>
+<span class="normal">1163</span>
+<span class="normal">1164</span>
+<span class="normal">1165</span>
+<span class="normal">1166</span>
+<span class="normal">1167</span>
+<span class="normal">1168</span>
+<span class="normal">1169</span>
+<span class="normal">1170</span>
+<span class="normal">1171</span>
+<span class="normal">1172</span>
+<span class="normal">1173</span>
+<span class="normal">1174</span>
+<span class="normal">1175</span>
+<span class="normal">1176</span>
+<span class="normal">1177</span>
+<span class="normal">1178</span>
+<span class="normal">1179</span>
+<span class="normal">1180</span>
+<span class="normal">1181</span>
+<span class="normal">1182</span>
+<span class="normal">1183</span>
+<span class="normal">1184</span>
+<span class="normal">1185</span>
+<span class="normal">1186</span>
+<span class="normal">1187</span>
+<span class="normal">1188</span>
+<span class="normal">1189</span>
+<span class="normal">1190</span>
+<span class="normal">1191</span>
+<span class="normal">1192</span>
+<span class="normal">1193</span>
+<span class="normal">1194</span>
+<span class="normal">1195</span>
+<span class="normal">1196</span>
+<span class="normal">1197</span>
+<span class="normal">1198</span>
+<span class="normal">1199</span>
+<span class="normal">1200</span>
+<span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
+<span class="normal">1209</span>
+<span class="normal">1210</span>
+<span class="normal">1211</span>
+<span class="normal">1212</span>
+<span class="normal">1213</span>
+<span class="normal">1214</span>
+<span class="normal">1215</span>
+<span class="normal">1216</span>
+<span class="normal">1217</span>
+<span class="normal">1218</span>
+<span class="normal">1219</span>
+<span class="normal">1220</span>
+<span class="normal">1221</span>
+<span class="normal">1222</span>
+<span class="normal">1223</span>
+<span class="normal">1224</span>
+<span class="normal">1225</span>
+<span class="normal">1226</span>
+<span class="normal">1227</span>
+<span class="normal">1228</span>
+<span class="normal">1229</span>
+<span class="normal">1230</span>
+<span class="normal">1231</span>
+<span class="normal">1232</span>
+<span class="normal">1233</span>
+<span class="normal">1234</span>
+<span class="normal">1235</span>
+<span class="normal">1236</span>
+<span class="normal">1237</span>
+<span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
+<span class="normal">1243</span>
+<span class="normal">1244</span>
+<span class="normal">1245</span>
+<span class="normal">1246</span>
+<span class="normal">1247</span>
+<span class="normal">1248</span>
+<span class="normal">1249</span>
+<span class="normal">1250</span>
+<span class="normal">1251</span>
+<span class="normal">1252</span>
+<span class="normal">1253</span>
+<span class="normal">1254</span>
+<span class="normal">1255</span>
+<span class="normal">1256</span>
+<span class="normal">1257</span>
+<span class="normal">1258</span>
+<span class="normal">1259</span>
+<span class="normal">1260</span>
+<span class="normal">1261</span>
+<span class="normal">1262</span>
+<span class="normal">1263</span>
+<span class="normal">1264</span>
+<span class="normal">1265</span>
+<span class="normal">1266</span>
+<span class="normal">1267</span>
+<span class="normal">1268</span>
+<span class="normal">1269</span>
+<span class="normal">1270</span>
+<span class="normal">1271</span>
+<span class="normal">1272</span>
+<span class="normal">1273</span>
+<span class="normal">1274</span>
+<span class="normal">1275</span>
+<span class="normal">1276</span>
+<span class="normal">1277</span>
+<span class="normal">1278</span>
+<span class="normal">1279</span>
+<span class="normal">1280</span>
+<span class="normal">1281</span>
+<span class="normal">1282</span>
+<span class="normal">1283</span>
+<span class="normal">1284</span>
+<span class="normal">1285</span>
+<span class="normal">1286</span>
+<span class="normal">1287</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atlas</span><span class="o">=</span><span class="s1">&#39;aseg_subcortex&#39;</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">hemisphere</span><span class="o">=</span><span class="s1">&#39;L&#39;</span><span class="p">,</span>  
+                          <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;medial&#39;</span><span class="p">,</span> <span class="s1">&#39;lateral&#39;</span><span class="p">],</span> <span class="n">line_thickness</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                          <span class="n">fill_title</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">NA_fill</span><span class="o">=</span><span class="s2">&quot;#cccccc&quot;</span><span class="p">,</span> <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                          <span class="n">fill_by_significance</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nonsig_fill_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>   
+                          <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                          <span class="n">show_figure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Visualize a given subcortical or cerebellar atlas template as a vector graphic, colored according to user-provided data values or, by default, a simple region-based color scheme. </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    subcortex_data : pandas.DataFrame, optional</span>
+<span class="sd">        DataFrame with columns [&#39;region&#39;, &#39;value&#39;, &#39;Hemisphere&#39;].</span>
+<span class="sd">        If None, regions will be simply colored based on their assigned index in the corresponding atlas (which is arbitrary).</span>
+
+<span class="sd">    atlas : str, default=&#39;aseg_subcortex&#39;</span>
+<span class="sd">        The atlas used for the subcortical regions. The default is &#39;aseg_subcortex&#39;.</span>
+
+<span class="sd">    value_column : str, default=&#39;value&#39;</span>
+<span class="sd">        The name of the column in `subcortex_data` that contains the values to be visualized.</span>
+
+<span class="sd">    hemisphere : {&#39;L&#39;, &#39;R&#39;, &#39;both&#39;}, default=&#39;L&#39;</span>
+<span class="sd">        Which hemisphere(s) to display. Use &#39;L&#39; for left, &#39;R&#39; for right, or &#39;both&#39; for bilateral plots.</span>
+
+<span class="sd">    views : list of str, default=[&#39;medial&#39;, &#39;lateral&#39;]</span>
+<span class="sd">        Which faces of the subcortical regions to display. Options include &#39;medial&#39;, &#39;lateral&#39;, &#39;superior&#39;, and &#39;inferior&#39;. </span>
+<span class="sd">        Not applicable to the SUIT cerebellar lobule atlas.</span>
+
+<span class="sd">    line_thickness : float or str, default=1.5</span>
+<span class="sd">        Thickness of the outline for each region, or a column name in ``subcortex_data`` whose value gives region-specific thickness.</span>
+
+<span class="sd">    line_color : str, default=&#39;black&#39;</span>
+<span class="sd">        Color of the outline around each subcortical region.</span>
+
+<span class="sd">    fill_title : str, default=&quot;values&quot;</span>
+<span class="sd">        Label for the colorbar indicating the meaning of the fill values.</span>
+
+<span class="sd">    cmap : str or matplotlib.colors.Colormap, default=&#39;viridis&#39;</span>
+<span class="sd">        Colormap used to fill in the regions. Accepts a string name or a Colormap object.</span>
+
+<span class="sd">    NA_fill : str, default=&quot;#cccccc&quot;</span>
+<span class="sd">        Color to use for regions with missing data (NaN values).</span>
+
+<span class="sd">    fill_alpha : float, default=1.0</span>
+<span class="sd">        Opacity level for the filled regions, between 0 (transparent) and 1 (opaque).</span>
+
+<span class="sd">    fill_by_significance : bool, default=False</span>
+<span class="sd">        If True, adjusts fill_alpha based on significance (e.g., p-values) in the data. Requires a &#39;p_value&#39; column in `subcortex_data`.</span>
+
+<span class="sd">    nonsig_fill_alpha : float, default=0.5</span>
+<span class="sd">        If `fill_by_significance` is True, this alpha level is applied to non-significant regions (e.g., p &gt;= 0.05).</span>
+
+<span class="sd">    vmin : float, optional</span>
+<span class="sd">        Minimum value for colormap normalization. </span>
+<span class="sd">        If None, the minimum of the input values is used.</span>
+
+<span class="sd">    vmax : float, optional</span>
+<span class="sd">        Maximum value for colormap normalization. </span>
+<span class="sd">        If None, the maximum of the input values is used.</span>
+
+<span class="sd">    midpoint : float, optional</span>
+<span class="sd">        If provided, uses a diverging colormap centered around this value.</span>
+
+<span class="sd">    show_legend : bool, default=True</span>
+<span class="sd">        If True, displays a legend or colorbar indicating the mapping of values to colors.</span>
+
+<span class="sd">    show_figure : bool, default=True</span>
+<span class="sd">        If True, displays the figure using `plt.show()`. If False, returns the matplotlib Figure object.</span>
+
+<span class="sd">    fontsize : int, default=12</span>
+<span class="sd">        Font size for the figure text elements.</span>
+
+<span class="sd">    ax : matplotlib.axes.Axes, optional</span>
+<span class="sd">        Axes object to plot on. If None, a new figure and axes are created.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    matplotlib.figure.Figure or None</span>
+<span class="sd">        The generated figure, if `show_figure` is False. Otherwise, displays the plot and returns None.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - The function loads SVG files and a lookup CSV bundled with the package, which can be found under `data/` directory.</span>
+<span class="sd">    - The input `subcortex_data` should align with regions defined in the lookup table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Aliases and backward compatibility</span>
+    <span class="k">if</span> <span class="s2">&quot;Tian&quot;</span> <span class="ow">in</span> <span class="n">atlas</span><span class="p">:</span>
+        <span class="n">atlas</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Tian&quot;</span><span class="p">,</span><span class="s2">&quot;Melbourne&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Use default of &#39;both&#39; for SUIT cerebellar atlas</span>
+    <span class="c1"># Handle colormap</span>
+    <span class="c1"># If atlas is SUIT, use a specific colormap</span>
+    <span class="k">if</span> <span class="n">atlas</span> <span class="o">==</span> <span class="s1">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">hemisphere</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individual-hemisphere visualization is not supported with the SUIT cerebellar lobule atlas. Rendering both hemispheres together, along with the vermis.&quot;</span><span class="p">)</span>
+            <span class="n">hemisphere</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+
+    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span>  <span class="c1"># default colormap</span>
+
+    <span class="c1"># Otherwise, use the provided colormap</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
+
+    <span class="c1"># If fill_by_significance is True, ensure that &#39;p_value&#39; column is present in subcortex_data</span>
+    <span class="k">if</span> <span class="n">fill_by_significance</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">subcortex_data</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="s1">&#39;p_value&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subcortex_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;fill_by_significance=True requires a &#39;p_value&#39; column in subcortex_data.&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Load ordering file</span>
+        <span class="n">atlas_ordering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">hemisphere</span><span class="si">}</span><span class="s2">_ordering.csv&quot;</span><span class="p">))</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># try appending &#39;_subcortex&#39; if not already present</span>
+            <span class="n">atlas</span> <span class="o">=</span> <span class="n">atlas</span> <span class="o">+</span> <span class="s1">&#39;_subcortex&#39;</span> 
+            <span class="n">atlas_ordering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">hemisphere</span><span class="si">}</span><span class="s2">_ordering.csv&quot;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atlas name found with &#39;_subcortex&#39; suffix. Using atlas=&#39;</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find atlas &#39;</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">&#39;. Please ensure the atlas name is correct and the corresponding data is included in the package.&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+
+    <span class="c1"># Define atlas data path</span>
+    <span class="n">atlas_data_path</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s1">&#39;subcortex_visualization&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">atlas</span><span class="p">)</span>
+
+    <span class="c1"># Prepare data for plotting</span>
+    <span class="k">if</span> <span class="n">subcortex_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+        <span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">color_lookup</span><span class="p">,</span> <span class="n">cmap_colors</span> <span class="o">=</span> <span class="n">_prep_data</span><span class="p">(</span><span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span> <span class="n">subcortex_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+        <span class="n">norm</span><span class="o">=</span><span class="kc">None</span>
+
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">color_lookup</span><span class="o">=</span><span class="kc">None</span>
+        <span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">midpoint</span> <span class="o">=</span> <span class="n">_prep_data</span><span class="p">(</span><span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span> 
+                                                               <span class="n">subcortex_data</span><span class="o">=</span><span class="n">subcortex_data</span><span class="p">,</span> 
+                                                               <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">=</span><span class="n">midpoint</span><span class="p">)</span>
+
+
+    <span class="c1"># Generate plot</span>
+
+    <span class="c1"># Case 1: Brainstem_Navigator atlas, where all regions are included in the same SVG for each hemisphere/view</span>
+    <span class="k">if</span> <span class="n">atlas</span> <span class="o">==</span> <span class="s1">&#39;Brainstem_Navigator&#39;</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">_plot_helper</span><span class="p">(</span>
+            <span class="n">atlas_ordering</span><span class="p">,</span> 
+            <span class="n">atlas_data_path</span><span class="p">,</span>
+            <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span>
+            <span class="n">hemisphere</span><span class="o">=</span><span class="n">hemisphere</span><span class="p">,</span>
+            <span class="n">subcortex_data</span><span class="o">=</span><span class="n">subcortex_data</span><span class="p">,</span>
+            <span class="n">views</span><span class="o">=</span><span class="n">views</span><span class="p">,</span>
+            <span class="n">color_lookup</span><span class="o">=</span><span class="n">color_lookup</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+            <span class="n">NA_fill</span><span class="o">=</span><span class="n">NA_fill</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+            <span class="n">fill_alpha</span><span class="o">=</span><span class="n">fill_alpha</span><span class="p">,</span>
+            <span class="n">fill_by_significance</span><span class="o">=</span><span class="n">fill_by_significance</span><span class="p">,</span>
+            <span class="n">nonsig_fill_alpha</span><span class="o">=</span><span class="n">nonsig_fill_alpha</span><span class="p">,</span>
+            <span class="n">line_color</span><span class="o">=</span><span class="n">line_color</span><span class="p">,</span>
+            <span class="n">line_thickness</span><span class="o">=</span><span class="n">line_thickness</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">flat_axes</span>   <span class="o">=</span> <span class="p">[</span><span class="n">ax</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span> <span class="k">if</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_visible</span><span class="p">()]</span>
+        <span class="n">legend_ax</span>   <span class="o">=</span> <span class="n">flat_axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">is_multi_panel</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Case 2: SUIT cerebellar lobule</span>
+    <span class="k">elif</span> <span class="n">atlas</span><span class="o">==</span><span class="s1">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">:</span>
+        <span class="n">svg_path</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">hemisphere</span><span class="si">}</span><span class="s2">.svg&quot;</span><span class="p">)</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">svg_path</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+        <span class="n">ns</span>   <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;svg&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.w3.org/2000/svg&#39;</span><span class="p">}</span>
+        <span class="n">ET</span><span class="o">.</span><span class="n">register_namespace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ns</span><span class="p">[</span><span class="s1">&#39;svg&#39;</span><span class="p">])</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//svg:path&#39;</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">subcortex_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_plot_helper_cerebellum</span><span class="p">(</span><span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="n">paths</span><span class="p">,</span>
+                                    <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span>
+                                    <span class="n">hemisphere</span><span class="o">=</span><span class="n">hemisphere</span><span class="p">,</span>
+                                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                                    <span class="n">color_lookup</span><span class="o">=</span><span class="n">color_lookup</span><span class="p">,</span>
+                                    <span class="n">NA_fill</span><span class="o">=</span><span class="n">NA_fill</span><span class="p">,</span> 
+                                    <span class="n">fill_alpha</span><span class="o">=</span><span class="n">fill_alpha</span><span class="p">,</span>
+                                    <span class="n">fill_by_significance</span><span class="o">=</span><span class="n">fill_by_significance</span><span class="p">,</span>
+                                    <span class="n">line_color</span><span class="o">=</span><span class="n">line_color</span><span class="p">,</span>
+                                    <span class="n">line_thickness</span><span class="o">=</span><span class="n">line_thickness</span><span class="p">,</span>
+                                    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_plot_helper_cerebellum</span><span class="p">(</span><span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="n">paths</span><span class="p">,</span>
+                                    <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span>
+                                    <span class="n">hemisphere</span><span class="o">=</span><span class="n">hemisphere</span><span class="p">,</span>
+                                    <span class="n">subcortex_data</span><span class="o">=</span><span class="n">subcortex_data</span><span class="p">,</span>
+                                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> 
+                                    <span class="n">NA_fill</span><span class="o">=</span><span class="n">NA_fill</span><span class="p">,</span>
+                                    <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> 
+                                    <span class="n">fill_alpha</span><span class="o">=</span><span class="n">fill_alpha</span><span class="p">,</span>
+                                    <span class="n">fill_by_significance</span><span class="o">=</span><span class="n">fill_by_significance</span><span class="p">,</span>
+                                    <span class="n">line_color</span><span class="o">=</span><span class="n">line_color</span><span class="p">,</span>
+                                    <span class="n">line_thickness</span><span class="o">=</span><span class="n">line_thickness</span><span class="p">,</span>
+                                    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+        <span class="n">legend_ax</span>      <span class="o">=</span> <span class="n">ax</span>
+        <span class="n">flat_axes</span>      <span class="o">=</span> <span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+        <span class="n">is_multi_panel</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># For all other atlases</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">svg_dir</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">atlas_data_path</span><span class="si">}</span><span class="s1">/vectors/&#39;</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">_plot_helper_individual</span><span class="p">(</span><span class="n">atlas_ordering</span><span class="p">,</span> <span class="n">svg_dir</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span> 
+            <span class="n">hemisphere</span><span class="o">=</span><span class="n">hemisphere</span><span class="p">,</span> <span class="n">subcortex_data</span><span class="o">=</span><span class="n">subcortex_data</span><span class="p">,</span> 
+            <span class="n">views</span><span class="o">=</span><span class="n">views</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="n">line_color</span><span class="p">,</span> <span class="n">line_thickness</span><span class="o">=</span><span class="n">line_thickness</span><span class="p">,</span>
+            <span class="n">color_lookup</span><span class="o">=</span><span class="n">color_lookup</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">NA_fill</span><span class="o">=</span><span class="n">NA_fill</span><span class="p">,</span> 
+            <span class="n">fill_alpha</span><span class="o">=</span><span class="n">fill_alpha</span><span class="p">,</span> <span class="n">fill_by_significance</span><span class="o">=</span><span class="n">fill_by_significance</span><span class="p">,</span>
+            <span class="n">nonsig_fill_alpha</span><span class="o">=</span><span class="n">nonsig_fill_alpha</span><span class="p">,</span><span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+
+        <span class="c1"># Pick a legend anchor ax</span>
+        <span class="n">flat_axes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span> <span class="k">if</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_visible</span><span class="p">()]</span>
+        <span class="n">legend_ax</span> <span class="o">=</span> <span class="n">flat_axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># or flat_axes[0]</span>
+        <span class="n">is_multi_panel</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="n">fontsize</span><span class="p">})</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">h_pad</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+    <span class="c1"># Add a legend if requested — must come AFTER tight_layout so the</span>
+    <span class="c1"># colorbar / subplots_adjust reservation is not overwritten.</span>
+    <span class="k">if</span> <span class="n">show_legend</span><span class="p">:</span>
+
+        <span class="c1"># 8 columns if both hemispheres, else 4; only exception is for SUIT atlas, which always uses 4 columns</span>
+        <span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">if</span> <span class="n">atlas</span> <span class="o">==</span> <span class="s1">&#39;SUIT_cerebellar_lobule&#39;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">hemisphere</span> <span class="o">==</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># Discrete legend when no data provided, colorbar otherwise</span>
+        <span class="k">if</span> <span class="n">subcortex_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_add_legend</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">flat_axes</span> <span class="k">if</span> <span class="n">is_multi_panel</span> <span class="k">else</span> <span class="n">legend_ax</span><span class="p">,</span>
+                       <span class="n">multi_panel</span><span class="o">=</span><span class="n">is_multi_panel</span><span class="p">,</span>
+                       <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span> <span class="n">atlas_ordering</span><span class="o">=</span><span class="n">atlas_ordering</span><span class="p">,</span>
+                       <span class="n">cmap_colors</span><span class="o">=</span><span class="n">cmap_colors</span><span class="p">,</span> <span class="n">fill_title</span><span class="o">=</span><span class="n">fill_title</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_add_legend</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">flat_axes</span> <span class="k">if</span> <span class="n">is_multi_panel</span> <span class="k">else</span> <span class="n">legend_ax</span><span class="p">,</span>
+                       <span class="n">multi_panel</span><span class="o">=</span><span class="n">is_multi_panel</span><span class="p">,</span>
+                       <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">value_column</span><span class="o">=</span><span class="n">value_column</span><span class="p">,</span> <span class="n">atlas_ordering</span><span class="o">=</span><span class="n">atlas_ordering</span><span class="p">,</span>
+                       <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">fill_title</span><span class="o">=</span><span class="n">fill_title</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show_figure</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fig</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="subcortex_visualization.segmentation.parcel_segstats" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">subcortex_visualization</span><span class="o">.</span><span class="n">segmentation</span><span class="o">.</span><span class="n">parcel_segstats</span><span class="p">(</span><span class="n">input_vol</span><span class="p">,</span> <span class="n">atlas_space</span><span class="o">=</span><span class="s1">&#39;MNI152NLin6Asym&#39;</span><span class="p">,</span> <span class="n">atlas</span><span class="o">=</span><span class="s1">&#39;aseg_subcortex&#39;</span><span class="p">,</span> <span class="n">func_name</span><span class="o">=</span><span class="s1">&#39;Functional map&#39;</span><span class="p">,</span> <span class="n">parc_stat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">ignore_background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Extract voxel values from an input volume based on a parcellation atlas and apply a reduction function to each parcel.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>input_vol</code>
+            </td>
+            <td>
+                  <code><span title="nibabel.nifti1.Nifti1Image">Nifti1Image</span> or <span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The input 3D or 4D NIfTI image from which to extract voxel values. Can be a nibabel Nifti1Image object or a file path to a NIfTI image.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>atlas_space</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The standard space to use for the corresponding atlas. Options include 'MNI152NLin6Asym' (the default) and 'MNI152NLin2009cAsym'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;MNI152NLin6Asym&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>atlas</code>
+            </td>
+            <td>
+                  <code>str or list of str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name(s) of the subcortical atlas/atlases to apply. Default is 'aseg_subcortex', which is the FreeSurfer subcortical segmentation atlas. If multiple atlases are provided, the function will iterate over them and concatenate results.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;aseg_subcortex&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>func_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A name for the functional map being summarized, used for labeling purposes in the output DataFrame. Default is 'Functional map'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Functional map&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>parc_stat</code>
+            </td>
+            <td>
+                  <code><span title="function">function</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A function like np.mean, np.std, etc. that takes an array of values and returns a single summary statistic (scalar). Default is np.mean.
+Can also be a list of functions, in which case the output DataFrame will have one row per parcel per summary statistic.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="numpy.mean">mean</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ignore_background</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, the background label (as defined by <code>background_value</code>) is skipped
+when extracting parcel values.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>background_value</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Integer label in the parcellation that represents background (non-parcel) voxels.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>interpolation</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> or None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the input volume and atlas have different affines or spatial dimensions, this parameter
+specifies the interpolation method for resampling the atlas to match the input volume.
+Options include 'nearest', 'linear', and 'cubic'. If None (default), no resampling is
+performed and an error will be raised if affines or dimensions do not match.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>results_df</code></td>            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>One row per parcel per summary statistic, with columns:
+'stat', 'value', 'Atlas', 'Functional_Map', 'region', 'Hemisphere', 'Region_Index'.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Notes</summary>
+  <ul>
+<li>Users should ensure that the input volume is in the same standard space as the atlas specified by <code>atlas_space</code> to avoid issues with affine and spatial dimension mismatches. If resampling is necessary, users must specify an interpolation method.</li>
+</ul>
+</details>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>subcortex_visualization/segmentation.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">parcel_segstats</span><span class="p">(</span><span class="n">input_vol</span><span class="p">,</span> <span class="n">atlas_space</span><span class="o">=</span><span class="s1">&#39;MNI152NLin6Asym&#39;</span><span class="p">,</span> 
+                    <span class="n">atlas</span><span class="o">=</span><span class="s1">&#39;aseg_subcortex&#39;</span><span class="p">,</span> <span class="n">func_name</span><span class="o">=</span><span class="s1">&#39;Functional map&#39;</span><span class="p">,</span> <span class="n">parc_stat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+                    <span class="n">ignore_background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract voxel values from an input volume based on a parcellation atlas and apply a reduction function to each parcel.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_vol : nibabel.nifti1.Nifti1Image or str</span>
+<span class="sd">        The input 3D or 4D NIfTI image from which to extract voxel values. Can be a nibabel Nifti1Image object or a file path to a NIfTI image.</span>
+
+<span class="sd">    atlas_space : str, optional</span>
+<span class="sd">        The standard space to use for the corresponding atlas. Options include &#39;MNI152NLin6Asym&#39; (the default) and &#39;MNI152NLin2009cAsym&#39;.</span>
+
+<span class="sd">    atlas : str or list of str, optional</span>
+<span class="sd">        Name(s) of the subcortical atlas/atlases to apply. Default is &#39;aseg_subcortex&#39;, which is the FreeSurfer subcortical segmentation atlas. If multiple atlases are provided, the function will iterate over them and concatenate results.</span>
+
+<span class="sd">    func_name : str, optional</span>
+<span class="sd">        A name for the functional map being summarized, used for labeling purposes in the output DataFrame. Default is &#39;Functional map&#39;.</span>
+
+<span class="sd">    parc_stat : function, optional</span>
+<span class="sd">        A function like np.mean, np.std, etc. that takes an array of values and returns a single summary statistic (scalar). Default is np.mean.</span>
+<span class="sd">        Can also be a list of functions, in which case the output DataFrame will have one row per parcel per summary statistic.</span>
+
+<span class="sd">    ignore_background : bool, default=True</span>
+<span class="sd">        If True, the background label (as defined by ``background_value``) is skipped</span>
+<span class="sd">        when extracting parcel values.</span>
+
+<span class="sd">    background_value : int, default=0</span>
+<span class="sd">        Integer label in the parcellation that represents background (non-parcel) voxels.</span>
+
+<span class="sd">    interpolation : str or None, optional</span>
+<span class="sd">        If the input volume and atlas have different affines or spatial dimensions, this parameter</span>
+<span class="sd">        specifies the interpolation method for resampling the atlas to match the input volume.</span>
+<span class="sd">        Options include &#39;nearest&#39;, &#39;linear&#39;, and &#39;cubic&#39;. If None (default), no resampling is</span>
+<span class="sd">        performed and an error will be raised if affines or dimensions do not match.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    results_df : pandas.DataFrame</span>
+<span class="sd">        One row per parcel per summary statistic, with columns:</span>
+<span class="sd">        &#39;stat&#39;, &#39;value&#39;, &#39;Atlas&#39;, &#39;Functional_Map&#39;, &#39;region&#39;, &#39;Hemisphere&#39;, &#39;Region_Index&#39;.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - Users should ensure that the input volume is in the same standard space as the atlas specified by `atlas_space` to avoid issues with affine and spatial dimension mismatches. If resampling is necessary, users must specify an interpolation method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atlas</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">atlas</span> <span class="o">=</span> <span class="p">[</span><span class="n">atlas</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parc_stat</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">parc_stat</span> <span class="o">=</span> <span class="p">[</span><span class="n">parc_stat</span><span class="p">]</span>
+
+    <span class="c1"># Load in the input volume, if it&#39;s a file path</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_vol</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">input_vol</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_vol</span><span class="p">)</span>
+
+    <span class="c1"># Find the affine and input data dimensions</span>
+    <span class="n">input_vol_affine</span> <span class="o">=</span> <span class="n">input_vol</span><span class="o">.</span><span class="n">affine</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_vol</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+    <span class="c1"># Initialize list to hold results dataframes for each atlas</span>
+    <span class="n">results_df_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Iterate over user-specified atlas(es)</span>
+    <span class="k">for</span> <span class="n">this_atlas</span> <span class="ow">in</span> <span class="n">atlas</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">this_atlas</span> <span class="o">==</span> <span class="s1">&#39;Brainstem_Navigator&#39;</span><span class="p">:</span>
+            <span class="c1"># One NIFTI file per ROI — discover all .nii.gz files in the atlas directory</span>
+            <span class="n">atlas_dir</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization.atlases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_space</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">nifti_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">atlas_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.nii.gz&#39;</span><span class="p">)])</span>
+
+            <span class="k">for</span> <span class="n">roi_idx</span><span class="p">,</span> <span class="n">nifti_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nifti_files</span><span class="p">):</span>
+                <span class="n">roi_name</span> <span class="o">=</span> <span class="n">nifti_path</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nii.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">roi_vol</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nifti_path</span><span class="p">)</span>
+                <span class="n">roi_vol_affine</span> <span class="o">=</span> <span class="n">roi_vol</span><span class="o">.</span><span class="n">affine</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">input_vol_affine</span><span class="p">,</span> <span class="n">roi_vol_affine</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">interpolation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resampling ROI &#39;</span><span class="si">{</span><span class="n">roi_name</span><span class="si">}</span><span class="s2">&#39; to match input data affine and dimensions using </span><span class="si">{</span><span class="n">interpolation</span><span class="si">}</span><span class="s2"> interpolation...&quot;</span><span class="p">)</span>
+                        <span class="n">roi_vol</span> <span class="o">=</span> <span class="n">resample_img</span><span class="p">(</span><span class="n">roi_vol</span><span class="p">,</span> <span class="n">target_affine</span><span class="o">=</span><span class="n">input_vol_affine</span><span class="p">,</span> <span class="n">target_shape</span><span class="o">=</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">,</span> <span class="n">force_resample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy_header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No resampling method was specified. Re-run this function with a specified &#39;interpolation&#39; argument from the available options for resample_img (including &#39;nearest&#39;, &#39;cubic&#39;, or &#39;linear&#39;) to resample ROI &#39;</span><span class="si">{</span><span class="n">roi_name</span><span class="si">}</span><span class="s2">&#39; to your input data.</span><span class="se">\n</span><span class="s2">Input data affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">input_vol_affine</span><span class="si">}</span><span class="se">\n</span><span class="s2">ROI affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">roi_vol_affine</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="n">roi_data</span> <span class="o">=</span> <span class="n">roi_vol</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">roi_data</span> <span class="o">!=</span> <span class="mi">0</span>
+
+                <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="n">roi_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+                    <span class="n">min_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">roi_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="n">input_data_roi</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+                    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">[:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">input_data_roi</span> <span class="o">=</span> <span class="n">input_data</span>
+
+                <span class="n">voxels</span> <span class="o">=</span> <span class="n">input_data_roi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">voxels</span> <span class="o">=</span> <span class="n">voxels</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">(</span><span class="n">voxels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">(</span><span class="n">voxels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">]</span>
+
+                <span class="n">this_lab_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s1">&#39;stat&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">],</span>
+                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">vals</span>
+                <span class="p">})</span>
+
+                <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+                <span class="k">if</span> <span class="n">roi_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;_lh&#39;</span><span class="p">,</span> <span class="s1">&#39;-lh&#39;</span><span class="p">,</span> <span class="s1">&#39;-L&#39;</span><span class="p">,</span> <span class="s1">&#39;_L&#39;</span><span class="p">,</span> <span class="s1">&#39;_l&#39;</span><span class="p">)):</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+                <span class="k">elif</span> <span class="n">roi_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;_rh&#39;</span><span class="p">,</span> <span class="s1">&#39;-rh&#39;</span><span class="p">,</span> <span class="s1">&#39;-R&#39;</span><span class="p">,</span> <span class="s1">&#39;_R&#39;</span><span class="p">,</span> <span class="s1">&#39;_r&#39;</span><span class="p">)):</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>
+                <span class="k">elif</span> <span class="s1">&#39;vermis&#39;</span> <span class="ow">in</span> <span class="n">roi_name</span><span class="p">:</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span>
+
+                <span class="n">this_region_clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(_lh|-lh|-L|_L|_l|_rh|-rh|-R|_R|_r|-vermis)$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">roi_name</span><span class="p">)</span>
+
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Atlas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_atlas</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Functional_Map&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func_name</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_region_clean</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Hemisphere&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_hemi</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Region_Index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">roi_idx</span> <span class="o">+</span> <span class="mi">1</span>
+
+                <span class="n">results_df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_lab_df</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Define atlas volume</span>
+            <span class="n">this_atlas_volume_path</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization.atlases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_space</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span><span class="p">)</span>
+            <span class="c1"># Try loading atlas, if that fails, append _subcortex and try again (since some atlases have that suffix in the filename)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">this_atlas_vol</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">this_atlas_volume_path</span><span class="p">)</span>
+                <span class="c1"># Define atlas lookup table (LUT)</span>
+                <span class="n">this_atlas_LUT</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization.atlases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_space</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">_lookup.csv&quot;</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">this_atlas_volume_path</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization.atlases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_space</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">_subcortex.nii.gz&quot;</span><span class="p">)</span>
+                    <span class="n">this_atlas_vol</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">this_atlas_volume_path</span><span class="p">)</span>
+                    <span class="ne">Warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atlas volume file for atlas &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">&#39; not found with expected filename &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">.nii.gz&#39;. Successfully loaded atlas volume with alternative filename &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">_subcortex.nii.gz&#39;. Please check that the atlas volume file in the package directory is named according to one of these two conventions to avoid this warning in the future.&quot;</span><span class="p">)</span>
+
+                    <span class="n">this_atlas_LUT</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization.atlases&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_space</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">_subcortex_lookup.csv&quot;</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atlas volume file not found for atlas &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">&#39;. Looked for files named &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">.nii.gz&#39; and &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">_subcortex.nii.gz&#39; in the subcortex_visualization.atlases package directory. Please check that the atlas name is correct and that the corresponding atlas volume file is present in the package directory.&quot;</span><span class="p">)</span>
+
+            <span class="c1"># If first row has &#39;Region_Name&#39; in any column, then set the column names to the first row and drop the first row from the data</span>
+            <span class="k">if</span> <span class="n">this_atlas_LUT</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Region_Name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">this_atlas_LUT</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">this_atlas_LUT</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">this_atlas_LUT</span> <span class="o">=</span> <span class="n">this_atlas_LUT</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># Find affines</span>
+            <span class="n">this_atlas_vol_affine</span> <span class="o">=</span> <span class="n">this_atlas_vol</span><span class="o">.</span><span class="n">affine</span>
+
+            <span class="c1"># Compare affines and raise error if they don&#39;t match</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">input_vol_affine</span><span class="p">,</span> <span class="n">this_atlas_vol_affine</span><span class="p">):</span>
+                <span class="c1"># Affines don&#39;t match; resample if interpolation is specified, otherwise raise an error</span>
+                <span class="ne">Warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Affines of input data and atlas do not match. Atlas affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">this_atlas_vol_affine</span><span class="si">}</span><span class="se">\n</span><span class="s2">Input data affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">input_vol_affine</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="c1"># Resample the atlas to match the input volume</span>
+                <span class="k">if</span> <span class="n">interpolation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resampling atlas &#39;</span><span class="si">{</span><span class="n">this_atlas</span><span class="si">}</span><span class="s2">&#39; to match input data affine and dimensions using </span><span class="si">{</span><span class="n">interpolation</span><span class="si">}</span><span class="s2"> interpolation...&quot;</span><span class="p">)</span>
+                    <span class="n">this_atlas_vol</span> <span class="o">=</span> <span class="n">resample_img</span><span class="p">(</span><span class="n">this_atlas_vol</span><span class="p">,</span> <span class="n">target_affine</span><span class="o">=</span><span class="n">input_vol_affine</span><span class="p">,</span> <span class="n">target_shape</span><span class="o">=</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">,</span> <span class="n">force_resample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy_header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">this_atlas_vol_affine</span> <span class="o">=</span> <span class="n">this_atlas_vol</span><span class="o">.</span><span class="n">affine</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No resampling method was specified. Re-run this function with a specified &#39;interpolation&#39; argument from the available options for resample_img (including &#39;nearest&#39;, &#39;cubic&#39;, or &#39;linear&#39;) to resample the desired atlas volume to your input data.</span><span class="se">\n</span><span class="s2">Input data affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">input_vol_affine</span><span class="si">}</span><span class="se">\n</span><span class="s2">Atlas affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">this_atlas_vol_affine</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Extract data</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">this_atlas_vol</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+            <span class="c1"># Round to int — resampled atlases may have fractional label values</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+            <span class="c1"># If affines match but spatial dims still differ, it&#39;s likely an FOV mismatch — crop to the smaller shape</span>
+            <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+                <span class="ne">Warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spatial dimensions of input data and atlas do not match. Input data shape: </span><span class="si">{</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">Atlas labels shape: </span><span class="si">{</span><span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">Attempting to crop atlas labels to match input data dimensions...&quot;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">min_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+                    <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:</span><span class="n">min_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error occurred while attempting to crop atlas labels to match input data dimensions: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">Unable to proceed with extraction.&quot;</span><span class="p">)</span>
+
+            <span class="c1"># If affines and data dimensions are compatible, proceed with extraction</span>
+
+            <span class="n">this_atlas_LUT</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Index&#39;</span><span class="p">,</span> <span class="s1">&#39;Region&#39;</span><span class="p">]</span>
+            <span class="n">this_atlas_regions</span> <span class="o">=</span> <span class="n">this_atlas_LUT</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+            <span class="c1"># skip background if requested, which is the default</span>
+            <span class="k">if</span> <span class="n">ignore_background</span><span class="p">:</span>
+                <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">[</span><span class="n">unique_labels</span> <span class="o">!=</span> <span class="n">background_value</span><span class="p">]</span>
+
+
+            <span class="c1"># Iterate over each unique label and extract voxel values</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lab</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">):</span>
+                <span class="c1"># If lab is a str/float, convert to int</span>
+                <span class="n">lab</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">lab</span>
+                <span class="n">voxels</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+                <span class="c1"># Handle 4D (time series) vs 3D</span>
+                <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">voxels</span> <span class="o">=</span> <span class="n">voxels</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">(</span><span class="n">voxels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">(</span><span class="n">voxels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">]</span>
+
+                <span class="c1"># One row per summary statistic</span>
+                <span class="n">this_lab_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                    <span class="s1">&#39;stat&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">parc_stat</span><span class="p">],</span>
+                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">vals</span>
+                <span class="p">})</span>
+
+                <span class="n">this_atlas_region_full</span> <span class="o">=</span> <span class="n">this_atlas_regions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+                <span class="c1"># Infer hemisphere from region name suffix</span>
+                <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+                <span class="k">if</span> <span class="n">this_atlas_region_full</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;_lh&#39;</span><span class="p">,</span> <span class="s1">&#39;-lh&#39;</span><span class="p">,</span> <span class="s1">&#39;-L&#39;</span><span class="p">,</span> <span class="s1">&#39;_L&#39;</span><span class="p">,</span> <span class="s1">&#39;_l&#39;</span><span class="p">,</span> <span class="s1">&#39;_LH&#39;</span><span class="p">)):</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+                <span class="k">elif</span> <span class="n">this_atlas_region_full</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;_rh&#39;</span><span class="p">,</span> <span class="s1">&#39;-rh&#39;</span><span class="p">,</span> <span class="s1">&#39;-R&#39;</span><span class="p">,</span> <span class="s1">&#39;_R&#39;</span><span class="p">,</span> <span class="s1">&#39;_r&#39;</span><span class="p">,</span> <span class="s1">&#39;_RH&#39;</span><span class="p">)):</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>
+                <span class="k">elif</span> <span class="s1">&#39;vermis&#39;</span> <span class="ow">in</span> <span class="n">this_atlas_region_full</span><span class="p">:</span>
+                    <span class="n">this_hemi</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span>
+
+                <span class="c1"># Strip hemisphere suffix to get the clean region name</span>
+                <span class="n">this_region_clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(_lh|-lh|-L|_L|_l|_LH|_rh|-rh|-R|_R|_r|_RH|-vermis)$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">this_atlas_region_full</span><span class="p">)</span>
+
+                <span class="c1"># Add region/atlas metadata to the dataframe</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Atlas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_atlas</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Functional_Map&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func_name</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_region_clean</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Hemisphere&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_hemi</span>
+                <span class="n">this_lab_df</span><span class="p">[</span><span class="s1">&#39;Region_Index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lab</span>
+
+                <span class="c1"># Append this label&#39;s results to the list</span>
+                <span class="n">results_df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_lab_df</span><span class="p">)</span>
+
+    <span class="c1"># Concatenate results from all atlases into a single DataFrame</span>
+    <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results_df_list</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Return the dataframe</span>
+    <span class="k">return</span> <span class="n">results_df</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="subcortex_visualization.utils.get_atlas_regions" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">subcortex_visualization</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_atlas_regions</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Return the names of regions in a given subcortical or cerebellar atlas.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>atlas_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the subcortical/cerebellar atlas.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>np.ndarray or tuple of np.ndarray</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For most atlases: a 1-D array of region names ordered by segmentation index.
+For 'SUIT_cerebellar_lobule': a tuple of (hemisphere_regions, vermis_regions).
+For 'Brainstem_Navigator': a tuple of (hemisphere_regions, midline_regions).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>subcortex_visualization/utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_atlas_regions</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the names of regions in a given subcortical or cerebellar atlas.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas_name : str</span>
+<span class="sd">        Name of the subcortical/cerebellar atlas.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray or tuple of np.ndarray</span>
+<span class="sd">        For most atlases: a 1-D array of region names ordered by segmentation index.</span>
+<span class="sd">        For &#39;SUIT_cerebellar_lobule&#39;: a tuple of (hemisphere_regions, vermis_regions).</span>
+<span class="sd">        For &#39;Brainstem_Navigator&#39;: a tuple of (hemisphere_regions, midline_regions).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># If the atlas is the SUIT cerebellar lobules, use hemisphere of &#39;both&#39;</span>
+    <span class="k">if</span> <span class="n">atlas_name</span> <span class="o">==</span> <span class="s1">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">:</span>
+        <span class="n">hemisphere</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span>
+
+        <span class="c1"># Load ordering file</span>
+        <span class="n">atlas_ordering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">hemisphere</span><span class="si">}</span><span class="s2">_ordering.csv&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Identify regions for left/right cerebellar hemispheres versus vermis</span>
+        <span class="n">hemisphere_regions</span> <span class="o">=</span> <span class="n">atlas_ordering</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Hemisphere == &#39;L&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;seg_index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">vermis_regions</span> <span class="o">=</span> <span class="n">atlas_ordering</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Hemisphere==&#39;V&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;seg_index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+        <span class="c1"># Return both lists of regions as a tuple</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">hemisphere_regions</span><span class="p">,</span> <span class="n">vermis_regions</span><span class="p">)</span>
+
+    <span class="c1"># If atlas is Brainstem_Navigator, some regions are &#39;B&#39; (both) and some regions are &#39;L&#39; or &#39;R&#39;</span>
+    <span class="k">if</span> <span class="n">atlas_name</span> <span class="o">==</span> <span class="s1">&#39;Brainstem_Navigator&#39;</span><span class="p">:</span>
+        <span class="c1"># Load ordering file</span>
+        <span class="n">atlas_ordering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_L_ordering.csv&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Sort by segmentation index and print the array of region names</span>
+        <span class="n">hemisphere_regions</span> <span class="o">=</span> <span class="n">atlas_ordering</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Hemisphere==&#39;L&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;seg_index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">midline_regions</span> <span class="o">=</span> <span class="n">atlas_ordering</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Hemisphere==&#39;B&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;seg_index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+        <span class="c1"># Return both lists of regions as a tuple</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">hemisphere_regions</span><span class="p">,</span> <span class="n">midline_regions</span><span class="p">)</span>
+
+    <span class="c1"># Else, use left hemisphere just to get names</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hemisphere</span><span class="o">=</span><span class="s1">&#39;L&#39;</span>
+
+        <span class="c1"># Load ordering file</span>
+        <span class="n">atlas_ordering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;subcortex_visualization&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">hemisphere</span><span class="si">}</span><span class="s2">_ordering.csv&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Sort by segmentation index and print the array of region names</span>
+        <span class="n">unique_regions</span> <span class="o">=</span> <span class="n">atlas_ordering</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;seg_index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">unique_regions</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

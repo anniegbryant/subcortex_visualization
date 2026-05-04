@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="1000"
+   height="600"
+   viewBox="0 0 1000 600"
+   id="svg780124"
+   sodipodi:docname="VA_L_inferior.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs780128" />
+  <sodipodi:namedview
+     id="namedview780126"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="4.4500587"
+     inkscape:cx="531.67838"
+     inkscape:cy="268.08635"
+     inkscape:window-width="1309"
+     inkscape:window-height="456"
+     inkscape:window-x="0"
+     inkscape:window-y="340"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg780124" />
+  <path
+     d="M 536.429,272.001 C 538.118,271.451 541.525,270.509 544.000,269.907 C 547.289,269.108 549.779,267.494 553.253,263.907 L 558.006,259.000 L 565.896,259.000 C 575.192,259.000 575.905,258.240 573.474,250.921 C 571.539,245.095 565.610,239.346 557.112,235.057 C 551.849,232.400 550.001,232.000 542.979,232.000 C 533.644,232.000 530.841,233.124 526.404,238.647 C 519.731,246.954 518.825,251.286 521.458,262.304 C 522.959,268.586 524.303,270.767 527.465,272.048 C 530.275,273.187 532.824,273.174 536.429,272.001 Z"
+     fill="#d33c4e"
+     stroke="black"
+     stroke-width="0.5"
+     fill-rule="evenodd"
+     id="path780120" />
+</svg>

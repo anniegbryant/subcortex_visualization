@@ -1,0 +1,85 @@
+
+/* === Python API Reference Styling === */
+
+/* Smaller 'func' badge label */
+.doc-heading code.doc-symbol {
+  font-size: 0.55em;
+}
+
+/* Smaller function signature: name + arguments, transparent background */
+.doc-heading code.highlight,
+.doc-heading code.language-python {
+  font-size: 0.6em !important;
+  background-color: transparent !important;
+}
+
+/* Inline code */
+code {
+  font-size: 0.85em;
+}
+
+/* Code blocks */
+pre code {
+  font-size: 0.8em;
+}
+
+/* Optional: make inline code slightly tighter */
+code:not(pre code) {
+  padding: 0.15em 0.3em;
+}
+
+/* Code blocks inside Jupyter markdown cells */
+.jp-RenderedHTMLCommon pre,
+.jp-RenderedHTMLCommon pre code {
+  font-size: 0.8em;
+}
+
+/* Sometimes used by pygments */
+.jp-RenderedHTMLCommon .highlight pre {
+  font-size: 0.8em;
+}
+
+/* Bottom border under each function heading */
+.doc.doc-heading {
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Full-width parameter tables */
+.doc .md-typeset__table,
+.doc .md-typeset__table table {
+  display: table !important;
+  width: 100%;
+}
+
+.doc .md-typeset__table tr {
+  display: table-row;
+}
+
+/* Don't break parameter names inside table cells */
+.doc-contents td code {
+  word-break: normal !important;
+}
+
+/* Inline parameter descriptions (no leading line break) */
+.doc-md-description,
+.doc-md-description > p:first-child {
+  display: inline;
+}
+
+/* Bold section titles (Parameters, Returns, etc.) */
+.doc-section-title {
+  font-weight: bold;
+}
+
+/* Float default values to the right in table-style sections */
+.doc-param-default {
+  float: right;
+}
+
+/* Wider content area */
+.md-grid {
+  max-width: 1300px;
+}

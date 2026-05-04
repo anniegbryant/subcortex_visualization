@@ -17,18 +17,22 @@ __pycache__/
 */*.Rproj.user
 */*.Rbuildignore
 
-
 # Readme images
 readme_images.svg
 
 # Testing files
 testing*
 custom_segmentation_pipeline/*
+tests/
 
-# Atlas info folder
-atlas_info/raw_volumes
+# Atlas info folder template files
+atlas_info/original_space/tpl-*
 
 # While testing interactive jupyter
 interactive_online.ipynb
 create_R_package.R
 test_R_package.R
+
+# Ignore meshes folders
+subcortexVisualizationR/inst/extdata/data/*/meshes/*
+subcortex_visualization/data/*/meshes/*
