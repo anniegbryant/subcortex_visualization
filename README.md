@@ -10,22 +10,22 @@ More information about these atlases, including the process of rendering the sur
 
 ## 🙋‍♀️ Motivation
 
-If you work with subcortical or cerebellar data, you've probably hit this wall: there are plenty of beautiful tools for visualizing cortical results (as elegantly laid out by [Chopra et al. *Aperture Neuro* 2023](https://apertureneuro.org/article/85104-a-practical-guide-for-generating-reproducible-and-programmatic-neuroimaging-visualizations)), but far fewer options by comparison once you venture below the cortical mantle. 
-Most research groups end up building their own one-off plotting pipelines per atlas, which often amounts to lot of duplicated effort and figures that are hard to compare across studies.
+Among the many beautiful tools for visualizing region-level cortical results (as elegantly laid out by [Chopra et al. *Aperture Neuro* 2023](https://apertureneuro.org/article/85104-a-practical-guide-for-generating-reproducible-and-programmatic-neuroimaging-visualizations)), there are far fewer options by comparison once you venture below the cortical mantle. 
+Most research groups end up developing visualization pipelines in an ad hoc way for individual atlases, which can amount to redundant efforts and figures that are difficult to compare across studies.
 
-This package takes inspiration from the fantastic [`ggseg`](https://github.com/ggseg/ggseg) R package (and its [Python extension](https://github.com/ggseg/python-ggseg/)), which unifies cortical atlas visualization into clean, standardized 2D vector plots. 
-We admire this approach for a few reasons: vector graphics aren't subject to the lighting artifacts that make 3D renderings tricky to interpret (especially with color-mapped values), and they produce crisp, resolution-independent figures that are publication-ready straight out of the box (and easy to touch up in Inkscape or Illustrator afterwards).
+This package is inspired by the fantastic [`ggseg`](https://github.com/ggseg/ggseg) R package (and its [Python extension](https://github.com/ggseg/python-ggseg/)), which unifies more than fifteen cortical parcellation atlases into a clean, standardized two-dimensional (2D) vector graphic format for data mapping.
+We followed in this approach because vector graphics aren't subject to the lighting artifacts that make three-dimensional (3D) renderings difficult to interpret (especially with color-mapped values), and they produce crisp, resolution-independent figures that are publication-ready straight out of the box (and easy to touch up in Inkscape or Illustrator afterwards).
 
 While `ggseg` does support subcortical plotting via the FreeSurfer `aseg` atlas, it's [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) together in one figure, and the atlas coverage for the broader subcortex, thalamic nuclei, brainstem, and cerebellum is quite limited across the field.
 
-`subcortex_visualization` is our attempt to fill that gap: twelve commonly used non-cortical atlases, all in the same consistent 2D vector format, with a single function call in Python or R. 
+With `subcortex_visualization`, we hope to fill this gap by offering twelve commonly used subcortical and cerebellar atlases that all render in the same consistent 2D vector format, for mapping empirical region-level data from a variety of sources, using a single function call in Python or R. 
 To our knowledge, it's the largest collection of non-cortical atlases in one unified vector-based visualization toolbox.
 
-The below graphic shows the journey from 3D volumetric segmentation to 2D vector scaffold, using the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) (S1 resolution) as an example:
+The below graphic shows the path from 3D volumetric segmentation to 2D vector scaffold, using the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) (S1 resolution) as an example:
 
 <img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="90%">
 
-Vector outlines are derived from three-dimensional subcortical meshes (like the one for the aseg atlas offered by the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA)), either through a semi-automated or manual tracing pipeline.
+Vector outlines are derived from 3D subcortical meshes (like the one for the aseg subcortical atlas offered by the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA)), either through a semi-automated or manual tracing pipeline.
 Check out [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) as well as the [package documentation website](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation) for more information.
 Those same pipelines are there for you if you want to add your own custom atlas to the mix.
 
