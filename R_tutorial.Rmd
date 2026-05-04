@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE, warning = FALSE)
 ```
 
-`subcortexVisualizationR` is an open-source R package for programmatically visualizing region-level data across twelve popular atlases for the subcortex (including thalamic nuclei and the brainstem) and cerebellum. Visualizations are rendered as resolution-independent two-dimensional vector graphics, inspired by the `ggseg` R package for cortical data, with standardized rendering conventions that make results directly comparable across atlases.
+`subcortexVisualizationR` is an open-source R package for programmatically visualizing region-level data across twelve popular atlases for the subcortex (including thalamic nuclei and the brainstem) and cerebellum. Visualizations are rendered as resolution-independent two-dimensional vector graphics, inspired by the [`ggseg` R package](https://github.com/ggsegverse/ggseg) for cortical data, with standardized rendering conventions that make results directly comparable across atlases.
 
 This tutorial covers the core functionality of the package:
 
@@ -351,7 +351,7 @@ for (atlas in all_atlases) {
 
 ## 6. Combining cortical and subcortical visualizations
 
-Since `subcortexVisualizationR` produces `ggplot2` objects, it is straightforward to combine subcortical and cerebellar plots with cortical surface plots from `ggseg` using the `patchwork` package, all within the `ggplot2` framework. 
+Since `subcortexVisualizationR` produces `ggplot2` objects, it is straightforward to combine subcortical and cerebellar plots with cortical surface plots from `ggseg` using the [`patchwork`](https://patchwork.data-imaginist.com/) package, all within the `ggplot2` framework. 
 This allows for direct comparison of receptor density across cortical and non-cortical structures with a unified color scale.
 
 Python package users can save outputs from `plot_subcortical_data` in their preferred file format (e.g., .png or .svg) and combine with saved `ggseg` output from R in the image editor of their choice.
@@ -360,7 +360,7 @@ As a fully R-based example, we visualize the regional average GABA~A~-α1 recept
 We selected the 1000-parcel Schaefer atlas to parcellate the cerebral cortex, the Melbourne Subcortex S4 atlas for subcortex, and the SUIT cerebellar lobule atlas for cerebellum. 
 Note that the color range is consistent across all three plots, allowing for direct comparison of receptor subunit density across the cortical and non-cortical structures.
 
-> **Note:** The below code chunk does not compute/visualize the real cortical values for the Schaefer-1000 cortical atlas, as this is beyond the scope of our package and is designed to be performed in Python using `neuromaps`.
+> **Note:** The below code chunk does not compute/visualize the real cortical values for the Schaefer-1000 cortical atlas, as this is beyond the scope of our package and is designed to be performed in Python using `neuromaps`. Additionally, it requires the `ggseg` and `ggsegSchaefer` packages, which are not dependencies of `subcortexVisualizationR`.
 
 ```{r combine-viz, fig.height=6}
 library(ggseg)
