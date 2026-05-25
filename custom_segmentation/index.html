@@ -1307,8 +1307,15 @@ The pipeline consists of four steps:</p>
 <p><img alt="Semi-automatic pipeline overview" src="../images/automated_pipeline_details.png" width="90%" /></p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>Install the required Python packages before running the pipeline:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>yabplot<span class="w"> </span>potracer<span class="w"> </span>svgpath2mpl<span class="w"> </span>lxml<span class="w"> </span>Pillow
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>potracer<span class="w"> </span>svgpath2mpl<span class="w"> </span>lxml<span class="w"> </span>Pillow
 </code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Temporary: Forked version of <code>yabplot</code> required</p>
+<p>In order to make use of all of the functionality described below for the semi-automated pipeline, for the time being, you will need to install <a href="https://github.com/teanijarv/yabplot"><code>yabplot</code></a> directly from my fork rather than from source (while the updates are pending a PR).
+You can do this by running the following from your terminal:
+<div class="highlight"><pre><span></span><code>pip install git+https://github.com/anniegbryant/yabplot.git@feature/subcortical-new-params
+</code></pre></div></p>
+</div>
 <p>You'll also need the <code>subcortex_visualization</code> repository cloned locally to integrate your newly vectorized atlas with package functionality (see <a href="../installation/">Installation</a>).</p>
 <h3 id="required-inputs">Required inputs</h3>
 <p>The pipeline requires two input files:</p>
