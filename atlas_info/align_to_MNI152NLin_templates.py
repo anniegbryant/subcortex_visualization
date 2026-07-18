@@ -65,27 +65,29 @@ def apply_xfm_to_atlas(atlas_name, input_space, output_space, input_vol_dir, out
 
     # Get the .xfm file for input_space to output_space
     tflow.get(
-            input_space,
+            output_space,
             suffix="xfm",
             desc=None,
-            **{"from": output_space}
+            **{"from": input_space}
     )
 
     # Define paths for reference image and transform
     ref_img = os.fspath(tflow.get(
-        input_space,
+        output_space,
         resolution=1,
         desc=None,
         suffix="T1w"
     ))
+    print(f"Reference image for {output_space}: {ref_img}")
 
     xfm_results = tflow.get(
-        input_space,
+        output_space,
         suffix="xfm",
         extension=".h5",
         desc=None,
-        **{"from": output_space}
+        **{"from": input_space}
     )
+    print(f"Transform results for {input_space} -> {output_space}: {xfm_results}")
 
     if xfm_results:    
         # Handle both single path and list of paths
