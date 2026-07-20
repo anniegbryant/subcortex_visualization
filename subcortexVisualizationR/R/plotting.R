@@ -4,60 +4,88 @@
 
 # Prepare atlas ordering data for plotting: loads ordering CSV and merges with user data
 .prep_data <- function(atlas, hemisphere, subcortex_data = NULL, value_column = "value") {
-
+  
   ordering_file <- system.file(
     "extdata", "data", atlas,
     paste0(atlas, "_", hemisphere, "_ordering.csv"),
     package = "subcortexVisualizationR"
   )
   atlas_ordering <- read.csv(ordering_file)
-
+  
+  # If 'Region' is present in column names, set to lowercase 'region' for consistency
+  if ("Region" %in% names(atlas_ordering)) {
+    names(atlas_ordering)[names(atlas_ordering) == "Region"] <- "region"
+  }
+  
+  # If 'Hemisphere', 'Hemi', or 'hemi' is present in column names, set to lowercase 'hemisphere' for consistency
+  if ("Hemisphere" %in% names(atlas_ordering)) {
+    names(atlas_ordering)[names(atlas_ordering) == "Hemisphere"] <- "hemisphere"
+  } else if ("Hemi" %in% names(atlas_ordering)) {
+    names(atlas_ordering)[names(atlas_ordering) == "Hemi"] <- "hemisphere"
+  } else if ("hemi" %in% names(atlas_ordering)) {
+    names(atlas_ordering)[names(atlas_ordering) == "hemi"] <- "hemisphere"
+  }
+  
   region_order <- atlas_ordering |>
     dplyr::arrange(seg_index) |>
     dplyr::distinct(region) |>
     dplyr::pull(region) |>
     unique()
-
+  
   if (is.null(subcortex_data)) {
     atlas_ordering <- atlas_ordering |>
       dplyr::mutate(fill_var = region)
   } else {
+    # If 'Region' is present in column names, set to lowercase 'region' for consistency
+    if ("Region" %in% names(subcortex_data)) {
+      names(subcortex_data)[names(subcortex_data) == "Region"] <- "region"
+    }
+    
+    # If 'Hemisphere', 'Hemi', or 'hemi' is present in column names, set to lowercase 'hemisphere' for consistency
+    if ("Hemisphere" %in% names(subcortex_data)) {
+      names(subcortex_data)[names(subcortex_data) == "Hemisphere"] <- "hemisphere"
+    } else if ("Hemi" %in% names(subcortex_data)) {
+      names(subcortex_data)[names(subcortex_data) == "Hemi"] <- "hemisphere"
+    } else if ("hemi" %in% names(subcortex_data)) {
+      names(subcortex_data)[names(subcortex_data) == "hemi"] <- "hemisphere"
+    }
+    
     # Expand "B" hemisphere rows into BL and BR so they join with sided convention
-    bilateral <- subcortex_data[subcortex_data$Hemisphere == "B", ]
+    bilateral <- subcortex_data[subcortex_data$hemisphere == "B", ]
     if (nrow(bilateral) > 0) {
-      bl <- bilateral; bl$Hemisphere <- "BL"
-      br <- bilateral; br$Hemisphere <- "BR"
+      bl <- bilateral; bl$hemisphere <- "BL"
+      br <- bilateral; br$hemisphere <- "BR"
       subcortex_data <- dplyr::bind_rows(
-        subcortex_data[subcortex_data$Hemisphere != "B", ],
+        subcortex_data[subcortex_data$hemisphere != "B", ],
         bl, br, bilateral
       )
     }
-
+    
     # If the atlas uses "B" for midline regions but subcortex_data has "BL"/"BR" for those
     # regions (e.g., user-simulated data from the "both" ordering), add "B" copies so the
     # join below can match them.
-    atlas_b_regions <- unique(atlas_ordering$region[atlas_ordering$Hemisphere == "B"])
+    atlas_b_regions <- unique(atlas_ordering$region[atlas_ordering$hemisphere == "B"])
     if (length(atlas_b_regions) > 0) {
-      existing_b_regions <- unique(subcortex_data$region[subcortex_data$Hemisphere == "B"])
+      existing_b_regions <- unique(subcortex_data$region[subcortex_data$hemisphere == "B"])
       # regions that need a "B" copy in subcortex_data
       needs_b <- setdiff(atlas_b_regions, existing_b_regions) 
       if (length(needs_b) > 0) {
-        bl_br_rows <- subcortex_data[subcortex_data$Hemisphere %in% c("BL", "BR") &
+        bl_br_rows <- subcortex_data[subcortex_data$hemisphere %in% c("BL", "BR") &
                                        subcortex_data$region %in% needs_b, ]
         if (nrow(bl_br_rows) > 0) {
           b_copies <- bl_br_rows[!duplicated(bl_br_rows$region), ]
-          b_copies$Hemisphere <- "B"
+          b_copies$hemisphere <- "B"
           subcortex_data <- dplyr::bind_rows(subcortex_data, b_copies)
         }
       }
     }
-
+    
     # Join user-supplied data to atlas ordering; fill_var is the column used for coloring in the plot.
     atlas_ordering <- atlas_ordering |>
-      dplyr::left_join(subcortex_data, by = c("region", "Hemisphere")) |>
+      dplyr::left_join(subcortex_data, by = c("region", "hemisphere")) |>
       dplyr::mutate(fill_var = .data[[value_column]])
   }
-
+  
   # Return both the full atlas_ordering (with user data merged in) and the region_order (for discrete color scales)
   list(atlas_ordering = atlas_ordering, region_order = region_order)
 }
@@ -65,14 +93,14 @@
 
 # Select a ggplot2 fill scale for discrete or continuous brain data
 .resolve_fill_scale <- function(atlas_ordering,
-                               cmap       = "viridis",
-                               discrete   = TRUE,
-                               region_order = NULL,
-                               NA_fill    = "#cccccc",
-                               vmin       = NULL,
-                               vmax       = NULL,
-                               midpoint   = NULL) {
-
+                                cmap       = "viridis",
+                                discrete   = TRUE,
+                                region_order = NULL,
+                                NA_fill    = "#cccccc",
+                                vmin       = NULL,
+                                vmax       = NULL,
+                                midpoint   = NULL) {
+  
   # Case 1: single viridis-family palette name
   if (is.character(cmap) && length(cmap) == 1) {
     if (discrete) {
@@ -107,7 +135,7 @@
       )
     }
   }
-
+  
   # Case 2: User supplied a vector of colors to create a manual scale
   if (is.character(cmap) && length(cmap) > 1) {
     if (discrete) {
@@ -147,7 +175,7 @@
       )
     }
   }
-
+  
   # Case 3: User supplied a palette function (e.g., from RColorBrewer or a custom function)
   if (is.function(cmap)) {
     if (discrete) {
@@ -168,7 +196,7 @@
       )
     )
   }
-
+  
   stop("`cmap` must be a viridis palette name, a colour vector, or a palette function.")
 }
 
@@ -182,50 +210,50 @@
 .read_individual_atlas_data <- function(atlas_ordering, svg_dir, views) {
   all_data   <- list()
   group_base <- 0L
-
+  
   # Filter data only to the requested view(s)
   df_filtered <- atlas_ordering[atlas_ordering$face %in% views, ]
-
+  
   for (i in seq_len(nrow(df_filtered))) {
     row    <- df_filtered[i, ]
     region <- row$region
-    hemi   <- row$Hemisphere
+    hemi   <- row$hemisphere
     face   <- row$face
-
+    
     if (hemi %in% c("BL", "BR")) {
       svg_file <- file.path(svg_dir, paste0(region, "_", face, ".svg"))
     } else {
       svg_file <- file.path(svg_dir, paste0(region, "_", hemi, "_", face, ".svg"))
     }
-
+    
     if (!file.exists(svg_file)) {
       warning(paste("SVG not found, skipping:", svg_file))
       next
     }
-
+    
     svg_df <- suppressMessages(tryCatch(
       svgparser::read_svg(svg_file, obj_type = "data.frame"),
       error = function(e) { warning(paste("Could not parse:", svg_file)); NULL }
     ))
     if (is.null(svg_df) || nrow(svg_df) == 0) next
-
+    
     # Assign globally unique group IDs across all loaded SVGs
     unique_elems         <- unique(svg_df$elem_idx)
     id_map               <- setNames(group_base + seq_along(unique_elems), unique_elems)
     svg_df$group_id      <- id_map[as.character(svg_df$elem_idx)]
     group_base           <- group_base + length(unique_elems)
-
+    
     svg_df$region             <- region
-    svg_df$Hemisphere         <- hemi
+    svg_df$hemisphere         <- hemi
     svg_df$face               <- face
     svg_df$plot_order         <- row$plot_order
     svg_df$fill_var           <- row$fill_var
     svg_df$p_value            <- if ("p_value"            %in% names(row)) row$p_value            else NA_real_
     svg_df$line_thickness_val <- if ("line_thickness_val" %in% names(row)) row$line_thickness_val else 0.5
-
+    
     all_data[[length(all_data) + 1]] <- svg_df
   }
-
+  
   if (length(all_data) == 0) return(NULL)
   dplyr::bind_rows(all_data)
 }
@@ -233,24 +261,24 @@
 
 # Read polygon data from a combined SVG that uses <title> elements to identify
 # regions (used for SUIT_cerebellar_lobule).
-# Expected title format: {region}_{face}_{Hemisphere}
+# Expected title format: {region}_{face}_{hemisphere}
 .read_SUIT_data <- function(atlas_ordering, svg_file) {
   if (!file.exists(svg_file)) {
     warning(paste("SUIT SVG not found:", svg_file))
     return(NULL)
   }
-
+  
   svg_df <- suppressMessages(tryCatch(
     svgparser::read_svg(svg_file, obj_type = "data.frame"),
     error = function(e) { warning(paste("Could not parse SVG:", svg_file)); NULL }
   ))
   if (is.null(svg_df) || nrow(svg_df) == 0) return(NULL)
-
+  
   # Parse the SVG XML to extract <title> elements for each path to identify the region/hemisphere
   svg_xml  <- xml2::read_xml(svg_file)
   ns       <- xml2::xml_ns(svg_xml)
   paths_xml <- xml2::xml_find_all(svg_xml, ".//svg:path", ns)
-
+  
   # Build a lookup table of elem_idx to svg_title
   path_lookup <- data.frame(
     elem_idx  = seq_along(paths_xml),
@@ -261,17 +289,17 @@
     stringsAsFactors = FALSE
   )
   path_lookup <- path_lookup[!is.na(path_lookup$svg_title), ]
-
+  
   atlas_ordering$svg_title <- paste(
-    atlas_ordering$region, atlas_ordering$face, atlas_ordering$Hemisphere, sep = "_"
+    atlas_ordering$region, atlas_ordering$face, atlas_ordering$hemisphere, sep = "_"
   )
-
+  
   matched <- dplyr::left_join(atlas_ordering, path_lookup, by = "svg_title")
   matched <- matched[!is.na(matched$elem_idx), ]
-
+  
   # Select only the columns we need for plotting and joining with svg_df
   keep_cols <- intersect(
-    c("elem_idx", "region", "Hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
+    c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
     names(matched)
   )
   result <- dplyr::inner_join(svg_df, matched[, keep_cols], by = "elem_idx")
@@ -289,7 +317,7 @@
 .read_atlas_data <- function(atlas_ordering, atlas, data_dir, views, hemisphere) {
   LM_VIEWS     <- c("medial", "lateral")
   SI_VIEWS     <- c("superior", "inferior")
-
+  
   if (hemisphere == "both") {
     # The Brainstem_Navigator atlas uses the same SVG files for both
     # hemispheres, so we load all four LM views and filter them by
@@ -304,23 +332,23 @@
     lm_panels  <- ORDERED_LM[sapply(ORDERED_LM, function(p) p[[1]] == hemisphere && p[[2]] %in% views)]
     si_panels  <- lapply(SI_VIEWS[SI_VIEWS %in% views], function(v) c(hemisphere, v))
   }
-
+  
   .read_one_SVG <- function(svg_file, df_panel) {
     if (!file.exists(svg_file)) {
       warning(paste("Brainstem SVG not found:", svg_file))
       return(NULL)
     }
-
+    
     svg_df <- suppressMessages(tryCatch(
       svgparser::read_svg(svg_file, obj_type = "data.frame"),
       error = function(e) { warning(paste("Could not parse:", svg_file)); NULL }
     ))
     if (is.null(svg_df) || nrow(svg_df) == 0) return(NULL)
-
+    
     svg_xml  <- xml2::read_xml(svg_file)
     ns       <- xml2::xml_ns(svg_xml)
     paths_xml <- xml2::xml_find_all(svg_xml, ".//svg:path", ns)
-
+    
     path_lookup <- data.frame(
       elem_idx  = seq_along(paths_xml),
       svg_title = vapply(paths_xml, function(p) {
@@ -330,42 +358,42 @@
       stringsAsFactors = FALSE
     )
     path_lookup <- path_lookup[!is.na(path_lookup$svg_title), ]
-
+    
     df_panel$svg_title <- paste(
-      df_panel$region, df_panel$face, .normalise_hemi(df_panel$Hemisphere), sep = "_"
+      df_panel$region, df_panel$face, .normalise_hemi(df_panel$hemisphere), sep = "_"
     )
-
+    
     matched <- dplyr::left_join(df_panel, path_lookup, by = "svg_title")
     matched <- matched[!is.na(matched$elem_idx), ]
-
+    
     keep_cols <- intersect(
-      c("elem_idx", "region", "Hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
+      c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
       names(matched)
     )
     result <- dplyr::inner_join(svg_df, matched[, keep_cols], by = "elem_idx")
     result$group_id <- result$elem_idx
     result
   }
-
+  
   all_panels_data <- list()
-
+  
   for (panel in c(lm_panels, si_panels)) {
     panel_hemi <- panel[[1]]
     view       <- panel[[2]]
-
+    
     svg_file <- file.path(data_dir,
                           paste0(atlas, "_", panel_hemi, "_", view, ".svg"))
-
+    
     if (panel_hemi == "both") {
       df_panel <- atlas_ordering[atlas_ordering$face == view, ]
     } else {
-      hemi_mask <- atlas_ordering$Hemisphere == panel_hemi |
-                   atlas_ordering$Hemisphere == paste0("B", panel_hemi) |
-                   atlas_ordering$Hemisphere == "B"
+      hemi_mask <- atlas_ordering$hemisphere == panel_hemi |
+        atlas_ordering$hemisphere == paste0("B", panel_hemi) |
+        atlas_ordering$hemisphere == "B"
       df_panel  <- atlas_ordering[hemi_mask & atlas_ordering$face == view, ]
     }
     df_panel <- df_panel[order(df_panel$plot_order), ]
-
+    
     panel_df <- .read_one_SVG(svg_file, df_panel)
     if (!is.null(panel_df) && nrow(panel_df) > 0) {
       panel_df$panel_hemi <- panel_hemi
@@ -373,7 +401,7 @@
       all_panels_data[[length(all_panels_data) + 1]] <- panel_df
     }
   }
-
+  
   if (length(all_panels_data) == 0) return(NULL)
   dplyr::bind_rows(all_panels_data)
 }
@@ -395,23 +423,23 @@
   if (is.null(panel_data) || nrow(panel_data) == 0) {
     return(patchwork::plot_spacer())
   }
-
+  
   if (!"line_thickness_val" %in% names(panel_data)) {
     panel_data$line_thickness_val <- 0.5
   }
-
+  
   p <- ggplot2::ggplot()
-
+  
   for (po in sort(unique(panel_data$plot_order))) {
     df_po <- panel_data[panel_data$plot_order == po, ]
-
+    
     # If fill_by_significance is TRUE and a p_value column exists,
     # split the data into significant and non-significant subsets
     # and plot them separately with different alphas and line thickness values.
     if (fill_by_significance && "p_value" %in% names(df_po)) {
       nonsig <- df_po[!is.na(df_po$p_value) & df_po$p_value >= 0.05, ]
       sig    <- df_po[is.na(df_po$p_value)  | df_po$p_value < 0.05,  ]
-
+      
       if (nrow(nonsig) > 0) {
         # White backing so the transparent color reads against white, not the canvas
         p <- p + ggplot2::geom_polygon(
@@ -452,7 +480,7 @@
       )
     }
   }
-
+  
   p +
     fill_scale +
     ggplot2::scale_linewidth_identity() +
@@ -474,7 +502,7 @@
                              line_thickness_per_region = FALSE) {
   LM_VIEWS <- c("medial", "lateral")
   SI_VIEWS <- c("superior", "inferior")
-
+  
   # Determine ordered panel list (mirrors Python"s BOTH_VIEW_ORDER / SINGLE_VIEW_ORDER)
   if (hemisphere == "both") {
     BOTH_ORDER <- list(
@@ -492,9 +520,9 @@
     ordered_v  <- VIEW_ORDER[[hemisphere]][VIEW_ORDER[[hemisphere]] %in% views]
     all_panels <- lapply(ordered_v, function(v) c(hemisphere, v))
   }
-
+  
   lm_panels  <- all_panels[sapply(all_panels, function(p) p[[2]] %in% LM_VIEWS)]
-
+  
   # "combined" atlas (e.g., Brainstem_Navigator): superior/inferior with hemisphere="both" uses a single combined SVG
   # (both_superior/inferior.svg) stored under panel_hemi="both", so override the
   # per-hemisphere si_panels produced by BOTH_ORDER above.
@@ -503,45 +531,45 @@
   } else {
     si_panels <- all_panels[sapply(all_panels, function(p) p[[2]] %in% SI_VIEWS)]
   }
-
+  
   has_lm     <- length(lm_panels) > 0
   has_si     <- length(si_panels) > 0
   two_rows   <- (hemisphere == "both") && has_lm && has_si
-
+  
   # Filter polygon data for one panel and build its ggplot
   make_one_panel <- function(panel_hemi, view) {
     if (is.null(atlas_paths)) return(patchwork::plot_spacer())
-
+    
     if (atlas_type == "combined") {
       df_panel <- atlas_paths[atlas_paths$panel_hemi == panel_hemi &
-                              atlas_paths$view       == view, ]
+                                atlas_paths$view       == view, ]
     } else {
       if (hemisphere == "both") {
-        hemi_mask <- atlas_paths$Hemisphere %in%
-                     c(panel_hemi, paste0("B", panel_hemi), "B")
+        hemi_mask <- atlas_paths$hemisphere %in%
+          c(panel_hemi, paste0("B", panel_hemi), "B")
         df_panel  <- atlas_paths[hemi_mask & atlas_paths$face == view, ]
       } else {
-        hemi_mask <- atlas_paths$Hemisphere %in%
-                     c(hemisphere, paste0("B", hemisphere))
+        hemi_mask <- atlas_paths$hemisphere %in%
+          c(hemisphere, paste0("B", hemisphere))
         df_panel  <- atlas_paths[hemi_mask & atlas_paths$face == view, ]
       }
     }
-
+    
     .build_panel_plot(panel_data=df_panel, fill_scale=fill_scale,
                       fill_by_significance = fill_by_significance, 
                       fill_alpha = fill_alpha, nonsig_fill_alpha = nonsig_fill_alpha,
                       line_color = line_color, line_thickness_per_region = line_thickness_per_region)
   }
-
+  
   if (two_rows) {
     n_cols    <- max(length(lm_panels), length(si_panels))
     top_plots <- lapply(lm_panels, function(p) make_one_panel(p[[1]], p[[2]]))
     bot_plots <- lapply(si_panels, function(p) make_one_panel(p[[1]], p[[2]]))
-
+    
     # Pad the shorter row with spacers so column widths align
     while (length(top_plots) < n_cols) top_plots <- c(top_plots, list(patchwork::plot_spacer()))
     while (length(bot_plots) < n_cols) bot_plots <- c(bot_plots, list(patchwork::plot_spacer()))
-
+    
     top_row <- patchwork::wrap_plots(top_plots, nrow = 1)
     bot_row <- patchwork::wrap_plots(bot_plots, nrow = 1)
     top_row / bot_row
@@ -560,7 +588,7 @@
 
 #' Visualize a given subcortical or cerebellar atlas template as a vector graphic, colored according to user-provided data values or, by default, a simple region-based color scheme.
 #'
-#' @param subcortex_data Optional data.frame with columns \code{region}, \code{Hemisphere},
+#' @param subcortex_data Optional data.frame with columns \code{region}, \code{hemisphere},
 #'   and \code{value_column}. If NULL, regions will be simply colored based on their assigned
 #'   index in the corresponding atlas. May also include a \code{p_value} column if
 #'   \code{fill_by_significance = TRUE}.
@@ -606,54 +634,54 @@
 #' @return A \pkg{patchwork} / ggplot2 object.
 #' @export
 plot_subcortical_data <- function(subcortex_data      = NULL,
-                                   atlas               = "aseg_subcortex",
-                                   value_column        = "value",
-                                   hemisphere          = "L",
-                                   views               = c("medial", "lateral"),
-                                   line_color          = "black",
-                                   line_thickness      = 0.5,
-                                   cmap                = "viridis",
-                                   NA_fill             = "#cccccc",
-                                   fill_alpha          = 1.0,
-                                   fill_by_significance = FALSE,
-                                   nonsig_fill_alpha   = 0.5,
-                                   vmin                = NULL,
-                                   vmax                = NULL,
-                                   midpoint            = NULL,
-                                   show_legend         = TRUE,
-                                   fill_title          = "values",
-                                   fontsize            = 12) {
-
+                                  atlas               = "aseg_subcortex",
+                                  value_column        = "value",
+                                  hemisphere          = "L",
+                                  views               = c("medial", "lateral"),
+                                  line_color          = "black",
+                                  line_thickness      = 0.5,
+                                  cmap                = "viridis",
+                                  NA_fill             = "#cccccc",
+                                  fill_alpha          = 1.0,
+                                  fill_by_significance = FALSE,
+                                  nonsig_fill_alpha   = 0.5,
+                                  vmin                = NULL,
+                                  vmax                = NULL,
+                                  midpoint            = NULL,
+                                  show_legend         = TRUE,
+                                  fill_title          = "values",
+                                  fontsize            = 12) {
+  
   # Tian → Melbourne alias
   atlas <- gsub("Tian", "Melbourne", atlas)
-
+  
   # SUIT only supports "both"
   if (atlas == "SUIT_cerebellar_lobule" && hemisphere != "both") {
     message("Individual-hemisphere visualisation is not supported for SUIT_cerebellar_lobule. Switching to hemisphere='both'.")
     hemisphere <- "both"
   }
-
+  
   # If fill_by_significance is TRUE, ensure that "p_value" column is present in subcortex_data
   if (fill_by_significance) {
     if (is.null(subcortex_data) || !("p_value" %in% names(subcortex_data))) {
       stop("fill_by_significance=TRUE requires a 'p_value' column in subcortex_data.")
     }
   }
-
+  
   # ── Load ordering CSV and merge with user data ─────────────────────────────
   tryCatch({
-      prepped       <- .prep_data(atlas          = atlas,
-                              hemisphere     = hemisphere,
-                              subcortex_data = subcortex_data,
-                              value_column   = value_column)
+    prepped       <- .prep_data(atlas          = atlas,
+                                hemisphere     = hemisphere,
+                                subcortex_data = subcortex_data,
+                                value_column   = value_column)
   }, error = function(e) {
     tryCatch({
       # try appending "_subcortex" if not already present
       atlas <- paste0(atlas, "_subcortex")
       prepped       <- .prep_data(atlas          = atlas,
-                              hemisphere     = hemisphere,
-                              subcortex_data = subcortex_data,
-                              value_column   = value_column)
+                                  hemisphere     = hemisphere,
+                                  subcortex_data = subcortex_data,
+                                  value_column   = value_column)
       print(paste("Warning: initial data preparation failed; successfully loaded with atlas name", atlas))
     }, error = function(e2) {
       stop(paste("Error preparing data with atlas", atlas, 
@@ -661,11 +689,11 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
                  "; also tried atlas", paste0(atlas, "_subcortex"), ":", e2$message))
     })
   })
-
+  
   atlas_ordering <- prepped$atlas_ordering
   region_order   <- prepped$region_order
   discrete       <- is.null(subcortex_data)
-
+  
   # Compute continuous scale limits
   if (!discrete) {
     fill_values <- atlas_ordering$fill_var
@@ -678,7 +706,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       if (is.null(vmax)) vmax <- max(fill_values, na.rm = TRUE)
     }
   }
-
+  
   fill_scale <- .resolve_fill_scale(
     atlas_ordering = atlas_ordering,
     cmap           = cmap,
@@ -689,7 +717,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
     vmax           = vmax,
     midpoint       = midpoint
   )
-
+  
   # Resolve line_thickness into per-row values and a flag used by .build_panel_plot.
   # line_thickness_per_region = TRUE  → column supplied; nonsig regions keep full thickness.
   # line_thickness_per_region = FALSE → scalar; nonsig regions get 0.25 * scalar thickness.
@@ -705,7 +733,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
   } else {
     atlas_ordering$line_thickness_val <- as.numeric(line_thickness)
   }
-
+  
   # ── Load SVG path data and build the assembled plot ────────────────────────
   if (atlas == "SUIT_cerebellar_lobule") {
     svg_file <- system.file("extdata", "data", atlas,
@@ -713,10 +741,10 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
                             package = "subcortexVisualizationR")
     df_panel <- .read_SUIT_data(atlas_ordering, svg_file)
     final_plot  <- .build_panel_plot(panel_data=df_panel, fill_scale=fill_scale,
-                      fill_by_significance = fill_by_significance, 
-                      fill_alpha = fill_alpha, nonsig_fill_alpha = nonsig_fill_alpha,
-                      line_color = line_color, line_thickness_per_region = line_thickness_per_region)
-
+                                     fill_by_significance = fill_by_significance, 
+                                     fill_alpha = fill_alpha, nonsig_fill_alpha = nonsig_fill_alpha,
+                                     line_color = line_color, line_thickness_per_region = line_thickness_per_region)
+    
   } else if (atlas == "Brainstem_Navigator") {
     data_dir    <- system.file("extdata", "data", atlas, package = "subcortexVisualizationR")
     atlas_paths <- .read_atlas_data(atlas_ordering, atlas, data_dir, views, hemisphere)
@@ -727,7 +755,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       fill_by_significance = fill_by_significance,
       nonsig_fill_alpha = nonsig_fill_alpha,
       line_thickness_per_region = line_thickness_per_region)
-
+    
   } else {
     svg_dir     <- system.file("extdata", "data", atlas, "vectors",
                                package = "subcortexVisualizationR")
@@ -741,14 +769,14 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       line_thickness_per_region = line_thickness_per_region
     )
   }
-
+  
   # ── Legend ─────────────────────────────────────────────────────────────────
   legend_theme <- ggplot2::theme(
     legend.position = "bottom",
     legend.title    = ggplot2::element_text(size = fontsize),
     legend.text     = ggplot2::element_text(size = fontsize)
   )
-
+  
   if (show_legend) {
     guide <- if (discrete) {
       ggplot2::guides(fill = ggplot2::guide_legend(
@@ -759,7 +787,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
         title.position = "top", title.hjust = 0.5, barwidth=unit(5, "cm"), barheight=unit(0.5, "cm")
       ))
     }
-
+    
     if (discrete) {
       # guides="collect" doesn"t reliably deduplicate identical discrete legends
       # across panels. Build a standalone legend via a helper ggplot (geom_col
@@ -767,9 +795,9 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       # filled-rectangle keys), then append it below the main panels. Using the
       # full ggplot (not a grob) avoids device side-effects in Jupyter/IRkernel.
       legend_gg <- ggplot2::ggplot(
-          data.frame(x = seq_along(region_order), y = 0, fill_var = region_order),
-          ggplot2::aes(x = x, y = y, fill = fill_var)
-        ) +
+        data.frame(x = seq_along(region_order), y = 0, fill_var = region_order),
+        ggplot2::aes(x = x, y = y, fill = fill_var)
+      ) +
         ggplot2::geom_col() +
         fill_scale +
         ggplot2::labs(fill = fill_title) +
@@ -780,7 +808,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
           legend.text      = ggplot2::element_text(size = fontsize)
         ) +
         guide
-
+      
       final_plot <- patchwork::wrap_plots(
         final_plot & ggplot2::labs(fill = fill_title) & ggplot2::theme(legend.position = "none"),
         legend_gg,
@@ -792,9 +820,9 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       # continuous fill scale (producing a colorbar) while rendering no visible
       # bar. Appending it below guarantees the colorbar spans the full width.
       legend_gg <- ggplot2::ggplot(
-          data.frame(x = c(0, 1), y = c(0, 0), fill_var = c(vmin, vmax)),
-          ggplot2::aes(x = x, y = y, fill = fill_var)
-        ) +
+        data.frame(x = c(0, 1), y = c(0, 0), fill_var = c(vmin, vmax)),
+        ggplot2::aes(x = x, y = y, fill = fill_var)
+      ) +
         ggplot2::geom_col() +
         fill_scale +
         ggplot2::labs(fill = fill_title) +
@@ -805,7 +833,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
           legend.text      = ggplot2::element_text(size = fontsize)
         ) +
         guide
-
+      
       final_plot <- patchwork::wrap_plots(
         final_plot & ggplot2::labs(fill = fill_title) & ggplot2::theme(legend.position = "none"),
         legend_gg,
@@ -817,6 +845,6 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
     final_plot <- final_plot &
       ggplot2::theme(legend.position = "none")
   }
-
+  
   final_plot
 }

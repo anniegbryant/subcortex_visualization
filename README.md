@@ -210,7 +210,7 @@ If you use this package in a scientific publication, blog post, etc., we ask tha
 
 ## 🙏 Acknowledgments
 
-Thank you very much to [Sidhant Chopra](https://github.com/sidchop), [Chris Rorden](https://github.com/rordenlab), [Justine Hansen](https://github.com/justinehansen), and [Ye Tian](https://github.com/yetianmed) for their suggestions and continued development of open tools for neuroimaging visualization that enabled the development of this project!
+Thank you very much to [Sidhant Chopra](https://github.com/sidchop), [Chris Rorden](https://github.com/rordenlab), [Justine Hansen](https://github.com/justinehansen), [Ye Tian](https://github.com/yetianmed), and [Toomas Erik Anijärv](https://github.com/teanijarv) for their suggestions and continued development of open tools for neuroimaging visualization that enabled the development of this project!
 
 We're also very grateful for ongoing contributions from members of the GitHub community: 
 
@@ -221,6 +221,8 @@ We're also very grateful for ongoing contributions from members of the GitHub co
 📜 Diano et al. (2025) *PNAS*: https://www.pnas.org/doi/10.1073/pnas.2518549122
  
 📜 Wu et al. (2026) *NeuroImage*: https://www.sciencedirect.com/science/article/pii/S1053811926000315
+
+📜 Lawn et al. (2026) *bioRxiv*: https://doi.org/10.64898/2026.06.10.731385 
 
 
 ## ❓📧 Questions, comments, or suggestions always welcome!

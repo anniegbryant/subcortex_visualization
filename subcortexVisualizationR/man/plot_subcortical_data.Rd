@@ -26,7 +26,7 @@ plot_subcortical_data(
 )
 }
 \arguments{
-\item{subcortex_data}{Optional data.frame with columns \code{region}, \code{Hemisphere},
+\item{subcortex_data}{Optional data.frame with columns \code{region}, \code{hemisphere},
 and \code{value_column}. If NULL, regions will be simply colored based on their assigned
 index in the corresponding atlas. May also include a \code{p_value} column if
 \code{fill_by_significance = TRUE}.}

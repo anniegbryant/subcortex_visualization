@@ -49,7 +49,7 @@ def _normalise_hemi(h):
     Parameters
     ----------
     h : str
-        Hemisphere code from the atlas ordering DataFrame
+        hemisphere code from the atlas ordering DataFrame
         (e.g., 'L', 'R', 'B', 'BL', 'BR').
 
     Returns
@@ -76,7 +76,7 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
 
     row : pandas.Series
         One row from the atlas ordering DataFrame. Must contain at least 'region'
-        and 'Hemisphere'; also 'p_value' when ``fill_by_significance`` is True.
+        and 'hemisphere'; also 'p_value' when ``fill_by_significance`` is True.
 
     cmap : matplotlib.colors.Colormap
         Colormap applied to continuous values when ``subcortex_data`` is provided.
@@ -152,7 +152,7 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
     # Determine colour
     if subcortex_data is None:
         if is_cerebellum:
-            hemi_type = 'vermis' if row['Hemisphere'] == 'V' else 'LR'
+            hemi_type = 'vermis' if row['hemisphere'] == 'V' else 'LR'
             this_region_color = _SUIT_COLOR_LOOKUP.get((row['region'], hemi_type), NA_fill)
         else:
             this_region_color = color_lookup[row['region']]
@@ -289,7 +289,7 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
         The name of the column in `atlas_ordering` that contains the values to be visualized.
 
     subcortex_data : pandas.DataFrame, optional
-        DataFrame with columns ['region', 'value', 'Hemisphere'].
+        DataFrame with columns ['region', 'value', 'hemisphere'].
         Might also include a 'p_value' column if `fill_by_significance` is True.
         If None, a default dataset is generated based on the selected hemisphere.
 
@@ -322,7 +322,7 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
     When ``subcortex_data`` is provided (continuous colormap):
 
     atlas_ordering : pandas.DataFrame
-        Atlas ordering merged with ``subcortex_data`` on ['region', 'Hemisphere'].
+        Atlas ordering merged with ``subcortex_data`` on ['region', 'hemisphere'].
 
     norm : matplotlib.colors.Normalize or matplotlib.colors.TwoSlopeNorm
         Normalization object mapping data values to [0, 1] for the colormap.
@@ -338,9 +338,21 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
 
     """
 
+    # If 'Region' is present in column names, set to lowercase 'region' for consistency
+    if 'Region' in atlas_ordering.columns:
+        atlas_ordering = atlas_ordering.rename(columns={'Region': 'region'})
+
+    # If 'Hemisphere', 'Hemi', or 'hemi' is present in column names, set to lowercase 'hemisphere' for consistency
+    if 'Hemisphere' in atlas_ordering.columns:
+        atlas_ordering = atlas_ordering.rename(columns={'Hemisphere': 'hemisphere'})
+    elif 'Hemi' in atlas_ordering.columns:
+        atlas_ordering = atlas_ordering.rename(columns={'Hemi': 'hemisphere'})
+    elif 'hemi' in atlas_ordering.columns:
+        atlas_ordering = atlas_ordering.rename(columns={'hemi': 'hemisphere'})
+
     if subcortex_data is None:
         # Sort by seg_index for color assignment
-        atlas_ordering = atlas_ordering.sort_values(by='seg_index').reset_index(drop=True).dropna(subset=['region', 'Hemisphere'])
+        atlas_ordering = atlas_ordering.sort_values(by='seg_index').reset_index(drop=True).dropna(subset=['region', 'hemisphere'])
 
         # Assign discrete indices per region
         unique_regions = atlas_ordering['region'].unique()
@@ -358,11 +370,23 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
         return atlas_ordering, color_lookup, cmap_colors
     
     else:
+        # If 'Region' is present in column names, set to lowercase 'region' for consistency
+        if 'Region' in subcortex_data.columns:
+            subcortex_data = subcortex_data.rename(columns={'Region': 'region'})
+            
+        # If 'Hemisphere', 'Hemi', or 'hemi' is present in column names, set to lowercase 'hemisphere' for consistency
+        if 'Hemisphere' in subcortex_data.columns:
+            subcortex_data = subcortex_data.rename(columns={'Hemisphere': 'hemisphere'})
+        elif 'Hemi' in subcortex_data.columns:
+            subcortex_data = subcortex_data.rename(columns={'Hemi': 'hemisphere'})
+        elif 'hemi' in subcortex_data.columns:
+            subcortex_data = subcortex_data.rename(columns={'hemi': 'hemisphere'})
+            
         # Expand 'B' rows to 'BL'/'BR' only for views where the ordering uses sided bilateral convention
-        bilateral_mask = subcortex_data['Hemisphere'] == 'B'
+        bilateral_mask = subcortex_data['hemisphere'] == 'B'
         if bilateral_mask.any():
-            bl = subcortex_data[bilateral_mask].copy(); bl['Hemisphere'] = 'BL'
-            br = subcortex_data[bilateral_mask].copy(); br['Hemisphere'] = 'BR'
+            bl = subcortex_data[bilateral_mask].copy(); bl['hemisphere'] = 'BL'
+            br = subcortex_data[bilateral_mask].copy(); br['hemisphere'] = 'BR'
             subcortex_data = pd.concat(
                 [subcortex_data[~bilateral_mask], bl, br, subcortex_data[bilateral_mask]],
                 ignore_index=True
@@ -371,19 +395,19 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
         # If the atlas uses 'B' for midline regions but subcortex_data has 'BL'/'BR' for those
         # regions (e.g. user simulated data from the 'both' ordering), add 'B' copies so the
         # merge below can match them.
-        atlas_b_regions = set(atlas_ordering.loc[atlas_ordering['Hemisphere'] == 'B', 'region'])
+        atlas_b_regions = set(atlas_ordering.loc[atlas_ordering['hemisphere'] == 'B', 'region'])
         if atlas_b_regions:
-            existing_b_regions = set(subcortex_data.loc[subcortex_data['Hemisphere'] == 'B', 'region'])
+            existing_b_regions = set(subcortex_data.loc[subcortex_data['hemisphere'] == 'B', 'region'])
             needs_b = atlas_b_regions - existing_b_regions
             if needs_b:
-                bl_br_mask = subcortex_data['Hemisphere'].isin(['BL', 'BR']) & subcortex_data['region'].isin(needs_b)
+                bl_br_mask = subcortex_data['hemisphere'].isin(['BL', 'BR']) & subcortex_data['region'].isin(needs_b)
                 if bl_br_mask.any():
                     b_copies = subcortex_data[bl_br_mask].drop_duplicates(subset=['region']).copy()
-                    b_copies['Hemisphere'] = 'B'
+                    b_copies['hemisphere'] = 'B'
                     subcortex_data = pd.concat([subcortex_data, b_copies], ignore_index=True)
 
         # Merge and normalize
-        atlas_ordering = atlas_ordering.merge(subcortex_data, on=['region', 'Hemisphere'], how='left')
+        atlas_ordering = atlas_ordering.merge(subcortex_data, on=['region', 'hemisphere'], how='left')
 
         # Define the fill value column
         fill_values = atlas_ordering[value_column].values
@@ -428,7 +452,7 @@ def _plot_helper_cerebellum(atlas_ordering, paths, value_column='value', hemisph
         Which hemisphere(s) to display. Use 'L' for left, 'R' for right, or 'both' for bilateral plots.
 
     subcortex_data : pandas.DataFrame, optional
-        DataFrame with columns ['region', 'value', 'Hemisphere'].
+        DataFrame with columns ['region', 'value', 'hemisphere'].
         Might also include a 'p_value' column if `fill_by_significance` is True.
         If None, a default dataset is generated based on the selected hemisphere.
 
@@ -493,7 +517,7 @@ def _plot_helper_cerebellum(atlas_ordering, paths, value_column='value', hemisph
     for _, row in atlas_ordering.iterrows():
         this_region = row['region']
         this_region_side = row['face']
-        this_region_hemi = row['Hemisphere']
+        this_region_hemi = row['hemisphere']
 
         # Determine color and alpha
         this_region_color, base_color, this_line_thickness = _get_region_color(subcortex_data=subcortex_data, color_lookup=color_lookup, 
@@ -552,7 +576,7 @@ def _plot_helper(atlas_ordering, atlas_data_path, value_column='value',
         Which hemisphere(s) to display. Use 'L' for left, 'R' for right, or 'both' for bilateral plots.
 
     subcortex_data : pandas.DataFrame, optional
-        DataFrame with columns ['region', 'value', 'Hemisphere'].
+        DataFrame with columns ['region', 'value', 'hemisphere'].
         If None, a default dataset is generated based on the selected hemisphere.
 
     views : list of str, default=['medial', 'lateral']
@@ -670,10 +694,10 @@ def _plot_helper(atlas_ordering, atlas_data_path, value_column='value',
         all_x, all_y = [], []
 
         # Index df_panel by the title key used in the SVG
-        # Title format in SVG: {region}_{face}_{Hemisphere}
+        # Title format in SVG: {region}_{face}_{hemisphere}
         title_to_row = {}
         for _, row in df_panel.iterrows():
-            hemi_key = _normalise_hemi(row['Hemisphere'])
+            hemi_key = _normalise_hemi(row['hemisphere'])
             key = f"{row['region']}_{row['face']}_{hemi_key}"
             title_to_row[key] = row
 
@@ -747,9 +771,9 @@ def _plot_helper(atlas_ordering, atlas_data_path, value_column='value',
 
         # Filter atlas_ordering to this hemisphere + view
         hemi_filter = (
-            (atlas_ordering['Hemisphere'] == panel_hemi) |
-            (atlas_ordering['Hemisphere'] == f'B{panel_hemi}') |
-            (atlas_ordering['Hemisphere'] == 'B')  # include bilateral regions in both hemispheres
+            (atlas_ordering['hemisphere'] == panel_hemi) |
+            (atlas_ordering['hemisphere'] == f'B{panel_hemi}') |
+            (atlas_ordering['hemisphere'] == 'B')  # include bilateral regions in both hemispheres
         )
         df_panel = (atlas_ordering
                     .loc[hemi_filter & (atlas_ordering['face'] == view)]
@@ -772,9 +796,9 @@ def _plot_helper(atlas_ordering, atlas_data_path, value_column='value',
             svg_file = _svg_filename('both', view)
         else:
             hemi_filter = (
-                (atlas_ordering['Hemisphere'] == panel_hemi) |
-                (atlas_ordering['Hemisphere'] == f'B{panel_hemi}') |
-                (atlas_ordering['Hemisphere'] == 'B')
+                (atlas_ordering['hemisphere'] == panel_hemi) |
+                (atlas_ordering['hemisphere'] == f'B{panel_hemi}') |
+                (atlas_ordering['hemisphere'] == 'B')
             )
             df_panel = (atlas_ordering
                         .loc[hemi_filter & (atlas_ordering['face'] == view)]
@@ -797,7 +821,7 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
     """
     Plot helper for atlases where each region is saved as its own SVG file.
 
-    SVG naming convention: {region}_{Hemisphere}_{face}.svg
+    SVG naming convention: {region}_{hemisphere}_{face}.svg
 
     Parameters
     ----------
@@ -814,7 +838,7 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
         Which hemisphere(s) to display. Use 'L' for left, 'R' for right, or 'both' for bilateral plots.
 
     subcortex_data : pandas.DataFrame, optional
-        DataFrame with columns ['region', 'value', 'Hemisphere'].
+        DataFrame with columns ['region', 'value', 'hemisphere'].
 
     views : list of str, default=['medial', 'lateral']
         Which faces of the subcortical regions to display. Options include 'medial', 'lateral', 'superior', and 'inferior'.
@@ -933,8 +957,8 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
                 .loc[
                     (atlas_ordering['face'] == view) &
                     (
-                        (atlas_ordering['Hemisphere'] == panel_hemi) |
-                        (atlas_ordering['Hemisphere'] == f'B{panel_hemi}')
+                        (atlas_ordering['hemisphere'] == panel_hemi) |
+                        (atlas_ordering['hemisphere'] == f'B{panel_hemi}')
                     )
                 ]
                 .sort_values('plot_order')
@@ -949,8 +973,8 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
                 .loc[
                     (atlas_ordering['face'] == view) &
                     (
-                        (atlas_ordering['Hemisphere'] == hemisphere) |
-                        (atlas_ordering['Hemisphere'] == f'B{hemisphere}')
+                        (atlas_ordering['hemisphere'] == hemisphere) |
+                        (atlas_ordering['hemisphere'] == f'B{hemisphere}')
                     )
                 ]
                 .sort_values('plot_order')
@@ -966,7 +990,7 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
 
         for _, row in df_view.iterrows():
             this_region = row['region']
-            hemi = row['Hemisphere']
+            hemi = row['hemisphere']
 
             if hemi in ['BL', 'BR']:
                 svg_filename = f"{svg_dir}/{this_region}_{view}.svg"
@@ -1050,7 +1074,7 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
     Parameters
     ----------
     subcortex_data : pandas.DataFrame, optional
-        DataFrame with columns ['region', 'value', 'Hemisphere'].
+        DataFrame with columns ['region', 'value', 'hemisphere'].
         If None, regions will be simply colored based on their assigned index in the corresponding atlas (which is arbitrary).
 
     atlas : str, default='aseg_subcortex'
