@@ -8,6 +8,30 @@ This package (implemented in Python and R) currently includes the following twel
 
 More information about these atlases, including the process of rendering the surfaces and tracing the outlines for each, can be found in the [`atlas_info/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/atlas_info) directory and at the [project website](https://anniegbryant.github.io/subcortex_visualization/).
 
+## 🔗 Citing this package
+
+If you use this package in a scientific publication, blog post, etc., we ask that you please read and cite the [associated publication](
+https://doi.org/10.52294/001c.165884):
+
+* 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *Aperture Neuro*, 2026;6. doi:10.64898/2026.01.23.699785.
+
+<details closed>
+    <summary>Click here for a BibTex reference:</summary>
+
+```
+@article{bryant2026subcortex,
+	title = {Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum},
+	url = {https://doi.org/10.52294/001c.165884},
+	doi = {10.52294/001c.165884},
+	journal = {Aperture Neuro},
+	author = {Bryant, Annie G.},
+  volume = {6},
+	year = {2026}
+}
+```
+
+</details>
+
 ## 🙋‍♀️ Motivation
 
 Among the many beautiful tools for visualizing region-level cortical results (as elegantly laid out by [Chopra et al. *Aperture Neuro* 2023](https://apertureneuro.org/article/85104-a-practical-guide-for-generating-reproducible-and-programmatic-neuroimaging-visualizations)), there are far fewer options by comparison once you venture below the cortical mantle. 
@@ -184,29 +208,7 @@ We provide two pipelines in the [`adding_new_atlases/`](https://github.com/annie
 
 Check out the [project website page](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation/) for a full walkthrough of both approaches.
 
-## 🔗 Citing this package
 
-If you use this package in a scientific publication, blog post, etc., we ask that you please read and cite the [associated preprint](https://www.biorxiv.org/content/10.64898/2026.01.23.699785):
-
-* 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *bioRxiv*, 2026-01. doi:10.64898/2026.01.23.699785.
-
-<details closed>
-    <summary>Click here for a BibTex reference:</summary>
-
-```
-@article{bryant2026subcortex,
-	title = {Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum},
-	url = {https://www.biorxiv.org/content/10.64898/2026.01.23.699785},
-	doi = {10.64898/2026.01.23.699785},
-	journal = {bioRxiv},
-  publisher={Cold Spring Harbor Laboratory},
-	author = {Bryant, Annie G.},
-  pages = {2026--01},
-	year = {2026}
-}
-```
-
-</details>
 
 ## 🙏 Acknowledgments
 
@@ -219,10 +221,18 @@ We're also very grateful for ongoing contributions from members of the GitHub co
 ## Publications that have used this package 👯‍♀️
 
 📜 Diano et al. (2025) *PNAS*: https://www.pnas.org/doi/10.1073/pnas.2518549122
+
+📜 San-Martín et al. (2025) *Scientific Reports*: https://www.nature.com/articles/s41598-025-25065-6
  
 📜 Wu et al. (2026) *NeuroImage*: https://www.sciencedirect.com/science/article/pii/S1053811926000315
 
 📜 Lawn et al. (2026) *bioRxiv*: https://doi.org/10.64898/2026.06.10.731385 
+
+📜 Guo et al. (2026) *Progress in Neuro-Psychopharmacology and Biological Psychiatry*: https://doi.org/10.1016/j.pnpbp.2026.111883
+
+📜 Orsenigo et al. (2026) *bioRxiv* https://doi.org/10.64898/2026.08.26.747212
+
+📜 Levitis et al. (2026) *medRxiv* https://doi.org/10.64898/2026.08.28.26361643
 
 
 ## ❓📧 Questions, comments, or suggestions always welcome!
