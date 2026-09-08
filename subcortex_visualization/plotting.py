@@ -71,7 +71,9 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
     Parameters
     ----------
     color_lookup : dict
-        Mapping of region name to color, used when ``subcortex_data`` is None and
+        Mapping of region name to color when ``subcortex_data`` is None, or mapping
+        of category value (from ``value_column``) to color when ``subcortex_data``
+        holds discrete/categorical data. Used whenever ``norm`` is None and
         ``is_cerebellum`` is False.
 
     row : pandas.Series
@@ -149,13 +151,16 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
         ('X',       'vermis'): '#df007c',
     }
         
-    # Determine colour
-    if subcortex_data is None:
-        if is_cerebellum:
+    # Determine colour. `norm` is only set for continuous (numeric) data; discrete
+    # data uses `color_lookup`, keyed by region name when no user data was supplied,
+    # or by the category value in `value_column` when the user supplied discrete data.
+    if norm is None:
+        if is_cerebellum and subcortex_data is None:
             hemi_type = 'vermis' if row['hemisphere'] == 'V' else 'LR'
             this_region_color = _SUIT_COLOR_LOOKUP.get((row['region'], hemi_type), NA_fill)
         else:
-            this_region_color = color_lookup[row['region']]
+            key = row['region'] if subcortex_data is None else row[value_column]
+            this_region_color = color_lookup.get(key, NA_fill) if pd.notnull(key) else NA_fill
 
     else:
         val = row[value_column]
@@ -186,6 +191,7 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
     return this_region_color, base_color, this_line_thickness
 
 def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_colors=None,
+               color_lookup=None, fill_domain=None,
                fill_title=None, cmap='plasma', norm=None, multi_panel=False):
     """
     Add a legend or colorbar to the plot based on the provided data.
@@ -210,7 +216,18 @@ def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_col
         The name of the column in `atlas_ordering` that contains the values to be visualized.
 
     cmap_colors : list of str, optional
-        List of colors corresponding to the regions in the atlas.
+        List of colors corresponding to the regions in the atlas. Used for the
+        default (no user data) discrete legend, indexed by the integer stored
+        in ``value_column``.
+
+    color_lookup : dict, optional
+        Mapping of category value to color, used for the discrete legend when
+        the user supplied discrete/categorical data (paired with ``fill_domain``).
+
+    fill_domain : list, optional
+        Ordered list of category values to show in the discrete legend when the
+        user supplied discrete/categorical data. If provided (along with
+        ``color_lookup``), takes precedence over the default region-based legend.
 
     fill_title : str, optional
         Title for the legend or colorbar.
@@ -234,12 +251,19 @@ def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_col
         fill_title = "values"
 
     if norm is None:
-        # Discrete legend
-        unique_regions = atlas_ordering.sort_values(by='seg_index')[['region', value_column]].drop_duplicates()
-        legend_elements = [
-            Patch(facecolor=cmap_colors[row[value_column]], edgecolor='black', label=row['region'])
-            for _, row in unique_regions.iterrows()
-        ]
+        if fill_domain is not None and color_lookup is not None:
+            # Discrete legend over user-supplied category values
+            legend_elements = [
+                Patch(facecolor=color_lookup[cat], edgecolor='black', label=str(cat))
+                for cat in fill_domain
+            ]
+        else:
+            # Discrete legend, one entry per region (default region-based coloring)
+            unique_regions = atlas_ordering.sort_values(by='seg_index')[['region', value_column]].drop_duplicates()
+            legend_elements = [
+                Patch(facecolor=cmap_colors[row[value_column]], edgecolor='black', label=row['region'])
+                for _, row in unique_regions.iterrows()
+            ]
 
         shared_kwargs = dict(
             handles=legend_elements,
@@ -276,8 +300,8 @@ def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_col
 
         cbar.set_label(fill_title)
 
-def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=None, vmin=None, vmax=None, midpoint=None):
-    """ 
+def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=None, vmin=None, vmax=None, midpoint=None, discrete=False):
+    """
     Prepare data for plotting by merging with subcortex_data and normalizing values.
 
     Parameters
@@ -305,21 +329,36 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
     midpoint : float, optional
         If provided, uses a diverging colormap centered around this value.
 
+    discrete : bool, default=False
+        Only relevant when ``subcortex_data`` is provided. If True, ``value_column``
+        holds discrete/categorical values (e.g. group labels) rather than numeric
+        values, and each unique category is assigned its own color instead of a
+        continuous colormap normalization.
+
     Returns
     -------
-    When ``subcortex_data`` is None (discrete colormap):
+    When ``subcortex_data`` is None, or ``discrete`` is True (discrete colormap):
 
     atlas_ordering : pandas.DataFrame
-        Atlas ordering sorted by plot_order with an integer ``value_column``
-        column assigning each region a discrete color index.
+        Atlas ordering sorted by plot_order. When ``subcortex_data`` is None, an
+        integer ``value_column`` column is added assigning each region a discrete
+        color index; otherwise merged with ``subcortex_data``.
 
     color_lookup : dict
-        Mapping of region name to RGBA color for use in discrete legend rendering.
+        Mapping of region name (or, when ``subcortex_data`` is discrete, category
+        value) to RGBA color for use in discrete legend rendering.
 
     cmap_colors : numpy.ndarray
-        Array of RGBA colors sampled evenly from ``cmap``, one per unique region.
+        Array of RGBA colors sampled evenly from ``cmap``, one per unique region
+        or category — i.e. one per entry in ``fill_domain``.
 
-    When ``subcortex_data`` is provided (continuous colormap):
+    fill_domain : list
+        Ordered list of the discrete values the fill scale maps colors onto:
+        region names when no user data was supplied (each region gets its own
+        color), or the unique categorical levels of ``value_column`` (preserving
+        pandas Categorical level order if supplied) when the user's data is discrete.
+
+    When ``subcortex_data`` is provided and ``discrete`` is False (continuous colormap):
 
     atlas_ordering : pandas.DataFrame
         Atlas ordering merged with ``subcortex_data`` on ['region', 'hemisphere'].
@@ -366,9 +405,11 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
 
         # Re-sort by plot_order
         atlas_ordering = atlas_ordering.sort_values(by='plot_order').reset_index(drop=True)
-        
-        return atlas_ordering, color_lookup, cmap_colors
-    
+
+        fill_domain = list(unique_regions)
+
+        return atlas_ordering, color_lookup, cmap_colors, fill_domain
+
     else:
         # If 'Region' is present in column names, set to lowercase 'region' for consistency
         if 'Region' in subcortex_data.columns:
@@ -408,6 +449,22 @@ def _prep_data(atlas_ordering, value_column='value', subcortex_data=None, cmap=N
 
         # Merge and normalize
         atlas_ordering = atlas_ordering.merge(subcortex_data, on=['region', 'hemisphere'], how='left')
+
+        if discrete:
+            # Determine the discrete mapping the fill scale should map colors onto.
+            # fill_var holds the categorical value_column, so the domain is its
+            # unique levels (preserving factor/Categorical level order if supplied),
+            # and all regions sharing a category are colored the same.
+            fill_values_raw = atlas_ordering[value_column]
+            if isinstance(fill_values_raw.dtype, pd.CategoricalDtype):
+                fill_domain = list(fill_values_raw.cat.categories)
+            else:
+                fill_domain = sorted(pd.unique(fill_values_raw.dropna()))
+
+            cmap_colors = cmap(np.linspace(0, 1, len(fill_domain)))
+            color_lookup = {cat: cmap_colors[i] for i, cat in enumerate(fill_domain)}
+
+            return atlas_ordering, color_lookup, cmap_colors, fill_domain
 
         # Define the fill value column
         fill_values = atlas_ordering[value_column].values
@@ -1063,7 +1120,7 @@ def _plot_helper_individual(atlas_ordering, svg_dir, value_column='value',
 
 def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_column='value', hemisphere='L',  
                           views=['medial', 'lateral'], line_thickness=1.5, line_color='black',
-                          fill_title="values", cmap=None, NA_fill="#cccccc", fill_alpha=1.0,
+                          plot_title=None, fill_title="values", cmap=None, NA_fill="#cccccc", fill_alpha=1.0,
                           fill_by_significance=False, nonsig_fill_alpha=0.5,   
                           vmin=None, vmax=None, midpoint=None, show_legend=True,
                           show_figure=True, fontsize=12, ax=None):
@@ -1095,6 +1152,9 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
 
     line_color : str, default='black'
         Color of the outline around each subcortical region.
+    
+    plot_title : str, default="title"
+        Title for the plot.
 
     fill_title : str, default="values"
         Label for the colorbar indicating the meaning of the fill values.
@@ -1179,29 +1239,53 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
     except Exception as e:
         try:
             # try appending '_subcortex' if not already present
-            atlas = atlas + '_subcortex' 
-            atlas_ordering = pd.read_csv(files("subcortex_visualization").joinpath('data').joinpath(f"{atlas}/{atlas}_{hemisphere}_ordering.csv"))
-            print(f"Atlas name found with '_subcortex' suffix. Using atlas='{atlas}'.")
+            atlas_subcortex = atlas + '_subcortex' 
+            atlas_ordering = pd.read_csv(files("subcortex_visualization").joinpath('data').joinpath(f"{atlas_subcortex}/{atlas_subcortex}_{hemisphere}_ordering.csv"))
+            print(f"Atlas name found with '_subcortex' suffix. Using atlas='{atlas_subcortex}'.")
 
         except Exception as e:
             raise FileNotFoundError(f"Could not find atlas '{atlas}'. Please ensure the atlas name is correct and the corresponding data is included in the package.") from e
+
+        # overwrite atlas as atlas_subcortex if it was found with that suffix
+        atlas = atlas_subcortex
         
 
     # Define atlas data path
     atlas_data_path = files('subcortex_visualization').joinpath('data').joinpath(atlas)
 
-    # Prepare data for plotting
-    if subcortex_data is None: 
-        atlas_ordering, color_lookup, cmap_colors = _prep_data(atlas_ordering, value_column=value_column, subcortex_data=None, cmap=cmap)
-        norm=None
+    # Determine whether the fill values are discrete/categorical. As with the
+    # no-data case (each region gets its own color), the domain of colors is
+    # the unique category levels of value_column (preserving a pandas
+    # Categorical's level order, if supplied) when the user's data is discrete.
+    discrete = subcortex_data is None
+    if subcortex_data is not None:
+        fill_col = subcortex_data[value_column]
+        discrete = (isinstance(fill_col.dtype, pd.CategoricalDtype)
+                    or pd.api.types.is_object_dtype(fill_col)
+                    or pd.api.types.is_string_dtype(fill_col)
+                    or pd.api.types.is_bool_dtype(fill_col))
 
-    else: 
-        color_lookup=None
-        atlas_ordering, norm, vmin, vmax, midpoint = _prep_data(atlas_ordering, value_column=value_column, 
-                                                               subcortex_data=subcortex_data, 
-                                                               cmap=cmap, vmin=vmin, vmax=vmax, midpoint=midpoint)
-        
-        
+    # Prepare data for plotting
+    if subcortex_data is None:
+        atlas_ordering, color_lookup, cmap_colors, fill_domain = _prep_data(
+            atlas_ordering, value_column=value_column, subcortex_data=None, cmap=cmap)
+        norm = None
+
+    elif discrete:
+        atlas_ordering, color_lookup, cmap_colors, fill_domain = _prep_data(
+            atlas_ordering, value_column=value_column, subcortex_data=subcortex_data,
+            cmap=cmap, discrete=True)
+        norm = None
+
+    else:
+        color_lookup = None
+        fill_domain = None
+        atlas_ordering, norm, vmin, vmax, midpoint = _prep_data(atlas_ordering, value_column=value_column,
+                                                               subcortex_data=subcortex_data,
+                                                               cmap=cmap, vmin=vmin, vmax=vmax, midpoint=midpoint,
+                                                               discrete=False)
+
+
     # Generate plot
 
     # Case 1: Brainstem_Navigator atlas, where all regions are included in the same SVG for each hemisphere/view
@@ -1254,9 +1338,10 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
                                     value_column=value_column,
                                     hemisphere=hemisphere,
                                     subcortex_data=subcortex_data,
-                                    cmap=cmap, 
+                                    color_lookup=color_lookup,
+                                    cmap=cmap,
                                     NA_fill=NA_fill,
-                                    norm=norm, 
+                                    norm=norm,
                                     fill_alpha=fill_alpha,
                                     fill_by_significance=fill_by_significance,
                                     line_color=line_color,
@@ -1284,6 +1369,14 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
         is_multi_panel = True
 
     plt.rcParams.update({'font.size': fontsize})
+
+    # Add title if requested
+    if plot_title is not None:
+        if is_multi_panel:
+            fig.suptitle(plot_title, fontsize=fontsize + 2)
+        else:
+            legend_ax.set_title(plot_title, fontsize=fontsize + 2)
+
     plt.tight_layout(h_pad=1.5)
 
     # Add a legend if requested — must come AFTER tight_layout so the
@@ -1293,12 +1386,18 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
         # 8 columns if both hemispheres, else 4; only exception is for SUIT atlas, which always uses 4 columns
         ncols = 4 if atlas == 'SUIT_cerebellar_lobule' else np.where(hemisphere == 'both', 8, 4)
 
-        # Discrete legend when no data provided, colorbar otherwise
+        # Discrete legend when no data provided, discrete legend by category when
+        # the user's data is discrete/categorical, colorbar otherwise
         if subcortex_data is None:
             _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
                        multi_panel=is_multi_panel,
                        fig=fig, value_column=value_column, atlas_ordering=atlas_ordering,
                        cmap_colors=cmap_colors, fill_title=fill_title, ncols=ncols)
+        elif discrete:
+            _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
+                       multi_panel=is_multi_panel,
+                       fig=fig, value_column=value_column, atlas_ordering=atlas_ordering,
+                       color_lookup=color_lookup, fill_domain=fill_domain, fill_title=fill_title, ncols=ncols)
         else:
             _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
                        multi_panel=is_multi_panel,

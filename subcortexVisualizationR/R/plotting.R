@@ -92,22 +92,25 @@
 
 
 # Select a ggplot2 fill scale for discrete or continuous brain data
+# fill_domain is the set of discrete levels the scale should map colors onto:
+# region names when no user data was supplied (each region gets its own color),
+# or the unique categorical values of the user's value_column when it is discrete.
 .resolve_fill_scale <- function(atlas_ordering,
                                 cmap       = "viridis",
                                 discrete   = TRUE,
-                                region_order = NULL,
+                                fill_domain = NULL,
                                 NA_fill    = "#cccccc",
                                 vmin       = NULL,
                                 vmax       = NULL,
                                 midpoint   = NULL) {
-  
+
   # Case 1: single viridis-family palette name
   if (is.character(cmap) && length(cmap) == 1) {
     if (discrete) {
       return(
         ggplot2::scale_fill_viridis_d(
           option   = cmap,
-          limits   = region_order,
+          limits   = fill_domain,
           drop     = FALSE,
           na.value = NA_fill
         )
@@ -142,7 +145,7 @@
       return(
         ggplot2::scale_fill_manual(
           values   = cmap,
-          limits   = region_order,
+          limits   = fill_domain,
           drop     = FALSE,
           na.value = NA_fill
         )
@@ -181,8 +184,8 @@
     if (discrete) {
       return(
         ggplot2::scale_fill_manual(
-          values   = cmap(length(region_order)),
-          limits   = region_order,
+          values   = cmap(length(fill_domain)),
+          limits   = fill_domain,
           drop     = FALSE,
           na.value = NA_fill
         )
@@ -251,6 +254,15 @@
     svg_df$p_value            <- if ("p_value"            %in% names(row)) row$p_value            else NA_real_
     svg_df$line_thickness_val <- if ("line_thickness_val" %in% names(row)) row$line_thickness_val else 0.5
     
+    # Pass through any additional user-supplied columns (e.g. a `timepoint`
+    # column for faceting/animation) that aren't already handled above.
+    already_set <- c("region", "hemisphere", "face", "plot_order", "fill_var",
+                      "p_value", "line_thickness_val")
+    extra_cols  <- setdiff(names(row), union(already_set, names(svg_df)))
+    for (col in extra_cols) {
+      svg_df[[col]] <- row[[col]]
+    }
+    
     all_data[[length(all_data) + 1]] <- svg_df
   }
   
@@ -298,10 +310,9 @@
   matched <- matched[!is.na(matched$elem_idx), ]
   
   # Select only the columns we need for plotting and joining with svg_df
-  keep_cols <- intersect(
-    c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
-    names(matched)
-  )
+  core_cols  <- c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val")
+  extra_cols <- setdiff(names(matched), c(core_cols, "svg_title", names(svg_df)))
+  keep_cols  <- intersect(c(core_cols, extra_cols), names(matched))
   result <- dplyr::inner_join(svg_df, matched[, keep_cols], by = "elem_idx")
   result$group_id <- result$elem_idx
   result
@@ -366,10 +377,9 @@
     matched <- dplyr::left_join(df_panel, path_lookup, by = "svg_title")
     matched <- matched[!is.na(matched$elem_idx), ]
     
-    keep_cols <- intersect(
-      c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val"),
-      names(matched)
-    )
+    core_cols  <- c("elem_idx", "region", "hemisphere", "face", "plot_order", "fill_var", "p_value", "line_thickness_val")
+    extra_cols <- setdiff(names(matched), c(core_cols, "svg_title", names(svg_df)))
+    keep_cols  <- intersect(c(core_cols, extra_cols), names(matched))
     result <- dplyr::inner_join(svg_df, matched[, keep_cols], by = "elem_idx")
     result$group_id <- result$elem_idx
     result
@@ -677,23 +687,43 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
   }, error = function(e) {
     tryCatch({
       # try appending "_subcortex" if not already present
-      atlas <- paste0(atlas, "_subcortex")
-      prepped       <- .prep_data(atlas          = atlas,
+      atlas_subcortex <- paste0(atlas, "_subcortex")
+      prepped       <- .prep_data(atlas          = atlas_subcortex,
                                   hemisphere     = hemisphere,
                                   subcortex_data = subcortex_data,
                                   value_column   = value_column)
-      print(paste("Warning: initial data preparation failed; successfully loaded with atlas name", atlas))
+      print(paste("Warning: initial data preparation failed; successfully loaded with atlas name", atlas_subcortex))
     }, error = function(e2) {
       stop(paste("Error preparing data with atlas", atlas, 
                  "and hemisphere", hemisphere, ":", e$message, 
                  "; also tried atlas", paste0(atlas, "_subcortex"), ":", e2$message))
     })
+
+    # Overwrite atlas with atlas_subcortex 
+    atlas <- atlas_subcortex
   })
   
   atlas_ordering <- prepped$atlas_ordering
   region_order   <- prepped$region_order
-  discrete       <- is.null(subcortex_data)
-  
+  discrete       <- is.null(subcortex_data) || is.factor(atlas_ordering$fill_var) || is.character(atlas_ordering$fill_var)
+
+  # Determine the discrete mapping the fill scale should map colors onto.
+  # If no user data is passed: fill_var is the region name itself, so each region gets its own color.
+  # If user passes discrete data: fill_var holds the categorical value_column, so the domain is
+  #   its unique levels (preserving factor level order if a factor was supplied), and all
+  #   regions sharing a category are colored the same.
+  if (is.null(subcortex_data)) {
+    fill_domain <- region_order
+  } else if (discrete) {
+    fill_domain <- if (is.factor(atlas_ordering$fill_var)) {
+      levels(atlas_ordering$fill_var)
+    } else {
+      sort(unique(atlas_ordering$fill_var))
+    }
+  } else {
+    fill_domain <- NULL
+  }
+
   # Compute continuous scale limits
   if (!discrete) {
     fill_values <- atlas_ordering$fill_var
@@ -711,7 +741,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
     atlas_ordering = atlas_ordering,
     cmap           = cmap,
     discrete       = discrete,
-    region_order   = region_order,
+    fill_domain    = fill_domain,
     NA_fill        = NA_fill,
     vmin           = vmin,
     vmax           = vmax,
@@ -795,7 +825,7 @@ plot_subcortical_data <- function(subcortex_data      = NULL,
       # filled-rectangle keys), then append it below the main panels. Using the
       # full ggplot (not a grob) avoids device side-effects in Jupyter/IRkernel.
       legend_gg <- ggplot2::ggplot(
-        data.frame(x = seq_along(region_order), y = 0, fill_var = region_order),
+        data.frame(x = seq_along(fill_domain), y = 0, fill_var = fill_domain),
         ggplot2::aes(x = x, y = y, fill = fill_var)
       ) +
         ggplot2::geom_col() +

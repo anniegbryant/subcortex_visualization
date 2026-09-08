@@ -13,7 +13,7 @@ More information about these atlases, including the process of rendering the sur
 If you use this package in a scientific publication, blog post, etc., we ask that you please read and cite the [associated publication](
 https://doi.org/10.52294/001c.165884):
 
-* 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *Aperture Neuro*, 2026;6. doi:10.64898/2026.01.23.699785.
+* 📕 Bryant, Annie G. (2026). Subcortex visualization: A toolbox for custom data visualization in the subcortex and cerebellum. *Aperture Neuro*, 2026;6. doi:10.52294/001c.165884.
 
 <details closed>
     <summary>Click here for a BibTex reference:</summary>

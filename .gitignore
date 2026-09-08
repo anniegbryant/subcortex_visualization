@@ -23,7 +23,6 @@ readme_images.svg
 # Testing files
 testing*
 custom_segmentation_pipeline/*
-tests/
 
 # Atlas info folder template files
 atlas_info/original_space/tpl-*
