@@ -47,7 +47,7 @@ To our knowledge, it's the largest collection of non-cortical atlases in one uni
 
 The below graphic shows the path from 3D volumetric segmentation to 2D vector scaffold, using the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) (S1 resolution) as an example:
 
-<img src="docs-site/docs/images/Melbourne_S1_subcortical_atlas_info.png" width="90%">
+<img src="docs-site/docs/images/Melbourne_S1_atlas_info.png" width="90%">
 
 Vector outlines are derived from 3D subcortical meshes (like the one for the aseg subcortical atlas offered by the [ENIGMA toolbox](https://github.com/MICA-MNI/ENIGMA)), either through a semi-automated or manual tracing pipeline.
 Check out [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) as well as the [package documentation website](https://anniegbryant.github.io/subcortex_visualization/custom_segmentation) for more information.
