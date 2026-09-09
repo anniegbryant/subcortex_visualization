@@ -32,8 +32,10 @@ index in the corresponding atlas. May also include a \code{p_value} column if
 \code{fill_by_significance = TRUE}.}
 
 \item{atlas}{The atlas used for the subcortical regions. Default is \code{"aseg_subcortex"}.
-One of \code{"aseg_subcortex"}, \code{"CIT168_subcortex"}, \code{"Melbourne_S1"} (or
-\code{"Tian_S1"}), \code{"AICHA_subcortex"}, \code{"Brainnetome_subcortex"},
+One of \code{"aseg_subcortex"}, \code{"CIT168_subcortex"}, \code{"Melbourne_S1"} through
+\code{"Melbourne_S4"} (or \code{"Tian_S1"} through \code{"Tian_S4"}), each also available
+as a 7T variant (e.g. \code{"Melbourne_S1_7T"} or \code{"Tian_S1_7T"}),
+\code{"AICHA_subcortex"}, \code{"Brainnetome_subcortex"},
 \code{"Thalamus_HCP"}, \code{"Thalamus_THOMAS"}, \code{"Brainstem_Navigator"},
 \code{"SUIT_cerebellar_lobule"}.}
 

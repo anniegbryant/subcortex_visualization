@@ -14,6 +14,10 @@ ALL_ATLASES = [
     'Melbourne_S2',
     'Melbourne_S3',
     'Melbourne_S4',
+    'Melbourne_S1_7T',
+    'Melbourne_S2_7T',
+    'Melbourne_S3_7T',
+    'Melbourne_S4_7T',
     'AICHA_subcortex',
     'Brainnetome_subcortex',
     'CIT168_subcortex',
@@ -51,6 +55,19 @@ class TestAllAtlasesRender:
     def test_tian_alias_resolves(self):
         """Tian_S* is a backward-compatible alias for Melbourne_S*."""
         fig = plot_subcortical_data(atlas='Tian_S1', show_figure=False, show_legend=False)
+        assert isinstance(fig, Figure)
+
+    def test_tian_7t_alias_resolves(self):
+        """Tian_S*_7T is a backward-compatible alias for Melbourne_S*_7T."""
+        fig = plot_subcortical_data(atlas='Tian_S1_7T', show_figure=False, show_legend=False)
+        assert isinstance(fig, Figure)
+
+    @pytest.mark.parametrize('scale', [1, 2, 3, 4])
+    def test_melbourne_7t_bilateral(self, scale):
+        fig = plot_subcortical_data(
+            atlas=f'Melbourne_S{scale}_7T', hemisphere='both',
+            show_figure=False, show_legend=True,
+        )
         assert isinstance(fig, Figure)
 
     def test_invalid_atlas_raises_file_not_found(self):

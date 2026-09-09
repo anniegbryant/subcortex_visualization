@@ -36,7 +36,7 @@ plot_subcortical_data(
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `subcortex_data` | data.frame or NULL | `NULL` | Data frame with columns `region`, `Hemisphere`, and `value_column`. If NULL, regions will be simply colored based on their assigned index in the corresponding atlas. May also include a `p_value` column if `fill_by_significance = TRUE`. |
-| `atlas` | character | `'aseg_subcortex'` | The atlas used for the subcortical regions. One of `'aseg_subcortex'`, `'CIT168_subcortex'`, `'Melbourne_S1'` (or `'Tian_S1'`), `'AICHA_subcortex'`, `'Brainnetome_subcortex'`, `'Thalamus_HCP'`, `'Thalamus_THOMAS'`, `'Brainstem_Navigator'`, `'SUIT_cerebellar_lobule'`. |
+| `atlas` | character | `'aseg_subcortex'` | The atlas used for the subcortical regions. One of `'aseg_subcortex'`, `'CIT168_subcortex'`, `'Melbourne_S1'` through `'Melbourne_S4'` (or `'Tian_S1'` through `'Tian_S4'`), each also available as a 7T variant (e.g. `'Melbourne_S1_7T'` or `'Tian_S1_7T'`), `'AICHA_subcortex'`, `'Brainnetome_subcortex'`, `'Thalamus_HCP'`, `'Thalamus_THOMAS'`, `'Brainstem_Navigator'`, `'SUIT_cerebellar_lobule'`. |
 | `value_column` | character | `'value'` | The name of the column in `subcortex_data` that contains the values to be visualized. |
 | `hemisphere` | character | `'L'` | Which hemisphere(s) to display. Use `'L'` for left, `'R'` for right, or `'both'` for bilateral plots. |
 | `views` | character vector | `c('medial', 'lateral')` | Which faces of the subcortical regions to display. Options include `'medial'`, `'lateral'`, `'superior'`, and `'inferior'`. Not applicable to the SUIT cerebellar lobule atlas. |

@@ -10,6 +10,10 @@ STANDARD_ATLASES = [
     'Melbourne_S2',
     'Melbourne_S3',
     'Melbourne_S4',
+    'Melbourne_S1_7T',
+    'Melbourne_S2_7T',
+    'Melbourne_S3_7T',
+    'Melbourne_S4_7T',
     'AICHA_subcortex',
     'Brainnetome_subcortex',
     'CIT168_subcortex',
@@ -57,6 +61,20 @@ class TestGetAtlasRegionsStandard:
     def test_melbourne_region_counts_increase_with_scale(self):
         counts = [len(get_atlas_regions(f'Melbourne_S{i}')) for i in range(1, 5)]
         assert counts == sorted(counts)
+
+    def test_melbourne_7t_s1_eight_regions(self):
+        assert len(get_atlas_regions('Melbourne_S1_7T')) == 8
+
+    def test_melbourne_7t_region_counts_increase_with_scale(self):
+        counts = [len(get_atlas_regions(f'Melbourne_S{i}_7T')) for i in range(1, 5)]
+        assert counts == sorted(counts)
+
+    def test_melbourne_7t_region_counts_differ_from_3t(self):
+        # 7T resegmentation yields a different (generally finer) parcellation
+        # than the original 3T atlas at the same nominal scale, except at S1.
+        counts_3t = [len(get_atlas_regions(f'Melbourne_S{i}')) for i in range(1, 5)]
+        counts_7t = [len(get_atlas_regions(f'Melbourne_S{i}_7T')) for i in range(1, 5)]
+        assert counts_7t != counts_3t
 
 
 class TestGetAtlasRegionsSuit:

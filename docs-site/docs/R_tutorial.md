@@ -1,16 +1,18 @@
-# R tutorial
+R tutorial
+================
 
 `subcortexVisualizationR` is an open-source R package for
-programmatically visualizing region-level data across twelve popular
+programmatically visualizing region-level data across sixteen popular
 atlases for the subcortex (including thalamic nuclei and the brainstem)
 and cerebellum. Visualizations are rendered as resolution-independent
-two-dimensional vector graphics, inspired by the [`ggseg` R package](https://github.com/ggsegverse/ggseg) for
-cortical data, with standardized rendering conventions that make results
-directly comparable across atlases.
+two-dimensional vector graphics, inspired by the [`ggseg` R
+package](https://github.com/ggsegverse/ggseg) for cortical data, with
+standardized rendering conventions that make results directly comparable
+across atlases.
 
 This tutorial covers the core functionality of the package:
 
-1.  **Exploring the built-in atlases**: Viewing the twelve included
+1.  **Exploring the built-in atlases**: Viewing the sixteen included
     atlases with default and custom colormaps
 2.  **Choosing view angles**: Displaying medial, lateral, superior, and
     inferior views
@@ -36,6 +38,7 @@ library(cowplot)
 library(glue)
 library(grid)
 library(patchwork)
+library(RColorBrewer)
 library(subcortexVisualizationR)
 library(tidyverse)
 
@@ -44,14 +47,14 @@ theme_set(theme_cowplot())
 
 ## 1. Exploring the built-in atlases
 
-The package includes twelve pre-vectorized subcortical and cerebellar
+The package includes sixteen pre-vectorized subcortical and cerebellar
 atlases that serve as scaffolds for visualizing region-level summary
 statistics:
 
 | Atlas | Regions |
 |----|----|
 | `aseg_subcortex` | FreeSurfer aseg: accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus |
-| `Melbourne_S1` through `Melbourne_S4` | Melbourne Subcortex Atlas at four resolutions (8-27 subcortical regions per hemisphere) |
+| `Melbourne_S1` through `Melbourne_S4` | Melbourne Subcortex Atlas at four resolutions, each in both 3T and 7T (8-31 subcortical regions per hemisphere) |
 | `AICHA_subcortex` | AICHA subcortical atlas (20 regions per hemisphere) |
 | `Brainnetome_subcortex` | Brainnetome subcortical atlas (18 regions per hemisphere) |
 | `CIT168_subcortex` | CIT168 reinforcement learning atlas (14 regions per hemisphere) |
@@ -304,6 +307,45 @@ plot_subcortical_data(subcortex_data = example_continuous_data,
 
 ![](images/R_tutorial_files/figure-gfm/plot-viridis-1.png)<!-- -->
 
+### Plotting categorical data
+
+We’ve prepared a tabular dataset summarizing the broad category to which
+each region in the Melbourne Subcortex Atlas (7T) belongs; for example,
+‘thalamus’ or ‘hippocampus’. Let’s look at the structure of this
+dataset:
+
+``` r
+# Load the categorical data
+categorical_data <- read.csv("Melbourne_7T_categories.csv")
+
+# View the first few rows
+head(subset(categorical_data, subcortex_parcel_res == 'S4'))
+```
+
+    ##                    region    category subcortex_parcel_res
+    ## 53             caudate_VA     caudate                   S4
+    ## 54            caudate_DAi     caudate                   S4
+    ## 55            caudate_DAs     caudate                   S4
+    ## 56           caudate_post     caudate                   S4
+    ## 57 hippocampus_head_med_1 hippocampus                   S4
+    ## 58 hippocampus_head_med_2 hippocampus                   S4
+
+Now let’s plot the S4 resolution of the Melbourne Subcortex Atlas (7T),
+coloring each region by the corresponding category.
+
+``` r
+category_df = categorical_data %>% 
+               filter(subcortex_parcel_res == 'S4') %>%
+               mutate(Hemisphere = 'L')
+
+plot_subcortical_data(subcortex_data=category_df, atlas="Melbourne_S4_7T", 
+                      hemisphere='L',
+                      value_column='category', cmap=brewer.pal(n = 8, name = "YlGnBu"),
+                      fill_title="Melbourne S4 (7T) categories")
+```
+
+![](images/R_tutorial_files/figure-gfm/plot-categorical-1.png)<!-- -->
+
 ### Custom colormaps and the `midpoint` argument
 
 You can pass any colormap (or create a custom one with
@@ -413,13 +455,14 @@ spaces, you can flexibly mix any combination of atlases and summary
 statistics in a single function call.
 
 Here we compute the mean GABA<sub>A</sub>-α1 receptor subunit density
-across all twelve atlases included in the package:
+across all sixteen atlases included in the package:
 
 ``` r
 # Define subcortical atlases
 all_atlases <- c('aseg_subcortex', 'Melbourne_S1', 'Melbourne_S2',
-                 'Melbourne_S3', 'Melbourne_S4', 'AICHA_subcortex',
-                 'Brainnetome_subcortex', 'CIT168_subcortex', 'Thalamus_HCP',
+                 'Melbourne_S3', 'Melbourne_S4',
+                 'Melbourne_S1_7T', 'Melbourne_S2_7T', 'Melbourne_S3_7T', 'Melbourne_S4_7T',
+                 'AICHA_subcortex', 'Brainnetome_subcortex', 'CIT168_subcortex', 'Thalamus_HCP',
                  'Thalamus_THOMAS', 'Brainstem_Navigator', 'SUIT_cerebellar_lobule')
 
 # Define file path for download
@@ -462,16 +505,17 @@ for (atlas in all_atlases) {
 }
 ```
 
-![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png)<!-- -->
+![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-13.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-14.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-15.png)<!-- -->![](images/R_tutorial_files/figure-gfm/parcel-multi-atlas-16.png)<!-- -->
 
 ## 6. Combining cortical and subcortical visualizations
 
 Since `subcortexVisualizationR` produces `ggplot2` objects, it is
 straightforward to combine subcortical and cerebellar plots with
-cortical surface plots from `ggseg` using the [`patchwork`](https://patchwork.data-imaginist.com/) package, all
-within the `ggplot2` framework. This allows for direct comparison of
-receptor density across cortical and non-cortical structures with a
-unified color scale.
+cortical surface plots from `ggseg` using the
+[`patchwork`](https://patchwork.data-imaginist.com/) package, all within
+the `ggplot2` framework. This allows for direct comparison of receptor
+density across cortical and non-cortical structures with a unified color
+scale.
 
 Python package users can save outputs from `plot_subcortical_data` in
 their preferred file format (e.g., .png or .svg) and combine with saved
@@ -490,9 +534,12 @@ structures.
 > **Note:** The below code chunk does not compute/visualize the real
 > cortical values for the Schaefer-1000 cortical atlas, as this is
 > beyond the scope of our package and is designed to be performed in
-> Python using `neuromaps`.
+> Python using `neuromaps`. Additionally, it requires the `ggseg` and
+> `ggsegSchaefer` packages, which are not dependencies of
+> `subcortexVisualizationR`.
 
 ``` r
+library(sf)
 library(ggseg)
 library(ggsegSchaefer)
 library(patchwork)
@@ -505,7 +552,13 @@ library(tidyverse)
 # Get Schaefer 1000-parcel atlas labels, then join with parcellated GABA_A_a1 data
 # In practice, cortical parcellation would be done with neuromaps (Python) or
 # a surface-based parcellation tool; here we simulate cortical values for illustration
-schaefer1000_labels <- schaefer17_1000()$data$sf %>%
+schaefer17_1000_fixed <- schaefer17_1000()
+schaefer1000_labels <- schaefer17_1000()$data$sf
+schaefer1000_labels <- schaefer1000_labels[schaefer1000_labels$roi != "0001", ]
+schaefer17_1000_fixed$data$sf <- schaefer1000_labels
+
+class(schaefer1000_labels) <- "data.frame"
+schaefer1000_labels <- as_tibble(schaefer1000_labels) %>%
     as_tibble() %>%
     filter(!is.na(label)) %>%
     select(label, hemi) %>%
@@ -517,9 +570,9 @@ cortical_sim_data <- schaefer1000_labels %>%
                          min = min_func_parc_value,
                          max = max_func_parc_value))
 
-cortex_p <- cortical_sim_data %>%
-    ggplot() +
-    geom_brain(atlas = schaefer17_1000(), mapping = aes(fill = value),
+cortex_p <- ggplot() +
+    geom_brain(data = cortical_sim_data,
+               atlas = schaefer17_1000_fixed, mapping = aes(fill = value),
                colour = "black", linewidth = 0.1) +
     ggtitle("Schaefer-1000 Cortex") +
     labs(fill = 'Mean GABAa1 Signal (VT)') +
@@ -557,3 +610,10 @@ wrap_plots(A = cortex_p, B = subcortex_p, C = cerebellum_p,
 ```
 
 ![](images/R_tutorial_files/figure-gfm/combine-viz-1.png)<!-- -->
+
+``` r
+# Clean up downloaded file
+file.remove("GABAa1_mean.nii.gz")
+```
+
+    ## [1] TRUE

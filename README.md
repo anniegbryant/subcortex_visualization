@@ -2,7 +2,7 @@
 
 [![DOI:10.64898/2026.01.23.699785](http://img.shields.io/badge/DOI-10.1101/2021.01.08.425840-B31B1B.svg)](https://doi.org/10.64898/2026.01.23.699785)
 
-This package (implemented in Python and R) currently includes the following twelve subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
+This package (implemented in Python and R) currently includes the following sixteen subcortical and cerebellar atlases for data visualization in two-dimensional vector graphics:
 
 <img src="docs-site/docs/images/all_atlas_showcase.png" width="100%">
 
@@ -42,7 +42,7 @@ We followed in this approach because vector graphics aren't subject to the light
 
 While `ggseg` does support subcortical plotting via the FreeSurfer `aseg` atlas, it's [not currently possible](https://github.com/ggseg/ggseg/issues/104) to show all seven subcortical regions (accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus) together in one figure, and the atlas coverage for the broader subcortex, thalamic nuclei, brainstem, and cerebellum is quite limited across the field.
 
-With `subcortex_visualization`, we hope to fill this gap by offering twelve commonly used subcortical and cerebellar atlases that all render in the same consistent 2D vector format, for mapping empirical region-level data from a variety of sources, using a single function call in Python or R. 
+With `subcortex_visualization`, we hope to fill this gap by offering sixteen commonly used subcortical and cerebellar atlases that all render in the same consistent 2D vector format, for mapping empirical region-level data from a variety of sources, using a single function call in Python or R. 
 To our knowledge, it's the largest collection of non-cortical atlases in one unified vector-based visualization toolbox.
 
 The below graphic shows the path from 3D volumetric segmentation to 2D vector scaffold, using the [Melbourne Subcortex Atlas](https://github.com/yetianmed/subcortex/tree/master) (S1 resolution) as an example:
@@ -183,10 +183,10 @@ plot_subcortical_data(subcortex_data=example_continuous_data, atlas='aseg_subcor
 The following subcortical and cerebellar atlases are currently supported with more information at the [project website](https://anniegbryant.github.io/subcortex_visualization/atlas_info/): 
 
 * `aseg_subcortex`: The `aseg` parcellation atlas from FreeSurfer
-* `Melbourne_S1`: The Melbourne Subcortex Atlas at granularity level S1, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
-* `Melbourne_S2`: The Melbourne Subcortex Atlas at granularity level S2, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
-* `Melbourne_S3`: The Melbourne Subcortex Atlas at granularity level S3, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
-* `Melbourne_S4`: The Melbourne Subcortex Atlas at granularity level S4, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `Melbourne_S1` (also available as `Melbourne_S1_7T`): The Melbourne Subcortex Atlas at granularity level S1, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `Melbourne_S2` (also available as `Melbourne_S2_7T`): The Melbourne Subcortex Atlas at granularity level S2, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `Melbourne_S3` (also available as `Melbourne_S3_7T`): The Melbourne Subcortex Atlas at granularity level S3, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
+* `Melbourne_S4` (also available as `Melbourne_S4_7T`): The Melbourne Subcortex Atlas at granularity level S4, from [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6)
 * `AICHA_subcortex`: The AICHA subcortex atlas, from [Joliot et al. *J Neurosci Methods* (2015)](https://pubmed.ncbi.nlm.nih.gov/26213217/)
 * `Brainnetome_subcortex`: The Brainnetome subcortex atlas, from [Fan et al. *Cerebral Cortex* (2016)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4961028/)
 * `CIT168_subcortex`: The CIT168 reinforcement learning atlas, from [Pauli et al. *Scientific Data* (2018)](https://www.nature.com/articles/sdata201863)
@@ -199,7 +199,7 @@ The following subcortical and cerebellar atlases are currently supported with mo
 
 <img src="docs-site/docs/images/custom_vector_method.png" width="805%">
 
-This package provides twelve subcortical, thalamic, and cerebellar atlases as a starting point.
+This package provides sixteen subcortical, thalamic, and cerebellar atlases as a starting point.
 The workflow can readily be extended to your favorite segmentation atlas, though!
 We provide two pipelines in the [`adding_new_atlases/`](https://github.com/anniegbryant/subcortex_visualization/tree/main/adding_new_atlases) folder:
 
