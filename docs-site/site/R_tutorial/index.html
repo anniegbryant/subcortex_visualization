@@ -516,6 +516,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#plotting-categorical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting categorical data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-colormaps-and-the-midpoint-argument" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -963,6 +974,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#plotting-categorical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting categorical data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-colormaps-and-the-midpoint-argument" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1047,15 +1069,16 @@
 
 <h1 id="r-tutorial">R tutorial</h1>
 <p><code>subcortexVisualizationR</code> is an open-source R package for
-programmatically visualizing region-level data across twelve popular
+programmatically visualizing region-level data across sixteen popular
 atlases for the subcortex (including thalamic nuclei and the brainstem)
 and cerebellum. Visualizations are rendered as resolution-independent
-two-dimensional vector graphics, inspired by the <a href="https://github.com/ggsegverse/ggseg"><code>ggseg</code> R package</a> for
-cortical data, with standardized rendering conventions that make results
-directly comparable across atlases.</p>
+two-dimensional vector graphics, inspired by the <a href="https://github.com/ggsegverse/ggseg"><code>ggseg</code> R
+package</a> for cortical data, with
+standardized rendering conventions that make results directly comparable
+across atlases.</p>
 <p>This tutorial covers the core functionality of the package:</p>
 <ol>
-<li><strong>Exploring the built-in atlases</strong>: Viewing the twelve included
+<li><strong>Exploring the built-in atlases</strong>: Viewing the sixteen included
     atlases with default and custom colormaps</li>
 <li><strong>Choosing view angles</strong>: Displaying medial, lateral, superior, and
     inferior views</li>
@@ -1077,13 +1100,14 @@ that are included in this tutorial.</p>
 <span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">subcortexVisualizationR</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 
 <span class="nf">theme_set</span><span class="p">(</span><span class="nf">theme_cowplot</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="1-exploring-the-built-in-atlases">1. Exploring the built-in atlases</h2>
-<p>The package includes twelve pre-vectorized subcortical and cerebellar
+<p>The package includes sixteen pre-vectorized subcortical and cerebellar
 atlases that serve as scaffolds for visualizing region-level summary
 statistics:</p>
 <table>
@@ -1100,7 +1124,7 @@ statistics:</p>
 </tr>
 <tr>
 <td><code>Melbourne_S1</code> through <code>Melbourne_S4</code></td>
-<td>Melbourne Subcortex Atlas at four resolutions (8-27 subcortical regions per hemisphere)</td>
+<td>Melbourne Subcortex Atlas at four resolutions, each in both 3T and 7T (8-31 subcortical regions per hemisphere)</td>
 </tr>
 <tr>
 <td><code>AICHA_subcortex</code></td>
@@ -1323,6 +1347,37 @@ demonstrate this:</p>
 <span class="w">                      </span><span class="n">fill_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Normal distribution sample, aseg subcortex atlas&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../images/R_tutorial_files/figure-gfm/plot-viridis-1.png" /><!-- --></p>
+<h3 id="plotting-categorical-data">Plotting categorical data</h3>
+<p>We’ve prepared a tabular dataset summarizing the broad category to which
+each region in the Melbourne Subcortex Atlas (7T) belongs; for example,
+‘thalamus’ or ‘hippocampus’. Let’s look at the structure of this
+dataset:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load the categorical data</span>
+<span class="n">categorical_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Melbourne_7T_categories.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># View the first few rows</span>
+<span class="nf">head</span><span class="p">(</span><span class="nf">subset</span><span class="p">(</span><span class="n">categorical_data</span><span class="p">,</span><span class="w"> </span><span class="n">subcortex_parcel_res</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;S4&#39;</span><span class="p">))</span>
+</code></pre></div>
+<pre><code>##                    region    category subcortex_parcel_res
+## 53             caudate_VA     caudate                   S4
+## 54            caudate_DAi     caudate                   S4
+## 55            caudate_DAs     caudate                   S4
+## 56           caudate_post     caudate                   S4
+## 57 hippocampus_head_med_1 hippocampus                   S4
+## 58 hippocampus_head_med_2 hippocampus                   S4
+</code></pre>
+<p>Now let’s plot the S4 resolution of the Melbourne Subcortex Atlas (7T),
+coloring each region by the corresponding category.</p>
+<div class="highlight"><pre><span></span><code><span class="n">category_df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categorical_data</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">               </span><span class="nf">filter</span><span class="p">(</span><span class="n">subcortex_parcel_res</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;S4&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">               </span><span class="nf">mutate</span><span class="p">(</span><span class="n">Hemisphere</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;L&#39;</span><span class="p">)</span>
+
+<span class="nf">plot_subcortical_data</span><span class="p">(</span><span class="n">subcortex_data</span><span class="o">=</span><span class="n">category_df</span><span class="p">,</span><span class="w"> </span><span class="n">atlas</span><span class="o">=</span><span class="s">&quot;Melbourne_S4_7T&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                      </span><span class="n">hemisphere</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">value_column</span><span class="o">=</span><span class="s">&#39;category&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">cmap</span><span class="o">=</span><span class="nf">brewer.pal</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YlGnBu&quot;</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">fill_title</span><span class="o">=</span><span class="s">&quot;Melbourne S4 (7T) categories&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/plot-categorical-1.png" /><!-- --></p>
 <h3 id="custom-colormaps-and-the-midpoint-argument">Custom colormaps and the <code>midpoint</code> argument</h3>
 <p>You can pass any colormap (or create a custom one with
 <code>colorRampPalette</code>) to the <code>cmap</code> argument. Since this simulated data
@@ -1411,11 +1466,12 @@ patterns differ across parcellation schemes.</p>
 spaces, you can flexibly mix any combination of atlases and summary
 statistics in a single function call.</p>
 <p>Here we compute the mean GABA<sub>A</sub>-α1 receptor subunit density
-across all twelve atlases included in the package:</p>
+across all sixteen atlases included in the package:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define subcortical atlases</span>
 <span class="n">all_atlases</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;aseg_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S2&#39;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s">&#39;Melbourne_S3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S4&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;AICHA_subcortex&#39;</span><span class="p">,</span>
-<span class="w">                 </span><span class="s">&#39;Brainnetome_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CIT168_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Thalamus_HCP&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;Melbourne_S3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S4&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;Melbourne_S1_7T&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S2_7T&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S3_7T&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Melbourne_S4_7T&#39;</span><span class="p">,</span>
+<span class="w">                 </span><span class="s">&#39;AICHA_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Brainnetome_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CIT168_subcortex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Thalamus_HCP&#39;</span><span class="p">,</span>
 <span class="w">                 </span><span class="s">&#39;Thalamus_THOMAS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Brainstem_Navigator&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SUIT_cerebellar_lobule&#39;</span><span class="p">)</span>
 
 <span class="c1"># Define file path for download</span>
@@ -1457,14 +1513,15 @@ across all twelve atlases included in the package:</p>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">this_atlas_plot</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png" /><!-- --></p>
+<p><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-1.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-2.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-3.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-4.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-5.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-6.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-7.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-8.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-9.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-10.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-11.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-12.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-13.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-14.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-15.png" /><!-- --><img alt="" src="../images/R_tutorial_files/figure-gfm/parcel-multi-atlas-16.png" /><!-- --></p>
 <h2 id="6-combining-cortical-and-subcortical-visualizations">6. Combining cortical and subcortical visualizations</h2>
 <p>Since <code>subcortexVisualizationR</code> produces <code>ggplot2</code> objects, it is
 straightforward to combine subcortical and cerebellar plots with
-cortical surface plots from <code>ggseg</code> using the <a href="https://patchwork.data-imaginist.com/"><code>patchwork</code></a> package, all
-within the <code>ggplot2</code> framework. This allows for direct comparison of
-receptor density across cortical and non-cortical structures with a
-unified color scale.</p>
+cortical surface plots from <code>ggseg</code> using the
+<a href="https://patchwork.data-imaginist.com/"><code>patchwork</code></a> package, all within
+the <code>ggplot2</code> framework. This allows for direct comparison of receptor
+density across cortical and non-cortical structures with a unified color
+scale.</p>
 <p>Python package users can save outputs from <code>plot_subcortical_data</code> in
 their preferred file format (e.g., .png or .svg) and combine with saved
 <code>ggseg</code> output from R in the image editor of their choice.</p>
@@ -1481,9 +1538,12 @@ structures.</p>
 <p><strong>Note:</strong> The below code chunk does not compute/visualize the real
 cortical values for the Schaefer-1000 cortical atlas, as this is
 beyond the scope of our package and is designed to be performed in
-Python using <code>neuromaps</code>.</p>
+Python using <code>neuromaps</code>. Additionally, it requires the <code>ggseg</code> and
+<code>ggsegSchaefer</code> packages, which are not dependencies of
+<code>subcortexVisualizationR</code>.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggseg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggseg</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggsegSchaefer</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
@@ -1495,7 +1555,13 @@ Python using <code>neuromaps</code>.</p>
 <span class="c1"># Get Schaefer 1000-parcel atlas labels, then join with parcellated GABA_A_a1 data</span>
 <span class="c1"># In practice, cortical parcellation would be done with neuromaps (Python) or</span>
 <span class="c1"># a surface-based parcellation tool; here we simulate cortical values for illustration</span>
-<span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">()</span><span class="o">$</span><span class="n">data</span><span class="o">$</span><span class="n">sf</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="n">schaefer17_1000_fixed</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">()</span>
+<span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">()</span><span class="o">$</span><span class="n">data</span><span class="o">$</span><span class="n">sf</span>
+<span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">schaefer1000_labels</span><span class="p">[</span><span class="n">schaefer1000_labels</span><span class="o">$</span><span class="n">roi</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;0001&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="n">schaefer17_1000_fixed</span><span class="o">$</span><span class="n">data</span><span class="o">$</span><span class="n">sf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">schaefer1000_labels</span>
+
+<span class="nf">class</span><span class="p">(</span><span class="n">schaefer1000_labels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;data.frame&quot;</span>
+<span class="n">schaefer1000_labels</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as_tibble</span><span class="p">(</span><span class="n">schaefer1000_labels</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">as_tibble</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">label</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">label</span><span class="p">,</span><span class="w"> </span><span class="n">hemi</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -1507,9 +1573,9 @@ Python using <code>neuromaps</code>.</p>
 <span class="w">                         </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_func_parc_value</span><span class="p">,</span>
 <span class="w">                         </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_func_parc_value</span><span class="p">))</span>
 
-<span class="n">cortex_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cortical_sim_data</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="w">    </span><span class="nf">ggplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_brain</span><span class="p">(</span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">schaefer17_1000</span><span class="p">(),</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">),</span>
+<span class="n">cortex_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_brain</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cortical_sim_data</span><span class="p">,</span>
+<span class="w">               </span><span class="n">atlas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">schaefer17_1000_fixed</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">),</span>
 <span class="w">               </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Schaefer-1000 Cortex&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">labs</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Mean GABAa1 Signal (VT)&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
@@ -1546,6 +1612,11 @@ Python using <code>neuromaps</code>.</p>
 <span class="w">           </span><span class="n">design</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plot_design</span><span class="p">,</span><span class="w"> </span><span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../images/R_tutorial_files/figure-gfm/combine-viz-1.png" /><!-- --></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clean up downloaded file</span>
+<span class="nf">file.remove</span><span class="p">(</span><span class="s">&quot;GABAa1_mean.nii.gz&quot;</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>## [1] TRUE
+</code></pre>
 
 
 
