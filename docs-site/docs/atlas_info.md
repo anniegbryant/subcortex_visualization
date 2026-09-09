@@ -18,7 +18,7 @@ Atlas name keyword: `Melbourne_S1`
 
 Region names: accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus_anterior, thalamus_posterior
 
-![Melbourne S1 atlas information](images/Melbourne_S1_subcortical_atlas_info.png){ width="90%" }
+![Melbourne S1 atlas information](images/Melbourne_S1_atlas_info.png){ width="90%" }
 
 ## Melbourne Subcortex Atlas (S2)
 
@@ -28,7 +28,7 @@ Atlas name keyword: `Melbourne_S2`
 
 Region names: accumbens_core, accumbens_shell, amygdala_lateral, amygdala_medial, caudate_anterior, caudate_posterior, hippocampus_anterior, hippocampus_posterior, pallidum_anterior, pallidum_posterior, putamen_anterior, putamen_posterior, thalamus_DA, thalamus_DP, thalamus_VA, thalamus_VP
 
-![Melbourne S2 atlas information](images/Melbourne_S2_subcortical_atlas_info.png){ width="90%" }
+![Melbourne S2 atlas information](images/Melbourne_S2_atlas_info.png){ width="90%" }
 
 ## Melbourne Subcortex Atlas (S3)
 
@@ -38,7 +38,7 @@ Atlas name keyword: `Melbourne_S3`
 
 Region names: accumbens_core, accumbens_shell, amygdala_lateral, amygdala_medial, caudate_anterior, caudate_posterior, hippocampus_anterior, hippocampus_posterior, pallidum_anterior, pallidum_posterior, putamen_anterior, putamen_posterior, thalamus_DA, thalamus_DP, thalamus_VA, thalamus_VP
 
-![Melbourne S3 atlas information](images/Melbourne_S3_subcortical_atlas_info.png){ width="90%" }
+![Melbourne S3 atlas information](images/Melbourne_S3_atlas_info.png){ width="90%" }
 
 ## Melbourne Subcortex Atlas (S4)
 
@@ -48,7 +48,47 @@ Atlas name keyword: `Melbourne_S4`
 
 Region names: accumbens_core, accumbens_shell, amygdala_lateral, amygdala_medial, caudate_anterior, caudate_posterior, hippocampus_anterior, hippocampus_posterior, pallidum_anterior, pallidum_posterior, putamen_anterior, putamen_posterior, thalamus_DA, thalamus_DP, thalamus_VA, thalamus_VP
 
-![Melbourne S4 atlas information](images/Melbourne_S4_subcortical_atlas_info.png){ width="90%" }
+![Melbourne S4 atlas information](images/Melbourne_S4_atlas_info.png){ width="90%" }
+
+## Melbourne Subcortex Atlas (S1), 7T version
+
+Reference: [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6).
+
+Atlas name keyword: `Melbourne_S1_7T`
+
+Region names: accumbens, amygdala, caudate, hippocampus, pallidum, putamen, thalamus_anterior, thalamus_posterior
+
+![Melbourne S1 atlas information](images/Melbourne_S1_7T_atlas_info.png){ width="90%" }
+
+## Melbourne Subcortex Atlas (S2), 7T version
+
+Reference: [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6).
+
+Atlas name keyword: `Melbourne_S2_7T`
+
+Region names: hippocampus_tail, hippocampus_body, hippocampus_head, amygdala_lateral, amygdala_medial, thalamus_DP, thalamus_VP, thalamus_VA, thalamus_DA, accumbens_shell, accumbens_core, pallidum_posterior, pallidum_anterior,   putamen_anterior, putamen_posterior, caudate_anterior, caudate_posterior
+
+![Melbourne S1 atlas information](images/Melbourne_S2_7T_atlas_info.png){ width="90%" }
+
+## Melbourne Subcortex Atlas (S3), 7T version
+
+Reference: [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6).
+
+Atlas name keyword: `Melbourne_S3_7T`
+
+Region names: hippocampus_head_med, hippocampus_head_lat, hippocampus_body_med, hippocampus_body_lat, amygdala_SM, amygdala_CL, thalamus_DPl, thalamus_DPm, thalamus_VPm, thalamus_VPl, thalamus_VAi, thalamus_VAs, thalamus_DAm, thalamus_DAl, putamen_VA, putamen_DA, putamen_VP, putamen_DP, caudate_VA, caudate_DA, hippocampus_tail, amygdala_lat, GP_ant, GP_post, accumbens_shell, accumbens_core, caudate_post
+
+![Melbourne S1 atlas information](images/Melbourne_S3_7T_atlas_info.png){ width="90%" }
+
+## Melbourne Subcortex Atlas (S4), 7T version
+
+Reference: [Tian et al. *Nature Neuroscience* (2020)](https://www.nature.com/articles/s41593-020-00711-6).
+
+Atlas name keyword: `Melbourne_S4_7T`
+
+Region names: hippocampus_head_med_1, hippocampus_head_med_2, hippocampus_head_lat_1, hippocampus_head_lat_2, thalamus_VAip, thalamus_VAia, caudate_DAi, caudate_DAs, hippocampus_body_med, hippocampus_body_lat, amygdala_SM, amygdala_CL, thalamus_DPl, thalamus_DPm, thalamus_VPm, thalamus_VPl, thalamus_VAs, thalamus_DAm, thalamus_DAl, putamen_VA, putamen_DA, putamen_VP, putamen_DP, caudate_VA, hippocampus_tail, amygdala_lat, GP_post, GP_ant, accumbens_shell, accumbens_core, caudate_post
+
+![Melbourne S1 atlas information](images/Melbourne_S4_7T_atlas_info.png){ width="90%" }
 
 ## AICHA subcortical atlas
 
