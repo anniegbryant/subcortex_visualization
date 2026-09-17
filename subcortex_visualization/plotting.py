@@ -192,7 +192,7 @@ def _get_region_color(color_lookup, row, cmap, subcortex_data=None, value_column
 
 def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_colors=None,
                color_lookup=None, fill_domain=None,
-               fill_title=None, cmap='plasma', norm=None, multi_panel=False):
+               fill_title=None, cmap='plasma', norm=None, multi_panel=False, fontsize=12):
     """
     Add a legend or colorbar to the plot based on the provided data.
 
@@ -242,6 +242,12 @@ def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_col
         If True, uses figure-level legend/colorbar centred across all panels.
         If False, anchors legend to the single provided axis.
 
+    fontsize : int, default=12
+        Base font size the rest of the figure uses. For a multi-panel legend, the
+        legend text and handles are scaled up relative to this based on the
+        figure's width, so a wide, many-column figure doesn't end up with a
+        legend sized for a single narrow panel.
+
     Returns
     -------
     None (adds to the plot directly)
@@ -280,9 +286,30 @@ def _add_legend(ax, fig, atlas_ordering, ncols=4, value_column='value', cmap_col
         )
 
         if multi_panel:
+            # Scale the legend text/handles to the figure's width so a wide,
+            # many-column figure (e.g. hemisphere='both' with many views) doesn't
+            # end up with a legend sized for a single narrow panel. 16 inches
+            # (a 2-column figure) is the baseline the unscaled sizes above look
+            # right at.
+            # handlelength/handletextpad/columnspacing (set above, or matplotlib's
+            # defaults) are already expressed in units of fontsize, so they scale
+            # up automatically once fontsize does — scaling them again here would
+            # compound and overflow the figure width.
+            scale = max(1.0, fig.get_size_inches()[0] / 16.0)
+            shared_kwargs.update(
+                fontsize=fontsize * scale,
+                title_fontsize=(fontsize + 1) * scale,
+            )
             fig.legend(**shared_kwargs)
             current = fig.subplotpars
-            fig.subplots_adjust(bottom=0.25, wspace=current.wspace)
+            # Reserve just enough vertical space for the legend, based on how many
+            # rows it wraps to. A fixed fraction of the figure over-reserves space
+            # on taller figures (e.g. hemisphere='both' with 2 rows of views),
+            # leaving the legend looking tiny under a large empty gap.
+            n_legend_rows = int(np.ceil(len(legend_elements) / ncols))
+            legend_height_in = (0.5 + n_legend_rows * 0.4) * scale
+            bottom = min(0.5, legend_height_in / fig.get_size_inches()[1])
+            fig.subplots_adjust(bottom=bottom, wspace=current.wspace)
         else:
             ax.legend(**shared_kwargs)
             fig.subplots_adjust(bottom=0.5)
@@ -1379,6 +1406,14 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
 
     plt.tight_layout(h_pad=1.5)
 
+    # tight_layout() doesn't reliably size the gap between rows when panels use
+    # ax.set_aspect('equal') with very different data extents per row (e.g.
+    # hemisphere='both' with both lateral/medial and superior/inferior views
+    # selected), and can even compute a negative hspace, making the two rows
+    # visually overlap. Enforce a sane minimum gap whenever there are 2 rows.
+    if is_multi_panel and axes.ndim == 2 and axes.shape[0] > 1:
+        fig.subplots_adjust(hspace=max(fig.subplotpars.hspace, 0.1))
+
     # Add a legend if requested — must come AFTER tight_layout so the
     # colorbar / subplots_adjust reservation is not overwritten.
     if show_legend:
@@ -1392,12 +1427,13 @@ def plot_subcortical_data(subcortex_data=None, atlas='aseg_subcortex', value_col
             _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
                        multi_panel=is_multi_panel,
                        fig=fig, value_column=value_column, atlas_ordering=atlas_ordering,
-                       cmap_colors=cmap_colors, fill_title=fill_title, ncols=ncols)
+                       cmap_colors=cmap_colors, fill_title=fill_title, ncols=ncols, fontsize=fontsize)
         elif discrete:
             _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
                        multi_panel=is_multi_panel,
                        fig=fig, value_column=value_column, atlas_ordering=atlas_ordering,
-                       color_lookup=color_lookup, fill_domain=fill_domain, fill_title=fill_title, ncols=ncols)
+                       color_lookup=color_lookup, fill_domain=fill_domain, fill_title=fill_title, ncols=ncols,
+                       fontsize=fontsize)
         else:
             _add_legend(ax=flat_axes if is_multi_panel else legend_ax,
                        multi_panel=is_multi_panel,
